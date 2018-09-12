@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">InspectionProcessForm</property>
+      <property
+         name="page">/InspectionProcessForm.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>InspectionProcessForm&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">163.93652</property>
+      <property
+         name="x">314.0</property>
+   </View>
+</SDM>

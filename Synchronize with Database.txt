@@ -1,0 +1,8 @@
+The following Synchronization Actions were performed successfully:
+
+Entity :PwcInspectionProcessHeader
+  Attribute :InspectionProcessId
+    Change Mandatory to:true
+  Create Attribute for column: SALES_ORDER_NUMBER
+  Remove Key Constraint: PwcinspectionprocessheaderPrimaryKey
+  Create Key for Constraint: INSPECTION_PROCESS_PK
