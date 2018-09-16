@@ -323,15 +323,49 @@
                           <af:commandButton text="2" id="commandButton5"
                                             inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                         </af:gridCell>
-                        <af:gridCell marginStart="1px" width="5%" id="gc35"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc69"/>
-                        <af:gridCell marginStart="1px" width="5%" id="gc21"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc34"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc16"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc2"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc15"/>
+                        <af:gridCell marginStart="1px" width="5%" id="gc35"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="3" id="commandButton10"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc69"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="4" id="commandButton15"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%" id="gc21">
+                          <af:spacer width="30" height="15" id="spacer8"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc34"
+                                     halign="center" valign="middle">
+                          <af:outputText value="0" id="ot3"
+                                         inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc16">
+                          <af:spacer width="30" height="15" id="spacer17"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc2"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="1" id="commandButton20"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc15"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="2" id="commandButton25"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
                         <af:gridCell marginStart="1px" marginEnd="2px"
-                                     width="5%" id="gc50"/>
+                                     width="5%" id="gc50" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="3" id="commandButton30"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell1" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="4" id="commandButton35"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
                       </af:gridRow>
                       <af:gridRow marginTop="1px" height="auto" id="gr5">
                         <af:gridCell marginStart="2px" width="14%" id="gc65"
@@ -352,14 +386,48 @@
                           <af:commandButton text="2" id="commandButton6"
                                             inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                         </af:gridCell>
-                        <af:gridCell marginStart="1px" width="7%" id="gc8"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc27"/>
-                        <af:gridCell marginStart="1px" width="5%" id="gc64"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc48"/>
-                        <af:gridCell marginStart="1px" width="5%" id="gc28"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc47"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc66"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc36"/>
+                        <af:gridCell marginStart="1px" width="7%" id="gc8"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="3" id="commandButton11"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc27"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="4" id="commandButton16"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%" id="gc64">
+                          <af:spacer width="30" height="15" id="spacer9"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc48"
+                                     halign="center" valign="middle">
+                          <af:outputText value="0" id="outputText8"
+                                         inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%" id="gc28">
+                          <af:spacer width="30" height="15" id="spacer13"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc47"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="1" id="commandButton21"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc66"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="2" id="commandButton26"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc36"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="3" id="commandButton31"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell2" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="4" id="commandButton36"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
                         <af:gridCell marginStart="1px" width="7%" id="gc30"/>
                         <af:gridCell marginStart="1px" marginEnd="2px"
                                      width="5%" id="gc43"/>
@@ -384,14 +452,48 @@
                           <af:commandButton text="2" id="commandButton7"
                                             inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                         </af:gridCell>
-                        <af:gridCell marginStart="1px" width="7%" id="gc19"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc40"/>
-                        <af:gridCell marginStart="1px" width="5%" id="gc9"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc59"/>
-                        <af:gridCell marginStart="1px" width="5%" id="gc31"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc22"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc17"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc5"/>
+                        <af:gridCell marginStart="1px" width="7%" id="gc19"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="3" id="commandButton12"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc40"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="4" id="commandButton17"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%" id="gc9">
+                          <af:spacer width="30" height="15" id="spacer10"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc59"
+                                     halign="center" valign="middle">
+                          <af:outputText value="0" id="outputText9"
+                                         inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%" id="gc31">
+                          <af:spacer width="30" height="15" id="spacer14"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc22"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="1" id="commandButton22"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc17"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="2" id="commandButton27"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc5"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="3" id="commandButton32"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell3" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="4" id="commandButton37"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
                         <af:gridCell marginStart="1px" width="7%" id="gc51"/>
                         <af:gridCell marginStart="1px" marginEnd="2px"
                                      width="5%" id="gc68"/>
@@ -416,14 +518,48 @@
                           <af:commandButton text="2" id="commandButton8"
                                             inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                         </af:gridCell>
-                        <af:gridCell marginStart="1px" width="7%" id="gc4"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc26"/>
-                        <af:gridCell marginStart="1px" width="5%" id="gc12"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc70"/>
-                        <af:gridCell marginStart="1px" width="5%" id="gc33"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc56"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc25"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc13"/>
+                        <af:gridCell marginStart="1px" width="7%" id="gc4"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="3" id="commandButton13"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc26"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="4" id="commandButton18"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%" id="gc12">
+                          <af:spacer width="30" height="15" id="spacer11"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc70"
+                                     halign="center" valign="middle">
+                          <af:outputText value="0" id="outputText10"
+                                         inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%" id="gc33">
+                          <af:spacer width="30" height="15" id="spacer15"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc56"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="1" id="commandButton23"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc25"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="2" id="commandButton28"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc13"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="3" id="commandButton33"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell4" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="4" id="commandButton38"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
                         <af:gridCell marginStart="1px" width="7%" id="gc63"/>
                         <af:gridCell marginStart="1px" marginEnd="2px"
                                      width="5%" id="gc24"/>
@@ -449,14 +585,48 @@
                           <af:commandButton text="2" id="commandButton9"
                                             inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                         </af:gridCell>
-                        <af:gridCell marginStart="1px" width="7%" id="gc62"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc10"/>
-                        <af:gridCell marginStart="1px" width="5%" id="gc20"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc42"/>
-                        <af:gridCell marginStart="1px" width="5%" id="gc61"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc53"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc38"/>
-                        <af:gridCell marginStart="1px" width="7%" id="gc37"/>
+                        <af:gridCell marginStart="1px" width="7%" id="gc62"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="3" id="commandButton14"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc10"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="4" id="commandButton19"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%" id="gc20">
+                          <af:spacer width="30" height="15" id="spacer12"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc42"
+                                     halign="center" valign="middle">
+                          <af:outputText value="0" id="outputText11"
+                                         inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%" id="gc61">
+                          <af:spacer width="30" height="15" id="spacer16"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc53"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="1" id="commandButton24"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc38"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="2" id="commandButton29"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gc37"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="3" id="commandButton34"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell5" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="4" id="commandButton39"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
                         <af:gridCell marginStart="1px" width="7%" id="gc44"/>
                         <af:gridCell marginStart="1px" marginEnd="2px"
                                      width="5%" id="gc29"/>
@@ -464,9 +634,814 @@
                     </af:panelGridLayout>
                   </f:facet>
                 </af:panelSplitter>
-                <af:panelSplitter id="ps4">
-                  <f:facet name="first"/>
-                  <f:facet name="second"/>
+                <af:panelSplitter id="panelSplitter2" inlineStyle="width:673px;"
+                                  splitterPosition="108">
+                  <f:facet name="first">
+                    <af:panelGroupLayout layout="scroll"
+                                         xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                         id="panelGroupLayout1">
+                      <af:spacer width="1" height="59" id="spacer18"/>
+                      <af:outputText value="Dye Fault" id="outputText12"
+                                     inlineStyle="font-weight:bolder;"
+                                     styleClass="width:100%;"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <f:facet name="second">
+                    <af:panelGridLayout id="panelGridLayout1">
+                      <af:gridRow marginTop="2px" height="auto" id="gridRow1">
+                        <af:gridCell marginStart="2px" width="14%"
+                                     id="gridCell6"
+                                     inlineStyle="background-color:Lime;"
+                                     halign="center" valign="middle">
+                          <af:outputText value="Off Shade" id="outputText13"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell7">
+                          <af:spacer width="30" height="15" id="spacer19"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gridCell8"
+                                     valign="middle" halign="center">
+                          <af:commandButton text="1" id="commandButton40"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%" id="gridCell9"
+                                     halign="center" valign="middle">
+                          <af:commandButton text="2" id="commandButton41"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell10" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton42"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell11" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="4" id="commandButton43"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell12">
+                          <af:spacer width="30" height="15" id="spacer20"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell13" halign="center"
+                                     valign="middle">
+                          <af:outputText value="0" id="outputText14"
+                                         inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell14">
+                          <af:spacer width="30" height="15" id="spacer21"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell15" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="1" id="commandButton44"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell16" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton45"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell17" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="3" id="commandButton46"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell18" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="4" id="commandButton47"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                      </af:gridRow>
+                      <af:gridRow marginTop="1px" height="auto" id="gridRow2">
+                        <af:gridCell marginStart="2px" width="14%"
+                                     id="gridCell19"
+                                     inlineStyle="background-color:Lime;"
+                                     halign="center" valign="middle">
+                          <af:outputText value="Shade Variation"
+                                         id="outputText15"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell20">
+                          <af:spacer width="30" height="15" id="spacer22"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell21" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="1" id="commandButton48"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell22" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="2" id="commandButton49"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell23" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton50"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell24" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="4" id="commandButton51"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell25">
+                          <af:spacer width="30" height="15" id="spacer23"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell26" halign="center"
+                                     valign="middle">
+                          <af:outputText value="0" id="outputText16"
+                                         inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell27">
+                          <af:spacer width="30" height="15" id="spacer24"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell28" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="1" id="commandButton52"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell29" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton53"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell30" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton54"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell31" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="4" id="commandButton55"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell32"/>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell33"/>
+                      </af:gridRow>
+                      <af:gridRow marginTop="1px" height="auto" id="gridRow3">
+                        <af:gridCell marginStart="2px" width="8%"
+                                     id="gridCell34"
+                                     inlineStyle="background-color:Lime;"
+                                     halign="center" valign="middle">
+                          <af:outputText value="Spot" id="outputText17"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell35">
+                          <af:spacer width="30" height="15" id="spacer25"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell36" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="1" id="commandButton56"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell37" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton57"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell38" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton58"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell39" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="4" id="commandButton59"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell40">
+                          <af:spacer width="30" height="15" id="spacer26"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell41" halign="center"
+                                     valign="middle">
+                          <af:outputText value="0" id="outputText18"
+                                         inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell42">
+                          <af:spacer width="30" height="15" id="spacer27"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell43" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="1" id="commandButton60"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell44" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton61"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell45" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton62"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell46" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="4" id="commandButton63"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell47"/>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell48"/>
+                      </af:gridRow>
+                      <af:gridRow marginTop="1px" height="auto" id="gridRow4">
+                        <af:gridCell marginStart="2px" width="8%"
+                                     id="gridCell49"
+                                     inlineStyle="background-color:Lime;"
+                                     halign="center" valign="middle">
+                          <af:outputText value="Miss Print" id="outputText19"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell50">
+                          <af:spacer width="30" height="15" id="spacer28"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell51" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="1" id="commandButton64"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell52" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton65"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell53" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton66"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell54" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="4" id="commandButton67"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell55">
+                          <af:spacer width="30" height="15" id="spacer29"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell56" halign="center"
+                                     valign="middle">
+                          <af:outputText value="0" id="outputText20"
+                                         inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell57">
+                          <af:spacer width="30" height="15" id="spacer30"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell58" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="1" id="commandButton68"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell59" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton69"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell60" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton70"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell61" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="4" id="commandButton71"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell62"/>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell63"/>
+                      </af:gridRow>
+                      <af:gridRow marginTop="1px" marginBottom="2px"
+                                  height="auto" id="gridRow5">
+                        <af:gridCell marginStart="2px" width="8%"
+                                     id="gridCell64"
+                                     inlineStyle="background-color:Lime;"
+                                     halign="center" valign="middle">
+                          <af:outputText value="Dye Stain" id="outputText21"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell65">
+                          <af:spacer width="30" height="15" id="spacer31"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell66" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="1" id="commandButton72"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell67" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton73"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell68" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton74"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell69" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="4" id="commandButton75"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell70">
+                          <af:spacer width="30" height="15" id="spacer32"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell71" halign="center"
+                                     valign="middle">
+                          <af:outputText value="0" id="outputText22"
+                                         inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell72">
+                          <af:spacer width="30" height="15" id="spacer33"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell73" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="1" id="commandButton76"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell74" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton77"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell75" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton78"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell76" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="4" id="commandButton79"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell77"/>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell78"/>
+                      </af:gridRow>
+                      <af:gridRow marginTop="1px" marginBottom="2px"
+                                  height="auto" id="gridRow6">
+                        <af:gridCell marginStart="2px" width="8%"
+                                     id="gridCell79"
+                                     inlineStyle="background-color:Lime;"
+                                     halign="center" valign="middle">
+                          <af:outputText value="Stop Mark" id="outputText23"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell80">
+                          <af:spacer width="30" height="15" id="spacer34"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell81" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="1" id="commandButton80"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell82" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton81"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell83" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton82"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell84" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="4" id="commandButton83"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell85">
+                          <af:spacer width="30" height="15" id="spacer35"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell86" halign="center"
+                                     valign="middle">
+                          <af:outputText value="0" id="outputText24"
+                                         inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell87">
+                          <af:spacer width="30" height="15" id="spacer36"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell88" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="1" id="commandButton84"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell89" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton85"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell90" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton86"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell91" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="4" id="commandButton87"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell92"/>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell93"/>
+                      </af:gridRow>
+                      <af:gridRow marginTop="1px" marginBottom="2px"
+                                  height="auto" id="gridRow7">
+                        <af:gridCell marginStart="2px" width="8%"
+                                     id="gridCell94"
+                                     inlineStyle="background-color:Lime;"
+                                     halign="center" valign="middle">
+                          <af:outputText value="Bar Mark" id="outputText25"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell95">
+                          <af:spacer width="30" height="15" id="spacer37"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell96" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="1" id="commandButton88"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell97" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton89"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell98" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton90"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell99" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="4" id="commandButton91"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell100">
+                          <af:spacer width="30" height="15" id="spacer38"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell101" halign="center"
+                                     valign="middle">
+                          <af:outputText value="0" id="outputText26"
+                                         inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell102">
+                          <af:spacer width="30" height="15" id="spacer39"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell103" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="1" id="commandButton92"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell104" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton93"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell105" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton94"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell106" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="4" id="commandButton95"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell107"/>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell108"/>
+                      </af:gridRow>
+                    </af:panelGridLayout>
+                  </f:facet>
+                </af:panelSplitter>
+                <af:panelSplitter id="panelSplitter3" inlineStyle="width:673px;"
+                                  splitterPosition="108">
+                  <f:facet name="first">
+                    <af:panelGroupLayout layout="scroll"
+                                         xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                         id="panelGroupLayout4">
+                      <af:spacer width="1" height="59" id="spacer40"/>
+                      <af:outputText value="Yarn Fault" id="outputText27"
+                                     inlineStyle="font-weight:bolder;"
+                                     styleClass="width:100%;"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <f:facet name="second">
+                    <af:panelGridLayout id="panelGridLayout2">
+                      <af:gridRow marginTop="2px" height="auto" id="gridRow8">
+                        <af:gridCell marginStart="2px" width="14%"
+                                     id="gridCell109"
+                                     inlineStyle="background-color:Lime;"
+                                     halign="center" valign="middle">
+                          <af:outputText value="Thick Yarn" id="outputText28"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell110">
+                          <af:spacer width="30" height="15" id="spacer41"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell111" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="1" id="commandButton96"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell112" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton97"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell113" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton98"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell114" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="4" id="commandButton99"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell115">
+                          <af:spacer width="30" height="15" id="spacer42"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell116" halign="center"
+                                     valign="middle">
+                          <af:outputText value="0" id="outputText29"
+                                         inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell117">
+                          <af:spacer width="30" height="15" id="spacer43"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell118" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="1" id="commandButton100"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell119" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton101"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell120" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="3" id="commandButton102"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell121" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="4" id="commandButton103"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                      </af:gridRow>
+                      <af:gridRow marginTop="1px" height="auto" id="gridRow9">
+                        <af:gridCell marginStart="2px" width="14%"
+                                     id="gridCell122"
+                                     inlineStyle="background-color:Lime;"
+                                     halign="center" valign="middle">
+                          <af:outputText value="Think Yarn"
+                                         id="outputText30"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell123">
+                          <af:spacer width="30" height="15" id="spacer44"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell124" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="1" id="commandButton104"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell125" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="2" id="commandButton105"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell126" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton106"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell127" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="4" id="commandButton107"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell128">
+                          <af:spacer width="30" height="15" id="spacer45"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell129" halign="center"
+                                     valign="middle">
+                          <af:outputText value="0" id="outputText31"
+                                         inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell130">
+                          <af:spacer width="30" height="15" id="spacer46"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell131" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="1" id="commandButton108"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell132" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton109"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell133" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton110"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell134" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="4" id="commandButton111"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell135"/>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell136"/>
+                      </af:gridRow>
+                      <af:gridRow marginTop="1px" height="auto" id="gridRow10">
+                        <af:gridCell marginStart="2px" width="8%"
+                                     id="gridCell137"
+                                     inlineStyle="background-color:Lime;"
+                                     halign="center" valign="middle">
+                          <af:outputText value="Slub" id="outputText32"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell138">
+                          <af:spacer width="30" height="15" id="spacer47"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell139" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="1" id="commandButton112"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell140" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton113"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell141" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton114"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell142" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="4" id="commandButton115"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell143">
+                          <af:spacer width="30" height="15" id="spacer48"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell144" halign="center"
+                                     valign="middle">
+                          <af:outputText value="0" id="outputText33"
+                                         inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="5%"
+                                     id="gridCell145">
+                          <af:spacer width="30" height="15" id="spacer49"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell146" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="1" id="commandButton116"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell147" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="2" id="commandButton117"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell148" halign="center"
+                                     valign="middle">
+                          <af:commandButton text="3" id="commandButton118"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell149" valign="middle"
+                                     halign="center">
+                          <af:commandButton text="4" id="commandButton119"
+                                            inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="1px" width="7%"
+                                     id="gridCell150"/>
+                        <af:gridCell marginStart="1px" marginEnd="2px"
+                                     width="5%" id="gridCell151"/>
+                      </af:gridRow>
+                    </af:panelGridLayout>
+                  </f:facet>
                 </af:panelSplitter>
               </af:panelGroupLayout>
             </f:facet>
