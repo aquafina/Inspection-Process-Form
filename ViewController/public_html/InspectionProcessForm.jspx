@@ -341,7 +341,8 @@
                                halign="center" valign="middle">
                     <af:outputText value="0" id="ot3"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   binding="#{backingBeanScope.InspectionProcessBackingBean.gf_CM_Total_OT}"/>
+                                   binding="#{backingBeanScope.InspectionProcessBackingBean.gf_CM_Total_OT}"
+                                   partialTriggers="crease_mark_cb1 crease_mark_cb2 crease_mark_cb3 crease_mark_cb4 crease_mark_cb5 crease_mark_cb6 crease_mark_cb7 crease_mark_cb8"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc16">
                     <af:spacer width="30" height="15" id="spacer17"/>
@@ -389,25 +390,29 @@
                                valign="middle" halign="center">
                     <af:commandButton text="1" id="width_variation_cb1"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_WV_1_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc14"
                                valign="middle" halign="center">
                     <af:commandButton text="2" id="width_variation_cb2"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_WV_2_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc8"
                                halign="center" valign="middle">
                     <af:commandButton text="3" id="width_variation_cb3"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_WV_3_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc27"
                                halign="center" valign="middle">
                     <af:commandButton text="4" id="width_variation_cb4"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_WV_4_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc64">
                     <af:spacer width="30" height="15" id="spacer9"/>
@@ -415,7 +420,9 @@
                   <af:gridCell marginStart="1px" width="7%" id="gc48"
                                halign="center" valign="middle">
                     <af:outputText value="0" id="outputText8"
-                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   binding="#{backingBeanScope.InspectionProcessBackingBean.gt_WV_Total_OT}"
+                                   partialTriggers="width_variation_cb1 width_variation_cb2 width_variation_cb3 width_variation_cb4 width_variation_cb5 width_variation_cb6 width_variation_cb7 width_variation_cb8"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc28">
                     <af:spacer width="30" height="15" id="spacer13"/>
@@ -424,25 +431,29 @@
                                halign="center" valign="middle">
                     <af:commandButton text="1" id="width_variation_cb5"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_WV_1_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc66"
                                halign="center" valign="middle">
                     <af:commandButton text="2" id="width_variation_cb6"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_WV_2_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc36"
                                halign="center" valign="middle">
                     <af:commandButton text="3" id="width_variation_cb7"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_WV_3_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
                                id="gridCell2" valign="middle" halign="center">
                     <af:commandButton text="4" id="width_variation_cb8"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_WV_4_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc30"/>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
@@ -465,25 +476,29 @@
                                valign="middle" halign="center">
                     <af:commandButton text="1" id="line_mark_cb1"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_1_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc41"
                                halign="center" valign="middle">
                     <af:commandButton text="2" id="line_mark_cb2"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_2_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc19"
                                halign="center" valign="middle">
                     <af:commandButton text="3" id="line_mark_cb3"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_3_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc40"
                                halign="center" valign="middle">
                     <af:commandButton text="4" id="line_mark_cb4"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_4_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc9">
                     <af:spacer width="30" height="15" id="spacer10"/>
@@ -491,7 +506,9 @@
                   <af:gridCell marginStart="1px" width="7%" id="gc59"
                                halign="center" valign="middle">
                     <af:outputText value="0" id="outputText9"
-                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   binding="#{backingBeanScope.InspectionProcessBackingBean.gf_LM_Total_OT}"
+                                   partialTriggers="line_mark_cb1 line_mark_cb2 line_mark_cb3 line_mark_cb4 line_mark_cb5 line_mark_cb6 line_mark_cb7 line_mark_cb8"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc31">
                     <af:spacer width="30" height="15" id="spacer14"/>
@@ -500,25 +517,29 @@
                                halign="center" valign="middle">
                     <af:commandButton text="1" id="line_mark_cb5"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_1_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc17"
                                halign="center" valign="middle">
                     <af:commandButton text="2" id="line_mark_cb6"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_2_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc5"
                                halign="center" valign="middle">
                     <af:commandButton text="3" id="line_mark_cb7"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_3_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
                                id="gridCell3" valign="middle" halign="center">
                     <af:commandButton text="4" id="line_mark_cb8"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_4_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc51"/>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
@@ -538,25 +559,29 @@
                                valign="middle" halign="center">
                     <af:commandButton text="1" id="lycra_naps_cb1"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LN_1_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc45"
                                halign="center" valign="middle">
                     <af:commandButton text="2" id="lycra_naps_cb2"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LN_2_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc4"
                                halign="center" valign="middle">
                     <af:commandButton text="3" id="lycra_naps_cb3"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LN_3_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc26"
                                halign="center" valign="middle">
                     <af:commandButton text="4" id="lycra_naps_cb4"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LN_4_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc12">
                     <af:spacer width="30" height="15" id="spacer11"/>
@@ -564,7 +589,9 @@
                   <af:gridCell marginStart="1px" width="7%" id="gc70"
                                halign="center" valign="middle">
                     <af:outputText value="0" id="outputText10"
-                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   binding="#{backingBeanScope.InspectionProcessBackingBean.gf_LN_Total_OT}"
+                                   partialTriggers="lycra_naps_cb1 lycra_naps_cb2 lycra_naps_cb3 lycra_naps_cb4 lycra_naps_cb5 lycra_naps_cb6 lycra_naps_cb7 lycra_naps_cb8"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc33">
                     <af:spacer width="30" height="15" id="spacer15"/>
@@ -573,25 +600,29 @@
                                halign="center" valign="middle">
                     <af:commandButton text="1" id="lycra_naps_cb5"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LN_1_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc25"
                                halign="center" valign="middle">
                     <af:commandButton text="2" id="lycra_naps_cb6"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LN_2_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc13"
                                halign="center" valign="middle">
                     <af:commandButton text="3" id="lycra_naps_cb7"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LN_3_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
                                id="gridCell4" valign="middle" halign="center">
                     <af:commandButton text="4" id="lycra_naps_cb8"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LN_4_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc63"/>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
@@ -612,25 +643,29 @@
                                valign="middle" halign="center">
                     <af:commandButton text="1" id="fly_yarn_cb1"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_FY_1_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc55"
                                halign="center" valign="middle">
                     <af:commandButton text="2" id="fly_yarn_cb2"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_FY_2_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc62"
                                halign="center" valign="middle">
                     <af:commandButton text="3" id="fly_yarn_cb3"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_FY_3_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc10"
                                halign="center" valign="middle">
                     <af:commandButton text="4" id="fly_yarn_cb4"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_FY_4_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc20">
                     <af:spacer width="30" height="15" id="spacer12"/>
@@ -638,7 +673,9 @@
                   <af:gridCell marginStart="1px" width="7%" id="gc42"
                                halign="center" valign="middle">
                     <af:outputText value="0" id="outputText11"
-                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   binding="#{backingBeanScope.InspectionProcessBackingBean.gf_FY_Total_OT}"
+                                   partialTriggers="fly_yarn_cb1 fly_yarn_cb2 fly_yarn_cb3 fly_yarn_cb4 fly_yarn_cb5 fly_yarn_cb6 fly_yarn_cb7 fly_yarn_cb8"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc61">
                     <af:spacer width="30" height="15" id="spacer16"/>
@@ -647,25 +684,29 @@
                                halign="center" valign="middle">
                     <af:commandButton text="1" id="fly_yarn_cb5"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_FY_1_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc38"
                                halign="center" valign="middle">
                     <af:commandButton text="2" id="fly_yarn_cb6"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_FY_2_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc37"
                                halign="center" valign="middle">
                     <af:commandButton text="3" id="fly_yarn_cb7"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_FY_3_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
                                id="gridCell5" valign="middle" halign="center">
                     <af:commandButton text="4" id="fly_yarn_cb8"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                      partialSubmit="true"/>
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_FY_4_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc44"/>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
@@ -760,19 +801,19 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell168"
                                valign="middle" halign="center">
-                    <af:commandButton text="2" id="commandButton129"
+                    <af:commandButton text="2" id="shade_variation_cb2"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell169"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton130"
+                    <af:commandButton text="3" id="shade_variation_cb3"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell170"
                                halign="center" valign="middle">
-                    <af:commandButton text="4" id="commandButton131"
+                    <af:commandButton text="4" id="shade_variation_cb4"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
@@ -789,22 +830,22 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell174"
                                halign="center" valign="middle">
-                    <af:commandButton text="1" id="commandButton132"
+                    <af:commandButton text="1" id="shade_variation_cb5"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell175"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton133"
+                    <af:commandButton text="2" id="shade_variation_cb6"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell176"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton134"
+                    <af:commandButton text="3" id="shade_variation_cb7"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
                                id="gridCell177" valign="middle" halign="center">
-                    <af:commandButton text="4" id="commandButton135"
+                    <af:commandButton text="4" id="shade_variation_cb8"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell178"/>
@@ -823,25 +864,25 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell182"
                                valign="middle" halign="center">
-                    <af:commandButton text="1" id="commandButton136"
+                    <af:commandButton text="1" id="spot_cb1"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell183"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton137"
+                    <af:commandButton text="2" id="spot_cb2"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell184"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton138"
+                    <af:commandButton text="3" id="spot_cb3"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell185"
                                halign="center" valign="middle">
-                    <af:commandButton text="4" id="commandButton139"
+                    <af:commandButton text="4" id="spot_cb4"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
@@ -858,22 +899,22 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell189"
                                halign="center" valign="middle">
-                    <af:commandButton text="1" id="commandButton140"
+                    <af:commandButton text="1" id="spot_cb5"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell190"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton141"
+                    <af:commandButton text="2" id="spot_cb6"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell191"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton142"
+                    <af:commandButton text="3" id="spot_cb7"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
                                id="gridCell192" valign="middle" halign="center">
-                    <af:commandButton text="4" id="commandButton143"
+                    <af:commandButton text="4" id="spot_cb8"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell193"/>
@@ -895,25 +936,25 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell197"
                                valign="middle" halign="center">
-                    <af:commandButton text="1" id="commandButton144"
+                    <af:commandButton text="1" id="miss_print_cb1"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell198"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton145"
+                    <af:commandButton text="2" id="miss_print_cb2"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell199"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton146"
+                    <af:commandButton text="3" id="miss_print_cb3"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell200"
                                halign="center" valign="middle">
-                    <af:commandButton text="4" id="commandButton147"
+                    <af:commandButton text="4" id="miss_print_cb4"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
@@ -930,22 +971,22 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell204"
                                halign="center" valign="middle">
-                    <af:commandButton text="1" id="commandButton148"
+                    <af:commandButton text="1" id="miss_print_cb5"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell205"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton149"
+                    <af:commandButton text="2" id="miss_print_cb6"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell206"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton150"
+                    <af:commandButton text="3" id="miss_print_cb7"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
                                id="gridCell207" valign="middle" halign="center">
-                    <af:commandButton text="4" id="commandButton151"
+                    <af:commandButton text="4" id="miss_print_cb8"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell208"/>
@@ -965,25 +1006,25 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell212"
                                valign="middle" halign="center">
-                    <af:commandButton text="1" id="commandButton152"
+                    <af:commandButton text="1" id="dye_stain_cb1"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell213"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton153"
+                    <af:commandButton text="2" id="dye_stain_cb2"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell214"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton154"
+                    <af:commandButton text="3" id="dye_stain_cb3"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell215"
                                halign="center" valign="middle">
-                    <af:commandButton text="4" id="commandButton155"
+                    <af:commandButton text="4" id="dye_stain_cb4"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
@@ -1000,22 +1041,22 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell219"
                                halign="center" valign="middle">
-                    <af:commandButton text="1" id="commandButton156"
+                    <af:commandButton text="1" id="dye_stain_cb5"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell220"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton157"
+                    <af:commandButton text="2" id="dye_stain_cb6"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell221"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton158"
+                    <af:commandButton text="3" id="dye_stain_cb7"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
                                id="gridCell222" valign="middle" halign="center">
-                    <af:commandButton text="4" id="commandButton159"
+                    <af:commandButton text="4" id="dye_stain_cb8"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell223"/>
@@ -1035,25 +1076,25 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell227"
                                valign="middle" halign="center">
-                    <af:commandButton text="1" id="commandButton160"
+                    <af:commandButton text="1" id="stop_mark_cb1"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell228"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton161"
+                    <af:commandButton text="2" id="stop_mark_cb2"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell229"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton162"
+                    <af:commandButton text="3" id="stop_mark_cb3"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell230"
                                halign="center" valign="middle">
-                    <af:commandButton text="4" id="commandButton163"
+                    <af:commandButton text="4" id="stop_mark_cb4"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
@@ -1070,22 +1111,22 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell234"
                                halign="center" valign="middle">
-                    <af:commandButton text="1" id="commandButton164"
+                    <af:commandButton text="1" id="stop_mark_cb5"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell235"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton165"
+                    <af:commandButton text="2" id="stop_mark_cb6"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell236"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton166"
+                    <af:commandButton text="3" id="stop_mark_cb7"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
                                id="gridCell237" valign="middle" halign="center">
-                    <af:commandButton text="4" id="commandButton167"
+                    <af:commandButton text="4" id="stop_mark_cb8"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell238"/>
@@ -1105,25 +1146,25 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell242"
                                valign="middle" halign="center">
-                    <af:commandButton text="1" id="commandButton168"
+                    <af:commandButton text="1" id="bar_mark_cb1"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell243"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton169"
+                    <af:commandButton text="2" id="bar_mark_cb2"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell244"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton170"
+                    <af:commandButton text="3" id="bar_mark_cb3"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell245"
                                halign="center" valign="middle">
-                    <af:commandButton text="4" id="commandButton171"
+                    <af:commandButton text="4" id="bar_mark_cb4"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
@@ -1140,22 +1181,22 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell249"
                                halign="center" valign="middle">
-                    <af:commandButton text="1" id="commandButton172"
+                    <af:commandButton text="1" id="bar_mark_cb5"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell250"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton173"
+                    <af:commandButton text="2" id="bar_mark_cb6"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell251"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton174"
+                    <af:commandButton text="3" id="bar_mark_cb7"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
                                id="gridCell252" valign="middle" halign="center">
-                    <af:commandButton text="4" id="commandButton175"
+                    <af:commandButton text="4" id="bar_mark_cb8"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell253"/>
@@ -1179,25 +1220,25 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell8"
                                valign="middle" halign="center">
-                    <af:commandButton text="1" id="commandButton40"
+                    <af:commandButton text="1" id="thick_yarn_cb1"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell9"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton41"
+                    <af:commandButton text="2" id="thick_yarn_cb2"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell10"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton42"
+                    <af:commandButton text="3" id="thick_yarn_cb3"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell11"
                                halign="center" valign="middle">
-                    <af:commandButton text="4" id="commandButton43"
+                    <af:commandButton text="4" id="thick_yarn_cb4"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
@@ -1214,25 +1255,25 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell15"
                                halign="center" valign="middle">
-                    <af:commandButton text="1" id="commandButton44"
+                    <af:commandButton text="1" id="thick_yarn_cb5"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell16"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton45"
+                    <af:commandButton text="2" id="thick_yarn_cb6"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
                                id="gridCell17" valign="middle" halign="center">
-                    <af:commandButton text="3" id="commandButton46"
+                    <af:commandButton text="3" id="thick_yarn_cb7"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
                                id="gridCell18" valign="middle" halign="center">
-                    <af:commandButton text="4" id="commandButton47"
+                    <af:commandButton text="4" id="thick_yarn_cb8"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
@@ -1253,25 +1294,25 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell21"
                                valign="middle" halign="center">
-                    <af:commandButton text="1" id="commandButton48"
+                    <af:commandButton text="1" id="think_yarn_cb1"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell22"
                                valign="middle" halign="center">
-                    <af:commandButton text="2" id="commandButton49"
+                    <af:commandButton text="2" id="think_yarn_cb2"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell23"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton50"
+                    <af:commandButton text="3" id="think_yarn_cb3"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell24"
                                halign="center" valign="middle">
-                    <af:commandButton text="4" id="commandButton51"
+                    <af:commandButton text="4" id="think_yarn_cb4"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
@@ -1288,25 +1329,25 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell28"
                                halign="center" valign="middle">
-                    <af:commandButton text="1" id="commandButton52"
+                    <af:commandButton text="1" id="think_yarn_cb5"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell29"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton53"
+                    <af:commandButton text="2" id="think_yarn_cb6"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell30"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton54"
+                    <af:commandButton text="3" id="think_yarn_cb7"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
                                id="gridCell31" valign="middle" halign="center">
-                    <af:commandButton text="4" id="commandButton55"
+                    <af:commandButton text="4" id="think_yarn_cb8"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
@@ -1326,25 +1367,25 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell36"
                                valign="middle" halign="center">
-                    <af:commandButton text="1" id="commandButton56"
+                    <af:commandButton text="1" id="slub_cb1"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell37"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton57"
+                    <af:commandButton text="2" id="slub_cb2"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell38"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton58"
+                    <af:commandButton text="3" id="slub_cb3"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell39"
                                halign="center" valign="middle">
-                    <af:commandButton text="4" id="commandButton59"
+                    <af:commandButton text="4" id="slub_cb4"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
@@ -1361,25 +1402,25 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell43"
                                halign="center" valign="middle">
-                    <af:commandButton text="1" id="commandButton60"
+                    <af:commandButton text="1" id="slub_cb5"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell44"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="commandButton61"
+                    <af:commandButton text="2" id="slub_cb6"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell45"
                                halign="center" valign="middle">
-                    <af:commandButton text="3" id="commandButton62"
+                    <af:commandButton text="3" id="slub_cb7"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
                                id="gridCell46" valign="middle" halign="center">
-                    <af:commandButton text="4" id="commandButton63"
+                    <af:commandButton text="4" id="slub_cb8"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"/>
                   </af:gridCell>
