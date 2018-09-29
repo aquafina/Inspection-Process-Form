@@ -23,10 +23,12 @@
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     TableName="PWC_INSPECTION_PROCESS_LINE"
-    PrimaryKey="true">
+    PrimaryKey="true"
+    IsUpdateable="while_insert">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
+    <TransientExpression><![CDATA[(new oracle.jbo.server.SequenceImpl("PWC_ODM_INSP_PROC_LINE_S",adf.object.getDBTransaction())).getSequenceNumber()]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="InspectionMachineNumber"
