@@ -8,7 +8,6 @@
   InheritPersonalization="true"
   SelectList="PwcInspectionProcessLineEO.ROLL_NUMBER, 
        PwcInspectionProcessLineEO.INSPECTION_MACHINE_NUMBER, 
-       PwcInspectionProcessLineEO.INSPECTION_PROCESS_ID, 
        PwcInspectionProcessLineEO.ROLL_QUANTITY, 
        PwcInspectionProcessLineEO.TOTAL_FAULTS, 
        PwcInspectionProcessLineEO.FAULTS_PER_100_SQ, 
@@ -35,7 +34,9 @@
        PwcInspectionProcessLineEO.ATTRIBUTE13, 
        PwcInspectionProcessLineEO.ATTRIBUTE14, 
        PwcInspectionProcessLineEO.ATTRIBUTE15, 
-       PwcInspectionProcessLineEO.MFG_ORG_ID"
+       PwcInspectionProcessLineEO.MFG_ORG_ID, 
+       PwcInspectionProcessLineEO.INSPECTION_PROCESS_LINE_ID, 
+       PwcInspectionProcessLineEO.INSPECTION_PROCESS_ID"
   FromList="PWC_INSPECTION_PROCESS_LINE PwcInspectionProcessLineEO"
   BindingStyle="OracleName"
   CustomQuery="false"
@@ -44,70 +45,140 @@
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="VarAccess"/>
   </DesignTime>
+  <ViewAccessor
+    Name="PpNumberLOV1"
+    ViewObjectName="model.LOV.PpNumberLOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="BatchNumberLOV1"
+    ViewObjectName="model.LOV.BatchNumberLOV">
+    <ParameterMap>
+      <PIMap Variable="p_wo_number">
+        <TransientExpression><![CDATA[WoNumber]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="WoNumberLOV1"
+    ViewObjectName="model.LOV.WoNumberLOV">
+    <ParameterMap>
+      <PIMap Variable="p_pp_number">
+        <TransientExpression><![CDATA[PpNumber]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <EntityUsage
     Name="PwcInspectionProcessLineEO"
     Entity="model.EO.PwcInspectionProcessLineEO"/>
   <ViewAttribute
     Name="RollNumber"
+    IsUpdateable="while_insert"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="RollNumber"
     EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="ROLL_NUMBER"/>
+    AliasName="ROLL_NUMBER">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="InspectionMachineNumber"
     PrecisionRule="true"
     EntityAttrName="InspectionMachineNumber"
     EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="INSPECTION_MACHINE_NUMBER"/>
-  <ViewAttribute
-    Name="InspectionProcessId"
-    PrecisionRule="true"
-    EntityAttrName="InspectionProcessId"
-    EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="INSPECTION_PROCESS_ID"/>
+    AliasName="INSPECTION_MACHINE_NUMBER">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="RollQuantity"
     PrecisionRule="true"
     EntityAttrName="RollQuantity"
     EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="ROLL_QUANTITY"/>
+    AliasName="ROLL_QUANTITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TotalFaults"
     PrecisionRule="true"
     EntityAttrName="TotalFaults"
     EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="TOTAL_FAULTS"/>
+    AliasName="TOTAL_FAULTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FaultsPer100Sq"
     PrecisionRule="true"
     EntityAttrName="FaultsPer100Sq"
     EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="FAULTS_PER_100_SQ"/>
+    AliasName="FAULTS_PER_100_SQ">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Grade"
     PrecisionRule="true"
     EntityAttrName="Grade"
     EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="GRADE"/>
+    AliasName="GRADE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="InspectionDate"
     PrecisionRule="true"
     EntityAttrName="InspectionDate"
     EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="INSPECTION_DATE"/>
+    AliasName="INSPECTION_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="CREATED_BY"/>
+    AliasName="CREATED_BY"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="CreationDate"
+    IsUpdateable="while_insert"
     PrecisionRule="true"
     EntityAttrName="CreationDate"
     EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="CREATION_DATE"/>
+    AliasName="CREATION_DATE">
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
+  </ViewAttribute>
   <ViewAttribute
     Name="LastUpdatedBy"
     PrecisionRule="true"
@@ -119,13 +190,17 @@
     PrecisionRule="true"
     EntityAttrName="LastUpdatedDate"
     EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="LAST_UPDATED_DATE"/>
+    AliasName="LAST_UPDATED_DATE">
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
+  </ViewAttribute>
   <ViewAttribute
     Name="LastUpdatedLogin"
     PrecisionRule="true"
     EntityAttrName="LastUpdatedLogin"
     EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="LAST_UPDATED_LOGIN"/>
+    AliasName="LAST_UPDATED_LOGIN">
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
+  </ViewAttribute>
   <ViewAttribute
     Name="OrgId"
     PrecisionRule="true"
@@ -228,4 +303,17 @@
     EntityAttrName="MfgOrgId"
     EntityUsage="PwcInspectionProcessLineEO"
     AliasName="MFG_ORG_ID"/>
+  <ViewAttribute
+    Name="InspectionProcessLineId"
+    IsUpdateable="while_insert"
+    PrecisionRule="true"
+    EntityAttrName="InspectionProcessLineId"
+    EntityUsage="PwcInspectionProcessLineEO"
+    AliasName="INSPECTION_PROCESS_LINE_ID"/>
+  <ViewAttribute
+    Name="InspectionProcessId"
+    PrecisionRule="true"
+    EntityAttrName="InspectionProcessId"
+    EntityUsage="PwcInspectionProcessLineEO"
+    AliasName="INSPECTION_PROCESS_ID"/>
 </ViewObject>

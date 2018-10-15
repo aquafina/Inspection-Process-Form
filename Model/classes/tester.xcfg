@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="model.AM.InspectionProcessAM">
+      <AppModuleConfig name="16676A91F22" user="apps" JDBCName="NGDEV" password="apps" DeployPlatform="LOCAL" jbo.project="model.Model" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" BC4JConfigName="AppModuleLocal" ApplicationName="model.AM.InspectionProcessAM" DBconnection="jdbc:oracle:thin:@116.68.194.14:1521:NGDEV">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="Java" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="model.AM.InspectionProcessAM"/>
+         <Tester FullProxyInterfaceName="model.AM.common.InspectionProcessAM"/>
+         <Custom LastUsedConfiguration="AppModuleLocal"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

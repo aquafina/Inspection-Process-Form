@@ -13,264 +13,200 @@
         <af:panelGroupLayout id="pgl1"
                              inlineStyle="width:100%;"
                              layout="scroll" valign="top">
-          <af:panelSplitter id="ps2" inlineStyle="width:832px; height:158px;"
-                            splitterPosition="110">
-            <f:facet name="first">
-              <af:panelGroupLayout layout="vertical"
-                                   xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-                                   id="pgl2" styleClass="width:100%;"
-                                   valign="middle" halign="center">
-                <af:spacer width="7" height="49" id="s1"/>
-                <af:outputText value="Level 1" id="ot1"
-                               inlineStyle="font-weight:bolder;"
-                               styleClass="width:100%;"/>
-              </af:panelGroupLayout>
-            </f:facet>
-            <f:facet name="second">
-              <af:panelFormLayout id="pfl1" inlineStyle="height:141px;"
-                                  maxColumns="2" rows="5">
-                <af:inputText value="#{bindings.PpNumber.inputValue}"
-                              label="#{bindings.PpNumber.hints.label}"
-                              required="#{bindings.PpNumber.hints.mandatory}"
-                              columns="#{bindings.PpNumber.hints.displayWidth}"
-                              maximumLength="#{bindings.PpNumber.hints.precision}"
-                              shortDesc="#{bindings.PpNumber.hints.tooltip}"
-                              id="it6">
-                  <f:validator binding="#{bindings.PpNumber.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.SalesOrderNumber.inputValue}"
-                              label="#{bindings.SalesOrderNumber.hints.label}"
-                              required="#{bindings.SalesOrderNumber.hints.mandatory}"
-                              columns="#{bindings.SalesOrderNumber.hints.displayWidth}"
-                              maximumLength="#{bindings.SalesOrderNumber.hints.precision}"
-                              shortDesc="#{bindings.SalesOrderNumber.hints.tooltip}"
-                              id="it12">
-                  <f:validator binding="#{bindings.SalesOrderNumber.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.SalesOrderNumber.format}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.WoNumber.inputValue}"
-                              label="#{bindings.WoNumber.hints.label}"
-                              required="#{bindings.WoNumber.hints.mandatory}"
-                              columns="#{bindings.WoNumber.hints.displayWidth}"
-                              maximumLength="#{bindings.WoNumber.hints.precision}"
-                              shortDesc="#{bindings.WoNumber.hints.tooltip}"
-                              id="it9">
-                  <f:validator binding="#{bindings.WoNumber.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.BatchNumber.inputValue}"
-                              label="#{bindings.BatchNumber.hints.label}"
-                              required="#{bindings.BatchNumber.hints.mandatory}"
-                              columns="#{bindings.BatchNumber.hints.displayWidth}"
-                              maximumLength="#{bindings.BatchNumber.hints.precision}"
-                              shortDesc="#{bindings.BatchNumber.hints.tooltip}"
-                              id="it4">
-                  <f:validator binding="#{bindings.BatchNumber.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.BuyerName.inputValue}"
-                              label="#{bindings.BuyerName.hints.label}"
-                              required="#{bindings.BuyerName.hints.mandatory}"
-                              columns="#{bindings.BuyerName.hints.displayWidth}"
-                              maximumLength="#{bindings.BuyerName.hints.precision}"
-                              shortDesc="#{bindings.BuyerName.hints.tooltip}"
-                              id="it5">
-                  <f:validator binding="#{bindings.BuyerName.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.ItemCode.inputValue}"
-                              label="#{bindings.ItemCode.hints.label}"
-                              required="#{bindings.ItemCode.hints.mandatory}"
-                              columns="#{bindings.ItemCode.hints.displayWidth}"
-                              maximumLength="#{bindings.ItemCode.hints.precision}"
-                              shortDesc="#{bindings.ItemCode.hints.tooltip}"
-                              id="it10">
-                  <f:validator binding="#{bindings.ItemCode.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.ItemDescription.inputValue}"
-                              label="#{bindings.ItemDescription.hints.label}"
-                              required="#{bindings.ItemDescription.hints.mandatory}"
-                              columns="#{bindings.ItemDescription.hints.displayWidth}"
-                              maximumLength="#{bindings.ItemDescription.hints.precision}"
-                              shortDesc="#{bindings.ItemDescription.hints.tooltip}"
-                              id="it11">
-                  <f:validator binding="#{bindings.ItemDescription.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.FinishingJobNumber.inputValue}"
-                              label="#{bindings.FinishingJobNumber.hints.label}"
-                              required="#{bindings.FinishingJobNumber.hints.mandatory}"
-                              columns="#{bindings.FinishingJobNumber.hints.displayWidth}"
-                              maximumLength="#{bindings.FinishingJobNumber.hints.precision}"
-                              shortDesc="#{bindings.FinishingJobNumber.hints.tooltip}"
-                              id="it3">
-                  <f:validator binding="#{bindings.FinishingJobNumber.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.JobQuantity.inputValue}"
-                              label="#{bindings.JobQuantity.hints.label}"
-                              required="#{bindings.JobQuantity.hints.mandatory}"
-                              columns="#{bindings.JobQuantity.hints.displayWidth}"
-                              maximumLength="#{bindings.JobQuantity.hints.precision}"
-                              shortDesc="#{bindings.JobQuantity.hints.tooltip}"
-                              id="it1">
-                  <f:validator binding="#{bindings.JobQuantity.validator}"/>
+          <af:panelGroupLayout id="pgl3" inlineStyle="width:730px;">
+            <af:panelFormLayout id="pfl1" rows="5">
+              <af:inputText value="#{bindings.InspectionProcessId.inputValue}"
+                            label="#{bindings.InspectionProcessId.hints.label}"
+                            required="#{bindings.InspectionProcessId.hints.mandatory}"
+                            columns="#{bindings.InspectionProcessId.hints.displayWidth}"
+                            maximumLength="#{bindings.InspectionProcessId.hints.precision}"
+                            shortDesc="#{bindings.InspectionProcessId.hints.tooltip}"
+                            id="it2" rendered="false">
+                <f:validator binding="#{bindings.InspectionProcessId.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.InspectionProcessId.format}"/>
+              </af:inputText>
+              <af:inputListOfValues id="ppNumberId"
+                                    popupTitle="Search and Select: #{bindings.PpNumber.hints.label}"
+                                    value="#{bindings.PpNumber.inputValue}"
+                                    label="PP Number"
+                                    model="#{bindings.PpNumber.listOfValuesModel}"
+                                    required="#{bindings.PpNumber.hints.mandatory}"
+                                    columns="#{bindings.PpNumber.hints.displayWidth}"
+                                    shortDesc="#{bindings.PpNumber.hints.tooltip}">
+                <f:validator binding="#{bindings.PpNumber.validator}"/>
+              </af:inputListOfValues>
+              <af:inputText value="#{bindings.SalesOrderNumber.inputValue}"
+                            label="Sale Order Number"
+                            required="#{bindings.SalesOrderNumber.hints.mandatory}"
+                            columns="#{bindings.SalesOrderNumber.hints.displayWidth}"
+                            maximumLength="#{bindings.SalesOrderNumber.hints.precision}"
+                            shortDesc="#{bindings.SalesOrderNumber.hints.tooltip}"
+                            id="it4">
+                <f:validator binding="#{bindings.SalesOrderNumber.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.SalesOrderNumber.format}"/>
+              </af:inputText>
+              <af:inputListOfValues id="woNumberId"
+                                    popupTitle="Search and Select: #{bindings.WoNumber.hints.label}"
+                                    value="#{bindings.WoNumber.inputValue}"
+                                    label="Work Order Number"
+                                    model="#{bindings.WoNumber.listOfValuesModel}"
+                                    required="#{bindings.WoNumber.hints.mandatory}"
+                                    columns="#{bindings.WoNumber.hints.displayWidth}"
+                                    shortDesc="#{bindings.WoNumber.hints.tooltip}">
+                <f:validator binding="#{bindings.WoNumber.validator}"/>
+              </af:inputListOfValues>
+              <af:inputListOfValues id="batchNumberId"
+                                    popupTitle="Search and Select: #{bindings.BatchNumber.hints.label}"
+                                    value="#{bindings.BatchNumber.inputValue}"
+                                    label="Batch Number"
+                                    model="#{bindings.BatchNumber.listOfValuesModel}"
+                                    required="#{bindings.BatchNumber.hints.mandatory}"
+                                    columns="#{bindings.BatchNumber.hints.displayWidth}"
+                                    shortDesc="#{bindings.BatchNumber.hints.tooltip}">
+                <f:validator binding="#{bindings.BatchNumber.validator}"/>
+              </af:inputListOfValues>
+              <af:panelLabelAndMessage label="Buyer Name"
+                                       id="plam1">
+                <af:outputText value="#{bindings.BuyerName.inputValue}"
+                               id="ot1" partialTriggers="batchNumberId"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="Item Code"
+                                       id="plam2">
+                <af:outputText value="#{bindings.ItemCode.inputValue}"
+                               id="ot5" partialTriggers="batchNumberId"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="Item Description"
+                                       id="plam3">
+                <af:outputText value="#{bindings.ItemDescription.inputValue}"
+                               id="ot6" partialTriggers="batchNumberId"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="Finishing Job Number"
+                                       id="plam5"
+                                       partialTriggers="batchNumberId">
+                <af:outputText value="#{bindings.FinishingJobNumber.inputValue}"
+                               id="ot8"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="Job Quantity"
+                                       id="plam4">
+                <af:outputText value="#{bindings.JobQuantity.inputValue}"
+                               id="ot7" partialTriggers="batchNumberId">
                   <af:convertNumber groupingUsed="false"
                                     pattern="#{bindings.JobQuantity.format}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.MfgOrgId.inputValue}"
-                              label="#{bindings.MfgOrgId.hints.label}"
-                              required="#{bindings.MfgOrgId.hints.mandatory}"
-                              columns="#{bindings.MfgOrgId.hints.displayWidth}"
-                              maximumLength="#{bindings.MfgOrgId.hints.precision}"
-                              shortDesc="#{bindings.MfgOrgId.hints.tooltip}"
-                              id="it2" rendered="false">
-                  <f:validator binding="#{bindings.MfgOrgId.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.MfgOrgId.format}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.OrgId.inputValue}"
-                              label="#{bindings.OrgId.hints.label}"
-                              required="#{bindings.OrgId.hints.mandatory}"
-                              columns="#{bindings.OrgId.hints.displayWidth}"
-                              maximumLength="#{bindings.OrgId.hints.precision}"
-                              shortDesc="#{bindings.OrgId.hints.tooltip}"
-                              id="it7" rendered="false">
-                  <f:validator binding="#{bindings.OrgId.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.OrgId.format}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.InspectionProcessId.inputValue}"
-                              label="#{bindings.InspectionProcessId.hints.label}"
-                              required="#{bindings.InspectionProcessId.hints.mandatory}"
-                              columns="#{bindings.InspectionProcessId.hints.displayWidth}"
-                              maximumLength="#{bindings.InspectionProcessId.hints.precision}"
-                              shortDesc="#{bindings.InspectionProcessId.hints.tooltip}"
-                              id="it8" rendered="false">
-                  <f:validator binding="#{bindings.InspectionProcessId.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.InspectionProcessId.format}"/>
-                </af:inputText>
-              </af:panelFormLayout>
-            </f:facet>
-          </af:panelSplitter>
-          <af:panelSplitter id="panelSplitter1"
-                            inlineStyle="width:832px; height:158px;"
-                            splitterPosition="110">
-            <f:facet name="first">
-              <af:panelGroupLayout layout="vertical"
-                                   xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-                                   id="panelGroupLayout3"
-                                   styleClass="width:100%;" valign="middle"
-                                   halign="center">
-                <af:spacer width="7" height="49" id="spacer3"/>
-                <af:outputText value="Level 2" id="outputText3"
-                               inlineStyle="font-weight:bolder;"
-                               styleClass="width:100%;"/>
-              </af:panelGroupLayout>
-            </f:facet>
-            <f:facet name="second">
-              <af:panelFormLayout id="panelFormLayout1" rows="4" maxColumns="2">
-                <af:inputText value="#{bindings.RollNumber.inputValue}"
-                              label="#{bindings.RollNumber.hints.label}"
-                              required="#{bindings.RollNumber.hints.mandatory}"
-                              columns="#{bindings.RollNumber.hints.displayWidth}"
-                              maximumLength="#{bindings.RollNumber.hints.precision}"
-                              shortDesc="#{bindings.RollNumber.hints.tooltip}"
-                              id="inputText1">
-                  <f:validator binding="#{bindings.RollNumber.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.InspectionMachineNumber.inputValue}"
-                              label="#{bindings.InspectionMachineNumber.hints.label}"
-                              required="#{bindings.InspectionMachineNumber.hints.mandatory}"
-                              columns="#{bindings.InspectionMachineNumber.hints.displayWidth}"
-                              maximumLength="#{bindings.InspectionMachineNumber.hints.precision}"
-                              shortDesc="#{bindings.InspectionMachineNumber.hints.tooltip}"
-                              id="inputText2">
-                  <f:validator binding="#{bindings.InspectionMachineNumber.validator}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.InspectionProcessId1.inputValue}"
-                              label="#{bindings.InspectionProcessId1.hints.label}"
-                              required="#{bindings.InspectionProcessId1.hints.mandatory}"
-                              columns="#{bindings.InspectionProcessId1.hints.displayWidth}"
-                              maximumLength="#{bindings.InspectionProcessId1.hints.precision}"
-                              shortDesc="#{bindings.InspectionProcessId1.hints.tooltip}"
-                              id="inputText3" rendered="false">
-                  <f:validator binding="#{bindings.InspectionProcessId1.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.InspectionProcessId1.format}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.TotalFaults.inputValue}"
-                              label="#{bindings.TotalFaults.hints.label}"
-                              required="#{bindings.TotalFaults.hints.mandatory}"
-                              columns="#{bindings.TotalFaults.hints.displayWidth}"
-                              maximumLength="#{bindings.TotalFaults.hints.precision}"
-                              shortDesc="#{bindings.TotalFaults.hints.tooltip}"
-                              id="inputText4">
-                  <f:validator binding="#{bindings.TotalFaults.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.TotalFaults.format}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.FaultsPer100Sq.inputValue}"
-                              label="#{bindings.FaultsPer100Sq.hints.label}"
-                              required="#{bindings.FaultsPer100Sq.hints.mandatory}"
-                              columns="#{bindings.FaultsPer100Sq.hints.displayWidth}"
-                              maximumLength="#{bindings.FaultsPer100Sq.hints.precision}"
-                              shortDesc="#{bindings.FaultsPer100Sq.hints.tooltip}"
-                              id="inputText5">
-                  <f:validator binding="#{bindings.FaultsPer100Sq.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.FaultsPer100Sq.format}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.Grade.inputValue}"
-                              label="#{bindings.Grade.hints.label}"
-                              required="#{bindings.Grade.hints.mandatory}"
-                              columns="#{bindings.Grade.hints.displayWidth}"
-                              maximumLength="#{bindings.Grade.hints.precision}"
-                              shortDesc="#{bindings.Grade.hints.tooltip}"
-                              id="inputText6">
-                  <f:validator binding="#{bindings.Grade.validator}"/>
-                </af:inputText>
-                <af:inputDate value="#{bindings.InspectionDate.inputValue}"
-                              label="#{bindings.InspectionDate.hints.label}"
-                              required="#{bindings.InspectionDate.hints.mandatory}"
-                              shortDesc="#{bindings.InspectionDate.hints.tooltip}"
-                              id="inputDate1">
-                  <f:validator binding="#{bindings.InspectionDate.validator}"/>
-                  <af:convertDateTime pattern="#{bindings.InspectionDate.format}"/>
-                </af:inputDate>
-                <af:inputText value="#{bindings.RollQuantity.inputValue}"
-                              label="#{bindings.RollQuantity.hints.label}"
-                              required="#{bindings.RollQuantity.hints.mandatory}"
-                              columns="#{bindings.RollQuantity.hints.displayWidth}"
-                              maximumLength="#{bindings.RollQuantity.hints.precision}"
-                              shortDesc="#{bindings.RollQuantity.hints.tooltip}"
-                              id="inputText7">
-                  <f:validator binding="#{bindings.RollQuantity.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.RollQuantity.format}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.MfgOrgId1.inputValue}"
-                              label="#{bindings.MfgOrgId1.hints.label}"
-                              required="#{bindings.MfgOrgId1.hints.mandatory}"
-                              columns="#{bindings.MfgOrgId1.hints.displayWidth}"
-                              maximumLength="#{bindings.MfgOrgId1.hints.precision}"
-                              shortDesc="#{bindings.MfgOrgId1.hints.tooltip}"
-                              id="inputText8" rendered="false">
-                  <f:validator binding="#{bindings.MfgOrgId1.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.MfgOrgId1.format}"/>
-                </af:inputText>
-                <af:inputText value="#{bindings.OrgId1.inputValue}"
-                              label="#{bindings.OrgId1.hints.label}"
-                              required="#{bindings.OrgId1.hints.mandatory}"
-                              columns="#{bindings.OrgId1.hints.displayWidth}"
-                              maximumLength="#{bindings.OrgId1.hints.precision}"
-                              shortDesc="#{bindings.OrgId1.hints.tooltip}"
-                              id="inputText9" rendered="false">
-                  <f:validator binding="#{bindings.OrgId1.validator}"/>
-                  <af:convertNumber groupingUsed="false"
-                                    pattern="#{bindings.OrgId1.format}"/>
-                </af:inputText>
-              </af:panelFormLayout>
-            </f:facet>
-          </af:panelSplitter>
+                </af:outputText>
+              </af:panelLabelAndMessage>
+            </af:panelFormLayout>
+          </af:panelGroupLayout>
+          <af:panelGroupLayout id="pgl5">
+            <af:commandButton actionListener="#{bindings.CreateInsert1.execute}"
+                              text="New"
+                              disabled="#{!bindings.CreateInsert1.enabled}"
+                              id="cb4"/>
+            <af:commandButton text="Complete" id="cb2"/>
+          </af:panelGroupLayout>
+          <af:panelGroupLayout id="pgl2">
+            <af:panelFormLayout id="panelFormLayout1" rows="4" maxColumns="2">
+              <af:inputText value="#{bindings.InspectionMachineNumber.inputValue}"
+                            label="Inspection Machine Number"
+                            required="#{bindings.InspectionMachineNumber.hints.mandatory}"
+                            columns="#{bindings.InspectionMachineNumber.hints.displayWidth}"
+                            maximumLength="#{bindings.InspectionMachineNumber.hints.precision}"
+                            shortDesc="#{bindings.InspectionMachineNumber.hints.tooltip}"
+                            id="it1">
+                <f:validator binding="#{bindings.InspectionMachineNumber.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.RollNumber.inputValue}"
+                            label="Roll Number"
+                            required="#{bindings.RollNumber.hints.mandatory}"
+                            columns="#{bindings.RollNumber.hints.displayWidth}"
+                            maximumLength="#{bindings.RollNumber.hints.precision}"
+                            shortDesc="#{bindings.RollNumber.hints.tooltip}"
+                            id="inputText1" inlineStyle="width:20px;">
+                <f:validator binding="#{bindings.RollNumber.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.TotalFaults.inputValue}"
+                            label="Total Faults"
+                            required="#{bindings.TotalFaults.hints.mandatory}"
+                            columns="#{bindings.TotalFaults.hints.displayWidth}"
+                            maximumLength="#{bindings.TotalFaults.hints.precision}"
+                            shortDesc="#{bindings.TotalFaults.hints.tooltip}"
+                            id="it3">
+                <f:validator binding="#{bindings.TotalFaults.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.TotalFaults.format}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.FaultsPer100Sq.inputValue}"
+                            label="Faults Per 100Sq"
+                            required="#{bindings.FaultsPer100Sq.hints.mandatory}"
+                            columns="#{bindings.FaultsPer100Sq.hints.displayWidth}"
+                            maximumLength="#{bindings.FaultsPer100Sq.hints.precision}"
+                            shortDesc="#{bindings.FaultsPer100Sq.hints.tooltip}"
+                            id="it5">
+                <f:validator binding="#{bindings.FaultsPer100Sq.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.FaultsPer100Sq.format}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.RollQuantity.inputValue}"
+                            label="Roll Quantity"
+                            required="#{bindings.RollQuantity.hints.mandatory}"
+                            columns="#{bindings.RollQuantity.hints.displayWidth}"
+                            maximumLength="#{bindings.RollQuantity.hints.precision}"
+                            shortDesc="#{bindings.RollQuantity.hints.tooltip}"
+                            id="it6">
+                <f:validator binding="#{bindings.RollQuantity.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.RollQuantity.format}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.Grade.inputValue}"
+                            label="Grade"
+                            required="#{bindings.Grade.hints.mandatory}"
+                            columns="#{bindings.Grade.hints.displayWidth}"
+                            maximumLength="#{bindings.Grade.hints.precision}"
+                            shortDesc="#{bindings.Grade.hints.tooltip}"
+                            id="it8">
+                <f:validator binding="#{bindings.Grade.validator}"/>
+              </af:inputText>
+              <af:inputDate value="#{bindings.InspectionDate.inputValue}"
+                            label="Inspection Date"
+                            required="#{bindings.InspectionDate.hints.mandatory}"
+                            shortDesc="#{bindings.InspectionDate.hints.tooltip}"
+                            id="id1">
+                <f:validator binding="#{bindings.InspectionDate.validator}"/>
+                <af:convertDateTime pattern="#{bindings.InspectionDate.format}"/>
+              </af:inputDate>
+              <af:inputText value="#{bindings.MfgOrgId1.inputValue}"
+                            label="#{bindings.MfgOrgId1.hints.label}"
+                            required="#{bindings.MfgOrgId1.hints.mandatory}"
+                            columns="#{bindings.MfgOrgId1.hints.displayWidth}"
+                            maximumLength="#{bindings.MfgOrgId1.hints.precision}"
+                            shortDesc="#{bindings.MfgOrgId1.hints.tooltip}"
+                            id="inputText8" rendered="false">
+                <f:validator binding="#{bindings.MfgOrgId1.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.MfgOrgId1.format}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.OrgId1.inputValue}"
+                            label="#{bindings.OrgId1.hints.label}"
+                            required="#{bindings.OrgId1.hints.mandatory}"
+                            columns="#{bindings.OrgId1.hints.displayWidth}"
+                            maximumLength="#{bindings.OrgId1.hints.precision}"
+                            shortDesc="#{bindings.OrgId1.hints.tooltip}"
+                            id="inputText9" rendered="false">
+                <f:validator binding="#{bindings.OrgId1.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.OrgId1.format}"/>
+              </af:inputText>
+            </af:panelFormLayout>
+          </af:panelGroupLayout>
+          <af:panelGroupLayout id="pgl9" layout="horizontal">
+            <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
+                              text="New"
+                              disabled="#{!bindings.CreateInsert.enabled}"
+                              id="cb1"/>
+            <af:commandButton text="Save" id="cb3"
+                              actionListener="#{backingBeanScope.InspectionProcessBackingBean.saveChanges}"/>
+          </af:panelGroupLayout>
           <af:spacer width="9" height="23" id="s2"/>
           <af:panelGroupLayout id="pgl7" inlineStyle="width:1317px;"
                                layout="horizontal">
@@ -720,8 +656,8 @@
                 <af:gridRow marginTop="2px" height="auto" id="gridRow11">
                   <af:gridCell id="gc74"/>
                   <af:gridCell marginStart="2px" width="14%" id="gridCell152"
-                               inlineStyle="background-color:Lime;"
-                               halign="center" valign="middle">
+                               halign="center" valign="middle"
+                               inlineStyle="background-color:Lime;">
                     <af:outputText value="Off Shade" id="outputText36"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell153">
@@ -796,8 +732,8 @@
                 <af:gridRow marginTop="1px" height="auto" id="gridRow12">
                   <af:gridCell id="gc75"/>
                   <af:gridCell marginStart="2px" width="14%" id="gridCell165"
-                               inlineStyle="background-color:Lime;"
-                               halign="center" valign="middle">
+                               halign="center" valign="middle"
+                               inlineStyle="background-color:Lime;">
                     <af:outputText value="Shade Variation" id="outputText38"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell166">
@@ -877,7 +813,8 @@
                   <af:gridCell marginStart="2px" width="8%" id="gridCell180"
                                inlineStyle="background-color:Lime;"
                                halign="center" valign="middle">
-                    <af:outputText value="Spot" id="outputText40"/>
+                    <af:outputText value="Spot" id="outputText40"
+                                   inlineStyle="background-color:Lime;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell181">
                     <af:spacer width="30" height="15" id="spacer54"/>
@@ -1323,7 +1260,7 @@
                                halign="center" valign="middle">
                     <af:outputText value="0" id="outputText13"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   binding="#{backingBeanScope.InspectionProcessBackingBean.df_TY_Total_OT}"
+                                   binding="#{backingBeanScope.InspectionProcessBackingBean.yf_TY_Total_OT}"
                                    partialTriggers="thick_yarn_cb1 thick_yarn_cb2 thick_yarn_cb3 thick_yarn_cb4 thick_yarn_cb5 thick_yarn_cb6 thick_yarn_cb7 thick_yarn_cb8"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell14">
@@ -1408,7 +1345,7 @@
                                halign="center" valign="middle">
                     <af:outputText value="0" id="outputText15"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   binding="#{backingBeanScope.InspectionProcessBackingBean.df_TY1_Total_OT}"/>
+                                   binding="#{backingBeanScope.InspectionProcessBackingBean.yf_TY1_Total_OT}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell27">
                     <af:spacer width="30" height="15" id="spacer24"/>
@@ -1490,8 +1427,8 @@
                                halign="center" valign="middle">
                     <af:outputText value="0" id="outputText17"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   binding="#{backingBeanScope.InspectionProcessBackingBean.df_Slub_Total_OT}"
-                                   partialTriggers="slub_cb1 slub_cb2 slub_cb3 slub_cb4 slub_cb5 slub_cb6 slub_cb7 slub_cb8"/>
+                                   partialTriggers="slub_cb1 slub_cb2 slub_cb3 slub_cb4 slub_cb5 slub_cb6 slub_cb7 slub_cb8"
+                                   binding="#{backingBeanScope.InspectionProcessBackingBean.yf_Slub_Total_OT}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell42">
                     <af:spacer width="30" height="15" id="spacer27"/>

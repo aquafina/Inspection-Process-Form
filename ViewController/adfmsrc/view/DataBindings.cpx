@@ -11,7 +11,7 @@
           path="view.pageDefs.InspectionProcessFormPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
-    <BC4JDataControl id="AppModuleDataControl" Package="model.AM"
+    <BC4JDataControl id="InspectionProcessAMDataControl" Package="model.AM"
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
                      SupportsTransactions="true" SupportsFindMode="true"
                      SupportsRangesize="true" SupportsResetState="true"

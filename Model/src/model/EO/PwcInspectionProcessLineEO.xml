@@ -10,25 +10,24 @@
   DBObjectName="PWC_INSPECTION_PROCESS_LINE"
   AliasName="PwcInspectionProcessLineEO"
   BindingStyle="OracleName"
-  UseGlueCode="false">
+  UseGlueCode="false"
+  RowClass="model.EO.PwcInspectionProcessLineEOImpl">
   <DesignTime>
     <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <Attribute
     Name="RollNumber"
-    IsNotNull="true"
     Precision="100"
     ColumnName="ROLL_NUMBER"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="PWC_INSPECTION_PROCESS_LINE"
-    PrimaryKey="true"
-    IsUpdateable="while_insert">
+    TableName="PWC_INSPECTION_PROCESS_LINE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
-    <TransientExpression><![CDATA[(new oracle.jbo.server.SequenceImpl("PWC_ODM_INSP_PROC_LINE_S",adf.object.getDBTransaction())).getSequenceNumber()]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="InspectionMachineNumber"
@@ -40,17 +39,6 @@
     TableName="PWC_INSPECTION_PROCESS_LINE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="500"/>
-    </DesignTime>
-  </Attribute>
-  <Attribute
-    Name="InspectionProcessId"
-    ColumnName="INSPECTION_PROCESS_ID"
-    SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
-    ColumnType="NUMBER"
-    TableName="PWC_INSPECTION_PROCESS_LINE">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </Attribute>
   <Attribute
@@ -112,10 +100,11 @@
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
-    SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
-    ColumnType="NUMBER"
-    TableName="PWC_INSPECTION_PROCESS_LINE">
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="PWC_INSPECTION_PROCESS_LINE"
+    IsUpdateable="while_insert">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
@@ -126,7 +115,8 @@
     SQLType="TIMESTAMP"
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="PWC_INSPECTION_PROCESS_LINE">
+    TableName="PWC_INSPECTION_PROCESS_LINE"
+    IsUpdateable="while_insert">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>
@@ -134,9 +124,9 @@
   <Attribute
     Name="LastUpdatedBy"
     ColumnName="LAST_UPDATED_BY"
-    SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
-    ColumnType="NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
     TableName="PWC_INSPECTION_PROCESS_LINE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="22"/>
@@ -156,9 +146,9 @@
   <Attribute
     Name="LastUpdatedLogin"
     ColumnName="LAST_UPDATED_LOGIN"
-    SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
-    ColumnType="NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
     TableName="PWC_INSPECTION_PROCESS_LINE">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="22"/>
@@ -366,6 +356,126 @@
       <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="BatchNumber"
+    Precision="500"
+    ColumnName="BATCH_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PWC_INSPECTION_PROCESS_LINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BuyerName"
+    Precision="360"
+    ColumnName="BUYER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PWC_INSPECTION_PROCESS_LINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="360"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FinishingJobNumber"
+    Precision="500"
+    ColumnName="FINISHING_JOB_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PWC_INSPECTION_PROCESS_LINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ItemCode"
+    Precision="245"
+    ColumnName="ITEM_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PWC_INSPECTION_PROCESS_LINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="245"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ItemDescription"
+    Precision="240"
+    ColumnName="ITEM_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PWC_INSPECTION_PROCESS_LINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="JobQuantity"
+    ColumnName="JOB_QUANTITY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PWC_INSPECTION_PROCESS_LINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PpNumber"
+    Precision="500"
+    ColumnName="PP_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PWC_INSPECTION_PROCESS_LINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="WoNumber"
+    Precision="500"
+    ColumnName="WO_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PWC_INSPECTION_PROCESS_LINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InspectionProcessLineId"
+    ColumnName="INSPECTION_PROCESS_LINE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="PWC_INSPECTION_PROCESS_LINE"
+    IsUpdateable="while_insert"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+    <TransientExpression><![CDATA[(new oracle.jbo.server.SequenceImpl("PWC_ODM_INSP_PROC_LINE_S",adf.object.getDBTransaction())).getSequenceNumber()]]></TransientExpression>
+  </Attribute>
+  <Attribute
+    Name="InspectionProcessId"
+    ColumnName="INSPECTION_PROCESS_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PWC_INSPECTION_PROCESS_LINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
   <Key
     Name="PwcInspectionProcessLineRollNumberCheck">
     <DesignTime>
@@ -374,9 +484,7 @@
       <Attr Name="_checkCondition" Value='"ROLL_NUMBER" IS NOT NULL'/>
       <Attr Name="_isCheck" Value="true"/>
     </DesignTime>
-    <AttrArray Name="Attributes">
-      <Item Value="model.EO.PwcInspectionProcessLineEO.RollNumber"/>
-    </AttrArray>
+    <AttrArray Name="Attributes"/>
   </Key>
   <Key
     Name="PwcinspectionprocesslineeoPrimaryKey"
@@ -385,7 +493,8 @@
       <Attr Name="_DBObjectName" Value="PWCINSPECTIONPROCESSLINEEO_PRI"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.EO.PwcInspectionProcessLineEO.RollNumber"/>
+      <Item
+        Value="model.EO.PwcInspectionProcessLineEO.InspectionProcessLineId"/>
     </AttrArray>
   </Key>
 </Entity>

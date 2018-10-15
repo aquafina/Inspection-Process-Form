@@ -9,7 +9,7 @@
    PackageName="model" >
    <DesignTime>
       <Attr Name="_jprName" Value="../../Model.jpr" />
-      <Attr Name="_appModuleNames0" Value="model.AM.AppModule" />
+      <Attr Name="_appModuleNames0" Value="model.AM.InspectionProcessAM" />
       <Attr Name="_NamedConnection" Value="NGDEV" />
    </DesignTime>
    <Containee
@@ -26,6 +26,22 @@
       PackageName="model.EO" >
       <DesignTime>
          <Attr Name="_EO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="LOV"
+      ObjectType="JboPackage"
+      PackageName="model.LOV" >
+      <DesignTime>
+         <Attr Name="_VO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="VL"
+      ObjectType="JboPackage"
+      PackageName="model.VL" >
+      <DesignTime>
+         <Attr Name="_VL" Value="true" />
       </DesignTime>
    </Containee>
    <Containee

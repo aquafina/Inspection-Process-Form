@@ -1,8 +1,19 @@
 package view.classes;
 
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
+import model.AM.InspectionProcessAMImpl;
+
+import oracle.adf.model.BindingContext;
+import oracle.adf.model.binding.DCDataControl;
 import oracle.adf.view.rich.component.rich.output.RichOutputText;
+
+import oracle.jbo.ApplicationModule;
+import oracle.jbo.Row;
+import oracle.jbo.RowSetIterator;
+import oracle.jbo.ViewObject;
+import oracle.jbo.server.ApplicationModuleImpl;
 
 public class InspectionProcessBackingBean {
     private RichOutputText gf_CM_Total_OT;
@@ -17,9 +28,9 @@ public class InspectionProcessBackingBean {
     private RichOutputText df_DS_Total_OT;
     private RichOutputText df_SM_Total_OT;
     private RichOutputText df_BM_Total_OT;
-    private RichOutputText df_TY_Total_OT;
-    private RichOutputText df_TY1_Total_OT;
-    private RichOutputText df_Slub_Total_OT;
+    private RichOutputText yf_TY_Total_OT;
+    private RichOutputText yf_TY1_Total_OT;
+    private RichOutputText yf_Slub_Total_OT;
     
     private int count_GF_CM_1 = 0;
     private int count_GF_CM_2 = 0;
@@ -95,7 +106,7 @@ public class InspectionProcessBackingBean {
     private int count_YF_Slub_2 = 0;
     private int count_YF_Slub_3 = 0;
     private int count_YF_Slub_4 = 0;
-    
+
     public InspectionProcessBackingBean() {
         super();
     }
@@ -957,193 +968,286 @@ public class InspectionProcessBackingBean {
 
     public void YF_TY_1_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
         currValue = currValue+1;
-        df_TY_Total_OT.setValue(currValue);
+        yf_TY_Total_OT.setValue(currValue);
     }
 
     public void YF_TY_2_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
         currValue = currValue+2;
-        df_TY_Total_OT.setValue(currValue);
+        yf_TY_Total_OT.setValue(currValue);
     }
 
     public void YF_TY_3_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
         currValue = currValue+3;
-        df_TY_Total_OT.setValue(currValue);
+        yf_TY_Total_OT.setValue(currValue);
     }
 
     public void YF_TY_4_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
         currValue = currValue+4;
-        df_TY_Total_OT.setValue(currValue);
+        yf_TY_Total_OT.setValue(currValue);
     }
 
     public void YF_TY_1_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
         currValue = (currValue-1)<0?0:(currValue-1);
-        df_TY_Total_OT.setValue(currValue);
+        yf_TY_Total_OT.setValue(currValue);
     }
 
     public void YF_TY_2_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
         currValue = (currValue-2)<0?0:(currValue-2);
-        df_TY_Total_OT.setValue(currValue);
+        yf_TY_Total_OT.setValue(currValue);
     }
 
     public void YF_TY_3_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
         currValue = (currValue-3)<0?0:(currValue-3);
-        df_TY_Total_OT.setValue(currValue);                
+        yf_TY_Total_OT.setValue(currValue);                
     }
 
     public void YF_TY_4_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
         currValue = (currValue-4)<0?0:(currValue-4);
-        df_TY_Total_OT.setValue(currValue);
+        yf_TY_Total_OT.setValue(currValue);
     }
 
-    public void setDf_TY_Total_OT(RichOutputText df_TY_Total_OT) {
-        this.df_TY_Total_OT = df_TY_Total_OT;
+    public void setYf_TY_Total_OT(RichOutputText yf_TY_Total_OT) {
+        this.yf_TY_Total_OT = yf_TY_Total_OT;
     }
 
-    public RichOutputText getDf_TY_Total_OT() {
-        return df_TY_Total_OT;
+    public RichOutputText getYf_TY_Total_OT() {
+        return yf_TY_Total_OT;
     }
 
     public void YF_TY1_1_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY1_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
         currValue = currValue+1;
-        df_TY1_Total_OT.setValue(currValue);
+        yf_TY1_Total_OT.setValue(currValue);
     }
 
     public void YF_TY1_2_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY1_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
         currValue = currValue+2;
-        df_TY1_Total_OT.setValue(currValue);
+        yf_TY1_Total_OT.setValue(currValue);
     }
 
     public void YF_TY1_3_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY1_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
         currValue = currValue+3;
-        df_TY1_Total_OT.setValue(currValue);
+        yf_TY1_Total_OT.setValue(currValue);
     }
 
     public void YF_TY1_4_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY1_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
         currValue = currValue+4;
-        df_TY1_Total_OT.setValue(currValue);
+        yf_TY1_Total_OT.setValue(currValue);
     }
 
     public void YF_TY1_1_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY1_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
         currValue = (currValue-1)<0?0:(currValue-1);
-        df_TY1_Total_OT.setValue(currValue);
+        yf_TY1_Total_OT.setValue(currValue);
     }
 
     public void YF_TY1_2_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY1_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
         currValue = (currValue-2)<0?0:(currValue-2);
-        df_TY1_Total_OT.setValue(currValue);
+        yf_TY1_Total_OT.setValue(currValue);
     }
 
     public void YF_TY1_3_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY1_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
         currValue = (currValue-3)<0?0:(currValue-3);
-        df_TY1_Total_OT.setValue(currValue);
+        yf_TY1_Total_OT.setValue(currValue);
     }
 
     public void YF_TY1_4_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_TY1_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
         currValue = (currValue-4)<0?0:(currValue-4);
-        df_TY1_Total_OT.setValue(currValue);
+        yf_TY1_Total_OT.setValue(currValue);
     }
 
     public void YF_Slub_1_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_Slub_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
         currValue = currValue+1;
-        df_Slub_Total_OT.setValue(currValue);
+        yf_Slub_Total_OT.setValue(currValue);
     }
 
     public void YF_Slub_2_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_Slub_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
         currValue = currValue+2;
-        df_Slub_Total_OT.setValue(currValue);
+        yf_Slub_Total_OT.setValue(currValue);
     }
 
     public void YF_Slub_3_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_Slub_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
         currValue = currValue+3;
-        df_Slub_Total_OT.setValue(currValue);
+        yf_Slub_Total_OT.setValue(currValue);
     }
 
     public void YF_Slub_4_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_Slub_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
         currValue = currValue+4;
-        df_Slub_Total_OT.setValue(currValue);
+        yf_Slub_Total_OT.setValue(currValue);
     }
 
     public void YF_Slub_1_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_Slub_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
         currValue = (currValue-1)<0?0:(currValue-1);
-        df_Slub_Total_OT.setValue(currValue);
+        yf_Slub_Total_OT.setValue(currValue);
     }
 
     public void YF_Slub_2_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_Slub_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
         currValue = (currValue-2)<0?0:(currValue-2);
-        df_Slub_Total_OT.setValue(currValue);
+        yf_Slub_Total_OT.setValue(currValue);
     }
 
     public void YF_Slub_3_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_Slub_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
         currValue = (currValue-3)<0?0:(currValue-3);
-        df_Slub_Total_OT.setValue(currValue);
+        yf_Slub_Total_OT.setValue(currValue);
     }
 
     public void YF_Slub_4_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(df_Slub_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
         currValue = (currValue-4)<0?0:(currValue-4);
-        df_Slub_Total_OT.setValue(currValue);
+        yf_Slub_Total_OT.setValue(currValue);
     }
 
-    public void setDf_TY1_Total_OT(RichOutputText df_TY1_Total_OT) {
-        this.df_TY1_Total_OT = df_TY1_Total_OT;
+    public void setYf_TY1_Total_OT(RichOutputText yf_TY1_Total_OT) {
+        this.yf_TY1_Total_OT = yf_TY1_Total_OT;
     }
 
-    public RichOutputText getDf_TY1_Total_OT() {
-        return df_TY1_Total_OT;
+    public RichOutputText getYf_TY1_Total_OT() {
+        return yf_TY1_Total_OT;
     }
 
-    public void setDf_Slub_Total_OT(RichOutputText df_Slub_Total_OT) {
-        this.df_Slub_Total_OT = df_Slub_Total_OT;
+    public void setYf_Slub_Total_OT(RichOutputText yf_Slub_Total_OT) {
+        this.yf_Slub_Total_OT = yf_Slub_Total_OT;
     }
 
-    public RichOutputText getDf_Slub_Total_OT() {
-        return df_Slub_Total_OT;
+    public RichOutputText getYf_Slub_Total_OT() {
+        return yf_Slub_Total_OT;
+    }
+
+    public static InspectionProcessAMImpl getApplicationModule() {
+        FacesContext fctx = FacesContext.getCurrentInstance();
+        BindingContext bindingContext = BindingContext.getCurrent();
+        DCDataControl dc = bindingContext.findDataControl("InspectionProcessAMDataControl");
+        return (InspectionProcessAMImpl)dc.getDataProvider();
+        }
+
+
+    public void saveChanges(ActionEvent actionEvent) {
+        // Add event code here...
+        ApplicationModuleImpl am = getApplicationModule();
+        ViewObject greigeFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcGreigeFaultVO1");
+        Row newRow = greigeFaultVO.createRow();
+        ViewObject inpectionLineVO = (ViewObject)am.findViewObject("PwcInspectionProcessLineVO1");
+        String rollNumber = inpectionLineVO.getCurrentRow().getAttribute("RollNumber").toString();
+        newRow.setAttribute("InspPrcRollNumber", rollNumber);
+        newRow.setAttribute("CreaseMark1", count_GF_CM_1);
+        newRow.setAttribute("CreaseMark2", count_GF_CM_2);
+        newRow.setAttribute("CreaseMark3", count_GF_CM_3);
+        newRow.setAttribute("CreaseMark4", count_GF_CM_4);
+        newRow.setAttribute("CreaseMarkTotal", Integer.parseInt(gf_CM_Total_OT.getValue().toString()));
+        newRow.setAttribute("WidthVariation1", count_GF_WV_1);
+        newRow.setAttribute("WidthVariation2", count_GF_WV_2);
+        newRow.setAttribute("WidthVariation3", count_GF_WV_3);
+        newRow.setAttribute("WidthVariation4", count_GF_WV_4);
+        newRow.setAttribute("WidthVariationTotal", Integer.parseInt(gf_WV_Total_OT.getValue().toString())) ;
+        newRow.setAttribute("LineMark1", count_GF_LM_1);
+        newRow.setAttribute("LineMark2", count_GF_LM_2);
+        newRow.setAttribute("LineMark3", count_GF_LM_3);
+        newRow.setAttribute("LineMark4", count_GF_LM_4);
+        newRow.setAttribute("LineMarkTotal",Integer.parseInt(gf_LM_Total_OT.getValue().toString()));
+        newRow.setAttribute("LycraNaps1", count_GF_LN_1);
+        newRow.setAttribute("LycraNaps2", count_GF_LN_2);
+        newRow.setAttribute("LycraNaps3", count_GF_LN_3);
+        newRow.setAttribute("LycraNaps4", count_GF_LN_4);
+        newRow.setAttribute("LycraNapsTotal", Integer.parseInt(gf_LN_Total_OT.getValue().toString()));
+        newRow.setAttribute("FlyYarn1", count_GF_FY_1);
+        newRow.setAttribute("FlyYarn2", count_GF_FY_2);
+        newRow.setAttribute("FlyYarn3", count_GF_FY_3);
+        newRow.setAttribute("FlyYarn4", count_GF_FY_4);
+        newRow.setAttribute("FlyYarnTotal",Integer.parseInt(gf_FY_Total_OT.getValue().toString()));
+        ViewObject dyeFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcDyeFaultVO1");
+        newRow = dyeFaultVO.createRow();
+        newRow.setAttribute("OffShade1", count_DF_OS_1);
+        newRow.setAttribute("OffShade2", count_DF_OS_2);
+        newRow.setAttribute("OffShade3", count_DF_OS_3);
+        newRow.setAttribute("OffShade4", count_DF_OS_4);
+        newRow.setAttribute("OffShadeTotal",Integer.parseInt(df_OS_Total_OT.getValue().toString()));
+        newRow.setAttribute("ShadeVariation1", count_DF_SV_1);
+        newRow.setAttribute("ShadeVariation2", count_DF_SV_2);
+        newRow.setAttribute("ShadeVariation3", count_DF_SV_3);
+        newRow.setAttribute("ShadeVariation4", count_DF_SV_4);
+        newRow.setAttribute("ShadeVariationTotal",Integer.parseInt(df_SV_Total_OT.getValue().toString()));
+        newRow.setAttribute("Spot1", count_DF_Spot_1);
+        newRow.setAttribute("Spot2", count_DF_Spot_2);
+        newRow.setAttribute("Spot3", count_DF_Spot_3);
+        newRow.setAttribute("Spot4", count_DF_Spot_4);
+        newRow.setAttribute("SpotTotal",Integer.parseInt(df_Spot_Total_OT.getValue().toString()));
+        newRow.setAttribute("MissPrint1", count_DF_MP_1);
+        newRow.setAttribute("MissPrint2", count_DF_MP_2);
+        newRow.setAttribute("MissPrint3", count_DF_MP_3);
+        newRow.setAttribute("MissPrint4", count_DF_MP_4);
+        newRow.setAttribute("MissPrintTotal",Integer.parseInt(df_MP_Total_OT.getValue().toString()));
+        newRow.setAttribute("DyeStain1", count_DF_DS_1);
+        newRow.setAttribute("DyeStain2", count_DF_DS_2);
+        newRow.setAttribute("DyeStain3", count_DF_DS_3);
+        newRow.setAttribute("DyeStain4", count_DF_DS_4);
+        newRow.setAttribute("DyeStainTotal",Integer.parseInt(df_DS_Total_OT.getValue().toString()));
+        newRow.setAttribute("BarMark1", count_DF_BM_1);
+        newRow.setAttribute("BarMark2", count_DF_BM_2);
+        newRow.setAttribute("BarMark3", count_DF_BM_3);
+        newRow.setAttribute("BarMark4", count_DF_BM_4);
+        newRow.setAttribute("BarMarkTotal",Integer.parseInt(df_BM_Total_OT.getValue().toString()));
+        ViewObject yarnFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcYarnFaultVO1");
+        newRow = yarnFaultVO.createRow();
+        newRow.setAttribute("ThickYarn1", count_YF_TY_1);
+        newRow.setAttribute("ThickYarn2", count_YF_TY_2);
+        newRow.setAttribute("ThickYarn3", count_YF_TY_3);
+        newRow.setAttribute("ThickYarn4", count_YF_TY_4);
+        newRow.setAttribute("ThickYarnTotal",Integer.parseInt(yf_TY_Total_OT.getValue().toString()));
+        newRow.setAttribute("ThinkYarn1", count_YF_TY1_1);
+        newRow.setAttribute("ThinkYarn2", count_YF_TY1_2);
+        newRow.setAttribute("ThinkYarn3", count_YF_TY1_3);
+        newRow.setAttribute("ThinkYarn4", count_YF_TY1_4);
+        newRow.setAttribute("ThinkYarnTotal",Integer.parseInt(yf_TY1_Total_OT.getValue().toString()));
+        newRow.setAttribute("Slub1", count_YF_Slub_1);
+        newRow.setAttribute("Slub2", count_YF_Slub_2);
+        newRow.setAttribute("Slub3", count_YF_Slub_3);
+        newRow.setAttribute("Slub4", count_YF_Slub_4);
+        newRow.setAttribute("SlubTotal", count_YF_Slub_1);
+        am.getDBTransaction().commit();
     }
 }

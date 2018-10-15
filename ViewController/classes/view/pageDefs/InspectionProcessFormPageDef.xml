@@ -5,80 +5,14 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="PwcInspectionProcessHeaderVO1" RangeSize="25"
-              DataControl="AppModuleDataControl"
-              id="PwcInspectionProcessHeaderView1Iterator"/>
     <iterator Binds="PwcInspectionProcessLineVO1" RangeSize="25"
-              DataControl="AppModuleDataControl"
+              DataControl="InspectionProcessAMDataControl"
               id="PwcInspectionProcessLineVO1Iterator"/>
+    <iterator Binds="PwcInspectionProcessHeaderVO1" RangeSize="25"
+              DataControl="InspectionProcessAMDataControl"
+              id="PwcInspectionProcessHeaderVO1Iterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderView1Iterator"
-                     id="InspectionProcessId">
-      <AttrNames>
-        <Item Value="InspectionProcessId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderView1Iterator"
-                     id="PpNumber">
-      <AttrNames>
-        <Item Value="PpNumber"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderView1Iterator"
-                     id="WoNumber">
-      <AttrNames>
-        <Item Value="WoNumber"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderView1Iterator"
-                     id="BatchNumber">
-      <AttrNames>
-        <Item Value="BatchNumber"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderView1Iterator"
-                     id="BuyerName">
-      <AttrNames>
-        <Item Value="BuyerName"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderView1Iterator"
-                     id="ItemCode">
-      <AttrNames>
-        <Item Value="ItemCode"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderView1Iterator"
-                     id="ItemDescription">
-      <AttrNames>
-        <Item Value="ItemDescription"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderView1Iterator"
-                     id="FinishingJobNumber">
-      <AttrNames>
-        <Item Value="FinishingJobNumber"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderView1Iterator"
-                     id="JobQuantity">
-      <AttrNames>
-        <Item Value="JobQuantity"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderView1Iterator"
-                     id="MfgOrgId">
-      <AttrNames>
-        <Item Value="MfgOrgId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderView1Iterator"
-                     id="OrgId">
-      <AttrNames>
-        <Item Value="OrgId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
                      id="RollNumber">
       <AttrNames>
@@ -86,21 +20,71 @@
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
-                     id="InspectionMachineNumber">
+                     id="MfgOrgId1">
       <AttrNames>
-        <Item Value="InspectionMachineNumber"/>
+        <Item Value="MfgOrgId"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
-                     id="InspectionProcessId1">
+                     id="OrgId1">
+      <AttrNames>
+        <Item Value="OrgId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="PwcInspectionProcessLineVO1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+            id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <listOfValues StaticList="false"
+                  IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                  Uses="LOV_BatchNumber" id="BatchNumber"/>
+    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                     id="InspectionProcessId">
       <AttrNames>
         <Item Value="InspectionProcessId"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
-                     id="RollQuantity">
+    <listOfValues StaticList="false"
+                  IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                  Uses="LOV_PpNumber" id="PpNumber"/>
+    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                     id="SalesOrderNumber">
       <AttrNames>
-        <Item Value="RollQuantity"/>
+        <Item Value="SalesOrderNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                     id="ItemDescription">
+      <AttrNames>
+        <Item Value="ItemDescription"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                     id="JobQuantity">
+      <AttrNames>
+        <Item Value="JobQuantity"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues StaticList="false"
+                  IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                  Uses="LOV_WoNumber" id="WoNumber"/>
+    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                     id="BuyerName">
+      <AttrNames>
+        <Item Value="BuyerName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                     id="ItemCode">
+      <AttrNames>
+        <Item Value="ItemCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
+                     id="InspectionMachineNumber">
+      <AttrNames>
+        <Item Value="InspectionMachineNumber"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
@@ -116,6 +100,12 @@
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
+                     id="RollQuantity">
+      <AttrNames>
+        <Item Value="RollQuantity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
                      id="Grade">
       <AttrNames>
         <Item Value="Grade"/>
@@ -127,22 +117,10 @@
         <Item Value="InspectionDate"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
-                     id="MfgOrgId1">
+    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                     id="FinishingJobNumber">
       <AttrNames>
-        <Item Value="MfgOrgId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
-                     id="OrgId1">
-      <AttrNames>
-        <Item Value="OrgId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderView1Iterator"
-                     id="SalesOrderNumber">
-      <AttrNames>
-        <Item Value="SalesOrderNumber"/>
+        <Item Value="FinishingJobNumber"/>
       </AttrNames>
     </attributeValues>
   </bindings>

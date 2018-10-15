@@ -46,64 +46,252 @@
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="VarAccess"/>
   </DesignTime>
+  <ViewAccessor
+    Name="PpNumberLOV1"
+    ViewObjectName="model.LOV.PpNumberLOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="WoNumberLOV1"
+    ViewObjectName="model.LOV.WoNumberLOV">
+    <ParameterMap>
+      <PIMap Variable="p_pp_number">
+        <TransientExpression><![CDATA[PpNumber]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="BatchNumberLOV1"
+    ViewObjectName="model.LOV.BatchNumberLOV">
+    <ParameterMap>
+      <PIMap Variable="p_wo_number">
+        <TransientExpression><![CDATA[WoNumber]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="SaleOrderNoLOV1"
+    ViewObjectName="model.LOV.SaleOrderNoLOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_PpNumber"
+    ListVOName="PpNumberLOV1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_PpNumber_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PpNumber"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="PpNumber"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="PpNumber"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_WoNumber"
+    ListVOName="WoNumberLOV1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_WoNumber_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="WoNumber"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="WorkOrderNumber"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="WorkOrderNumber"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_BatchNumber"
+    ListVOName="BatchNumberLOV1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_BatchNumber_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BatchNumber"/>
+    </AttrArray>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="BuyerName"/>
+      <Item Value="ItemCode"/>
+      <Item Value="ItemDescription"/>
+      <Item Value="JobQuantity"/>
+      <Item Value="FinishingJobNumber"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="BatchNo"/>
+      <Item Value="Buyer"/>
+      <Item Value="ItemCode"/>
+      <Item Value="ItemDesc"/>
+      <Item Value="JobQty"/>
+      <Item Value="JobNumber"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="BatchNo"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SalesOrderNumber"
+    ListVOName="SaleOrderNoLOV1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_SalesOrderNumber_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SalesOrderNumber"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SaleOrderNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SaleOrderNo"/>
+      <Item Value="Buyer"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
   <EntityUsage
     Name="PwcInspectionProcessHeader"
     Entity="model.EO.PwcInspectionProcessHeaderEO"/>
   <ViewAttribute
     Name="InspectionProcessId"
     IsUpdateable="while_insert"
+    IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="InspectionProcessId"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="INSPECTION_PROCESS_ID"/>
+    AliasName="INSPECTION_PROCESS_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PpNumber"
+    LOVName="LOV_PpNumber"
     PrecisionRule="true"
     EntityAttrName="PpNumber"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="PP_NUMBER"/>
+    AliasName="PP_NUMBER">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="WoNumber"
+    LOVName="LOV_WoNumber"
     PrecisionRule="true"
     EntityAttrName="WoNumber"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="WO_NUMBER"/>
+    AliasName="WO_NUMBER">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="BatchNumber"
+    LOVName="LOV_BatchNumber"
     PrecisionRule="true"
     EntityAttrName="BatchNumber"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="BATCH_NUMBER"/>
+    AliasName="BATCH_NUMBER">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="BuyerName"
     PrecisionRule="true"
     EntityAttrName="BuyerName"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="BUYER_NAME"/>
+    AliasName="BUYER_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ItemCode"
     PrecisionRule="true"
     EntityAttrName="ItemCode"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="ITEM_CODE"/>
+    AliasName="ITEM_CODE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ItemDescription"
     PrecisionRule="true"
     EntityAttrName="ItemDescription"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="ITEM_DESCRIPTION"/>
+    AliasName="ITEM_DESCRIPTION">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FinishingJobNumber"
     PrecisionRule="true"
     EntityAttrName="FinishingJobNumber"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="FINISHING_JOB_NUMBER"/>
+    AliasName="FINISHING_JOB_NUMBER">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="JobQuantity"
     PrecisionRule="true"
     EntityAttrName="JobQuantity"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="JOB_QUANTITY"/>
+    AliasName="JOB_QUANTITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -112,10 +300,13 @@
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="CreationDate"
+    IsUpdateable="while_insert"
     PrecisionRule="true"
     EntityAttrName="CreationDate"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="CREATION_DATE"/>
+    AliasName="CREATION_DATE">
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
+  </ViewAttribute>
   <ViewAttribute
     Name="LastUpdatedBy"
     PrecisionRule="true"
@@ -127,7 +318,9 @@
     PrecisionRule="true"
     EntityAttrName="LastUpdatedDate"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="LAST_UPDATED_DATE"/>
+    AliasName="LAST_UPDATED_DATE">
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
+  </ViewAttribute>
   <ViewAttribute
     Name="LastUpdatedLogin"
     PrecisionRule="true"
@@ -238,8 +431,21 @@
     AliasName="MFG_ORG_ID"/>
   <ViewAttribute
     Name="SalesOrderNumber"
+    LOVName="LOV_SalesOrderNumber"
     PrecisionRule="true"
     EntityAttrName="SalesOrderNumber"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="SALES_ORDER_NUMBER"/>
+    AliasName="SALES_ORDER_NUMBER">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="PwcInspectionProcessLineVO"
+    ViewLink="model.VL.PwcInspectionProcessVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>
