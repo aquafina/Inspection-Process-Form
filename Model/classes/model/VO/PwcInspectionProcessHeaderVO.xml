@@ -297,16 +297,15 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="CREATED_BY"/>
+    AliasName="CREATED_BY"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="CreationDate"
     IsUpdateable="while_insert"
     PrecisionRule="true"
     EntityAttrName="CreationDate"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="CREATION_DATE">
-    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
-  </ViewAttribute>
+    AliasName="CREATION_DATE"/>
   <ViewAttribute
     Name="LastUpdatedBy"
     PrecisionRule="true"
@@ -318,9 +317,7 @@
     PrecisionRule="true"
     EntityAttrName="LastUpdatedDate"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="LAST_UPDATED_DATE">
-    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
-  </ViewAttribute>
+    AliasName="LAST_UPDATED_DATE"/>
   <ViewAttribute
     Name="LastUpdatedLogin"
     PrecisionRule="true"

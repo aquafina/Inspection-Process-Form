@@ -11,6 +11,8 @@
     <iterator Binds="PwcInspectionProcessHeaderVO1" RangeSize="25"
               DataControl="InspectionProcessAMDataControl"
               id="PwcInspectionProcessHeaderVO1Iterator"/>
+    <invokeAction id="setSessionValuesAction" Binds="setSessionValues"
+                  Refresh="always"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
@@ -123,5 +125,20 @@
         <Item Value="FinishingJobNumber"/>
       </AttrNames>
     </attributeValues>
+    <methodAction id="setSessionValues"
+                  InstanceName="InspectionProcessAMDataControl.dataProvider"
+                  DataControl="InspectionProcessAMDataControl"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="setSessionValues" IsViewObjectMethod="false">
+      <NamedData NDName="orgId" NDValue="" NDType="java.lang.String"/>
+      <NamedData NDName="userId" NDValue="#{viewScope.UserId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="respId" NDValue="#{viewScope.RespId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="respAppl" NDValue="#{viewScope.RespApplId}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="mfgOrgId" NDValue="#{viewScope.OrgId}"
+                 NDType="java.lang.String"/>
+    </methodAction>
   </bindings>
 </pageDefinition>

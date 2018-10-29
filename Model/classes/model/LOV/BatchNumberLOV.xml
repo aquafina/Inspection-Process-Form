@@ -107,6 +107,8 @@
           Value="30"/>
         <DISPLAYHINT
           Value="Hide"/>
+        <LABEL
+          ResId="model.LOV.BatchNumberLOV.JobNumber_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -129,6 +131,8 @@
           Value="30"/>
         <DISPLAYHINT
           Value="Hide"/>
+        <LABEL
+          ResId="model.LOV.BatchNumberLOV.JobQty_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -152,6 +156,8 @@
           Value="30"/>
         <DISPLAYHINT
           Value="Hide"/>
+        <LABEL
+          ResId="model.LOV.BatchNumberLOV.ItemCode_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -175,6 +181,8 @@
           Value="30"/>
         <DISPLAYHINT
           Value="Hide"/>
+        <LABEL
+          ResId="model.LOV.BatchNumberLOV.ItemDesc_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

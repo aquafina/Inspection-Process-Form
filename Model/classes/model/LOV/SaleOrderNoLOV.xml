@@ -74,11 +74,12 @@
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="30"/>
-        <LABEL
-          ResId="model.LOV.SaleOrderNoLOV.SaleOrderNo_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="SaleOrderNo"/>
+  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

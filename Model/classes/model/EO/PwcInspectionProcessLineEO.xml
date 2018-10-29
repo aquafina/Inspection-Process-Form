@@ -108,6 +108,7 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
+    <TransientExpression><![CDATA[adf.context.sessionScope.user_id]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="CreationDate"
@@ -120,6 +121,7 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="LastUpdatedBy"
@@ -131,6 +133,7 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
+    <TransientExpression><![CDATA[adf.context.sessionScope.user_id]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="LastUpdatedDate"
@@ -142,6 +145,7 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="LastUpdatedLogin"
@@ -153,6 +157,7 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
+    <TransientExpression><![CDATA[adf.context.sessionScope.user_id]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="OrgId"
@@ -355,6 +360,7 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
+    <TransientExpression><![CDATA[adf.context.sessionScope.mfg_org_id]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="BatchNumber"

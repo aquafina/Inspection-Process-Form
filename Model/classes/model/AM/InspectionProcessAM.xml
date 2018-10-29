@@ -7,7 +7,9 @@
   Version="11.1.1.64.93"
   InheritPersonalization="true"
   ComponentClass="model.AM.InspectionProcessAMImpl"
-  ClearCacheOnRollback="true">
+  ClearCacheOnRollback="true"
+  ComponentInterface="model.AM.common.InspectionProcessAM"
+  ClientProxyName="model.AM.client.InspectionProcessAMClient">
   <DesignTime>
     <Attr Name="_deployType" Value="0"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -33,4 +35,26 @@
     SrcViewUsageName="model.AM.InspectionProcessAM.PwcInspectionProcessHeaderVO1"
     DstViewUsageName="model.AM.InspectionProcessAM.PwcInspectionProcessLineVO1"
     Reversed="false"/>
+  <ClientInterface>
+    <Method
+      Name="setSessionValues">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="orgId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="userId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="respId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="respAppl"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="mfgOrgId"
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
 </AppModule>

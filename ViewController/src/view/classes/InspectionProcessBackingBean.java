@@ -1201,6 +1201,7 @@ public class InspectionProcessBackingBean {
         newRow.setAttribute("FlyYarnTotal",Integer.parseInt(gf_FY_Total_OT.getValue().toString()));
         ViewObject dyeFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcDyeFaultVO1");
         newRow = dyeFaultVO.createRow();
+        newRow.setAttribute("InspPrcRollNumber", rollNumber);
         newRow.setAttribute("OffShade1", count_DF_OS_1);
         newRow.setAttribute("OffShade2", count_DF_OS_2);
         newRow.setAttribute("OffShade3", count_DF_OS_3);
@@ -1233,6 +1234,7 @@ public class InspectionProcessBackingBean {
         newRow.setAttribute("BarMarkTotal",Integer.parseInt(df_BM_Total_OT.getValue().toString()));
         ViewObject yarnFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcYarnFaultVO1");
         newRow = yarnFaultVO.createRow();
+        newRow.setAttribute("InspPrcRollNumber", rollNumber);
         newRow.setAttribute("ThickYarn1", count_YF_TY_1);
         newRow.setAttribute("ThickYarn2", count_YF_TY_2);
         newRow.setAttribute("ThickYarn3", count_YF_TY_3);

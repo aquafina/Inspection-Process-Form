@@ -130,10 +130,12 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
-    TableName="PWC_INSPECTION_PROCESS_HEADER">
+    TableName="PWC_INSPECTION_PROCESS_HEADER"
+    IsUpdateable="while_insert">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
+    <TransientExpression><![CDATA[adf.context.sessionScope.user_id]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="CreationDate"
@@ -141,10 +143,12 @@
     SQLType="TIMESTAMP"
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="PWC_INSPECTION_PROCESS_HEADER">
+    TableName="PWC_INSPECTION_PROCESS_HEADER"
+    IsUpdateable="while_insert">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="LastUpdatedBy"
@@ -156,6 +160,7 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
+    <TransientExpression><![CDATA[adf.context.sessionScope.user_id]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="LastUpdatedDate"
@@ -167,6 +172,7 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="LastUpdatedLogin"
@@ -178,6 +184,7 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
+    <TransientExpression><![CDATA[adf.context.sessionScope.user_id]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="OrgId"
@@ -380,6 +387,7 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
+    <TransientExpression><![CDATA[adf.context.sessionScope.mfg_org_id]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="SalesOrderNumber"
