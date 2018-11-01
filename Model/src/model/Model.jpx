@@ -11,7 +11,7 @@
    <DesignTime>
       <Attr Name="_jprName" Value="../../Model.jpr" />
       <Attr Name="_appModuleNames0" Value="model.AM.InspectionProcessAM" />
-      <Attr Name="_NamedConnection" Value="NGDEV" />
+      <Attr Name="_NamedConnection" Value="Conn1" />
       <Attr Name="_jbo.TypeMapEntries" Value="Java"/>
    </DesignTime>
    <Containee

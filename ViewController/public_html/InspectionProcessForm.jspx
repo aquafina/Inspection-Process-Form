@@ -118,11 +118,11 @@
               </af:inputText>
               <af:inputText value="#{bindings.RollNumber.inputValue}"
                             label="Roll Number"
-                            required="#{bindings.RollNumber.hints.mandatory}"
                             columns="#{bindings.RollNumber.hints.displayWidth}"
                             maximumLength="#{bindings.RollNumber.hints.precision}"
                             shortDesc="#{bindings.RollNumber.hints.tooltip}"
-                            id="inputText1" inlineStyle="width:20px;">
+                            id="inputText1" inlineStyle="width:20px;"
+                            showRequired="true" required="true">
                 <f:validator binding="#{bindings.RollNumber.validator}"/>
               </af:inputText>
               <af:inputText value="#{bindings.TotalFaults.inputValue}"
@@ -275,10 +275,12 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc34"
                                halign="center" valign="middle">
-                    <af:outputText value="0" id="ot3"
+                    <af:outputText value="#{bindings.CreaseMarkTotal.inputValue}" id="ot3"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   binding="#{backingBeanScope.InspectionProcessBackingBean.gf_CM_Total_OT}"
-                                   partialTriggers="crease_mark_cb1 crease_mark_cb2 crease_mark_cb3 crease_mark_cb4 crease_mark_cb5 crease_mark_cb6 crease_mark_cb7 crease_mark_cb8"/>
+                                   partialTriggers="crease_mark_cb1 crease_mark_cb2 crease_mark_cb3 crease_mark_cb4 crease_mark_cb5 crease_mark_cb6 crease_mark_cb7 crease_mark_cb8">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.CreaseMarkTotal.format}"/>
+                    </af:outputText>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc16">
                     <af:spacer width="30" height="15" id="spacer17"/>
@@ -355,10 +357,13 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc48"
                                halign="center" valign="middle">
-                    <af:outputText value="0" id="outputText8"
+                    <af:outputText value="#{bindings.WidthVariationTotal.inputValue}" id="outputText8"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    binding="#{backingBeanScope.InspectionProcessBackingBean.gt_WV_Total_OT}"
-                                   partialTriggers="width_variation_cb1 width_variation_cb2 width_variation_cb3 width_variation_cb4 width_variation_cb5 width_variation_cb6 width_variation_cb7 width_variation_cb8"/>
+                                   partialTriggers="width_variation_cb1 width_variation_cb2 width_variation_cb3 width_variation_cb4 width_variation_cb5 width_variation_cb6 width_variation_cb7 width_variation_cb8">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.WidthVariationTotal.format}"/>
+                    </af:outputText>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc28">
                     <af:spacer width="30" height="15" id="spacer13"/>

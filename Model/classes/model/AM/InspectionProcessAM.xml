@@ -29,11 +29,38 @@
   <ViewUsage
     Name="PwcInspectionProcessLineVO1"
     ViewObjectName="model.VO.PwcInspectionProcessLineVO"/>
+  <ViewUsage
+    Name="PwcOdmInspPrcDyeFaultVO2"
+    ViewObjectName="model.VO.PwcOdmInspPrcDyeFaultVO"/>
+  <ViewUsage
+    Name="PwcOdmInspPrcGreigeFaultVO2"
+    ViewObjectName="model.VO.PwcOdmInspPrcGreigeFaultVO"/>
+  <ViewUsage
+    Name="PwcOdmInspPrcYarnFaultVO2"
+    ViewObjectName="model.VO.PwcOdmInspPrcYarnFaultVO"/>
   <ViewLinkUsage
     Name="PwcInspectionProcessVL"
     ViewLinkObjectName="model.VL.PwcInspectionProcessVL"
     SrcViewUsageName="model.AM.InspectionProcessAM.PwcInspectionProcessHeaderVO1"
     DstViewUsageName="model.AM.InspectionProcessAM.PwcInspectionProcessLineVO1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="InspPrcLineDyeFaultVL1"
+    ViewLinkObjectName="model.VL.InspPrcLineDyeFaultVL"
+    SrcViewUsageName="model.AM.InspectionProcessAM.PwcInspectionProcessLineVO1"
+    DstViewUsageName="model.AM.InspectionProcessAM.PwcOdmInspPrcDyeFaultVO2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="InspPrcLineGreig1"
+    ViewLinkObjectName="model.VL.InspPrcLineGreig"
+    SrcViewUsageName="model.AM.InspectionProcessAM.PwcInspectionProcessLineVO1"
+    DstViewUsageName="model.AM.InspectionProcessAM.PwcOdmInspPrcGreigeFaultVO2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="InspPrcLineYarnFaultVL1"
+    ViewLinkObjectName="model.VL.InspPrcLineYarnFaultVL"
+    SrcViewUsageName="model.AM.InspectionProcessAM.PwcInspectionProcessLineVO1"
+    DstViewUsageName="model.AM.InspectionProcessAM.PwcOdmInspPrcYarnFaultVO2"
     Reversed="false"/>
   <ClientInterface>
     <Method

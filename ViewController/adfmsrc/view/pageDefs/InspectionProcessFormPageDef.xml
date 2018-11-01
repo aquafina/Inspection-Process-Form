@@ -13,6 +13,9 @@
               id="PwcInspectionProcessHeaderVO1Iterator"/>
     <invokeAction id="setSessionValuesAction" Binds="setSessionValues"
                   Refresh="always"/>
+    <iterator Binds="PwcOdmInspPrcGreigeFaultVO2" RangeSize="25"
+              DataControl="InspectionProcessAMDataControl"
+              id="PwcOdmInspPrcGreigeFaultVO2Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
@@ -140,5 +143,17 @@
       <NamedData NDName="mfgOrgId" NDValue="#{viewScope.OrgId}"
                  NDType="java.lang.String"/>
     </methodAction>
+    <attributeValues IterBinding="PwcOdmInspPrcGreigeFaultVO2Iterator"
+                     id="CreaseMarkTotal">
+      <AttrNames>
+        <Item Value="CreaseMarkTotal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInspPrcGreigeFaultVO2Iterator"
+                     id="WidthVariationTotal">
+      <AttrNames>
+        <Item Value="WidthVariationTotal"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
