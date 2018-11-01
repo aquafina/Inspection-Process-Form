@@ -223,7 +223,8 @@
     PrecisionRule="true"
     EntityAttrName="CreationDate"
     EntityUsage="PwcOdmInspPrcGreigeFault"
-    AliasName="CREATION_DATE"/>
+    AliasName="CREATION_DATE"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="LastUpdatedBy"
     PrecisionRule="true"

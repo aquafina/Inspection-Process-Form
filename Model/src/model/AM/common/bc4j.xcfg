@@ -12,4 +12,5 @@
          <Custom JDBCDataSource="java:comp/env/jdbc/NGDEVDS"/>
       </AppModuleConfig>
    </AppModuleConfigBag>
+   <AppModuleConfigBag ApplicationName="model.AM.AppModule"/>
 </BC4JConfig>

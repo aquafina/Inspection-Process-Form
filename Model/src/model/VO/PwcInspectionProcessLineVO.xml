@@ -312,4 +312,14 @@
     EntityAttrName="InspectionProcessId"
     EntityUsage="PwcInspectionProcessLineEO"
     AliasName="INSPECTION_PROCESS_ID"/>
+  <ViewLinkAccessor
+    Name="PwcOdmInspPrcDyeFaultVO"
+    ViewLink="model.VL.InspPrcLineDyeFaultVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PwcOdmInspPrcGreigeFaultVO"
+    ViewLink="model.VL.InspPrcLineGreig"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

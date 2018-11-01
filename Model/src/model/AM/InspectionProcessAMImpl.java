@@ -104,4 +104,53 @@ public class InspectionProcessAMImpl extends ApplicationModuleImpl implements In
     public ViewLinkImpl getPwcInspectionProcessVL() {
         return (ViewLinkImpl)findViewLink("PwcInspectionProcessVL");
     }
+
+    /**
+     * Container's getter for PwcOdmInspPrcDyeFaultVO2.
+     * @return PwcOdmInspPrcDyeFaultVO2
+     */
+    public ViewObjectImpl getPwcOdmInspPrcDyeFaultVO2() {
+        return (ViewObjectImpl)findViewObject("PwcOdmInspPrcDyeFaultVO2");
+    }
+
+    /**
+     * Container's getter for InspPrcLineDyeFaultVL1.
+     * @return InspPrcLineDyeFaultVL1
+     */
+    public ViewLinkImpl getInspPrcLineDyeFaultVL1() {
+        return (ViewLinkImpl)findViewLink("InspPrcLineDyeFaultVL1");
+    }
+
+
+    /**
+     * Container's getter for PwcOdmInspPrcGreigeFaultVO2.
+     * @return PwcOdmInspPrcGreigeFaultVO2
+     */
+    public ViewObjectImpl getPwcOdmInspPrcGreigeFaultVO2() {
+        return (ViewObjectImpl)findViewObject("PwcOdmInspPrcGreigeFaultVO2");
+    }
+
+    /**
+     * Container's getter for InspPrcLineGreig1.
+     * @return InspPrcLineGreig1
+     */
+    public ViewLinkImpl getInspPrcLineGreig1() {
+        return (ViewLinkImpl)findViewLink("InspPrcLineGreig1");
+    }
+
+    /**
+     * Container's getter for PwcOdmInspPrcYarnFaultVO2.
+     * @return PwcOdmInspPrcYarnFaultVO2
+     */
+    public ViewObjectImpl getPwcOdmInspPrcYarnFaultVO2() {
+        return (ViewObjectImpl)findViewObject("PwcOdmInspPrcYarnFaultVO2");
+    }
+
+    /**
+     * Container's getter for InspPrcLineYarnFaultVL1.
+     * @return InspPrcLineYarnFaultVL1
+     */
+    public ViewLinkImpl getInspPrcLineYarnFaultVL1() {
+        return (ViewLinkImpl)findViewLink("InspPrcLineYarnFaultVL1");
+    }
 }
