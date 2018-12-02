@@ -13,8 +13,43 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">163.93652</property>
+         name="y">163.23535</property>
       <property
-         name="x">314.0</property>
+         name="x">472.0</property>
    </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">InspectionProcessSearchForm</property>
+      <property
+         name="page">/InspectionProcessSearchForm.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>InspectionProcessSearchForm&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">163.23535</property>
+      <property
+         name="x">228.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View3"
+      to="View2">
+      <property
+         name="fromOutcome">Goto Create Page</property>
+      <property
+         name="sdm:polyPoints">R46,269.0,159.38477,431.0,159.38477,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View2"
+      to="View3">
+      <property
+         name="fromOutcome">Goto Search Page</property>
+      <property
+         name="sdm:polyPoints">L54,431.0,166.38477,269.0,166.38477,R54</property>
+   </ControlFlowCase>
 </SDM>

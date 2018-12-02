@@ -19,6 +19,23 @@
       <to-value>#{viewScope.RespApplId}</to-value>
     </input-page-parameter>
   </view>
+  <view id="InspectionProcessSearchForm">
+    <page>/InspectionProcessSearchForm.jspx</page>
+  </view>
+  <control-flow-rule id="__5">
+    <from-activity-id id="__6">InspectionProcessSearchForm</from-activity-id>
+    <control-flow-case id="__8">
+      <from-outcome id="__9">Goto Create Page</from-outcome>
+      <to-activity-id id="__7">InspectionProcessForm</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__10">
+    <from-activity-id id="__11">InspectionProcessForm</from-activity-id>
+    <control-flow-case id="__13">
+      <from-outcome id="__14">Goto Search Page</from-outcome>
+      <to-activity-id id="__12">InspectionProcessSearchForm</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
   <managed-bean id="__1">
     <managed-bean-name id="__4">InspectionProcessBackingBean</managed-bean-name>
     <managed-bean-class id="__2">view.classes.InspectionProcessBackingBean</managed-bean-class>
