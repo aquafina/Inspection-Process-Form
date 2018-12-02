@@ -1,5 +1,7 @@
 package view.classes;
 
+import java.util.Map;
+
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
@@ -8,6 +10,9 @@ import model.AM.InspectionProcessAMImpl;
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCDataControl;
 import oracle.adf.view.rich.component.rich.output.RichOutputText;
+
+import oracle.binding.BindingContainer;
+import oracle.binding.OperationBinding;
 
 import oracle.jbo.ApplicationModule;
 import oracle.jbo.Row;
@@ -1227,6 +1232,11 @@ public class InspectionProcessBackingBean {
         newRow.setAttribute("DyeStain3", count_DF_DS_3);
         newRow.setAttribute("DyeStain4", count_DF_DS_4);
         newRow.setAttribute("DyeStainTotal",Integer.parseInt(df_DS_Total_OT.getValue().toString()));
+        newRow.setAttribute("StopMark1", count_DF_SM_1);
+        newRow.setAttribute("StopMark2", count_DF_SM_2);
+        newRow.setAttribute("StopMark3", count_DF_SM_3);
+        newRow.setAttribute("StopMark4", count_DF_SM_4);
+        newRow.setAttribute("StopMarkTotal",Integer.parseInt(df_SM_Total_OT.getValue().toString()));
         newRow.setAttribute("BarMark1", count_DF_BM_1);
         newRow.setAttribute("BarMark2", count_DF_BM_2);
         newRow.setAttribute("BarMark3", count_DF_BM_3);
@@ -1249,7 +1259,46 @@ public class InspectionProcessBackingBean {
         newRow.setAttribute("Slub2", count_YF_Slub_2);
         newRow.setAttribute("Slub3", count_YF_Slub_3);
         newRow.setAttribute("Slub4", count_YF_Slub_4);
-        newRow.setAttribute("SlubTotal", count_YF_Slub_1);
+        newRow.setAttribute("SlubTotal", yf_Slub_Total_OT.getValue().toString());
+        
         am.getDBTransaction().commit();
+    }
+    
+    /*****Generic Method to Get BindingContainer**/
+    public BindingContainer getBindingsCont() {
+     return BindingContext.getCurrent().getCurrentBindingsEntry();
+    }
+
+    /**
+     * Generic Method to execute operation
+     * */
+    public OperationBinding executeOperation(String operation) {
+    OperationBinding createParam = getBindingsCont().getOperationBinding(operation);
+    return createParam;
+    }
+    
+    //#{bindings.CreateInsert.execute}
+
+    public void inspectionProcLinesNewAction(ActionEvent actionEvent) {
+        // Add event code here...
+        gf_CM_Total_OT.setValue(0);
+        gf_WV_Total_OT.setValue(0);
+        gf_LM_Total_OT.setValue(0);
+        gf_LN_Total_OT.setValue(0);
+        gf_FY_Total_OT.setValue(0);
+        df_OS_Total_OT.setValue(0);
+        df_SV_Total_OT.setValue(0);
+        df_Spot_Total_OT.setValue(0);
+        df_MP_Total_OT.setValue(0);
+        df_DS_Total_OT.setValue(0);
+        df_SM_Total_OT.setValue(0);
+        df_BM_Total_OT.setValue(0);
+        yf_TY_Total_OT.setValue(0);
+        yf_TY1_Total_OT.setValue(0);
+        yf_Slub_Total_OT.setValue(0);
+        BindingContainer bindings = getBindingsCont();
+        OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert");
+        operationBinding.execute();
+        
     }
 }
