@@ -104,7 +104,7 @@
                               disabled="#{!bindings.CreateInsert1.enabled}"
                               id="cb4"/>
             <af:commandButton text="Complete" id="cb2"/>
-            <af:commandButton text="Back" id="cb6"/>
+            <af:commandButton text="Back" id="cb6" action="Goto Search Page"/>
           </af:panelGroupLayout>
           <af:panelGroupLayout id="pgl2">
             <af:panelFormLayout id="panelFormLayout1" rows="4" maxColumns="2">
@@ -281,10 +281,9 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc34"
                                halign="center" valign="middle">
-                    <af:outputText value="0" id="ot3"
+                    <af:outputText value="#{bindings.CreaseMarkTotal.inputValue}" id="ot3"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   partialTriggers="cb1 crease_mark_cb1 crease_mark_cb2 crease_mark_cb3 crease_mark_cb4 crease_mark_cb5 crease_mark_cb6 crease_mark_cb7 crease_mark_cb8"
-                                   binding="#{backingBeanScope.InspectionProcessBackingBean.gf_CM_Total_OT}">
+                                   partialTriggers="cb1 crease_mark_cb1 crease_mark_cb2 crease_mark_cb3 crease_mark_cb4 crease_mark_cb5 crease_mark_cb6 crease_mark_cb7 crease_mark_cb8">
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.CreaseMarkTotal.format}"/>
                     </af:outputText>

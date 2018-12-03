@@ -1,10 +1,9 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
    <AppModuleConfigBag ApplicationName="model.AM.InspectionProcessAM">
-      <AppModuleConfig DeployPlatform="LOCAL" jbo.project="model.Model" name="AppModuleLocal" ApplicationName="model.AM.InspectionProcessAM" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory">
+      <AppModuleConfig DeployPlatform="LOCAL" JDBCName="Conn1" jbo.project="model.Model" name="AppModuleLocal" ApplicationName="model.AM.InspectionProcessAM">
          <Database jbo.locking.mode="optimistic"/>
          <Security AppModuleJndiName="model.AM.InspectionProcessAM"/>
-         <Custom JDBCDataSource="java:comp/env/jdbc/Conn1DS"/>
       </AppModuleConfig>
       <AppModuleConfig name="AppModuleShared" ApplicationName="model.AM.InspectionProcessAM" DeployPlatform="LOCAL" jbo.project="model.Model" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory">
          <AM-Pooling jbo.ampool.isuseexclusive="false" jbo.ampool.maxpoolsize="1"/>

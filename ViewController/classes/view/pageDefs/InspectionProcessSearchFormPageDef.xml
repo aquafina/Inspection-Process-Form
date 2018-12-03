@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.64.93" id="InspectionProcessSearchFormPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PwcInspectionProcessHeaderVO1" RangeSize="25"
+              DataControl="InspectionProcessAMDataControl"
+              id="PwcInspectionProcessHeaderVO1Iterator"/>
+    <searchRegion Binds="PwcInspectionProcessHeaderVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PwcInspectionProcessHeaderVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+          id="PwcInspectionProcessHeaderVO1">
+      <nodeDefinition DefName="model.VO.PwcInspectionProcessHeaderVO"
+                      Name="PwcInspectionProcessHeaderVO10">
+        <AttrNames>
+          <Item Value="PpNumber"/>
+          <Item Value="WoNumber"/>
+          <Item Value="BatchNumber"/>
+          <Item Value="BuyerName"/>
+          <Item Value="ItemCode"/>
+          <Item Value="ItemDescription"/>
+          <Item Value="FinishingJobNumber"/>
+          <Item Value="JobQuantity"/>
+          <Item Value="SalesOrderNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+            id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+            id="setCurrentRowWithKey" RequiresUpdateModel="false"
+            Action="setCurrentRowWithKey">
+      <NamedData NDName="rowKey" NDValue="" NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

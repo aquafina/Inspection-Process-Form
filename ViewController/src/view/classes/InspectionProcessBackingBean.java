@@ -120,7 +120,7 @@ public class InspectionProcessBackingBean {
 
     public void GF_CM_1_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
         currValue = currValue+1;
         gf_CM_Total_OT.setValue(currValue);
         count_GF_CM_1++;
@@ -129,7 +129,7 @@ public class InspectionProcessBackingBean {
 
     public void GF_CM_2_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
         currValue = currValue+2;
         gf_CM_Total_OT.setValue(currValue);
         count_GF_CM_2++;
@@ -138,7 +138,7 @@ public class InspectionProcessBackingBean {
 
     public void GF_CM_3_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
         currValue = currValue+3;
         gf_CM_Total_OT.setValue(currValue);
         count_GF_CM_3++;
@@ -147,7 +147,7 @@ public class InspectionProcessBackingBean {
 
     public void GF_CM_4_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
         currValue = currValue+4;
         gf_CM_Total_OT.setValue(currValue);
         count_GF_CM_4++;
@@ -156,7 +156,7 @@ public class InspectionProcessBackingBean {
 
     public void GF_CM_1_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
         currValue = (currValue-1)<0?0:(currValue-1);
         gf_CM_Total_OT.setValue(currValue);
         if (count_GF_CM_1>0)
@@ -166,8 +166,8 @@ public class InspectionProcessBackingBean {
 
     public void GF_CM_2_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        String currValue = gf_CM_Total_OT.getValue().toString();
-        currValue = (Integer.parseInt(currValue)-2)+"";
+        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
+        currValue = (currValue-2)<0?0:(currValue-2);
         gf_CM_Total_OT.setValue(currValue);
         if (count_GF_CM_2>0)
             count_GF_CM_2--;
@@ -176,7 +176,7 @@ public class InspectionProcessBackingBean {
 
     public void GF_CM_3_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
         currValue = (currValue-3)<0?0:(currValue-3);
         gf_CM_Total_OT.setValue(currValue);
         if (count_GF_CM_3>0)
@@ -186,7 +186,7 @@ public class InspectionProcessBackingBean {
 
     public void GF_CM_4_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue().toString());
+        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
         currValue = (currValue-4)<0?0:(currValue-4);
         gf_CM_Total_OT.setValue(currValue);
         if (count_GF_CM_4>0)

@@ -52,7 +52,7 @@
     Reversed="false"/>
   <ViewLinkUsage
     Name="InspPrcLineGreig1"
-    ViewLinkObjectName="model.VL.InspPrcLineGreig"
+    ViewLinkObjectName="model.VL.InspPrcLineGreigFaultVL"
     SrcViewUsageName="model.AM.InspectionProcessAM.PwcInspectionProcessLineVO1"
     DstViewUsageName="model.AM.InspectionProcessAM.PwcOdmInspPrcGreigeFaultVO2"
     Reversed="false"/>

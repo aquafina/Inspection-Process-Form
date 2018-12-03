@@ -5,10 +5,14 @@
   <pageMap>
     <page path="/InspectionProcessForm.jspx"
           usageId="view_InspectionProcessFormPageDef"/>
+    <page path="/InspectionProcessSearchForm.jspx"
+          usageId="view_InspectionProcessSearchFormPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_InspectionProcessFormPageDef"
           path="view.pageDefs.InspectionProcessFormPageDef"/>
+    <page id="view_InspectionProcessSearchFormPageDef"
+          path="view.pageDefs.InspectionProcessSearchFormPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="InspectionProcessAMDataControl" Package="model.AM"

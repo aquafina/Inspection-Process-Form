@@ -319,7 +319,7 @@
     IsUpdateable="false"/>
   <ViewLinkAccessor
     Name="PwcOdmInspPrcGreigeFaultVO"
-    ViewLink="model.VL.InspPrcLineGreig"
+    ViewLink="model.VL.InspPrcLineGreigFaultVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelGroupLayout id="pgl1"
+                             inlineStyle="width:812px; height:354px;">
+          <af:panelHeader text="Inspection Process Search Form" id="ph1"
+                          inlineStyle="height:37px;">
+            <f:facet name="context"/>
+            <f:facet name="menuBar"/>
+            <f:facet name="toolbar"/>
+            <f:facet name="legend"/>
+            <f:facet name="info"/>
+          </af:panelHeader>
+          <af:toolbar id="t2">
+            <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
+                              text="Create"
+                              disabled="#{!bindings.CreateInsert.enabled}"
+                              id="cb1" action="Goto Create Page"/>
+            <af:commandButton actionListener="#{bindings.setCurrentRowWithKey.execute}"
+                              text="Update"
+                              disabled="#{!bindings.setCurrentRowWithKey.enabled}"
+                              id="cb2" action="Goto Create Page"/>
+          </af:toolbar>
+          <af:table value="#{bindings.PwcInspectionProcessHeaderVO1.collectionModel}"
+                    var="row"
+                    rows="#{bindings.PwcInspectionProcessHeaderVO1.rangeSize}"
+                    emptyText="#{bindings.PwcInspectionProcessHeaderVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    fetchSize="#{bindings.PwcInspectionProcessHeaderVO1.rangeSize}"
+                    rowBandingInterval="0"
+                    filterModel="#{bindings.PwcInspectionProcessHeaderVO1Query.queryDescriptor}"
+                    queryListener="#{bindings.PwcInspectionProcessHeaderVO1Query.processQuery}"
+                    filterVisible="true" varStatus="vs"
+                    selectedRowKeys="#{bindings.PwcInspectionProcessHeaderVO1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.PwcInspectionProcessHeaderVO1.collectionModel.makeCurrent}"
+                    rowSelection="single" id="t1" partialTriggers="::cb1 ::cb2"
+                    width="100%">
+            <af:column sortProperty="#{bindings.PwcInspectionProcessHeaderVO1.hints.PpNumber.name}"
+                       filterable="true" sortable="true"
+                       headerText="PP Number"
+                       id="c3" align="center">
+              <af:outputText value="#{row.PpNumber}" id="ot1"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.PwcInspectionProcessHeaderVO1.hints.WoNumber.name}"
+                       filterable="true" sortable="true"
+                       headerText="WO Number"
+                       id="c7" align="center">
+              <af:outputText value="#{row.WoNumber}" id="ot2"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.PwcInspectionProcessHeaderVO1.hints.BatchNumber.name}"
+                       filterable="true" sortable="true"
+                       headerText="Batch Number"
+                       id="c5" align="center">
+              <af:outputText value="#{row.BatchNumber}" id="ot3"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.PwcInspectionProcessHeaderVO1.hints.BuyerName.name}"
+                       filterable="true" sortable="true"
+                       headerText="Buyer Name"
+                       id="c4" align="center">
+              <af:outputText value="#{row.BuyerName}" id="ot4"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.PwcInspectionProcessHeaderVO1.hints.ItemCode.name}"
+                       filterable="true" sortable="true"
+                       headerText="Item Code"
+                       id="c9" align="center">
+              <af:outputText value="#{row.ItemCode}" id="ot6"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.PwcInspectionProcessHeaderVO1.hints.ItemDescription.name}"
+                       filterable="true" sortable="true"
+                       headerText="Item Description"
+                       id="c2" align="center">
+              <af:outputText value="#{row.ItemDescription}" id="ot9"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.PwcInspectionProcessHeaderVO1.hints.FinishingJobNumber.name}"
+                       filterable="true" sortable="true"
+                       headerText="Finishing Job Number"
+                       id="c1" align="center">
+              <af:outputText value="#{row.FinishingJobNumber}" id="ot7"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.PwcInspectionProcessHeaderVO1.hints.JobQuantity.name}"
+                       filterable="true" sortable="true"
+                       headerText="Job Quantity"
+                       id="c6" align="center">
+              <af:outputText value="#{row.JobQuantity}" id="ot8">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.PwcInspectionProcessHeaderVO1.hints.JobQuantity.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.PwcInspectionProcessHeaderVO1.hints.SalesOrderNumber.name}"
+                       filterable="true" sortable="true"
+                       headerText="Sales Order Number"
+                       id="c8" align="center">
+              <af:outputText value="#{row.SalesOrderNumber}" id="ot5">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.PwcInspectionProcessHeaderVO1.hints.SalesOrderNumber.format}"/>
+              </af:outputText>
+            </af:column>
+          </af:table>
+        </af:panelGroupLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>
