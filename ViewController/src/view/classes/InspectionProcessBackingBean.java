@@ -2,10 +2,14 @@ package view.classes;
 
 import java.util.Map;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 
 import model.AM.InspectionProcessAMImpl;
+
+import model.AM.client.InspectionProcessAMClient;
+import model.AM.common.InspectionProcessAM;
 
 import oracle.adf.model.BindingContext;
 import oracle.adf.model.binding.DCDataControl;
@@ -111,29 +115,45 @@ public class InspectionProcessBackingBean {
     private int count_YF_Slub_2 = 0;
     private int count_YF_Slub_3 = 0;
     private int count_YF_Slub_4 = 0;
-
+    
+    ViewObject greigeFaultVO;
+    Row greigeFaultVOCurrRow;
     public InspectionProcessBackingBean() {
         super();
+        ApplicationModuleImpl am = getApplicationModule();
+        greigeFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcGreigeFaultVO2"); 
+        //greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
     }
 
     /**                      GREIGE FAULT                          **/
 
     public void GF_CM_1_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
-        currValue = currValue+1;
-        gf_CM_Total_OT.setValue(currValue);
-        count_GF_CM_1++;
-        System.out.println("currValue = "+currValue);
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("CM1 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark1"));
+        count_GF_CM_1 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark1")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark1").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
+        currTotalValue = currTotalValue+1;
+        //gf_CM_Total_OT.setValue(currValue);
+        count_GF_CM_1 = count_GF_CM_1 + 1;
+        greigeFaultVOCurrRow.setAttribute("CreaseMark1",count_GF_CM_1);
+        greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
     }
 
     public void GF_CM_2_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
-        currValue = currValue+2;
-        gf_CM_Total_OT.setValue(currValue);
-        count_GF_CM_2++;
-        System.out.println("currValue = "+currValue);
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("CM1 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark2"));
+        count_GF_CM_2 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark2")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark2").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
+        currTotalValue = currTotalValue+2;
+        count_GF_CM_2 = count_GF_CM_2 + 1;
+        greigeFaultVOCurrRow.setAttribute("CreaseMark2",count_GF_CM_2);
+        greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
     }
 
     public void GF_CM_3_Points_actionListener(ActionEvent actionEvent) {
@@ -1174,36 +1194,42 @@ public class InspectionProcessBackingBean {
     public void saveChanges(ActionEvent actionEvent) {
         // Add event code here...
         ApplicationModuleImpl am = getApplicationModule();
-        ViewObject greigeFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcGreigeFaultVO1");
-        Row newRow = greigeFaultVO.createRow();
+//        ViewObject greigeFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcGreigeFaultVO2");
+        //greigeFaultVO.getCurrentRow().setAttribute("CreaseMarkTotal", Integer.parseInt(gf_CM_Total_OT.getValue().toString()));
+        /*Row currGreigeFaultRow = greigeFaultVO.getCurrentRow();
+        if (currGreigeFaultRow==null) {
+            currGreigeFaultRow = greigeFaultVO.createRow();
+        }*/
+        /*Row newRow = greigeFaultVO.createRow();
         ViewObject inpectionLineVO = (ViewObject)am.findViewObject("PwcInspectionProcessLineVO1");
         String rollNumber = inpectionLineVO.getCurrentRow().getAttribute("RollNumber").toString();
-        newRow.setAttribute("InspPrcRollNumber", rollNumber);
-        newRow.setAttribute("CreaseMark1", count_GF_CM_1);
-        newRow.setAttribute("CreaseMark2", count_GF_CM_2);
-        newRow.setAttribute("CreaseMark3", count_GF_CM_3);
-        newRow.setAttribute("CreaseMark4", count_GF_CM_4);
-        newRow.setAttribute("CreaseMarkTotal", Integer.parseInt(gf_CM_Total_OT.getValue().toString()));
-        newRow.setAttribute("WidthVariation1", count_GF_WV_1);
-        newRow.setAttribute("WidthVariation2", count_GF_WV_2);
-        newRow.setAttribute("WidthVariation3", count_GF_WV_3);
-        newRow.setAttribute("WidthVariation4", count_GF_WV_4);
-        newRow.setAttribute("WidthVariationTotal", Integer.parseInt(gf_WV_Total_OT.getValue().toString())) ;
-        newRow.setAttribute("LineMark1", count_GF_LM_1);
-        newRow.setAttribute("LineMark2", count_GF_LM_2);
-        newRow.setAttribute("LineMark3", count_GF_LM_3);
-        newRow.setAttribute("LineMark4", count_GF_LM_4);
-        newRow.setAttribute("LineMarkTotal",Integer.parseInt(gf_LM_Total_OT.getValue().toString()));
-        newRow.setAttribute("LycraNaps1", count_GF_LN_1);
-        newRow.setAttribute("LycraNaps2", count_GF_LN_2);
-        newRow.setAttribute("LycraNaps3", count_GF_LN_3);
-        newRow.setAttribute("LycraNaps4", count_GF_LN_4);
-        newRow.setAttribute("LycraNapsTotal", Integer.parseInt(gf_LN_Total_OT.getValue().toString()));
-        newRow.setAttribute("FlyYarn1", count_GF_FY_1);
-        newRow.setAttribute("FlyYarn2", count_GF_FY_2);
-        newRow.setAttribute("FlyYarn3", count_GF_FY_3);
-        newRow.setAttribute("FlyYarn4", count_GF_FY_4);
-        newRow.setAttribute("FlyYarnTotal",Integer.parseInt(gf_FY_Total_OT.getValue().toString()));
+        currGreigeFaultRow.setAttribute("InspPrcRollNumber", rollNumber);*/
+//        showMessage(count_GF_CM_1+"", 112);
+        /*currGreigeFaultRow.setAttribute("CreaseMark1", count_GF_CM_1);
+        currGreigeFaultRow.setAttribute("CreaseMark2", count_GF_CM_2);
+        currGreigeFaultRow.setAttribute("CreaseMark3", count_GF_CM_3);
+        currGreigeFaultRow.setAttribute("CreaseMark4", count_GF_CM_4);
+        currGreigeFaultRow.setAttribute("CreaseMarkTotal", Integer.parseInt(gf_CM_Total_OT.getValue().toString()));
+        /*currGreigeFaultRow.setAttribute("WidthVariation1", count_GF_WV_1);
+        currGreigeFaultRow.setAttribute("WidthVariation2", count_GF_WV_2);
+        currGreigeFaultRow.setAttribute("WidthVariation3", count_GF_WV_3);
+        currGreigeFaultRow.setAttribute("WidthVariation4", count_GF_WV_4);
+        currGreigeFaultRow.setAttribute("WidthVariationTotal", Integer.parseInt(gf_WV_Total_OT.getValue().toString())) ;
+        currGreigeFaultRow.setAttribute("LineMark1", count_GF_LM_1);
+        currGreigeFaultRow.setAttribute("LineMark2", count_GF_LM_2);
+        currGreigeFaultRow.setAttribute("LineMark3", count_GF_LM_3);
+        currGreigeFaultRow.setAttribute("LineMark4", count_GF_LM_4);
+        currGreigeFaultRow.setAttribute("LineMarkTotal",Integer.parseInt(gf_LM_Total_OT.getValue().toString()));
+        currGreigeFaultRow.setAttribute("LycraNaps1", count_GF_LN_1);
+        currGreigeFaultRow.setAttribute("LycraNaps2", count_GF_LN_2);
+        currGreigeFaultRow.setAttribute("LycraNaps3", count_GF_LN_3);
+        currGreigeFaultRow.setAttribute("LycraNaps4", count_GF_LN_4);
+        currGreigeFaultRow.setAttribute("LycraNapsTotal", Integer.parseInt(gf_LN_Total_OT.getValue().toString()));
+        currGreigeFaultRow.setAttribute("FlyYarn1", count_GF_FY_1);
+        currGreigeFaultRow.setAttribute("FlyYarn2", count_GF_FY_2);
+        currGreigeFaultRow.setAttribute("FlyYarn3", count_GF_FY_3);
+        currGreigeFaultRow.setAttribute("FlyYarn4", count_GF_FY_4);
+        currGreigeFaultRow.setAttribute("FlyYarnTotal",Integer.parseInt(gf_FY_Total_OT.getValue().toString()));
         ViewObject dyeFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcDyeFaultVO1");
         newRow = dyeFaultVO.createRow();
         newRow.setAttribute("InspPrcRollNumber", rollNumber);
@@ -1259,7 +1285,7 @@ public class InspectionProcessBackingBean {
         newRow.setAttribute("Slub2", count_YF_Slub_2);
         newRow.setAttribute("Slub3", count_YF_Slub_3);
         newRow.setAttribute("Slub4", count_YF_Slub_4);
-        newRow.setAttribute("SlubTotal", yf_Slub_Total_OT.getValue().toString());
+        newRow.setAttribute("SlubTotal", yf_Slub_Total_OT.getValue().toString());*/
         
         am.getDBTransaction().commit();
     }
@@ -1277,9 +1303,23 @@ public class InspectionProcessBackingBean {
     return createParam;
     }
     
+    public static void showMessage(String message, int code) {
+
+            FacesMessage.Severity s = null;
+            if (code == 112) {
+                s = FacesMessage.SEVERITY_ERROR;
+            } else if (code == 111) {
+                s = FacesMessage.SEVERITY_INFO;
+            }
+
+            FacesMessage msg = new FacesMessage(s, message, "");
+            FacesContext.getCurrentInstance().addMessage(null, msg);
+    }
+
+    
     //#{bindings.CreateInsert.execute}
 
-    public void inspectionProcLinesNewAction(ActionEvent actionEvent) {
+    /*public void inspectionProcLinesNewAction(ActionEvent actionEvent) {
         // Add event code here...
         gf_CM_Total_OT.setValue(0);
         gf_WV_Total_OT.setValue(0);
@@ -1300,5 +1340,5 @@ public class InspectionProcessBackingBean {
         OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert");
         operationBinding.execute();
         
-    }
+    }*/
 }

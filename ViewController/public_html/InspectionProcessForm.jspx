@@ -104,7 +104,12 @@
                               disabled="#{!bindings.CreateInsert1.enabled}"
                               id="cb4"/>
             <af:commandButton text="Complete" id="cb2"/>
-            <af:commandButton text="Back" id="cb6" action="Goto Search Page"/>
+            <af:commandButton actionListener="#{bindings.Rollback.execute}"
+                              text="Back"
+                              immediate="true" id="cb7"
+                              action="Goto Search Page">
+              <af:resetActionListener/>
+            </af:commandButton>
           </af:panelGroupLayout>
           <af:panelGroupLayout id="pgl2">
             <af:panelFormLayout id="panelFormLayout1" rows="4" maxColumns="2">
@@ -201,11 +206,10 @@
             </af:panelFormLayout>
           </af:panelGroupLayout>
           <af:panelGroupLayout id="pgl9" layout="horizontal">
-            <af:commandButton
+            <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
                               text="New"
                               disabled="#{!bindings.CreateInsert.enabled}"
-                              id="cb1"
-                              actionListener="#{backingBeanScope.InspectionProcessBackingBean.inspectionProcLinesNewAction}"/>
+                              id="cb1"/>
             <af:commandButton text="Save" id="cb3"
                               actionListener="#{backingBeanScope.InspectionProcessBackingBean.saveChanges}"/>
             <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
