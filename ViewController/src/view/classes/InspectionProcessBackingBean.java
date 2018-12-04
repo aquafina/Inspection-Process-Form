@@ -172,50 +172,90 @@ public class InspectionProcessBackingBean {
 
     public void GF_CM_4_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
-        currValue = currValue+4;
-        gf_CM_Total_OT.setValue(currValue);
-        count_GF_CM_4++;
-        System.out.println("currValue = "+currValue);
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("CM4 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark4"));
+        count_GF_CM_4 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark4")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark4").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
+        currTotalValue = currTotalValue+4;
+        count_GF_CM_4 = count_GF_CM_4 + 1;
+        greigeFaultVOCurrRow.setAttribute("CreaseMark4",count_GF_CM_4);
+        greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
     }
 
     public void GF_CM_1_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
-        currValue = (currValue-1)<0?0:(currValue-1);
-        gf_CM_Total_OT.setValue(currValue);
-        if (count_GF_CM_1>0)
-            count_GF_CM_1--;
-        System.out.println("currValue = "+currValue);
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("CM1 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark1"));
+        count_GF_CM_1 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark1")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark1").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
+        if (count_GF_CM_1>0 && currTotalValue>0)
+        {
+            currTotalValue = currTotalValue - 1;
+            count_GF_CM_1 = count_GF_CM_1 - 1;
+        }
+        greigeFaultVOCurrRow.setAttribute("CreaseMark1",count_GF_CM_1);
+        greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
     }
 
     public void GF_CM_2_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
+        /*int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
         currValue = (currValue-2)<0?0:(currValue-2);
         gf_CM_Total_OT.setValue(currValue);
         if (count_GF_CM_2>0)
             count_GF_CM_2--;
-        System.out.println("currValue = "+currValue);
+        System.out.println("currValue = "+currValue);*/
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("CM2 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark2"));
+        count_GF_CM_2 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark2")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark2").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
+        if (count_GF_CM_2>0 && currTotalValue>0)
+        {
+            currTotalValue = currTotalValue - 2;
+            count_GF_CM_2 = count_GF_CM_2 - 1;
+        }
+        greigeFaultVOCurrRow.setAttribute("CreaseMark2",count_GF_CM_2);
+        greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
     }
 
     public void GF_CM_3_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
-        currValue = (currValue-3)<0?0:(currValue-3);
-        gf_CM_Total_OT.setValue(currValue);
-        if (count_GF_CM_3>0)
-            count_GF_CM_3--;
-        System.out.println("currValue = "+currValue);
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("CM3 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark3"));
+        count_GF_CM_3 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark3")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark3").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
+        if (count_GF_CM_3>0 && currTotalValue>0)
+        {
+            currTotalValue = currTotalValue - 3;
+            count_GF_CM_3 = count_GF_CM_3 - 1;
+        }
+        greigeFaultVOCurrRow.setAttribute("CreaseMark3",count_GF_CM_3);
+        greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
     }
 
     public void GF_CM_4_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
-        currValue = (currValue-4)<0?0:(currValue-4);
-        gf_CM_Total_OT.setValue(currValue);
-        if (count_GF_CM_4>0)
-            count_GF_CM_4--;
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("CM4 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark4"));
+        count_GF_CM_4 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark4")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark4").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
+        if (count_GF_CM_4>0 && currTotalValue>0)
+        {
+            currTotalValue = currTotalValue - 4;
+            count_GF_CM_4 = count_GF_CM_4 - 1;
+        }
+        greigeFaultVOCurrRow.setAttribute("CreaseMark4",count_GF_CM_4);
+        greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
     }
 
     public void setGf_CM_Total_OT(RichOutputText gf_CM_Total_OT) {
@@ -236,10 +276,10 @@ public class InspectionProcessBackingBean {
 
     public void GF_WV_1_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_WV_Total_OT.getValue().toString());
+        /*int currValue = Integer.parseInt(gf_WV_Total_OT.getValue().toString());
         currValue = currValue+1;
         gf_WV_Total_OT.setValue(currValue);
-        count_GF_WV_1++;
+        count_GF_WV_1++;*/
     }
 
     public void GF_WV_2_Points_actionListener(ActionEvent actionEvent) {
