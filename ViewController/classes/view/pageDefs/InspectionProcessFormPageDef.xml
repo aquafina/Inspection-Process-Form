@@ -149,14 +149,14 @@
         <Item Value="CreaseMarkTotal"/>
       </AttrNames>
     </attributeValues>
+    <action id="Rollback" RequiresUpdateModel="false"
+            Action="rollbackTransaction"
+            DataControl="InspectionProcessAMDataControl"/>
     <attributeValues IterBinding="PwcOdmInspPrcGreigeFaultVO2Iterator"
                      id="WidthVariationTotal">
       <AttrNames>
         <Item Value="WidthVariationTotal"/>
       </AttrNames>
     </attributeValues>
-    <action id="Rollback" RequiresUpdateModel="false"
-            Action="rollbackTransaction"
-            DataControl="InspectionProcessAMDataControl"/>
   </bindings>
 </pageDefinition>

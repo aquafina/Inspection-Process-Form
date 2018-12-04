@@ -367,9 +367,8 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc48"
                                halign="center" valign="middle">
-                    <af:outputText value="0" id="outputText8"
+                    <af:outputText value="#{bindings.WidthVariationTotal.inputValue}" id="outputText8"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   binding="#{backingBeanScope.InspectionProcessBackingBean.gt_WV_Total_OT}"
                                    partialTriggers="width_variation_cb1 width_variation_cb2 width_variation_cb3 width_variation_cb4 width_variation_cb5 width_variation_cb6 width_variation_cb7 width_variation_cb8 cb1">
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.WidthVariationTotal.format}"/>
