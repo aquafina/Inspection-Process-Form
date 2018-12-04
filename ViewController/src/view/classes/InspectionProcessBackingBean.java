@@ -147,7 +147,7 @@ public class InspectionProcessBackingBean {
         greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
         if (greigeFaultVOCurrRow==null)
             greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("CM1 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark2"));
+        System.out.println("CM2 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark2"));
         count_GF_CM_2 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark2")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark2").toString():"0");
         int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
         currTotalValue = currTotalValue+2;
@@ -158,11 +158,16 @@ public class InspectionProcessBackingBean {
 
     public void GF_CM_3_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_CM_Total_OT.getValue()!=null?gf_CM_Total_OT.getValue().toString():"0");
-        currValue = currValue+3;
-        gf_CM_Total_OT.setValue(currValue);
-        count_GF_CM_3++;
-        System.out.println("currValue = "+currValue);
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("CM3 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark3"));
+        count_GF_CM_3 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark3")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark3").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
+        currTotalValue = currTotalValue+3;
+        count_GF_CM_3 = count_GF_CM_3 + 1;
+        greigeFaultVOCurrRow.setAttribute("CreaseMark3",count_GF_CM_3);
+        greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
     }
 
     public void GF_CM_4_Points_actionListener(ActionEvent actionEvent) {
