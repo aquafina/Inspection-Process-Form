@@ -371,12 +371,6 @@ public class InspectionProcessBackingBean {
     }
 
     public void GF_WV_4_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        /*int currValue = Integer.parseInt(gf_WV_Total_OT.getValue().toString());
-        currValue = (currValue-4)<0?0:(currValue-4);
-        gf_WV_Total_OT.setValue(currValue);
-        if (count_GF_WV_4>0)
-            count_GF_WV_4--;*/
         greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
         if (greigeFaultVOCurrRow==null)
             greigeFaultVOCurrRow = greigeFaultVO.createRow();
@@ -393,71 +387,134 @@ public class InspectionProcessBackingBean {
     }
 
     public void GF_LM_1_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_LM_Total_OT.getValue().toString());
-        currValue = currValue+1;
-        gf_LM_Total_OT.setValue(currValue);
-        count_GF_LM_1++;
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("LM1 = "+greigeFaultVOCurrRow.getAttribute("LineMark1"));
+        count_GF_LM_1 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark1")!=null?greigeFaultVOCurrRow.getAttribute("LineMark1").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
+        currTotalValue = currTotalValue + 1;
+        count_GF_LM_1 = count_GF_LM_1 + 1;
+        greigeFaultVOCurrRow.setAttribute("LineMark1",count_GF_LM_1);
+        greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
     }
 
     public void GF_LM_2_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_LM_Total_OT.getValue().toString());
+        /*int currValue = Integer.parseInt(gf_LM_Total_OT.getValue().toString());
         currValue = currValue+2;
         gf_LM_Total_OT.setValue(currValue);
-        count_GF_LM_2++;
+        count_GF_LM_2++;*/
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("LM2 = "+greigeFaultVOCurrRow.getAttribute("LineMark2"));
+        count_GF_LM_2 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark2")!=null?greigeFaultVOCurrRow.getAttribute("LineMark2").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
+        currTotalValue = currTotalValue + 2;
+        count_GF_LM_2 = count_GF_LM_2 + 1;
+        greigeFaultVOCurrRow.setAttribute("LineMark2",count_GF_LM_2);
+        greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
     }
 
     public void GF_LM_3_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_LM_Total_OT.getValue().toString());
+        /*int currValue = Integer.parseInt(gf_LM_Total_OT.getValue().toString());
         currValue = currValue+3;
         gf_LM_Total_OT.setValue(currValue);
-        count_GF_LM_3++;
+        count_GF_LM_3++;*/
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("LM3 = "+greigeFaultVOCurrRow.getAttribute("LineMark3"));
+        count_GF_LM_3 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark3")!=null?greigeFaultVOCurrRow.getAttribute("LineMark3").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
+        currTotalValue = currTotalValue + 3;
+        count_GF_LM_3 = count_GF_LM_3 + 1;
+        greigeFaultVOCurrRow.setAttribute("LineMark3",count_GF_LM_3);
+        greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
     }
   
     public void GF_LM_4_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_LM_Total_OT.getValue().toString());
+        /*int currValue = Integer.parseInt(gf_LM_Total_OT.getValue().toString());
         currValue = currValue+4;
         gf_LM_Total_OT.setValue(currValue);
-        count_GF_LM_4++;
+        count_GF_LM_4++;*/
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("LM4 = "+greigeFaultVOCurrRow.getAttribute("LineMark4"));
+        count_GF_LM_4 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark4")!=null?greigeFaultVOCurrRow.getAttribute("LineMark4").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
+        currTotalValue = currTotalValue + 4;
+        count_GF_LM_4 = count_GF_LM_4 + 1;
+        greigeFaultVOCurrRow.setAttribute("LineMark4",count_GF_LM_4);
+        greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
     }
 
     public void GF_LM_1_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_LM_Total_OT.getValue().toString());
-        currValue = (currValue-1)<0?0:(currValue-1);
-        gf_LM_Total_OT.setValue(currValue);
-        if (count_GF_LM_1>0)
-            count_GF_LM_1--;
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("LM1 = "+greigeFaultVOCurrRow.getAttribute("LineMark1"));
+        count_GF_LM_1 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark1")!=null?greigeFaultVOCurrRow.getAttribute("LineMark1").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
+        if (count_GF_LM_1 > 0 && currTotalValue > 0)
+        {
+            currTotalValue = currTotalValue - 1;
+            count_GF_LM_1 = count_GF_LM_1 - 1;
+            greigeFaultVOCurrRow.setAttribute("LineMark1",count_GF_LM_1);
+            greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
+        }
     }
 
     public void GF_LM_2_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_LM_Total_OT.getValue().toString());
-        currValue = (currValue-2)<0?0:(currValue-2);
-        gf_LM_Total_OT.setValue(currValue);
-        if (count_GF_LM_2>0)
-            count_GF_LM_2--;
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("LM2 = "+greigeFaultVOCurrRow.getAttribute("LineMark2"));
+        count_GF_LM_2 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark2")!=null?greigeFaultVOCurrRow.getAttribute("LineMark2").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
+        if (count_GF_LM_2 > 0 && currTotalValue > 0)
+        {
+            currTotalValue = currTotalValue - 2;
+            count_GF_LM_2 = count_GF_LM_2 - 1;
+            greigeFaultVOCurrRow.setAttribute("LineMark2",count_GF_LM_2);
+            greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
+        }
     }
 
     public void GF_LM_3_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_LM_Total_OT.getValue().toString());
-        currValue = (currValue-3)<0?0:(currValue-3);
-        gf_LM_Total_OT.setValue(currValue);
-        if (count_GF_LM_3>0)
-            count_GF_LM_3--;
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("LM3 = "+greigeFaultVOCurrRow.getAttribute("LineMark3"));
+        count_GF_LM_3 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark3")!=null?greigeFaultVOCurrRow.getAttribute("LineMark3").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
+        if (count_GF_LM_3 > 0 && currTotalValue > 0)
+        {
+            currTotalValue = currTotalValue - 3;
+            count_GF_LM_3 = count_GF_LM_3 - 1;
+            greigeFaultVOCurrRow.setAttribute("LineMark3",count_GF_LM_3);
+            greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
+        }
     }
 
     public void GF_LM_4_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_LM_Total_OT.getValue().toString());
-        currValue = (currValue-4)<0?0:(currValue-4);
-        gf_LM_Total_OT.setValue(currValue);
-        if (count_GF_LM_4>0)
-            count_GF_LM_4--;
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("LM4 = "+greigeFaultVOCurrRow.getAttribute("LineMark4"));
+        count_GF_LM_4 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark4")!=null?greigeFaultVOCurrRow.getAttribute("LineMark4").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
+        if (count_GF_LM_4 > 0 && currTotalValue > 0)
+        {
+            currTotalValue = currTotalValue - 4;
+            count_GF_LM_4 = count_GF_LM_4 - 1;
+            greigeFaultVOCurrRow.setAttribute("LineMark4",count_GF_LM_4);
+            greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
+        }
     }
 
     public void setGf_LM_Total_OT(RichOutputText gf_LM_Total_OT) {
@@ -470,10 +527,10 @@ public class InspectionProcessBackingBean {
 
     public void GF_LN_1_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_LN_Total_OT.getValue().toString());
+        /*int currValue = Integer.parseInt(gf_LN_Total_OT.getValue().toString());
         currValue = currValue+1;
         gf_LN_Total_OT.setValue(currValue);
-        count_GF_LN_1++;
+        count_GF_LN_1++;*/
     }
 
     public void GF_LN_2_Points_actionListener(ActionEvent actionEvent) {

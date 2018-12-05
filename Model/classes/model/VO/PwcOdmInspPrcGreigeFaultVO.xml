@@ -236,7 +236,9 @@
     PrecisionRule="true"
     EntityAttrName="LastUpdatedDate"
     EntityUsage="PwcOdmInspPrcGreigeFault"
-    AliasName="LAST_UPDATED_DATE"/>
+    AliasName="LAST_UPDATED_DATE">
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
+  </ViewAttribute>
   <ViewAttribute
     Name="LastUpdatedLogin"
     PrecisionRule="true"

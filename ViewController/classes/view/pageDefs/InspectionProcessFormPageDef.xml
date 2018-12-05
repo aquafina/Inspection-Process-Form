@@ -158,5 +158,11 @@
         <Item Value="WidthVariationTotal"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="PwcOdmInspPrcGreigeFaultVO2Iterator"
+                     id="LineMarkTotal">
+      <AttrNames>
+        <Item Value="LineMarkTotal"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

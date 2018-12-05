@@ -455,10 +455,12 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc59"
                                halign="center" valign="middle">
-                    <af:outputText value="0" id="outputText9"
+                    <af:outputText value="#{bindings.LineMarkTotal.inputValue}" id="outputText9"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   binding="#{backingBeanScope.InspectionProcessBackingBean.gf_LM_Total_OT}"
-                                   partialTriggers="line_mark_cb1 line_mark_cb2 line_mark_cb3 line_mark_cb4 line_mark_cb5 line_mark_cb6 line_mark_cb7 line_mark_cb8"/>
+                                   partialTriggers="line_mark_cb1 line_mark_cb2 line_mark_cb3 line_mark_cb4 line_mark_cb5 line_mark_cb6 line_mark_cb7 line_mark_cb8">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.LineMarkTotal.format}"/>
+                    </af:outputText>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc31">
                     <af:spacer width="30" height="15" id="spacer14"/>
