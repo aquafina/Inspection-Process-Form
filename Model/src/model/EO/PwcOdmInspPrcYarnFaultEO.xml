@@ -41,10 +41,10 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="ThickYarn1"
-    ColumnName="THICK_YARN_1"
+    Name="ForeignYarn1"
+    ColumnName="FOREIGN_YARN_1"
     SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="PWC_ODM_INSP_PRC_YARN_FAULT">
     <DesignTime>
@@ -52,10 +52,10 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="ThickYarn2"
-    ColumnName="THICK_YARN_2"
+    Name="ForeignYarn2"
+    ColumnName="FOREIGN_YARN_2"
     SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="PWC_ODM_INSP_PRC_YARN_FAULT">
     <DesignTime>
@@ -63,10 +63,10 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="ThickYarn3"
-    ColumnName="THICK_YARN_3"
+    Name="ForeignYarn3"
+    ColumnName="FOREIGN_YARN_3"
     SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="PWC_ODM_INSP_PRC_YARN_FAULT">
     <DesignTime>
@@ -74,10 +74,10 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="ThickYarn4"
-    ColumnName="THICK_YARN_4"
+    Name="ForeignYarn4"
+    ColumnName="FOREIGN_YARN_4"
     SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="PWC_ODM_INSP_PRC_YARN_FAULT">
     <DesignTime>
@@ -85,10 +85,10 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="ThickYarnTotal"
-    ColumnName="THICK_YARN_TOTAL"
+    Name="ForeignYarnTotal"
+    ColumnName="FOREIGN_YARN_TOTAL"
     SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="PWC_ODM_INSP_PRC_YARN_FAULT">
     <DesignTime>
@@ -96,10 +96,10 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="ThinkYarn1"
-    ColumnName="THINK_YARN_1"
+    Name="Neps1"
+    ColumnName="NEPS_1"
     SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="PWC_ODM_INSP_PRC_YARN_FAULT">
     <DesignTime>
@@ -107,10 +107,10 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="ThinkYarn2"
-    ColumnName="THINK_YARN_2"
+    Name="Neps2"
+    ColumnName="NEPS_2"
     SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="PWC_ODM_INSP_PRC_YARN_FAULT">
     <DesignTime>
@@ -118,10 +118,10 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="ThinkYarn3"
-    ColumnName="THINK_YARN_3"
+    Name="Neps3"
+    ColumnName="NEPS_3"
     SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="PWC_ODM_INSP_PRC_YARN_FAULT">
     <DesignTime>
@@ -129,10 +129,10 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="ThinkYarn4"
-    ColumnName="THINK_YARN_4"
+    Name="Neps4"
+    ColumnName="NEPS_4"
     SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="PWC_ODM_INSP_PRC_YARN_FAULT">
     <DesignTime>
@@ -140,10 +140,10 @@
     </DesignTime>
   </Attribute>
   <Attribute
-    Name="ThinkYarnTotal"
-    ColumnName="THINK_YARN_TOTAL"
+    Name="NepsTotal"
+    ColumnName="NEPS_TOTAL"
     SQLType="NUMERIC"
-    Type="oracle.jbo.domain.Number"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="PWC_ODM_INSP_PRC_YARN_FAULT">
     <DesignTime>
@@ -211,7 +211,8 @@
     SQLType="TIMESTAMP"
     Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="PWC_ODM_INSP_PRC_YARN_FAULT">
+    TableName="PWC_ODM_INSP_PRC_YARN_FAULT"
+    IsUpdateable="while_insert">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>
@@ -237,6 +238,7 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="7"/>
     </DesignTime>
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="LastUpdatedLogin"

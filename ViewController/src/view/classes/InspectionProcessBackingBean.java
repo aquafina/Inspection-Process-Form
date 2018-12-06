@@ -25,31 +25,16 @@ import oracle.jbo.ViewObject;
 import oracle.jbo.server.ApplicationModuleImpl;
 
 public class InspectionProcessBackingBean {
-    private RichOutputText gf_CM_Total_OT;
-    private RichOutputText gf_WV_Total_OT;
-    private RichOutputText gf_LM_Total_OT;
-    private RichOutputText gf_LN_Total_OT;
-    private RichOutputText gf_FY_Total_OT;
-    private RichOutputText df_OS_Total_OT;
-    private RichOutputText df_SV_Total_OT;
-    private RichOutputText df_Spot_Total_OT;
-    private RichOutputText df_MP_Total_OT;
-    private RichOutputText df_DS_Total_OT;
-    private RichOutputText df_SM_Total_OT;
-    private RichOutputText df_BM_Total_OT;
-    private RichOutputText yf_TY_Total_OT;
-    private RichOutputText yf_TY1_Total_OT;
-    private RichOutputText yf_Slub_Total_OT;
     
-    private int count_GF_CM_1 = 0;
-    private int count_GF_CM_2 = 0;
-    private int count_GF_CM_3 = 0;
-    private int count_GF_CM_4 = 0;
+    private int count_YF_Slub_1 = 0;
+    private int count_YF_Slub_2 = 0;
+    private int count_YF_Slub_3 = 0;
+    private int count_YF_Slub_4 = 0;
     
-    private int count_GF_WV_1 = 0;
-    private int count_GF_WV_2 = 0;
-    private int count_GF_WV_3 = 0;
-    private int count_GF_WV_4 = 0;
+    private int count_YF_Neps_1 = 0;
+    private int count_YF_Neps_2 = 0;
+    private int count_YF_Neps_3 = 0;
+    private int count_YF_Neps_4 = 0;
     
     private int count_GF_LM_1 =0;
     private int count_GF_LM_2 =0;
@@ -110,283 +95,260 @@ public class InspectionProcessBackingBean {
     private int count_YF_TY1_2 = 0;
     private int count_YF_TY1_3 = 0;
     private int count_YF_TY1_4 = 0;
-
-    private int count_YF_Slub_1 = 0;
-    private int count_YF_Slub_2 = 0;
-    private int count_YF_Slub_3 = 0;
-    private int count_YF_Slub_4 = 0;
     
-    ViewObject greigeFaultVO;
+    ViewObject yarnFaultVO;
     ViewObject dyeFaultVO;
     
-    Row greigeFaultVOCurrRow;
+    Row yarnFaultVOCurrRow;
     public InspectionProcessBackingBean() {
         super();
         ApplicationModuleImpl am = getApplicationModule();
-        greigeFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcGreigeFaultVO2"); 
+        yarnFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcYarnFaultVO2"); 
         dyeFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcDyeFaultVO2");
         //greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
     }
 
-    /**                      GREIGE FAULT                          **/
+    /**                      YARN FAULT                          **/
 
-    public void GF_CM_1_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("CM1 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark1"));
-        count_GF_CM_1 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark1")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark1").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
+    public void YF_Slub_1_Points_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Slub1 = "+yarnFaultVOCurrRow.getAttribute("Slub1"));
+        count_YF_Slub_1 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Slub1")!=null?yarnFaultVOCurrRow.getAttribute("Slub1").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("SlubTotal")!=null?yarnFaultVOCurrRow.getAttribute("SlubTotal").toString():"0");
         currTotalValue = currTotalValue+1;
-        //gf_CM_Total_OT.setValue(currValue);
-        count_GF_CM_1 = count_GF_CM_1 + 1;
-        greigeFaultVOCurrRow.setAttribute("CreaseMark1",count_GF_CM_1);
-        greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
+        count_YF_Slub_1  = count_YF_Slub_1 + 1;
+        yarnFaultVOCurrRow.setAttribute("Slub1",count_YF_Slub_1);
+        yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
     }
 
-    public void GF_CM_2_Points_actionListener(ActionEvent actionEvent) {
+    public void YF_Slub_2_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("CM2 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark2"));
-        count_GF_CM_2 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark2")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark2").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Slub2 = "+yarnFaultVOCurrRow.getAttribute("Slub2"));
+        count_YF_Slub_2 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Slub2")!=null?yarnFaultVOCurrRow.getAttribute("Slub2").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("SlubTotal")!=null?yarnFaultVOCurrRow.getAttribute("SlubTotal").toString():"0");
         currTotalValue = currTotalValue+2;
-        count_GF_CM_2 = count_GF_CM_2 + 1;
-        greigeFaultVOCurrRow.setAttribute("CreaseMark2",count_GF_CM_2);
-        greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
+        count_YF_Slub_2  = count_YF_Slub_2 + 1;
+        yarnFaultVOCurrRow.setAttribute("Slub2",count_YF_Slub_2);
+        yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
     }
 
-    public void GF_CM_3_Points_actionListener(ActionEvent actionEvent) {
+    public void YF_Slub_3_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("CM3 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark3"));
-        count_GF_CM_3 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark3")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark3").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Slub3 = "+yarnFaultVOCurrRow.getAttribute("Slub3"));
+        count_YF_Slub_3 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Slub3")!=null?yarnFaultVOCurrRow.getAttribute("Slub3").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("SlubTotal")!=null?yarnFaultVOCurrRow.getAttribute("SlubTotal").toString():"0");
         currTotalValue = currTotalValue+3;
-        count_GF_CM_3 = count_GF_CM_3 + 1;
-        greigeFaultVOCurrRow.setAttribute("CreaseMark3",count_GF_CM_3);
-        greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
+        count_YF_Slub_3 = count_YF_Slub_3 + 1;
+        yarnFaultVOCurrRow.setAttribute("Slub3",count_YF_Slub_3);
+        yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
     }
 
-    public void GF_CM_4_Points_actionListener(ActionEvent actionEvent) {
+    public void YF_Slub_4_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("CM4 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark4"));
-        count_GF_CM_4 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark4")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark4").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Slub4 = "+yarnFaultVOCurrRow.getAttribute("Slub4"));
+        count_YF_Slub_4 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Slub4")!=null?yarnFaultVOCurrRow.getAttribute("Slub4").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("SlubTotal")!=null?yarnFaultVOCurrRow.getAttribute("SlubTotal").toString():"0");
         currTotalValue = currTotalValue+4;
-        count_GF_CM_4 = count_GF_CM_4 + 1;
-        greigeFaultVOCurrRow.setAttribute("CreaseMark4",count_GF_CM_4);
-        greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
+        count_YF_Slub_4 = count_YF_Slub_4 + 1;
+        yarnFaultVOCurrRow.setAttribute("Slub4",count_YF_Slub_4);
+        yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
     }
 
-    public void GF_CM_1_Undo_actionListener(ActionEvent actionEvent) {
+    public void YF_Slub_1_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("CM1 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark1"));
-        count_GF_CM_1 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark1")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark1").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
-        if (count_GF_CM_1>0 && currTotalValue>0)
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Slub1 = "+yarnFaultVOCurrRow.getAttribute("Slub1"));
+        count_YF_Slub_1 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Slub1")!=null?yarnFaultVOCurrRow.getAttribute("Slub1").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("SlubTotal")!=null?yarnFaultVOCurrRow.getAttribute("SlubTotal").toString():"0");
+        if (count_YF_Slub_1 > 0 && currTotalValue > 0)
         {
             currTotalValue = currTotalValue - 1;
-            count_GF_CM_1 = count_GF_CM_1 - 1;
-            greigeFaultVOCurrRow.setAttribute("CreaseMark1",count_GF_CM_1);
-            greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
+            count_YF_Slub_1 = count_YF_Slub_1 - 1;
+            yarnFaultVOCurrRow.setAttribute("Slub1",count_YF_Slub_1);
+            yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
         }
     }
 
-    public void GF_CM_2_Undo_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("CM2 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark2"));
-        count_GF_CM_2 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark2")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark2").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
-        if (count_GF_CM_2>0 && currTotalValue>0)
+    public void YF_Slub_2_Undo_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Slub2 = "+yarnFaultVOCurrRow.getAttribute("Slub2"));
+        count_YF_Slub_2 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Slub2")!=null?yarnFaultVOCurrRow.getAttribute("Slub2").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("SlubTotal")!=null?yarnFaultVOCurrRow.getAttribute("SlubTotal").toString():"0");
+        if (count_YF_Slub_2 > 0 && currTotalValue > 0)
         {
             currTotalValue = currTotalValue - 2;
-            count_GF_CM_2 = count_GF_CM_2 - 1;
-            greigeFaultVOCurrRow.setAttribute("CreaseMark2",count_GF_CM_2);
-            greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
+            count_YF_Slub_2 = count_YF_Slub_2 - 1;
+            yarnFaultVOCurrRow.setAttribute("Slub2",count_YF_Slub_2);
+            yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
         }
     }
 
-    public void GF_CM_3_Undo_actionListener(ActionEvent actionEvent) {
+    public void YF_Slub_3_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("CM3 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark3"));
-        count_GF_CM_3 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark3")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark3").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
-        if (count_GF_CM_3>0 && currTotalValue>0)
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Slub3 = "+yarnFaultVOCurrRow.getAttribute("Slub3"));
+        count_YF_Slub_3 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Slub3")!=null?yarnFaultVOCurrRow.getAttribute("Slub3").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("SlubTotal")!=null?yarnFaultVOCurrRow.getAttribute("SlubTotal").toString():"0");
+        if (count_YF_Slub_3 > 0 && currTotalValue > 0)
         {
             currTotalValue = currTotalValue - 3;
-            count_GF_CM_3 = count_GF_CM_3 - 1;
-            greigeFaultVOCurrRow.setAttribute("CreaseMark3",count_GF_CM_3);
-            greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
+            count_YF_Slub_3 = count_YF_Slub_3 - 1;
+            yarnFaultVOCurrRow.setAttribute("Slub3",count_YF_Slub_3);
+            yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
         }
     }
 
-    public void GF_CM_4_Undo_actionListener(ActionEvent actionEvent) {
+    public void YF_Slub_4_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("CM4 = "+greigeFaultVOCurrRow.getAttribute("CreaseMark4"));
-        count_GF_CM_4 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMark4")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMark4").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("CreaseMarkTotal").toString():"0");
-        if (count_GF_CM_4>0 && currTotalValue>0)
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Slub4 = "+yarnFaultVOCurrRow.getAttribute("Slub4"));
+        count_YF_Slub_4 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Slub4")!=null?yarnFaultVOCurrRow.getAttribute("Slub4").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("SlubTotal")!=null?yarnFaultVOCurrRow.getAttribute("SlubTotal").toString():"0");
+        if (count_YF_Slub_4 > 0 && currTotalValue > 0)
         {
             currTotalValue = currTotalValue - 4;
-            count_GF_CM_4 = count_GF_CM_4 - 1;
-            greigeFaultVOCurrRow.setAttribute("CreaseMark4",count_GF_CM_4);
-            greigeFaultVOCurrRow.setAttribute("CreaseMarkTotal",currTotalValue);
+            count_YF_Slub_4 = count_YF_Slub_4 - 1;
+            yarnFaultVOCurrRow.setAttribute("Slub4",count_YF_Slub_4);
+            yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
         }
     }
 
-    public void setGf_CM_Total_OT(RichOutputText gf_CM_Total_OT) {
-        this.gf_CM_Total_OT = gf_CM_Total_OT;
-    }
-
-    public RichOutputText getGf_CM_Total_OT() {
-        return gf_CM_Total_OT;
-    }
-
-    public void setGt_WV_Total_OT(RichOutputText gt_WV_Total_OT) {
-        this.gf_WV_Total_OT = gt_WV_Total_OT;
-    }
-
-    public RichOutputText getGt_WV_Total_OT() {
-        return gf_WV_Total_OT;
-    }
-
-    public void GF_WV_1_Points_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("WV1 = "+greigeFaultVOCurrRow.getAttribute("WidthVariation1"));
-        count_GF_WV_1 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariation1")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariation1").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariationTotal")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariationTotal").toString():"0");
+    public void YF_Nep_1_Points_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Neps1 = "+yarnFaultVOCurrRow.getAttribute("Neps1"));
+        count_YF_Neps_1 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Neps1")!=null?yarnFaultVOCurrRow.getAttribute("Neps1").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("NepsTotal")!=null?yarnFaultVOCurrRow.getAttribute("NepsTotal").toString():"0");
         currTotalValue = currTotalValue + 1;
-        count_GF_WV_1 = count_GF_WV_1 + 1;
-        greigeFaultVOCurrRow.setAttribute("WidthVariation1",count_GF_WV_1);
-        greigeFaultVOCurrRow.setAttribute("WidthVariationTotal",currTotalValue);
+        count_YF_Neps_1 = count_YF_Neps_1 + 1;
+        yarnFaultVOCurrRow.setAttribute("Neps1",count_YF_Neps_1);
+        yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
     }
 
-    public void GF_WV_2_Points_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("WV2 = "+greigeFaultVOCurrRow.getAttribute("WidthVariation2"));
-        count_GF_WV_2 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariation2")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariation2").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariationTotal")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariationTotal").toString():"0");
+    public void YF_Neps_2_Points_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Neps2 = "+yarnFaultVOCurrRow.getAttribute("Neps2"));
+        count_YF_Neps_2 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Neps2")!=null?yarnFaultVOCurrRow.getAttribute("Neps2").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("NepsTotal")!=null?yarnFaultVOCurrRow.getAttribute("NepsTotal").toString():"0");
         currTotalValue = currTotalValue + 2;
-        count_GF_WV_2 = count_GF_WV_2 + 1;
-        greigeFaultVOCurrRow.setAttribute("WidthVariation2",count_GF_WV_2);
-        greigeFaultVOCurrRow.setAttribute("WidthVariationTotal",currTotalValue);
+        count_YF_Neps_2 = count_YF_Neps_2 + 1;
+        yarnFaultVOCurrRow.setAttribute("Neps2",count_YF_Neps_1);
+        yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
     }
 
-    public void GF_WV_3_Points_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("WV3 = "+greigeFaultVOCurrRow.getAttribute("WidthVariation3"));
-        count_GF_WV_3 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariation3")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariation3").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariationTotal")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariationTotal").toString():"0");
+    public void YF_Neps_3_Points_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Neps3 = "+yarnFaultVOCurrRow.getAttribute("Neps3"));
+        count_YF_Neps_3 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Neps3")!=null?yarnFaultVOCurrRow.getAttribute("Neps3").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("NepsTotal")!=null?yarnFaultVOCurrRow.getAttribute("NepsTotal").toString():"0");
         currTotalValue = currTotalValue + 3;
-        count_GF_WV_3 = count_GF_WV_3 + 1;
-        greigeFaultVOCurrRow.setAttribute("WidthVariation3",count_GF_WV_3);
-        greigeFaultVOCurrRow.setAttribute("WidthVariationTotal",currTotalValue);
+        count_YF_Neps_3 = count_YF_Neps_3 + 1;
+        yarnFaultVOCurrRow.setAttribute("Neps3",count_YF_Neps_3);
+        yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
     }
 
-    public void GF_WV_4_Points_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("WV4 = "+greigeFaultVOCurrRow.getAttribute("WidthVariation4"));
-        count_GF_WV_4 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariation4")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariation4").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariationTotal")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariationTotal").toString():"0");
+    public void YF_Neps_4_Points_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Neps4 = "+yarnFaultVOCurrRow.getAttribute("Neps4"));
+        count_YF_Neps_4 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Neps4")!=null?yarnFaultVOCurrRow.getAttribute("Neps4").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("NepsTotal")!=null?yarnFaultVOCurrRow.getAttribute("NepsTotal").toString():"0");
         currTotalValue = currTotalValue + 4;
-        count_GF_WV_4 = count_GF_WV_4 + 1;
-        greigeFaultVOCurrRow.setAttribute("WidthVariation4",count_GF_WV_4);
-        greigeFaultVOCurrRow.setAttribute("WidthVariationTotal",currTotalValue);
+        count_YF_Neps_4 = count_YF_Neps_4 + 1;
+        yarnFaultVOCurrRow.setAttribute("Neps4",count_YF_Neps_4);
+        yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
     }
 
-    public void GF_WV_1_Undo_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("WV1 = "+greigeFaultVOCurrRow.getAttribute("WidthVariation1"));
-        count_GF_WV_1 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariation1")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariation1").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariationTotal")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariationTotal").toString():"0");
-        if (count_GF_WV_1 > 0 && currTotalValue > 0)
+    public void YF_Neps_1_Undo_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Neps1 = "+yarnFaultVOCurrRow.getAttribute("Neps1"));
+        count_YF_Neps_1 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Neps1")!=null?yarnFaultVOCurrRow.getAttribute("Neps1").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("NepsTotal")!=null?yarnFaultVOCurrRow.getAttribute("NepsTotal").toString():"0");
+        if (count_YF_Neps_1 > 0 && currTotalValue > 0)
         {
             currTotalValue = currTotalValue - 1;
-            count_GF_WV_1 = count_GF_WV_1 - 1;
-            greigeFaultVOCurrRow.setAttribute("WidthVariation1",count_GF_WV_1);
-            greigeFaultVOCurrRow.setAttribute("WidthVariationTotal",currTotalValue);
+            count_YF_Neps_1 = count_YF_Neps_1 - 1;
+            yarnFaultVOCurrRow.setAttribute("Neps1",count_YF_Neps_1);
+            yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
         }
     }
 
-    public void GF_WV_2_Undo_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("WV2 = "+greigeFaultVOCurrRow.getAttribute("WidthVariation2"));
-        count_GF_WV_2 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariation2")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariation2").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariationTotal")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariationTotal").toString():"0");
-        if (count_GF_WV_2 > 0 && currTotalValue > 0)
+    public void YF_Neps_2_Undo_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Neps2 = "+yarnFaultVOCurrRow.getAttribute("Neps2"));
+        count_YF_Neps_2 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Neps2")!=null?yarnFaultVOCurrRow.getAttribute("Neps2").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("NepsTotal")!=null?yarnFaultVOCurrRow.getAttribute("NepsTotal").toString():"0");
+        if (count_YF_Neps_2 > 0 && currTotalValue > 0)
         {
             currTotalValue = currTotalValue - 2;
-            count_GF_WV_2 = count_GF_WV_2 - 1;
-            greigeFaultVOCurrRow.setAttribute("WidthVariation2",count_GF_WV_2);
-            greigeFaultVOCurrRow.setAttribute("WidthVariationTotal",currTotalValue);
+            count_YF_Neps_2 = count_YF_Neps_2 - 1;
+            yarnFaultVOCurrRow.setAttribute("Neps2",count_YF_Neps_2);
+            yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
         }
     }
 
-    public void GF_WV_3_Undo_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("WV3 = "+greigeFaultVOCurrRow.getAttribute("WidthVariation3"));
-        count_GF_WV_3 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariation3")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariation3").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariationTotal")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariationTotal").toString():"0");
-        if (count_GF_WV_3 > 0 && currTotalValue > 0)
+    public void YF_Neps_3_Undo_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Neps3 = "+yarnFaultVOCurrRow.getAttribute("Neps3"));
+        count_YF_Neps_3 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Neps3")!=null?yarnFaultVOCurrRow.getAttribute("Neps3").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("NepsTotal")!=null?yarnFaultVOCurrRow.getAttribute("NepsTotal").toString():"0");
+        if (count_YF_Neps_3 > 0 && currTotalValue > 0)
         {
             currTotalValue = currTotalValue - 3;
-            count_GF_WV_3 = count_GF_WV_3 - 1;
-            greigeFaultVOCurrRow.setAttribute("WidthVariation3",count_GF_WV_3);
-            greigeFaultVOCurrRow.setAttribute("WidthVariationTotal",currTotalValue);
+            count_YF_Neps_3 = count_YF_Neps_3 - 1;
+            yarnFaultVOCurrRow.setAttribute("Neps3",count_YF_Neps_3);
+            yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
         }
     }
 
-    public void GF_WV_4_Undo_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("WV4 = "+greigeFaultVOCurrRow.getAttribute("WidthVariation4"));
-        count_GF_WV_4 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariation4")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariation4").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("WidthVariationTotal")!=null?greigeFaultVOCurrRow.getAttribute("WidthVariationTotal").toString():"0");
-        if (count_GF_WV_4 > 0 && currTotalValue > 0)
+    public void YF_Neps_4_Undo_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("Neps4 = "+yarnFaultVOCurrRow.getAttribute("Neps4"));
+        count_YF_Neps_4 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Neps4")!=null?yarnFaultVOCurrRow.getAttribute("Neps4").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("NepsTotal")!=null?yarnFaultVOCurrRow.getAttribute("NepsTotal").toString():"0");
+        if (count_YF_Neps_4 > 0 && currTotalValue > 0)
         {
             currTotalValue = currTotalValue - 4;
-            count_GF_WV_4 = count_GF_WV_4 - 1;
-            greigeFaultVOCurrRow.setAttribute("WidthVariation4",count_GF_WV_4);
-            greigeFaultVOCurrRow.setAttribute("WidthVariationTotal",currTotalValue);
+            count_YF_Neps_4 = count_YF_Neps_4 - 1;
+            yarnFaultVOCurrRow.setAttribute("Neps4",count_YF_Neps_4);
+            yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
         }
     }
 
-    public void GF_LM_1_Points_actionListener(ActionEvent actionEvent) {
+   /* public void GF_LM_1_Points_actionListener(ActionEvent actionEvent) {
         greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
         if (greigeFaultVOCurrRow==null)
             greigeFaultVOCurrRow = greigeFaultVO.createRow();
@@ -401,10 +363,6 @@ public class InspectionProcessBackingBean {
 
     public void GF_LM_2_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        /*int currValue = Integer.parseInt(gf_LM_Total_OT.getValue().toString());
-        currValue = currValue+2;
-        gf_LM_Total_OT.setValue(currValue);
-        count_GF_LM_2++;*/
         greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
         if (greigeFaultVOCurrRow==null)
             greigeFaultVOCurrRow = greigeFaultVO.createRow();
@@ -418,11 +376,6 @@ public class InspectionProcessBackingBean {
     }
 
     public void GF_LM_3_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        /*int currValue = Integer.parseInt(gf_LM_Total_OT.getValue().toString());
-        currValue = currValue+3;
-        gf_LM_Total_OT.setValue(currValue);
-        count_GF_LM_3++;*/
         greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
         if (greigeFaultVOCurrRow==null)
             greigeFaultVOCurrRow = greigeFaultVO.createRow();
@@ -436,11 +389,6 @@ public class InspectionProcessBackingBean {
     }
   
     public void GF_LM_4_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        /*int currValue = Integer.parseInt(gf_LM_Total_OT.getValue().toString());
-        currValue = currValue+4;
-        gf_LM_Total_OT.setValue(currValue);
-        count_GF_LM_4++;*/
         greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
         if (greigeFaultVOCurrRow==null)
             greigeFaultVOCurrRow = greigeFaultVO.createRow();
@@ -526,11 +474,16 @@ public class InspectionProcessBackingBean {
     }
 
     public void GF_LN_1_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        /*int currValue = Integer.parseInt(gf_LN_Total_OT.getValue().toString());
-        currValue = currValue+1;
-        gf_LN_Total_OT.setValue(currValue);
-        count_GF_LN_1++;*/
+        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
+        if (greigeFaultVOCurrRow==null)
+            greigeFaultVOCurrRow = greigeFaultVO.createRow();
+        System.out.println("LN1 = "+greigeFaultVOCurrRow.getAttribute("LineMark1"));
+        count_GF_LM_1 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark1")!=null?greigeFaultVOCurrRow.getAttribute("LineMark1").toString():"0");
+        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
+        currTotalValue = currTotalValue + 1;
+        count_GF_LM_1 = count_GF_LM_1 + 1;
+        greigeFaultVOCurrRow.setAttribute("LineMark1",count_GF_LM_1);
+        greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
     }
 
     public void GF_LN_2_Points_actionListener(ActionEvent actionEvent) {
@@ -591,14 +544,6 @@ public class InspectionProcessBackingBean {
         gf_LN_Total_OT.setValue(currValue);
         if(count_GF_LN_4>0)
             count_GF_LN_4--;
-    }
-
-    public void setGf_LN_Total_OT(RichOutputText gf_LN_Total_OT) {
-        this.gf_LN_Total_OT = gf_LN_Total_OT;
-    }
-
-    public RichOutputText getGf_LN_Total_OT() {
-        return gf_LN_Total_OT;
     }
 
     public void GF_FY_1_Points_actionListener(ActionEvent actionEvent) {
@@ -678,7 +623,7 @@ public class InspectionProcessBackingBean {
     }
                 
                 
-    /**                 DYE FAULT                   **/
+    
     public void DF_OS_1_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
         int currValue = Integer.parseInt(df_OS_Total_OT.getValue().toString());
@@ -1334,7 +1279,7 @@ public class InspectionProcessBackingBean {
     public RichOutputText getYf_Slub_Total_OT() {
         return yf_Slub_Total_OT;
     }
-
+*/
     public static InspectionProcessAMImpl getApplicationModule() {
         FacesContext fctx = FacesContext.getCurrentInstance();
         BindingContext bindingContext = BindingContext.getCurrent();

@@ -8,21 +8,21 @@
   InheritPersonalization="true"
   SelectList="PwcOdmInspPrcYarnFaultEO.YARN_ID, 
        PwcOdmInspPrcYarnFaultEO.INSP_PRC_ROLL_NUMBER, 
-       PwcOdmInspPrcYarnFaultEO.THICK_YARN_1, 
-       PwcOdmInspPrcYarnFaultEO.THICK_YARN_2, 
-       PwcOdmInspPrcYarnFaultEO.THICK_YARN_3, 
-       PwcOdmInspPrcYarnFaultEO.THICK_YARN_4, 
-       PwcOdmInspPrcYarnFaultEO.THICK_YARN_TOTAL, 
-       PwcOdmInspPrcYarnFaultEO.THINK_YARN_1, 
-       PwcOdmInspPrcYarnFaultEO.THINK_YARN_2, 
-       PwcOdmInspPrcYarnFaultEO.THINK_YARN_3, 
-       PwcOdmInspPrcYarnFaultEO.THINK_YARN_4, 
-       PwcOdmInspPrcYarnFaultEO.THINK_YARN_TOTAL, 
        PwcOdmInspPrcYarnFaultEO.SLUB_1, 
        PwcOdmInspPrcYarnFaultEO.SLUB_2, 
        PwcOdmInspPrcYarnFaultEO.SLUB_3, 
        PwcOdmInspPrcYarnFaultEO.SLUB_4, 
        PwcOdmInspPrcYarnFaultEO.SLUB_TOTAL, 
+       PwcOdmInspPrcYarnFaultEO.FOREIGN_YARN_1, 
+       PwcOdmInspPrcYarnFaultEO.FOREIGN_YARN_2, 
+       PwcOdmInspPrcYarnFaultEO.FOREIGN_YARN_3, 
+       PwcOdmInspPrcYarnFaultEO.FOREIGN_YARN_4, 
+       PwcOdmInspPrcYarnFaultEO.FOREIGN_YARN_TOTAL, 
+       PwcOdmInspPrcYarnFaultEO.NEPS_1, 
+       PwcOdmInspPrcYarnFaultEO.NEPS_2, 
+       PwcOdmInspPrcYarnFaultEO.NEPS_3, 
+       PwcOdmInspPrcYarnFaultEO.NEPS_4, 
+       PwcOdmInspPrcYarnFaultEO.NEPS_TOTAL, 
        PwcOdmInspPrcYarnFaultEO.CREATED_BY, 
        PwcOdmInspPrcYarnFaultEO.CREATION_DATE, 
        PwcOdmInspPrcYarnFaultEO.LAST_UPDATED_BY, 
@@ -52,66 +52,6 @@
     EntityAttrName="InspPrcRollNumber"
     EntityUsage="PwcOdmInspPrcYarnFaultEO"
     AliasName="INSP_PRC_ROLL_NUMBER"/>
-  <ViewAttribute
-    Name="ThickYarn1"
-    PrecisionRule="true"
-    EntityAttrName="ThickYarn1"
-    EntityUsage="PwcOdmInspPrcYarnFaultEO"
-    AliasName="THICK_YARN_1"/>
-  <ViewAttribute
-    Name="ThickYarn2"
-    PrecisionRule="true"
-    EntityAttrName="ThickYarn2"
-    EntityUsage="PwcOdmInspPrcYarnFaultEO"
-    AliasName="THICK_YARN_2"/>
-  <ViewAttribute
-    Name="ThickYarn3"
-    PrecisionRule="true"
-    EntityAttrName="ThickYarn3"
-    EntityUsage="PwcOdmInspPrcYarnFaultEO"
-    AliasName="THICK_YARN_3"/>
-  <ViewAttribute
-    Name="ThickYarn4"
-    PrecisionRule="true"
-    EntityAttrName="ThickYarn4"
-    EntityUsage="PwcOdmInspPrcYarnFaultEO"
-    AliasName="THICK_YARN_4"/>
-  <ViewAttribute
-    Name="ThickYarnTotal"
-    PrecisionRule="true"
-    EntityAttrName="ThickYarnTotal"
-    EntityUsage="PwcOdmInspPrcYarnFaultEO"
-    AliasName="THICK_YARN_TOTAL"/>
-  <ViewAttribute
-    Name="ThinkYarn1"
-    PrecisionRule="true"
-    EntityAttrName="ThinkYarn1"
-    EntityUsage="PwcOdmInspPrcYarnFaultEO"
-    AliasName="THINK_YARN_1"/>
-  <ViewAttribute
-    Name="ThinkYarn2"
-    PrecisionRule="true"
-    EntityAttrName="ThinkYarn2"
-    EntityUsage="PwcOdmInspPrcYarnFaultEO"
-    AliasName="THINK_YARN_2"/>
-  <ViewAttribute
-    Name="ThinkYarn3"
-    PrecisionRule="true"
-    EntityAttrName="ThinkYarn3"
-    EntityUsage="PwcOdmInspPrcYarnFaultEO"
-    AliasName="THINK_YARN_3"/>
-  <ViewAttribute
-    Name="ThinkYarn4"
-    PrecisionRule="true"
-    EntityAttrName="ThinkYarn4"
-    EntityUsage="PwcOdmInspPrcYarnFaultEO"
-    AliasName="THINK_YARN_4"/>
-  <ViewAttribute
-    Name="ThinkYarnTotal"
-    PrecisionRule="true"
-    EntityAttrName="ThinkYarnTotal"
-    EntityUsage="PwcOdmInspPrcYarnFaultEO"
-    AliasName="THINK_YARN_TOTAL"/>
   <ViewAttribute
     Name="Slub1"
     PrecisionRule="true"
@@ -143,6 +83,66 @@
     EntityUsage="PwcOdmInspPrcYarnFaultEO"
     AliasName="SLUB_TOTAL"/>
   <ViewAttribute
+    Name="ForeignYarn1"
+    PrecisionRule="true"
+    EntityAttrName="ForeignYarn1"
+    EntityUsage="PwcOdmInspPrcYarnFaultEO"
+    AliasName="FOREIGN_YARN_1"/>
+  <ViewAttribute
+    Name="ForeignYarn2"
+    PrecisionRule="true"
+    EntityAttrName="ForeignYarn2"
+    EntityUsage="PwcOdmInspPrcYarnFaultEO"
+    AliasName="FOREIGN_YARN_2"/>
+  <ViewAttribute
+    Name="ForeignYarn3"
+    PrecisionRule="true"
+    EntityAttrName="ForeignYarn3"
+    EntityUsage="PwcOdmInspPrcYarnFaultEO"
+    AliasName="FOREIGN_YARN_3"/>
+  <ViewAttribute
+    Name="ForeignYarn4"
+    PrecisionRule="true"
+    EntityAttrName="ForeignYarn4"
+    EntityUsage="PwcOdmInspPrcYarnFaultEO"
+    AliasName="FOREIGN_YARN_4"/>
+  <ViewAttribute
+    Name="ForeignYarnTotal"
+    PrecisionRule="true"
+    EntityAttrName="ForeignYarnTotal"
+    EntityUsage="PwcOdmInspPrcYarnFaultEO"
+    AliasName="FOREIGN_YARN_TOTAL"/>
+  <ViewAttribute
+    Name="Neps1"
+    PrecisionRule="true"
+    EntityAttrName="Neps1"
+    EntityUsage="PwcOdmInspPrcYarnFaultEO"
+    AliasName="NEPS_1"/>
+  <ViewAttribute
+    Name="Neps2"
+    PrecisionRule="true"
+    EntityAttrName="Neps2"
+    EntityUsage="PwcOdmInspPrcYarnFaultEO"
+    AliasName="NEPS_2"/>
+  <ViewAttribute
+    Name="Neps3"
+    PrecisionRule="true"
+    EntityAttrName="Neps3"
+    EntityUsage="PwcOdmInspPrcYarnFaultEO"
+    AliasName="NEPS_3"/>
+  <ViewAttribute
+    Name="Neps4"
+    PrecisionRule="true"
+    EntityAttrName="Neps4"
+    EntityUsage="PwcOdmInspPrcYarnFaultEO"
+    AliasName="NEPS_4"/>
+  <ViewAttribute
+    Name="NepsTotal"
+    PrecisionRule="true"
+    EntityAttrName="NepsTotal"
+    EntityUsage="PwcOdmInspPrcYarnFaultEO"
+    AliasName="NEPS_TOTAL"/>
+  <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
@@ -153,7 +153,10 @@
     PrecisionRule="true"
     EntityAttrName="CreationDate"
     EntityUsage="PwcOdmInspPrcYarnFaultEO"
-    AliasName="CREATION_DATE"/>
+    AliasName="CREATION_DATE"
+    IsUpdateable="while_insert">
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
+  </ViewAttribute>
   <ViewAttribute
     Name="LastUpdatedBy"
     PrecisionRule="true"
@@ -165,7 +168,9 @@
     PrecisionRule="true"
     EntityAttrName="LastUpdatedDate"
     EntityUsage="PwcOdmInspPrcYarnFaultEO"
-    AliasName="LAST_UPDATED_DATE"/>
+    AliasName="LAST_UPDATED_DATE">
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
+  </ViewAttribute>
   <ViewAttribute
     Name="LastUpdatedLogin"
     PrecisionRule="true"

@@ -13,9 +13,9 @@
               id="PwcInspectionProcessHeaderVO1Iterator"/>
     <invokeAction id="setSessionValuesAction" Binds="setSessionValues"
                   Refresh="always"/>
-    <iterator Binds="PwcOdmInspPrcGreigeFaultVO2" RangeSize="25"
+    <iterator Binds="PwcOdmInspPrcYarnFaultVO2" RangeSize="25"
               DataControl="InspectionProcessAMDataControl"
-              id="PwcOdmInspPrcGreigeFaultVO2Iterator"/>
+              id="PwcOdmInspPrcYarnFaultVO2Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
@@ -143,25 +143,25 @@
       <NamedData NDName="mfgOrgId" NDValue="#{viewScope.OrgId}"
                  NDType="java.lang.String"/>
     </methodAction>
-    <attributeValues IterBinding="PwcOdmInspPrcGreigeFaultVO2Iterator"
-                     id="CreaseMarkTotal">
-      <AttrNames>
-        <Item Value="CreaseMarkTotal"/>
-      </AttrNames>
-    </attributeValues>
     <action id="Rollback" RequiresUpdateModel="false"
             Action="rollbackTransaction"
             DataControl="InspectionProcessAMDataControl"/>
-    <attributeValues IterBinding="PwcOdmInspPrcGreigeFaultVO2Iterator"
-                     id="WidthVariationTotal">
+    <attributeValues IterBinding="PwcOdmInspPrcYarnFaultVO2Iterator"
+                     id="SlubTotal">
       <AttrNames>
-        <Item Value="WidthVariationTotal"/>
+        <Item Value="SlubTotal"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="PwcOdmInspPrcGreigeFaultVO2Iterator"
-                     id="LineMarkTotal">
+    <attributeValues IterBinding="PwcOdmInspPrcYarnFaultVO2Iterator"
+                     id="NepsTotal">
       <AttrNames>
-        <Item Value="LineMarkTotal"/>
+        <Item Value="NepsTotal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInspPrcYarnFaultVO2Iterator"
+                     id="ForeignYarnTotal">
+      <AttrNames>
+        <Item Value="ForeignYarnTotal"/>
       </AttrNames>
     </attributeValues>
   </bindings>
