@@ -421,28 +421,28 @@
                     <af:commandButton text="1" id="line_mark_cb1"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"
-                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_1_Points_actionListener}"/>
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.YF_Foreign_Yarn_1_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc41"
                                halign="center" valign="middle">
                     <af:commandButton text="2" id="line_mark_cb2"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"
-                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_2_Points_actionListener}"/>
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.YF_Foreign_Yarn_2_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc19"
                                halign="center" valign="middle">
                     <af:commandButton text="3" id="line_mark_cb3"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"
-                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_3_Points_actionListener}"/>
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.YF_Foreign_Yarn_3_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc40"
                                halign="center" valign="middle">
                     <af:commandButton text="4" id="line_mark_cb4"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"
-                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_4_Points_actionListener}"/>
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.YF_Foreign_Yarn_4_Points_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc9">
                     <af:spacer width="30" height="15" id="spacer10"/>
@@ -461,28 +461,28 @@
                     <af:commandButton text="1" id="line_mark_cb5"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"
-                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_1_Undo_actionListener}"/>
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.YF_Foreign_Yarn_1_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc17"
                                halign="center" valign="middle">
                     <af:commandButton text="2" id="line_mark_cb6"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"
-                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_2_Undo_actionListener}"/>
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.YF_Foreign_Yarn_2_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc5"
                                halign="center" valign="middle">
                     <af:commandButton text="3" id="line_mark_cb7"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"
-                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_3_Undo_actionListener}"/>
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.YF_Foreign_Yarn_3_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
                                id="gridCell3" valign="middle" halign="center">
                     <af:commandButton text="4" id="line_mark_cb8"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"
-                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.GF_LM_4_Undo_actionListener}"/>
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.YF_Foreign_Yarn_4_Undo_actionListener}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc51"/>
                   <af:gridCell marginStart="1px" marginEnd="2px" width="5%"

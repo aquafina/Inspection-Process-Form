@@ -36,10 +36,10 @@ public class InspectionProcessBackingBean {
     private int count_YF_Neps_3 = 0;
     private int count_YF_Neps_4 = 0;
     
-    private int count_GF_LM_1 =0;
-    private int count_GF_LM_2 =0;
-    private int count_GF_LM_3 =0;
-    private int count_GF_LM_4 =0;
+    private int count_YF_Foreign_Yarn_1 =0;
+    private int count_YF_Foreign_Yarn_2 =0;
+    private int count_YF_Foreign_Yarn_3 =0;
+    private int count_YF_Foreign_Yarn_4 =0;
     
     private int count_GF_LN_1 = 0;
     private int count_GF_LN_2 = 0;
@@ -254,7 +254,7 @@ public class InspectionProcessBackingBean {
         int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("NepsTotal")!=null?yarnFaultVOCurrRow.getAttribute("NepsTotal").toString():"0");
         currTotalValue = currTotalValue + 2;
         count_YF_Neps_2 = count_YF_Neps_2 + 1;
-        yarnFaultVOCurrRow.setAttribute("Neps2",count_YF_Neps_1);
+        yarnFaultVOCurrRow.setAttribute("Neps2",count_YF_Neps_2);
         yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
     }
 
@@ -304,8 +304,8 @@ public class InspectionProcessBackingBean {
         yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
-        System.out.println("Neps2 = "+yarnFaultVOCurrRow.getAttribute("Neps2"));
         count_YF_Neps_2 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Neps2")!=null?yarnFaultVOCurrRow.getAttribute("Neps2").toString():"0");
+        System.out.println("Neps2 = "+count_YF_Neps_2);
         int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("NepsTotal")!=null?yarnFaultVOCurrRow.getAttribute("NepsTotal").toString():"0");
         if (count_YF_Neps_2 > 0 && currTotalValue > 0)
         {
@@ -348,124 +348,123 @@ public class InspectionProcessBackingBean {
         }
     }
 
-   /* public void GF_LM_1_Points_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("LM1 = "+greigeFaultVOCurrRow.getAttribute("LineMark1"));
-        count_GF_LM_1 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark1")!=null?greigeFaultVOCurrRow.getAttribute("LineMark1").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
+    public void YF_Foreign_Yarn_1_Points_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("ForeignYarn1 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn1"));
+        count_YF_Foreign_Yarn_1 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarn1")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarn1").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal").toString():"0");
         currTotalValue = currTotalValue + 1;
-        count_GF_LM_1 = count_GF_LM_1 + 1;
-        greigeFaultVOCurrRow.setAttribute("LineMark1",count_GF_LM_1);
-        greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
+        count_YF_Foreign_Yarn_1 = count_YF_Foreign_Yarn_1 + 1;
+        yarnFaultVOCurrRow.setAttribute("ForeignYarn1",count_YF_Foreign_Yarn_1);
+        yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
     }
 
-    public void GF_LM_2_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("LM2 = "+greigeFaultVOCurrRow.getAttribute("LineMark2"));
-        count_GF_LM_2 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark2")!=null?greigeFaultVOCurrRow.getAttribute("LineMark2").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
+    public void YF_Foreign_Yarn_2_Points_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("ForeignYarn2 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn2"));
+        count_YF_Foreign_Yarn_2 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarn2")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarn2").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal").toString():"0");
         currTotalValue = currTotalValue + 2;
-        count_GF_LM_2 = count_GF_LM_2 + 1;
-        greigeFaultVOCurrRow.setAttribute("LineMark2",count_GF_LM_2);
-        greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
+        count_YF_Foreign_Yarn_2 = count_YF_Foreign_Yarn_2 + 1;
+        yarnFaultVOCurrRow.setAttribute("ForeignYarn2",count_YF_Foreign_Yarn_2);
+        yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
     }
 
-    public void GF_LM_3_Points_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("LM3 = "+greigeFaultVOCurrRow.getAttribute("LineMark3"));
-        count_GF_LM_3 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark3")!=null?greigeFaultVOCurrRow.getAttribute("LineMark3").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
+    public void YF_Foreign_Yarn_3_Points_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("ForeignYarn3 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn3"));
+        count_YF_Foreign_Yarn_3 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarn3")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarn3").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal").toString():"0");
         currTotalValue = currTotalValue + 3;
-        count_GF_LM_3 = count_GF_LM_3 + 1;
-        greigeFaultVOCurrRow.setAttribute("LineMark3",count_GF_LM_3);
-        greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
+        count_YF_Foreign_Yarn_3 = count_YF_Foreign_Yarn_3 + 1;
+        yarnFaultVOCurrRow.setAttribute("ForeignYarn3",count_YF_Foreign_Yarn_3);
+        yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
     }
   
-    public void GF_LM_4_Points_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("LM4 = "+greigeFaultVOCurrRow.getAttribute("LineMark4"));
-        count_GF_LM_4 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark4")!=null?greigeFaultVOCurrRow.getAttribute("LineMark4").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
+    public void YF_Foreign_Yarn_4_Points_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("ForeignYarn4 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn4"));
+        count_YF_Foreign_Yarn_4 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarn4")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarn4").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal").toString():"0");
         currTotalValue = currTotalValue + 4;
-        count_GF_LM_4 = count_GF_LM_4 + 1;
-        greigeFaultVOCurrRow.setAttribute("LineMark4",count_GF_LM_4);
-        greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
+        count_YF_Foreign_Yarn_4 = count_YF_Foreign_Yarn_4 + 1;
+        yarnFaultVOCurrRow.setAttribute("ForeignYarn4",count_YF_Foreign_Yarn_4);
+        yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
     }
 
-    public void GF_LM_1_Undo_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("LM1 = "+greigeFaultVOCurrRow.getAttribute("LineMark1"));
-        count_GF_LM_1 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark1")!=null?greigeFaultVOCurrRow.getAttribute("LineMark1").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
-        if (count_GF_LM_1 > 0 && currTotalValue > 0)
+    public void YF_Foreign_Yarn_1_Undo_actionListener(ActionEvent actionEvent) {        
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("ForeignYarn1 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn1"));
+        count_YF_Foreign_Yarn_1 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarn1")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarn1").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal").toString():"0");
+        if (count_YF_Foreign_Yarn_1 > 0 && currTotalValue > 0)
         {
             currTotalValue = currTotalValue - 1;
-            count_GF_LM_1 = count_GF_LM_1 - 1;
-            greigeFaultVOCurrRow.setAttribute("LineMark1",count_GF_LM_1);
-            greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
+            count_YF_Foreign_Yarn_1 = count_YF_Foreign_Yarn_1 - 1;
+            yarnFaultVOCurrRow.setAttribute("ForeignYarn1",count_YF_Foreign_Yarn_1);
+            yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
         }
     }
 
-    public void GF_LM_2_Undo_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("LM2 = "+greigeFaultVOCurrRow.getAttribute("LineMark2"));
-        count_GF_LM_2 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark2")!=null?greigeFaultVOCurrRow.getAttribute("LineMark2").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
-        if (count_GF_LM_2 > 0 && currTotalValue > 0)
+    public void YF_Foreign_Yarn_2_Undo_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("ForeignYarn2 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn2"));
+        count_YF_Foreign_Yarn_2 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarn2")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarn2").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal").toString():"0");
+        if (count_YF_Foreign_Yarn_2 > 0 && currTotalValue > 0)
         {
             currTotalValue = currTotalValue - 2;
-            count_GF_LM_2 = count_GF_LM_2 - 1;
-            greigeFaultVOCurrRow.setAttribute("LineMark2",count_GF_LM_2);
-            greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
+            count_YF_Foreign_Yarn_2 = count_YF_Foreign_Yarn_2 - 1;
+            yarnFaultVOCurrRow.setAttribute("ForeignYarn2",count_YF_Foreign_Yarn_2);
+            yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
         }
     }
 
-    public void GF_LM_3_Undo_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("LM3 = "+greigeFaultVOCurrRow.getAttribute("LineMark3"));
-        count_GF_LM_3 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark3")!=null?greigeFaultVOCurrRow.getAttribute("LineMark3").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
-        if (count_GF_LM_3 > 0 && currTotalValue > 0)
+    public void YF_Foreign_Yarn_3_Undo_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("ForeignYarn3 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn3"));
+        count_YF_Foreign_Yarn_3 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarn3")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarn3").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal").toString():"0");
+        if (count_YF_Foreign_Yarn_3 > 0 && currTotalValue > 0)
         {
             currTotalValue = currTotalValue - 3;
-            count_GF_LM_3 = count_GF_LM_3 - 1;
-            greigeFaultVOCurrRow.setAttribute("LineMark3",count_GF_LM_3);
-            greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
+            count_YF_Foreign_Yarn_3 = count_YF_Foreign_Yarn_3 - 1;
+            yarnFaultVOCurrRow.setAttribute("ForeignYarn3",count_YF_Foreign_Yarn_3);
+            yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
         }
     }
 
-    public void GF_LM_4_Undo_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("LM4 = "+greigeFaultVOCurrRow.getAttribute("LineMark4"));
-        count_GF_LM_4 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark4")!=null?greigeFaultVOCurrRow.getAttribute("LineMark4").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
-        if (count_GF_LM_4 > 0 && currTotalValue > 0)
+    public void YF_Foreign_Yarn_4_Undo_actionListener(ActionEvent actionEvent) {
+        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        if (yarnFaultVOCurrRow==null)
+            yarnFaultVOCurrRow = yarnFaultVO.createRow();
+        System.out.println("ForeignYarn4 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn4"));
+        count_YF_Foreign_Yarn_4 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarn4")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarn4").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal")!=null?yarnFaultVOCurrRow.getAttribute("ForeignYarnTotal").toString():"0");
+        if (count_YF_Foreign_Yarn_4 > 0 && currTotalValue > 0)
         {
             currTotalValue = currTotalValue - 4;
-            count_GF_LM_4 = count_GF_LM_4 - 1;
-            greigeFaultVOCurrRow.setAttribute("LineMark4",count_GF_LM_4);
-            greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
+            count_YF_Foreign_Yarn_4 = count_YF_Foreign_Yarn_4 - 1;
+            yarnFaultVOCurrRow.setAttribute("ForeignYarn4",count_YF_Foreign_Yarn_4);
+            yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
         }
     }
 
-    public void setGf_LM_Total_OT(RichOutputText gf_LM_Total_OT) {
+/*    public void setGf_LM_Total_OT(RichOutputText gf_LM_Total_OT) {
         this.gf_LM_Total_OT = gf_LM_Total_OT;
     }
 
