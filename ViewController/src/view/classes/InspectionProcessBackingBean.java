@@ -41,15 +41,15 @@ public class InspectionProcessBackingBean {
     private int count_YF_Foreign_Yarn_3 =0;
     private int count_YF_Foreign_Yarn_4 =0;
     
-    private int count_GF_LN_1 = 0;
-    private int count_GF_LN_2 = 0;
-    private int count_GF_LN_3 = 0;
-    private int count_GF_LN_4 = 0;
+    private int count_WF_Thick_Thin_End_1 = 0;
+    private int count_WF_Thick_Thin_End_2 = 0;
+    private int count_WF_Thick_Thin_End_3 = 0;
+    private int count_WF_Thick_Thin_End_4 = 0;
     
-    private int count_GF_FY_1 = 0; 
-    private int count_GF_FY_2 = 0;
-    private int count_GF_FY_3 = 0;
-    private int count_GF_FY_4 = 0;
+    private int count_WF_Thick_Thin_Pick_1 = 0; 
+    private int count_WF_Thick_Thin_Pick_2 = 0;
+    private int count_WF_Thick_Thin_Pick_3 = 0;
+    private int count_WF_Thick_Thin_Pick_4 = 0;
     
     private int count_DF_OS_1 = 0;
     private int count_DF_OS_2 = 0;
@@ -97,14 +97,15 @@ public class InspectionProcessBackingBean {
     private int count_YF_TY1_4 = 0;
     
     ViewObject yarnFaultVO;
-    ViewObject dyeFaultVO;
+    ViewObject weaveFaultVO;
     
     Row yarnFaultVOCurrRow;
+    Row weaveFaultVOCurrRow;
     public InspectionProcessBackingBean() {
         super();
         ApplicationModuleImpl am = getApplicationModule();
         yarnFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcYarnFaultVO2"); 
-        dyeFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcDyeFaultVO2");
+        weaveFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcWeaveFaultVO2");
         //greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
     }
 
@@ -464,156 +465,247 @@ public class InspectionProcessBackingBean {
         }
     }
 
-/*    public void setGf_LM_Total_OT(RichOutputText gf_LM_Total_OT) {
-        this.gf_LM_Total_OT = gf_LM_Total_OT;
-    }
-
-    public RichOutputText getGf_LM_Total_OT() {
-        return gf_LM_Total_OT;
-    }
-
-    public void GF_LN_1_Points_actionListener(ActionEvent actionEvent) {
-        greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
-        if (greigeFaultVOCurrRow==null)
-            greigeFaultVOCurrRow = greigeFaultVO.createRow();
-        System.out.println("LN1 = "+greigeFaultVOCurrRow.getAttribute("LineMark1"));
-        count_GF_LM_1 = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMark1")!=null?greigeFaultVOCurrRow.getAttribute("LineMark1").toString():"0");
-        int currTotalValue = Integer.parseInt(greigeFaultVOCurrRow.getAttribute("LineMarkTotal")!=null?greigeFaultVOCurrRow.getAttribute("LineMarkTotal").toString():"0");
+    public void WF_Thick_Thin_End_1_Points_actionListener(ActionEvent actionEvent) {
+        System.out.println("InspPrcRollNumber1"+weaveFaultVOCurrRow.getAttribute("InspPrcRollNumber"));
+       //weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        if (weaveFaultVOCurrRow==null)
+        {
+            weaveFaultVOCurrRow = weaveFaultVO.createRow();
+            System.out.println("VO is null");
+        }
+        count_WF_Thick_Thin_End_1 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEnd1")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEnd1").toString():"0");
+        System.out.println("weave_Thick_Thin_End_1 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd1"));
+        count_WF_Thick_Thin_End_1 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEnd1")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEnd1").toString():"0");
+        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
         currTotalValue = currTotalValue + 1;
-        count_GF_LM_1 = count_GF_LM_1 + 1;
-        greigeFaultVOCurrRow.setAttribute("LineMark1",count_GF_LM_1);
-        greigeFaultVOCurrRow.setAttribute("LineMarkTotal",currTotalValue);
+        count_WF_Thick_Thin_End_1 = count_WF_Thick_Thin_End_1 + 1;
+        weaveFaultVOCurrRow.setAttribute("ThickThinEnd1",count_WF_Thick_Thin_End_1 );
+        weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
+        System.out.println("InspPrcRollNumber2"+weaveFaultVOCurrRow.getAttribute("InspPrcRollNumber"));
     }
 
-    public void GF_LN_2_Points_actionListener(ActionEvent actionEvent) {
+    /*public void WF_Thick_Thin_End_2_Points_actionListener(ActionEvent actionEvent) {
+    weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+    if (weaveFaultVOCurrRow==null)
+        weaveFaultVOCurrRow = weaveFaultVO.createRow();
+    System.out.println("weave_Thick_Thin_End_2 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd2"));
+    count_WF_Thick_Thin_End_2 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEnd2")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEnd2").toString():"0");
+    int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+    currTotalValue = currTotalValue + 2;
+    count_WF_Thick_Thin_End_2 = count_WF_Thick_Thin_End_2 + 1;
+    weaveFaultVOCurrRow.setAttribute("ThickThinEnd2",count_WF_Thick_Thin_End_2 );
+    weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
+    }
+
+    public void WF_Thick_Thin_End_3_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_LN_Total_OT.getValue().toString());
-        currValue = currValue+2;
-        gf_LN_Total_OT.setValue(currValue);
-        count_GF_LN_2++;
+        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        if (weaveFaultVOCurrRow==null)
+            weaveFaultVOCurrRow = weaveFaultVO.createRow();
+        System.out.println("weave_Thick_Thin_End_3 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd3"));
+        count_WF_Thick_Thin_End_3 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEnd3")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEnd3").toString():"0");
+        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+        currTotalValue = currTotalValue + 3;
+        count_WF_Thick_Thin_End_3 = count_WF_Thick_Thin_End_3 + 1;
+        weaveFaultVOCurrRow.setAttribute("ThickThinEnd3",count_WF_Thick_Thin_End_3 );
+        weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
     }
 
-    public void GF_LN_3_Points_actionListener(ActionEvent actionEvent) {
+    public void WF_Thick_Thin_End_4_Points_actionListener(ActionEvent actionEvent) {
+        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        if (weaveFaultVOCurrRow==null)
+            weaveFaultVOCurrRow = weaveFaultVO.createRow();
+        System.out.println("weave_Thick_Thin_End_4 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd4"));
+        count_WF_Thick_Thin_End_4 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEnd4")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEnd4").toString():"0");
+        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+        currTotalValue = currTotalValue + 4;
+        count_WF_Thick_Thin_End_4 = count_WF_Thick_Thin_End_4 + 1;
+        weaveFaultVOCurrRow.setAttribute("ThickThinEnd4",count_WF_Thick_Thin_End_4 );
+        weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
+    }
+
+    public void WF_Thick_Thin_End_1_Undo_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        int currValue = Integer.parseInt(gf_LN_Total_OT.getValue().toString());
-        currValue = currValue+3;
-        gf_LN_Total_OT.setValue(currValue);
-        count_GF_LN_3++;
+        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        if (weaveFaultVOCurrRow==null)
+            weaveFaultVOCurrRow = weaveFaultVO.createRow();
+        System.out.println("weave_Thick_Thin_End_1 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd1"));
+        count_WF_Thick_Thin_End_1 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEnd1")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEnd1").toString():"0");
+        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+        if (count_WF_Thick_Thin_End_1 > 0 && currTotalValue > 0)
+        {
+            currTotalValue = currTotalValue - 1;
+            count_WF_Thick_Thin_End_1 = count_WF_Thick_Thin_End_1 - 1;
+            weaveFaultVOCurrRow.setAttribute("ThickThinEnd1",count_WF_Thick_Thin_End_1 );
+            weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
+        }
     }
 
-    public void GF_LN_4_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_LN_Total_OT.getValue().toString());
-        currValue = currValue+4;
-        gf_LN_Total_OT.setValue(currValue);
-        count_GF_LN_4++;
+    public void WF_Thick_Thin_End_2_Undo_actionListener(ActionEvent actionEvent) {
+        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        if (weaveFaultVOCurrRow==null)
+            weaveFaultVOCurrRow = weaveFaultVO.createRow();
+        System.out.println("weave_Thick_Thin_End_2 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd2"));
+        count_WF_Thick_Thin_End_2 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEnd2")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEnd2").toString():"0");
+        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+        if (count_WF_Thick_Thin_End_2 > 0 && currTotalValue > 0)
+        {
+            currTotalValue = currTotalValue - 2;
+            count_WF_Thick_Thin_End_2 = count_WF_Thick_Thin_End_2 - 1;
+            weaveFaultVOCurrRow.setAttribute("ThickThinEnd2",count_WF_Thick_Thin_End_2 );
+            weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
+        }
     }
 
-    public void GF_LN_1_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_LN_Total_OT.getValue().toString());
-        currValue = (currValue-1)<0?0:(currValue-1);
-        gf_LN_Total_OT.setValue(currValue);
-        if(count_GF_LN_1>0)
-            count_GF_LN_1--;
+    public void WF_Thick_Thin_End_3_Undo_actionListener(ActionEvent actionEvent) {
+        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        if (weaveFaultVOCurrRow==null)
+            weaveFaultVOCurrRow = weaveFaultVO.createRow();
+        System.out.println("weave_Thick_Thin_End_3 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd3"));
+        count_WF_Thick_Thin_End_3 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEnd3")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEnd3").toString():"0");
+        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+        if (count_WF_Thick_Thin_End_3 > 0 && currTotalValue > 0)
+        {
+            currTotalValue = currTotalValue - 3;
+            count_WF_Thick_Thin_End_3 = count_WF_Thick_Thin_End_3 - 1;
+            weaveFaultVOCurrRow.setAttribute("ThickThinEnd3",count_WF_Thick_Thin_End_3 );
+            weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
+        }
     }
 
-    public void GF_LN_2_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_LN_Total_OT.getValue().toString());
-        currValue = (currValue-2)<0?0:(currValue-2);
-        gf_LN_Total_OT.setValue(currValue);
-        if(count_GF_LN_2>0)
-            count_GF_LN_2--;
+    public void WF_Thick_Thin_End_4_Undo_actionListener(ActionEvent actionEvent) {
+        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        if (weaveFaultVOCurrRow==null)
+            weaveFaultVOCurrRow = weaveFaultVO.createRow();
+        System.out.println("weave_Thick_Thin_End_4 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd4"));
+        count_WF_Thick_Thin_End_4 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEnd4")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEnd4").toString():"0");
+        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+        if (count_WF_Thick_Thin_End_4 > 0 && currTotalValue > 0)
+        {
+            currTotalValue = currTotalValue - 4;
+            count_WF_Thick_Thin_End_4 = count_WF_Thick_Thin_End_4 - 1;
+            weaveFaultVOCurrRow.setAttribute("ThickThinEnd4",count_WF_Thick_Thin_End_4 );
+            weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
+        }
     }
 
-    public void GF_LN_3_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_LN_Total_OT.getValue().toString());
-        currValue = (currValue-3)<0?0:(currValue-3);
-        gf_LN_Total_OT.setValue(currValue);
-        if(count_GF_LN_3>0)
-            count_GF_LN_3--;
+    /*public void WF_Thick_Thin_Pick_1_Points_actionListener(ActionEvent actionEvent) {
+        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        if (weaveFaultVOCurrRow==null)
+            weaveFaultVOCurrRow = weaveFaultVO.createRow();
+        System.out.println("weave_Thick_Thin_Pick_1 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick1"));
+        count_WF_Thick_Thin_Pick_1 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinPick1")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinPick1").toString():"0");
+        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+        currTotalValue = currTotalValue + 1;
+        count_WF_Thick_Thin_Pick_1 = count_WF_Thick_Thin_Pick_1 + 1;
+        weaveFaultVOCurrRow.setAttribute("ThickThinPick1",count_WF_Thick_Thin_Pick_1);
+        weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
     }
 
-    public void GF_LN_4_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_LN_Total_OT.getValue().toString());
-        currValue = (currValue-4)<0?0:(currValue-4);
-        gf_LN_Total_OT.setValue(currValue);
-        if(count_GF_LN_4>0)
-            count_GF_LN_4--;
+    public void WF_Thick_Thin_Pick_2_Points_actionListener(ActionEvent actionEvent) {
+        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        if (weaveFaultVOCurrRow==null)
+            weaveFaultVOCurrRow = weaveFaultVO.createRow();
+        System.out.println("weave_Thick_Thin_Pick_2 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick2"));
+        count_WF_Thick_Thin_Pick_2 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinPick2")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinPick2").toString():"0");
+        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+        currTotalValue = currTotalValue + 2;
+        count_WF_Thick_Thin_Pick_2 = count_WF_Thick_Thin_Pick_2 + 1;
+        weaveFaultVOCurrRow.setAttribute("ThickThinPick2",count_WF_Thick_Thin_Pick_2);
+        weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
     }
 
-    public void GF_FY_1_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_FY_Total_OT.getValue().toString());
-        currValue = currValue+1;
-        gf_FY_Total_OT.setValue(currValue);
-        count_GF_FY_1++;
+    public void WF_Thick_Thin_Pick_3_Points_actionListener(ActionEvent actionEvent) {
+        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        if (weaveFaultVOCurrRow==null)
+            weaveFaultVOCurrRow = weaveFaultVO.createRow();
+        System.out.println("weave_Thick_Thin_Pick_3 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick3"));
+        count_WF_Thick_Thin_Pick_3 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinPick3")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinPick3").toString():"0");
+        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+        currTotalValue = currTotalValue + 3;
+        count_WF_Thick_Thin_Pick_3 = count_WF_Thick_Thin_Pick_3 + 1;
+        weaveFaultVOCurrRow.setAttribute("ThickThinPick3",count_WF_Thick_Thin_Pick_3);
+        weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
     }
 
-    public void GF_FY_2_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_FY_Total_OT.getValue().toString());
-        currValue = currValue+2;
-        gf_FY_Total_OT.setValue(currValue);
-        count_GF_FY_2++;
+    public void WF_Thick_Thin_Pick_4_Points_actionListener(ActionEvent actionEvent) {
+        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        if (weaveFaultVOCurrRow==null)
+            weaveFaultVOCurrRow = weaveFaultVO.createRow();
+        System.out.println("weave_Thick_Thin_Pick_4 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick4"));
+        count_WF_Thick_Thin_Pick_4 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinPick4")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinPick4").toString():"0");
+        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+        currTotalValue = currTotalValue + 4;
+        count_WF_Thick_Thin_Pick_4 = count_WF_Thick_Thin_Pick_4 + 1;
+        weaveFaultVOCurrRow.setAttribute("ThickThinPick4",count_WF_Thick_Thin_Pick_4);
+        weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
     }
 
-    public void GF_FY_3_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_FY_Total_OT.getValue().toString());
-        currValue = currValue+3;
-        gf_FY_Total_OT.setValue(currValue);
-        count_GF_FY_3++;
+    public void WF_Thick_Thin_Pick_1_Undo_actionListener(ActionEvent actionEvent) {
+        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        if (weaveFaultVOCurrRow==null)
+            weaveFaultVOCurrRow = weaveFaultVO.createRow();
+        System.out.println("weave_Thick_Thin_Pick_1 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick1"));
+        count_WF_Thick_Thin_Pick_1 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinPick1")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinPick1").toString():"0");
+        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+        if (count_WF_Thick_Thin_Pick_1 > 0 && currTotalValue > 0)
+        {
+            currTotalValue = currTotalValue - 1;
+            count_WF_Thick_Thin_Pick_1 = count_WF_Thick_Thin_Pick_1 - 1;
+            weaveFaultVOCurrRow.setAttribute("ThickThinPick1",count_WF_Thick_Thin_Pick_1);
+            weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
+        }
+    }
+    
+    public void WF_Thick_Thin_Pick_2_Undo_actionListener(ActionEvent actionEvent) {
+        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        if (weaveFaultVOCurrRow==null)
+            weaveFaultVOCurrRow = weaveFaultVO.createRow();
+        System.out.println("weave_Thick_Thin_Pick_2 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick2"));
+        count_WF_Thick_Thin_Pick_2 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinPick2")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinPick2").toString():"0");
+        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+        if (count_WF_Thick_Thin_Pick_2 > 0 && currTotalValue > 0)
+        {
+            currTotalValue = currTotalValue - 2;
+            count_WF_Thick_Thin_Pick_2 = count_WF_Thick_Thin_Pick_2 - 1;
+            weaveFaultVOCurrRow.setAttribute("ThickThinPick2",count_WF_Thick_Thin_Pick_2);
+            weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
+        }
     }
 
-    public void GF_FY_4_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_FY_Total_OT.getValue().toString());
-        currValue = currValue+4;
-        gf_FY_Total_OT.setValue(currValue);
-        count_GF_FY_4++;
+    public void WF_Thick_Thin_Pick_3_Undo_actionListener(ActionEvent actionEvent) {
+        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        if (weaveFaultVOCurrRow==null)
+            weaveFaultVOCurrRow = weaveFaultVO.createRow();
+        System.out.println("weave_Thick_Thin_Pick_3 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick3"));
+        count_WF_Thick_Thin_Pick_3 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinPick3")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinPick3").toString():"0");
+        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+        if (count_WF_Thick_Thin_Pick_3 > 0 && currTotalValue > 0)
+        {
+            currTotalValue = currTotalValue - 3;
+            count_WF_Thick_Thin_Pick_3 = count_WF_Thick_Thin_Pick_3 - 1;
+            weaveFaultVOCurrRow.setAttribute("ThickThinPick3",count_WF_Thick_Thin_Pick_3);
+            weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
+        }
     }
 
-    public void GF_FY_1_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_FY_Total_OT.getValue().toString());
-        currValue = (currValue-1)<0?0:(currValue-1);
-        gf_FY_Total_OT.setValue(currValue);
-        if (count_GF_FY_1>0)
-            count_GF_FY_1--;
+    public void WF_Thick_Thin_Pick_4_Undo_actionListener(ActionEvent actionEvent) {
+        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        if (weaveFaultVOCurrRow==null)
+            weaveFaultVOCurrRow = weaveFaultVO.createRow();
+        System.out.println("weave_Thick_Thin_Pick_4 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick4"));
+        count_WF_Thick_Thin_Pick_4 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinPick4")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinPick4").toString():"0");
+        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+        if (count_WF_Thick_Thin_Pick_4 > 0 && currTotalValue > 0)
+        {
+            currTotalValue = currTotalValue - 4;
+            count_WF_Thick_Thin_Pick_4 = count_WF_Thick_Thin_Pick_4 - 1;
+            weaveFaultVOCurrRow.setAttribute("ThickThinPick4",count_WF_Thick_Thin_Pick_4);
+            weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
+        }
     }
 
-    public void GF_FY_2_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_FY_Total_OT.getValue().toString());
-        currValue = (currValue-2)<0?0:(currValue-2);
-        gf_FY_Total_OT.setValue(currValue);
-        if (count_GF_FY_2>0)
-            count_GF_FY_2--;
-    }
-
-    public void GF_FY_3_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_FY_Total_OT.getValue().toString());
-        currValue = (currValue-3)<0?0:(currValue-3);
-        gf_FY_Total_OT.setValue(currValue);
-        if (count_GF_FY_3>0)
-            count_GF_FY_3--;
-    }
-
-    public void GF_FY_4_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_FY_Total_OT.getValue().toString());
-        currValue = (currValue-4)<0?0:(currValue-4);
-        gf_FY_Total_OT.setValue(currValue);
-        if (count_GF_FY_4>0)
-            count_GF_FY_4--;
-    }
-
-    public void setGf_FY_Total_OT(RichOutputText gf_FY_Total_OT) {
+    /*public void setGf_FY_Total_OT(RichOutputText gf_FY_Total_OT) {
         this.gf_FY_Total_OT = gf_FY_Total_OT;
     }
 

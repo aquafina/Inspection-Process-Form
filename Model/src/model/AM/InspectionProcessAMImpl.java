@@ -153,4 +153,70 @@ public class InspectionProcessAMImpl extends ApplicationModuleImpl implements In
     public ViewLinkImpl getInspPrcLineYarnFaultVL1() {
         return (ViewLinkImpl)findViewLink("InspPrcLineYarnFaultVL1");
     }
+
+
+    /**
+     * Container's getter for PwcOdmInspPrcDyeFaultVO3.
+     * @return PwcOdmInspPrcDyeFaultVO3
+     */
+    public ViewObjectImpl getPwcOdmInspPrcDyeFaultVO3() {
+        return (ViewObjectImpl)findViewObject("PwcOdmInspPrcDyeFaultVO3");
+    }
+
+    /**
+     * Container's getter for PwcOdmInspPrcWeaveFaultVO1.
+     * @return PwcOdmInspPrcWeaveFaultVO1
+     */
+    public ViewObjectImpl getPwcOdmInspPrcWeaveFaultVO1() {
+        return (ViewObjectImpl)findViewObject("PwcOdmInspPrcWeaveFaultVO1");
+    }
+
+    /**
+     * Container's getter for PwcInspPrcWeaveFaultVL.
+     * @return PwcInspPrcWeaveFaultVL
+     */
+    public ViewLinkImpl getPwcInspPrcWeaveFaultVL() {
+        return (ViewLinkImpl)findViewLink("PwcInspPrcWeaveFaultVL");
+    }
+
+    /**
+     * Container's getter for PwcInspectionProcessLineVO2.
+     * @return PwcInspectionProcessLineVO2
+     */
+    public ViewObjectImpl getPwcInspectionProcessLineVO2() {
+        return (ViewObjectImpl)findViewObject("PwcInspectionProcessLineVO2");
+    }
+
+
+    /**
+     * Container's getter for PwcOdmInspPrcWeaveFaultVO2.
+     * @return PwcOdmInspPrcWeaveFaultVO2
+     */
+    public ViewObjectImpl getPwcOdmInspPrcWeaveFaultVO2() {
+        return (ViewObjectImpl)findViewObject("PwcOdmInspPrcWeaveFaultVO2");
+    }
+
+    /**
+     * Container's getter for PwcInspPrcWeaveFaultVL1.
+     * @return PwcInspPrcWeaveFaultVL1
+     */
+    public ViewLinkImpl getPwcInspPrcWeaveFaultVL1() {
+        return (ViewLinkImpl)findViewLink("PwcInspPrcWeaveFaultVL1");
+    }
+
+    /**
+     * Container's getter for PwcOdmInspPrcWeaveFaultVO3.
+     * @return PwcOdmInspPrcWeaveFaultVO3
+     */
+   /* public ViewObjectImpl getPwcOdmInspPrcWeaveFaultVO1() {
+        return (ViewObjectImpl)findViewObject("PwcOdmInspPrcWeaveFaultVO1");
+    }*/
+
+    /**
+     * Container's getter for PwcOdmInspPrcWeaveFaultVO3.
+     * @return PwcOdmInspPrcWeaveFaultVO3
+     */
+    public ViewObjectImpl getPwcOdmInspPrcWeaveFaultVO3() {
+        return (ViewObjectImpl)findViewObject("PwcOdmInspPrcWeaveFaultVO3");
+    }
 }

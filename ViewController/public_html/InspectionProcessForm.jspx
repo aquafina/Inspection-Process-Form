@@ -493,6 +493,999 @@
                     <af:spacer width="10" height="20" id="s8"/>
                   </af:gridCell>
                 </af:gridRow>
+                <af:gridRow marginTop="1px" height="auto" id="gridRow4">
+                  <af:gridCell id="gridCell49"/>
+                  <af:gridCell marginStart="2px" width="8%" id="gridCell50"
+                               halign="center" valign="middle">
+                    <af:outputText value="Thick/Thin End" id="outputText2"
+                                   inlineStyle="font-weight:bolder;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell51">
+                    <af:spacer width="30" height="15" id="spacer3"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell52"
+                               valign="middle" halign="center">
+                    <strong><af:commandButton text="1" id="thick_thin_end_cb1"
+                                        inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                        partialSubmit="true"
+                                        actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_End_1_Points_actionListener}"/></strong>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell53"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="thick_thin_end_cb2"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_End_2_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell54"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="thick_thin_end_cb3"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_End_3_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell55"
+                               halign="center" valign="middle">
+                    <af:commandButton text="4" id="thick_thin_end_cb4"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_End_4_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell56">
+                    <af:spacer width="30" height="15" id="spacer30"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell57"
+                               halign="center" valign="middle">
+                    <af:outputText value="#{bindings.ThickThinEndTotal.inputValue}" id="outputText3"
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   partialTriggers="thick_thin_end_cb1 thick_thin_end_cb2 thick_thin_end_cb3 thick_thin_end_cb4 thick_thin_end_cb5 thick_thin_end_cb6 thick_thin_end_cb7 thick_thin_end_cb8"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell58">
+                    <af:spacer width="30" height="15" id="spacer31"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell59"
+                               halign="center" valign="middle">
+                    <af:commandButton text="1" id="thick_thin_end_cb5"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_End_1_Undo_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell60"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="thick_thin_end_cb6"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_End_2_Undo_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell61"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="thick_thin_end_cb7"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_End_3_Undo_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell62" valign="middle" halign="center">
+                    <af:commandButton text="4" id="thick_thin_end_cb8"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_End_4_Undo_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell63"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell64"/>
+                </af:gridRow>
+                <af:gridRow marginTop="1px" marginBottom="2px" height="auto"
+                            id="gridRow5">
+                  <af:gridCell id="gridCell65"/>
+                  <af:gridCell marginStart="2px" width="8%" id="gridCell66"
+                               halign="center" valign="middle">
+                    <af:outputText value="Thick/Thin Pick" id="outputText19"
+                                   inlineStyle="font-weight:bolder;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell67">
+                    <af:spacer width="30" height="15" id="spacer32"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell68"
+                               valign="middle" halign="center">
+                    <af:commandButton text="1" id="commandButton9"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_Pick_1_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell69"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton10"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_Pick_2_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell70"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton11"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_Pick_3_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell71"
+                               halign="center" valign="middle">
+                    <af:commandButton text="4" id="commandButton12"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_Pick_4_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell72">
+                    <af:spacer width="30" height="15" id="spacer33"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell73"
+                               halign="center" valign="middle">
+                    <af:outputText value="#{bindings.ThickThinPickTotal.inputValue}" id="outputText20"
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   partialTriggers="fly_yarn_cb1 fly_yarn_cb2 fly_yarn_cb3 fly_yarn_cb4 fly_yarn_cb5 fly_yarn_cb6 fly_yarn_cb7 fly_yarn_cb8"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell74">
+                    <af:spacer width="30" height="15" id="spacer34"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell75"
+                               halign="center" valign="middle">
+                    <af:commandButton text="1" id="commandButton13"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_Pick_1_Undo_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell76"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton14"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_Pick_2_Undo_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell77"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton15"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_Pick_3_Undo_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell78" valign="middle" halign="center">
+                    <af:commandButton text="4" id="commandButton16"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_Pick_4_Undo_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell79"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell80"/>
+                </af:gridRow>
+                <af:gridRow marginTop="2px" height="auto" id="gridRow6">
+                  <af:gridCell id="gridCell81"/>
+                  <af:gridCell marginStart="2px" width="14%" id="gridCell82"
+                               halign="center" valign="middle">
+                    <af:outputText value="Knots" id="outputText21"
+                                   inlineStyle="font-weight:bolder;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell83">
+                    <af:spacer width="30" height="15" id="spacer35"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell84"
+                               valign="middle" halign="center">
+                    <af:commandButton text="1" id="commandButton17"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_OS_1_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell85"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton18"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_OS_2_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell86"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton19"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_OS_3_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell87"
+                               halign="center" valign="middle">
+                    <af:commandButton text="4" id="commandButton20"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_OS_4_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell88">
+                    <af:spacer width="30" height="15" id="spacer36"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell89"
+                               halign="center" valign="middle">
+                    <af:outputText value="0" id="outputText22"
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   partialTriggers="off_shade_cb1 off_shade_cb2 off_shade_cb3 off_shade_cb4 off_shade_cb5 off_shade_cb6 off_shade_cb7 off_shade_cb8"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell90">
+                    <af:spacer width="30" height="15" id="spacer37"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell91"
+                               halign="center" valign="middle">
+                    <af:commandButton text="1" id="commandButton21"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_OS_1_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell92"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton22"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_OS_2_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell93" valign="middle" halign="center">
+                    <af:commandButton text="3" id="commandButton23"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_OS_3_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell94" valign="middle" halign="center">
+                    <af:commandButton text="4" id="commandButton24"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_OS_4_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="1px" height="auto" id="gridRow7">
+                  <af:gridCell id="gridCell95"/>
+                  <af:gridCell marginStart="2px" width="14%" id="gridCell96"
+                               halign="center" valign="middle">
+                    <af:outputText value="Mixed Yarn" id="outputText23"
+                                   inlineStyle="font-weight:bolder;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell97">
+                    <af:spacer width="30" height="15" id="spacer38"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell98"
+                               valign="middle" halign="center">
+                    <af:commandButton text="1" id="commandButton25"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SV_1_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell99"
+                               valign="middle" halign="center">
+                    <af:commandButton text="2" id="commandButton26"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SV_2_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell100"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton27"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SV_3_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell101"
+                               halign="center" valign="middle">
+                    <af:commandButton text="4" id="commandButton28"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SV_4_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell102">
+                    <af:spacer width="30" height="15" id="spacer39"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell103"
+                               halign="center" valign="middle">
+                    <af:outputText value="0" id="outputText24"
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   partialTriggers="shade_variation_cb1 shade_variation_cb2 shade_variation_cb3 shade_variation_cb4 shade_variation_cb5 shade_variation_cb6 shade_variation_cb7 shade_variation_cb8"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell104">
+                    <af:spacer width="30" height="15" id="spacer40"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell105"
+                               halign="center" valign="middle">
+                    <af:commandButton text="1" id="commandButton29"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SV_1_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell106"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton30"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SV_2_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell107"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton31"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SV_3_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell108" valign="middle" halign="center">
+                    <af:commandButton text="4" id="commandButton32"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SV_4_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell109"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell110"/>
+                </af:gridRow>
+                <af:gridRow marginTop="1px" height="auto" id="gridRow8">
+                  <af:gridCell id="gridCell111"/>
+                  <af:gridCell marginStart="2px" width="8%" id="gridCell112"
+                               halign="center" valign="middle">
+                    <af:outputText value="Double Yarn" id="outputText25"
+                                   inlineStyle="font-weight:bolder;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell113">
+                    <af:spacer width="30" height="15" id="spacer41"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell114"
+                               valign="middle" halign="center">
+                    <af:commandButton text="1" id="commandButton33"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_Spot_1_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell115"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton34"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_Spot_2_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell116"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton35"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_Spot_3_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell117"
+                               halign="center" valign="middle">
+                    <af:commandButton text="4" id="commandButton36"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_Spot_4_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell118">
+                    <af:spacer width="30" height="15" id="spacer42"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell119"
+                               halign="center" valign="middle">
+                    <af:outputText value="0" id="outputText26"
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   partialTriggers="spot_cb1 spot_cb2 spot_cb3 spot_cb4 spot_cb5 spot_cb6 spot_cb7 spot_cb8"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell120">
+                    <af:spacer width="30" height="15" id="spacer43"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell121"
+                               halign="center" valign="middle">
+                    <af:commandButton text="1" id="commandButton37"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_Spot_1_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell122"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton38"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_Spot_2_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell123"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton39"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_Spot_3_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell124" valign="middle" halign="center">
+                    <af:commandButton text="4" id="commandButton40"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_Spot_4_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell125"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell126"/>
+                </af:gridRow>
+                <af:gridRow marginTop="1px" height="auto" id="gridRow9">
+                  <af:gridCell id="gridCell127">
+                    <af:outputText value="Weave Fault" id="outputText27"
+                                   inlineStyle="font-weight:bolder;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="2px" width="8%" id="gridCell128"
+                               halign="center" valign="middle">
+                    <af:outputText value="Miss Yarn/Pick" id="outputText28"
+                                   inlineStyle="font-weight:bolder;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell129">
+                    <af:spacer width="30" height="15" id="spacer44"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell130"
+                               valign="middle" halign="center">
+                    <af:commandButton text="1" id="commandButton41"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_MP_1_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell131"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton42"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_MP_2_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell132"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton43"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_MP_3_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell133"
+                               halign="center" valign="middle">
+                    <af:commandButton text="4" id="commandButton44"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_MP_4_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell134">
+                    <af:spacer width="30" height="15" id="spacer45"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell135"
+                               halign="center" valign="middle">
+                    <af:outputText value="0" id="outputText29"
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   partialTriggers="miss_print_cb1 miss_print_cb2 miss_print_cb3 miss_print_cb4 miss_print_cb5 miss_print_cb6 miss_print_cb7 miss_print_cb8"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell136">
+                    <af:spacer width="30" height="15" id="spacer46"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell137"
+                               halign="center" valign="middle">
+                    <af:commandButton text="1" id="commandButton45"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_MP_1_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell138"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton46"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_MP_2_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell139"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton47"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_MP_3_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell140" valign="middle" halign="center">
+                    <af:commandButton text="4" id="commandButton48"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_MP_4_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell141"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell142"/>
+                </af:gridRow>
+                <af:gridRow marginTop="1px" marginBottom="2px" height="auto"
+                            id="gridRow10">
+                  <af:gridCell id="gridCell143"/>
+                  <af:gridCell marginStart="2px" width="8%" id="gridCell144"
+                               halign="center" valign="middle">
+                    <af:outputText value="Reed Mark" id="outputText30"
+                                   inlineStyle="font-weight:bolder;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell145">
+                    <af:spacer width="30" height="15" id="spacer47"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell146"
+                               valign="middle" halign="center">
+                    <af:commandButton text="1" id="commandButton49"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_DS_1_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell147"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton50"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_DS_2_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell148"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton51"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_DS_3_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell149"
+                               halign="center" valign="middle">
+                    <af:commandButton text="4" id="commandButton52"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_DS_4_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell150">
+                    <af:spacer width="30" height="15" id="spacer48"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell151"
+                               halign="center" valign="middle">
+                    <af:outputText value="0" id="outputText31"
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   partialTriggers="dye_stain_cb1 dye_stain_cb2 dye_stain_cb3 dye_stain_cb4 dye_stain_cb5 dye_stain_cb6 dye_stain_cb7 dye_stain_cb8"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell255">
+                    <af:spacer width="30" height="15" id="spacer49"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell256"
+                               halign="center" valign="middle">
+                    <af:commandButton text="1" id="commandButton53"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_DS_1_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell257"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton54"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_DS_2_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell258"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton55"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_DS_3_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell259" valign="middle" halign="center">
+                    <af:commandButton text="4" id="commandButton56"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_DS_4_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell260"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell261"/>
+                </af:gridRow>
+                <af:gridRow marginTop="1px" marginBottom="2px" height="auto"
+                            id="gridRow18">
+                  <af:gridCell id="gridCell262"/>
+                  <af:gridCell marginStart="2px" width="8%" id="gridCell263"
+                               halign="center" valign="middle">
+                    <af:outputText value="Hole" id="outputText32"
+                                   inlineStyle="font-weight:bolder;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell264">
+                    <af:spacer width="30" height="15" id="spacer69"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell265"
+                               valign="middle" halign="center">
+                    <af:commandButton text="1" id="commandButton57"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SM_1_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell266"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton58"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SM_2_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell267"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton59"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SM_3_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell268"
+                               halign="center" valign="middle">
+                    <af:commandButton text="4" id="commandButton60"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SM_4_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell269">
+                    <af:spacer width="30" height="15" id="spacer70"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell270"
+                               halign="center" valign="middle">
+                    <af:outputText value="0" id="outputText33"
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   partialTriggers="stop_mark_cb1 stop_mark_cb2 stop_mark_cb3 stop_mark_cb4 stop_mark_cb5 stop_mark_cb6 stop_mark_cb7 stop_mark_cb8"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell271">
+                    <af:spacer width="30" height="15" id="spacer71"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell272"
+                               halign="center" valign="middle">
+                    <af:commandButton text="1" id="commandButton61"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SM_1_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell273"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton62"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SM_2_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell274"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton63"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SM_3_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell275" valign="middle" halign="center">
+                    <af:commandButton text="4" id="commandButton64"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_SM_4_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell276"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell277"/>
+                </af:gridRow>
+                <af:gridRow marginTop="1px" marginBottom="2px" height="auto"
+                            id="gridRow19">
+                  <af:gridCell id="gridCell278"/>
+                  <af:gridCell marginStart="2px" width="8%" id="gridCell279"
+                               halign="center" valign="middle">
+                    <af:outputText value="Stop Mark" id="outputText52"
+                                   inlineStyle="font-weight:bolder;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell280">
+                    <af:spacer width="30" height="15" id="spacer72"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell281"
+                               valign="middle" halign="center">
+                    <af:commandButton text="1" id="commandButton65"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_1_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell282"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton66"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_2_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell283"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton67"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_3_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell284"
+                               halign="center" valign="middle">
+                    <af:commandButton text="4" id="commandButton68"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_4_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell285">
+                    <af:spacer width="30" height="15" id="spacer73"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell286"
+                               halign="center" valign="middle">
+                    <af:outputText value="0" id="outputText53"
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   partialTriggers="bar_mark_cb1 bar_mark_cb2 bar_mark_cb3 bar_mark_cb4 bar_mark_cb5 bar_mark_cb6 bar_mark_cb7 bar_mark_cb8"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell287">
+                    <af:spacer width="30" height="15" id="spacer74"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell288"
+                               halign="center" valign="middle">
+                    <af:commandButton text="1" id="commandButton69"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_1_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell289"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton70"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_2_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell290"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton71"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_3_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell291" valign="middle" halign="center">
+                    <af:commandButton text="4" id="commandButton72"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_4_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell292"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell293"/>
+                </af:gridRow>
+                <af:gridRow id="gr10">
+                  <af:gridCell id="gridCell295"/>
+                  <af:gridCell marginStart="2px" width="8%" id="gridCell296"
+                               halign="center" valign="middle">
+                    <af:outputText value="Broken End" id="outputText54"
+                                   inlineStyle="font-weight:bolder;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell297">
+                    <af:spacer width="30" height="15" id="spacer76"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell298"
+                               valign="middle" halign="center">
+                    <af:commandButton text="1" id="commandButton73"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_1_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell299"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton74"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_2_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell300"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton75"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_3_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell301"
+                               halign="center" valign="middle">
+                    <af:commandButton text="4" id="commandButton76"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_4_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell302">
+                    <af:spacer width="30" height="15" id="spacer77"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell303"
+                               halign="center" valign="middle">
+                    <af:outputText value="0" id="outputText55"
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   partialTriggers="bar_mark_cb1 bar_mark_cb2 bar_mark_cb3 bar_mark_cb4 bar_mark_cb5 bar_mark_cb6 bar_mark_cb7 bar_mark_cb8"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell304">
+                    <af:spacer width="30" height="15" id="spacer78"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell305"
+                               halign="center" valign="middle">
+                    <af:commandButton text="1" id="commandButton77"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_1_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell306"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton78"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_2_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell307"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton79"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_3_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell308" valign="middle" halign="center">
+                    <af:commandButton text="4" id="commandButton80"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_4_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell309"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell310"/>
+                </af:gridRow>
+                <af:gridRow id="gr11">
+                  <af:gridCell id="gridCell311"/>
+                  <af:gridCell marginStart="2px" width="8%" id="gridCell312"
+                               halign="center" valign="middle">
+                    <af:outputText value="Broken Pick" id="outputText56"
+                                   inlineStyle="font-weight:bolder;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell313">
+                    <af:spacer width="30" height="15" id="spacer79"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell314"
+                               valign="middle" halign="center">
+                    <af:commandButton text="1" id="commandButton81"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_1_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell315"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton82"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_2_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell316"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton83"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_3_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell317"
+                               halign="center" valign="middle">
+                    <af:commandButton text="4" id="commandButton84"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_4_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell318">
+                    <af:spacer width="30" height="15" id="spacer80"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell319"
+                               halign="center" valign="middle">
+                    <af:outputText value="0" id="outputText57"
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   partialTriggers="bar_mark_cb1 bar_mark_cb2 bar_mark_cb3 bar_mark_cb4 bar_mark_cb5 bar_mark_cb6 bar_mark_cb7 bar_mark_cb8"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell320">
+                    <af:spacer width="30" height="15" id="spacer81"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell321"
+                               halign="center" valign="middle">
+                    <af:commandButton text="1" id="commandButton85"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_1_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell322"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton86"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_2_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell323"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton87"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_3_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell324" valign="middle" halign="center">
+                    <af:commandButton text="4" id="commandButton88"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_4_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell325"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell326"/>
+                </af:gridRow>
+                <af:gridRow id="gr12">
+                  <af:gridCell id="gridCell327"/>
+                  <af:gridCell marginStart="2px" width="8%" id="gridCell328"
+                               halign="center" valign="middle">
+                    <af:outputText value="Distortion Mark" id="outputText58"
+                                   inlineStyle="font-weight:bolder;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell329">
+                    <af:spacer width="30" height="15" id="spacer82"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell330"
+                               valign="middle" halign="center">
+                    <af:commandButton text="1" id="commandButton89"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_1_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell331"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton90"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_2_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell332"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton91"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_3_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell333"
+                               halign="center" valign="middle">
+                    <af:commandButton text="4" id="commandButton92"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_4_Points_actionListener}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell334">
+                    <af:spacer width="30" height="15" id="spacer83"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell335"
+                               halign="center" valign="middle">
+                    <af:outputText value="0" id="outputText59"
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   partialTriggers="bar_mark_cb1 bar_mark_cb2 bar_mark_cb3 bar_mark_cb4 bar_mark_cb5 bar_mark_cb6 bar_mark_cb7 bar_mark_cb8"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell336">
+                    <af:spacer width="30" height="15" id="spacer84"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell337"
+                               halign="center" valign="middle">
+                    <af:commandButton text="1" id="commandButton93"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_1_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell338"
+                               halign="center" valign="middle">
+                    <af:commandButton text="2" id="commandButton94"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_2_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell339"
+                               halign="center" valign="middle">
+                    <af:commandButton text="3" id="commandButton95"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_3_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell340" valign="middle" halign="center">
+                    <af:commandButton text="4" id="commandButton96"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.DF_BM_4_Undo_actionListener}"
+                                      partialSubmit="true"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell341"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell342"/>
+                </af:gridRow>
+                <af:gridRow id="gridRow20">
+                  <af:gridCell id="gridCell294">
+                    <af:spacer width="10" height="20" id="spacer75"/>
+                  </af:gridCell>
+                </af:gridRow>
                 <af:gridRow marginTop="1px" height="auto" id="gr2">
                   <af:gridCell id="gc72"/>
                   <af:gridCell marginStart="2px" width="8%" id="gc23"

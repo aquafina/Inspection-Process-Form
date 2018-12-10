@@ -284,11 +284,11 @@
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="CreationDate"
+    IsUpdateable="while_insert"
     PrecisionRule="true"
     EntityAttrName="CreationDate"
     EntityUsage="PwcOdmInspPrcDyeFaultEO"
-    AliasName="CREATION_DATE"
-    IsUpdateable="while_insert"/>
+    AliasName="CREATION_DATE"/>
   <ViewAttribute
     Name="LastUpdatedBy"
     PrecisionRule="true"
@@ -313,4 +313,9 @@
     EntityAttrName="MissPrintTotal"
     EntityUsage="PwcOdmInspPrcDyeFaultEO"
     AliasName="MISS_PRINT_TOTAL"/>
+  <ViewLinkAccessor
+    Name="PwcOdmInspPrcWeaveFaultVO"
+    ViewLink="model.VL.PwcInspPrcWeaveFaultVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

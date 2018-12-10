@@ -16,6 +16,9 @@
     <iterator Binds="PwcOdmInspPrcYarnFaultVO2" RangeSize="25"
               DataControl="InspectionProcessAMDataControl"
               id="PwcOdmInspPrcYarnFaultVO2Iterator"/>
+    <iterator Binds="PwcOdmInspPrcWeaveFaultVO2" RangeSize="25"
+              DataControl="InspectionProcessAMDataControl"
+              id="PwcOdmInspPrcWeaveFaultVO2Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
@@ -162,6 +165,18 @@
                      id="ForeignYarnTotal">
       <AttrNames>
         <Item Value="ForeignYarnTotal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInspPrcWeaveFaultVO2Iterator"
+                     id="ThickThinEndTotal">
+      <AttrNames>
+        <Item Value="ThickThinEndTotal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInspPrcWeaveFaultVO2Iterator"
+                     id="ThickThinPickTotal">
+      <AttrNames>
+        <Item Value="ThickThinPickTotal"/>
       </AttrNames>
     </attributeValues>
   </bindings>
