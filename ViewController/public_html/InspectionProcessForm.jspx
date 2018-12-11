@@ -7,7 +7,13 @@
   <f:view>
     <af:document id="d1">
       <af:panelHeader text="Inspection Process Form"
-                      id="ph1" inlineStyle="height:26px; text-align:center;"/>
+                      id="ph1" inlineStyle="height:26px; text-align:center;">
+        <blockquote>
+          <p>
+             
+          </p>
+        </blockquote>
+      </af:panelHeader>
       <af:messages id="m1"/>
       <af:form id="f1">
         <af:panelGroupLayout id="pgl1"
@@ -112,7 +118,8 @@
             </af:commandButton>
           </af:panelGroupLayout>
           <af:panelGroupLayout id="pgl2">
-            <af:panelFormLayout id="panelFormLayout1" rows="4" maxColumns="2">
+            <af:panelFormLayout id="panelFormLayout1" rows="4" maxColumns="2"
+                                partialTriggers="cb1">
               <af:inputText value="#{bindings.InspectionMachineNumber.inputValue}"
                             label="Inspection Machine Number"
                             required="#{bindings.InspectionMachineNumber.hints.mandatory}"
@@ -206,12 +213,19 @@
             </af:panelFormLayout>
           </af:panelGroupLayout>
           <af:panelGroupLayout id="pgl9" layout="horizontal">
-            <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
+            <af:commandButton actionListener="#{backingBeanScope.InspectionProcessBackingBean.addNewLine}"
                               text="New"
-                              disabled="#{!bindings.CreateInsert.enabled}"
-                              id="cb1"/>
+                              id="cb1" partialSubmit="true"/>
             <af:commandButton text="Save" id="cb3"
                               actionListener="#{backingBeanScope.InspectionProcessBackingBean.saveChanges}"/>
+            <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
+                              text="CreateInsert"
+                              disabled="#{!bindings.CreateInsert.enabled}"
+                              id="cb6"/>
+            <af:commandButton actionListener="#{bindings.CreateInsert2.execute}"
+                              text="CreateInsert2"
+                              disabled="#{!bindings.CreateInsert2.enabled}"
+                              id="cb8"/>
             <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
                               text="CreateInsert"
                               disabled="#{!bindings.CreateInsert.enabled}"
@@ -223,7 +237,8 @@
             <af:outputText id="outputText1"
                            inlineStyle="font-weight:bolder;"
                            styleClass="width:100%;"/>
-            <af:panelGroupLayout id="pgl8" inlineStyle="width:1259px;">
+            <af:panelGroupLayout id="pgl8" inlineStyle="width:1259px;"
+                                 partialTriggers="cb1">
               <af:panelGroupLayout id="pgl4"
                                    inlineStyle="width:693px; height:29px;">
                 <af:spacer width="450" height="10" id="s4"/>
@@ -501,18 +516,23 @@
                                    inlineStyle="font-weight:bolder;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell51">
-                    <af:spacer width="30" height="15" id="spacer3"/>
+                    <af:commandButton actionListener="#{bindings.setSessionValues.execute}"
+                                      text="setSessionValues"
+                                      disabled="#{!bindings.setSessionValues.enabled}"
+                                      id="cb9"/>
                   </af:gridCell>
-                  <af:gridCell marginStart="1px" width="7%" id="gridCell52"
+                  <af:gridCell marginStart="1px" width="7%"
+                               id="thick_thin_end_cb1"
                                valign="middle" halign="center">
-                    <strong><af:commandButton text="1" id="thick_thin_end_cb1"
-                                        inlineStyle="padding-left:20.0px;padding-right:20.0px;"
-                                        partialSubmit="true"
-                                        actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_End_1_Points_actionListener}"/></strong>
+                    <af:commandButton text="1" id="commandButton1"
+                                      inlineStyle="padding-left:20.0px;padding-right:20.0px;"
+                                      partialSubmit="true"
+                                      actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_End_1_Points_actionListener}"/>
                   </af:gridCell>
-                  <af:gridCell marginStart="1px" width="7%" id="gridCell53"
+                  <af:gridCell marginStart="1px" width="7%"
+                               id="thick_thin_end_cb2"
                                halign="center" valign="middle">
-                    <af:commandButton text="2" id="thick_thin_end_cb2"
+                    <af:commandButton text="2" id="commandButton2"
                                       inlineStyle="padding-left:20.0px;padding-right:20.0px;"
                                       partialSubmit="true"
                                       actionListener="#{backingBeanScope.InspectionProcessBackingBean.WF_Thick_Thin_End_2_Points_actionListener}"/>

@@ -466,22 +466,19 @@ public class InspectionProcessBackingBean {
     }
 
     public void WF_Thick_Thin_End_1_Points_actionListener(ActionEvent actionEvent) {
-        System.out.println("InspPrcRollNumber1"+weaveFaultVOCurrRow.getAttribute("InspPrcRollNumber"));
-       //weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
         {
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
-            System.out.println("VO is null");
+            System.out.println("row is null ");
         }
-        count_WF_Thick_Thin_End_1 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEnd1")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEnd1").toString():"0");
-        System.out.println("weave_Thick_Thin_End_1 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd1"));
-        count_WF_Thick_Thin_End_1 = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEnd1")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEnd1").toString():"0");
-        int currTotalValue = Integer.parseInt(weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?weaveFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
+        System.out.println("ThickThinEnd1 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd1"));
+        count_YF_Foreign_Yarn_1 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ThickThinEnd1")!=null?yarnFaultVOCurrRow.getAttribute("ThickThinEnd1").toString():"0");
+        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("ThickThinEndTotal")!=null?yarnFaultVOCurrRow.getAttribute("ThickThinEndTotal").toString():"0");
         currTotalValue = currTotalValue + 1;
-        count_WF_Thick_Thin_End_1 = count_WF_Thick_Thin_End_1 + 1;
-        weaveFaultVOCurrRow.setAttribute("ThickThinEnd1",count_WF_Thick_Thin_End_1 );
-        weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
-        System.out.println("InspPrcRollNumber2"+weaveFaultVOCurrRow.getAttribute("InspPrcRollNumber"));
+        count_YF_Foreign_Yarn_1 = count_YF_Foreign_Yarn_1 + 1;
+        yarnFaultVOCurrRow.setAttribute("ThickThinEnd1",count_YF_Foreign_Yarn_1);
+        yarnFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
     }
 
     /*public void WF_Thick_Thin_End_2_Points_actionListener(ActionEvent actionEvent) {
@@ -1527,6 +1524,18 @@ public class InspectionProcessBackingBean {
         BindingContainer bindings = getBindingsCont();
         OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert");
         operationBinding.execute();
-        
+
     }*/
+
+    public void addNewLine(ActionEvent actionEvent) {
+        ApplicationModuleImpl am = getApplicationModule();
+        BindingContainer bindings = BindingContext.getCurrent().getCurrentBindingsEntry();
+        oracle.binding.OperationBinding operationBinding = bindings.getOperationBinding("CreateInsert2");
+        if (operationBinding.getResult() != null) {
+                Boolean result = (Boolean) operationBinding.getResult();
+                operationBinding.execute();
+        }
+        else System.out.println("ob is null");
+        
+    }
 }

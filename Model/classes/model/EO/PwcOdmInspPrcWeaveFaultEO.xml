@@ -26,6 +26,7 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
+    <TransientExpression><![CDATA[(new oracle.jbo.server.SequenceImpl("PWC_ODM_INSP_PROC_WEAVE",adf.object.getDBTransaction())).getSequenceNumber()]]></TransientExpression>
   </Attribute>
   <Attribute
     Name="InspPrcRollNumber"
