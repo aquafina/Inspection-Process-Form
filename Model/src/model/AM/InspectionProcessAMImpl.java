@@ -219,4 +219,61 @@ public class InspectionProcessAMImpl extends ApplicationModuleImpl implements In
     public ViewObjectImpl getPwcOdmInspPrcWeaveFaultVO3() {
         return (ViewObjectImpl)findViewObject("PwcOdmInspPrcWeaveFaultVO3");
     }
+
+    /**
+     * Container's getter for PwcOdmInspPrcFaultEntriesVO1.
+     * @return PwcOdmInspPrcFaultEntriesVO1
+     */
+    public ViewObjectImpl getPwcOdmInspPrcFaultEntriesVO1() {
+        return (ViewObjectImpl)findViewObject("PwcOdmInspPrcFaultEntriesVO1");
+    }
+
+    /**
+     * Container's getter for PwcInspectionProcessLineVO3.
+     * @return PwcInspectionProcessLineVO3
+     */
+    public ViewObjectImpl getPwcInspectionProcessLineVO3() {
+        return (ViewObjectImpl)findViewObject("PwcInspectionProcessLineVO3");
+    }
+
+    /**
+     * Container's getter for PwcOdmInspPrcFaultEntriesVO2.
+     * @return PwcOdmInspPrcFaultEntriesVO2
+     */
+    public ViewObjectImpl getPwcOdmInspPrcFaultEntriesVO2() {
+        return (ViewObjectImpl)findViewObject("PwcOdmInspPrcFaultEntriesVO2");
+    }
+
+    /**
+     * Container's getter for PwcOdmInspPrcLineFaultEntriesVL.
+     * @return PwcOdmInspPrcLineFaultEntriesVL
+     */
+    public ViewLinkImpl getPwcOdmInspPrcLineFaultEntriesVL() {
+        return (ViewLinkImpl)findViewLink("PwcOdmInspPrcLineFaultEntriesVL");
+    }
+
+
+    /**
+     * Container's getter for PwcOdmInspPrcFaultEntriesVO3.
+     * @return PwcOdmInspPrcFaultEntriesVO3
+     */
+    public ViewObjectImpl getPwcOdmInspPrcFaultEntriesVO3() {
+        return (ViewObjectImpl)findViewObject("PwcOdmInspPrcFaultEntriesVO3");
+    }
+
+    /**
+     * Container's getter for PwcOdmInspPrcLineFaultEntriesVL1.
+     * @return PwcOdmInspPrcLineFaultEntriesVL1
+     */
+    public ViewLinkImpl getPwcOdmInspPrcLineFaultEntriesVL1() {
+        return (ViewLinkImpl)findViewLink("PwcOdmInspPrcLineFaultEntriesVL1");
+    }
+
+    /**
+     * Container's getter for PwcInspPrcFaultTypesVO1.
+     * @return PwcInspPrcFaultTypesVO1
+     */
+    public ViewObjectImpl getPwcInspPrcFaultTypesVO1() {
+        return (ViewObjectImpl)findViewObject("PwcInspPrcFaultTypesVO1");
+    }
 }

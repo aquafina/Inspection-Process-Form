@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Date;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.AttributeDefImpl;
@@ -411,6 +412,26 @@ public class PwcInspectionProcessLineEOImpl extends EntityImpl {
                 obj.setInspectionProcessId((BigDecimal)value);
             }
         }
+        ,
+        PwcOdmInspPrcFaultEntriesEO {
+            public Object get(PwcInspectionProcessLineEOImpl obj) {
+                return obj.getPwcOdmInspPrcFaultEntriesEO();
+            }
+
+            public void put(PwcInspectionProcessLineEOImpl obj, Object value) {
+                obj.setAttributeInternal(index(), value);
+            }
+        }
+        ,
+        PwcInspectionProcessHeaderEO {
+            public Object get(PwcInspectionProcessLineEOImpl obj) {
+                return obj.getPwcInspectionProcessHeaderEO();
+            }
+
+            public void put(PwcInspectionProcessLineEOImpl obj, Object value) {
+                obj.setPwcInspectionProcessHeaderEO((EntityImpl)value);
+            }
+        }
         ;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -480,6 +501,8 @@ public class PwcInspectionProcessLineEOImpl extends EntityImpl {
     public static final int WONUMBER = AttributesEnum.WoNumber.index();
     public static final int INSPECTIONPROCESSLINEID = AttributesEnum.InspectionProcessLineId.index();
     public static final int INSPECTIONPROCESSID = AttributesEnum.InspectionProcessId.index();
+    public static final int PWCODMINSPPRCFAULTENTRIESEO = AttributesEnum.PwcOdmInspPrcFaultEntriesEO.index();
+    public static final int PWCINSPECTIONPROCESSHEADEREO = AttributesEnum.PwcInspectionProcessHeaderEO.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1156,6 +1179,28 @@ public class PwcInspectionProcessLineEOImpl extends EntityImpl {
         super.setAttrInvokeAccessor(index, value, attrDef);
     }
 
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getPwcOdmInspPrcFaultEntriesEO() {
+        return (RowIterator)getAttributeInternal(PWCODMINSPPRCFAULTENTRIESEO);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getPwcInspectionProcessHeaderEO() {
+        return (EntityImpl)getAttributeInternal(PWCINSPECTIONPROCESSHEADEREO);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setPwcInspectionProcessHeaderEO(EntityImpl value) {
+        setAttributeInternal(PWCINSPECTIONPROCESSHEADEREO, value);
+    }
 
     /**
      * @param inspectionProcessLineId key constituent

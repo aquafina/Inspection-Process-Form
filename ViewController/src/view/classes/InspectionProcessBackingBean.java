@@ -26,93 +26,35 @@ import oracle.jbo.server.ApplicationModuleImpl;
 
 public class InspectionProcessBackingBean {
     
-    private int count_YF_Slub_1 = 0;
-    private int count_YF_Slub_2 = 0;
-    private int count_YF_Slub_3 = 0;
-    private int count_YF_Slub_4 = 0;
-    
-    private int count_YF_Neps_1 = 0;
-    private int count_YF_Neps_2 = 0;
-    private int count_YF_Neps_3 = 0;
-    private int count_YF_Neps_4 = 0;
-    
-    private int count_YF_Foreign_Yarn_1 =0;
-    private int count_YF_Foreign_Yarn_2 =0;
-    private int count_YF_Foreign_Yarn_3 =0;
-    private int count_YF_Foreign_Yarn_4 =0;
-    
-    private int count_WF_Thick_Thin_End_1 = 0;
-    private int count_WF_Thick_Thin_End_2 = 0;
-    private int count_WF_Thick_Thin_End_3 = 0;
-    private int count_WF_Thick_Thin_End_4 = 0;
-    
-    private int count_WF_Thick_Thin_Pick_1 = 0; 
-    private int count_WF_Thick_Thin_Pick_2 = 0;
-    private int count_WF_Thick_Thin_Pick_3 = 0;
-    private int count_WF_Thick_Thin_Pick_4 = 0;
-    
-    private int count_DF_OS_1 = 0;
-    private int count_DF_OS_2 = 0;
-    private int count_DF_OS_3 = 0;
-    private int count_DF_OS_4 = 0;
-    
-    private int count_DF_SV_1 = 0;
-    private int count_DF_SV_2 = 0;
-    private int count_DF_SV_3 = 0;
-    private int count_DF_SV_4 = 0;
-    
-    private int count_DF_Spot_1 = 0;
-    private int count_DF_Spot_2 = 0;
-    private int count_DF_Spot_3 = 0;
-    private int count_DF_Spot_4 = 0;
-    
-    private int count_DF_MP_1 = 0;
-    private int count_DF_MP_2 = 0;
-    private int count_DF_MP_3 = 0;
-    private int count_DF_MP_4 = 0;
-    
-    private int count_DF_DS_1 = 0;
-    private int count_DF_DS_2 = 0;
-    private int count_DF_DS_3 = 0;
-    private int count_DF_DS_4 = 0;
-    
-    private int count_DF_SM_1 = 0;
-    private int count_DF_SM_2 = 0;
-    private int count_DF_SM_3 = 0;
-    private int count_DF_SM_4 = 0;
-    
-    private int count_DF_BM_1 = 0;
-    private int count_DF_BM_2 = 0;
-    private int count_DF_BM_3 = 0;
-    private int count_DF_BM_4 = 0;
-    
-    private int count_YF_TY_1 = 0;
-    private int count_YF_TY_2 = 0;
-    private int count_YF_TY_3 = 0;
-    private int count_YF_TY_4 = 0;
-
-    private int count_YF_TY1_1 = 0;
-    private int count_YF_TY1_2 = 0;
-    private int count_YF_TY1_3 = 0;
-    private int count_YF_TY1_4 = 0;
-    
-    ViewObject yarnFaultVO;
-    ViewObject weaveFaultVO;
-    
-    Row yarnFaultVOCurrRow;
-    Row weaveFaultVOCurrRow;
     public InspectionProcessBackingBean() {
         super();
-        ApplicationModuleImpl am = getApplicationModule();
-        yarnFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcYarnFaultVO2"); 
-        weaveFaultVO = (ViewObject)am.findViewObject("PwcOdmInspPrcWeaveFaultVO2");
-        //greigeFaultVOCurrRow = greigeFaultVO.getCurrentRow();
     }
 
+    public void insertIntoFaultEntries(String faultName, String faultCategory, int points) {
+        ApplicationModule am = getApplicationModule();
+        ViewObject faultEntriesVO = (ViewObject) am.findViewObject("PwcOdmInspPrcFaultEntriesVO3");
+        ViewObject faultTypesVO = (ViewObject) am.findViewObject("PwcInspPrcFaultTypesVO1");
+        faultTypesVO.setNamedWhereClauseParam("p_fault_category", faultCategory);
+        faultTypesVO.setNamedWhereClauseParam("p_fault_name", faultName);
+        faultTypesVO.executeQuery();
+        RowSetIterator rsi = faultTypesVO.createRowSetIterator(null);
+        Row resultRow = rsi.next();
+        if (resultRow!=null)
+        {
+            int faultTypeId = Integer.parseInt(resultRow.getAttribute(0).toString());
+            Row newRow = faultEntriesVO.createRow();
+            String faultEntryId = newRow.getAttribute("FaultEntryId").toString();
+            newRow.setAttribute("FaultTypeId", faultTypeId);
+            newRow.setAttribute("Points", points);
+            faultEntriesVO.insertRow(newRow);
+        }
+    }
+    
     /**                      YARN FAULT                          **/
 
     public void YF_Slub_1_Points_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Slubs","Yarn Faults",1);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("Slub1 = "+yarnFaultVOCurrRow.getAttribute("Slub1"));
@@ -121,12 +63,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue+1;
         count_YF_Slub_1  = count_YF_Slub_1 + 1;
         yarnFaultVOCurrRow.setAttribute("Slub1",count_YF_Slub_1);
-        yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
+        yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);*/
     }
 
     public void YF_Slub_2_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Slubs","Yarn Faults",2);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("Slub2 = "+yarnFaultVOCurrRow.getAttribute("Slub2"));
@@ -135,12 +77,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue+2;
         count_YF_Slub_2  = count_YF_Slub_2 + 1;
         yarnFaultVOCurrRow.setAttribute("Slub2",count_YF_Slub_2);
-        yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
+        yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);*/
     }
 
     public void YF_Slub_3_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Slubs","Yarn Faults",3);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("Slub3 = "+yarnFaultVOCurrRow.getAttribute("Slub3"));
@@ -149,12 +91,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue+3;
         count_YF_Slub_3 = count_YF_Slub_3 + 1;
         yarnFaultVOCurrRow.setAttribute("Slub3",count_YF_Slub_3);
-        yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
+        yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);*/
     }
 
     public void YF_Slub_4_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Slubs","Yarn Faults",4);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("Slub4 = "+yarnFaultVOCurrRow.getAttribute("Slub4"));
@@ -163,12 +105,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue+4;
         count_YF_Slub_4 = count_YF_Slub_4 + 1;
         yarnFaultVOCurrRow.setAttribute("Slub4",count_YF_Slub_4);
-        yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
+        yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);*/
     }
 
     public void YF_Slub_1_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Slubs","Yarn Faults",-1);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("Slub1 = "+yarnFaultVOCurrRow.getAttribute("Slub1"));
@@ -180,11 +122,12 @@ public class InspectionProcessBackingBean {
             count_YF_Slub_1 = count_YF_Slub_1 - 1;
             yarnFaultVOCurrRow.setAttribute("Slub1",count_YF_Slub_1);
             yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void YF_Slub_2_Undo_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Slubs","Yarn Faults",-2);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("Slub2 = "+yarnFaultVOCurrRow.getAttribute("Slub2"));
@@ -196,12 +139,12 @@ public class InspectionProcessBackingBean {
             count_YF_Slub_2 = count_YF_Slub_2 - 1;
             yarnFaultVOCurrRow.setAttribute("Slub2",count_YF_Slub_2);
             yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void YF_Slub_3_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Slubs","Yarn Faults",-3);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("Slub3 = "+yarnFaultVOCurrRow.getAttribute("Slub3"));
@@ -213,12 +156,12 @@ public class InspectionProcessBackingBean {
             count_YF_Slub_3 = count_YF_Slub_3 - 1;
             yarnFaultVOCurrRow.setAttribute("Slub3",count_YF_Slub_3);
             yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void YF_Slub_4_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Slubs","Yarn Faults",-4);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("Slub4 = "+yarnFaultVOCurrRow.getAttribute("Slub4"));
@@ -230,11 +173,12 @@ public class InspectionProcessBackingBean {
             count_YF_Slub_4 = count_YF_Slub_4 - 1;
             yarnFaultVOCurrRow.setAttribute("Slub4",count_YF_Slub_4);
             yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void YF_Nep_1_Points_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Neps","Yarn Faults",1);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("Neps1 = "+yarnFaultVOCurrRow.getAttribute("Neps1"));
@@ -243,11 +187,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue + 1;
         count_YF_Neps_1 = count_YF_Neps_1 + 1;
         yarnFaultVOCurrRow.setAttribute("Neps1",count_YF_Neps_1);
-        yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
+        yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);*/
     }
 
     public void YF_Neps_2_Points_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Neps","Yarn Faults",2);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("Neps2 = "+yarnFaultVOCurrRow.getAttribute("Neps2"));
@@ -256,11 +201,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue + 2;
         count_YF_Neps_2 = count_YF_Neps_2 + 1;
         yarnFaultVOCurrRow.setAttribute("Neps2",count_YF_Neps_2);
-        yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
+        yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);*/
     }
 
     public void YF_Neps_3_Points_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Neps","Yarn Faults",3);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("Neps3 = "+yarnFaultVOCurrRow.getAttribute("Neps3"));
@@ -269,11 +215,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue + 3;
         count_YF_Neps_3 = count_YF_Neps_3 + 1;
         yarnFaultVOCurrRow.setAttribute("Neps3",count_YF_Neps_3);
-        yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
+        yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);*/
     }
 
     public void YF_Neps_4_Points_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Neps","Yarn Faults",4);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("Neps4 = "+yarnFaultVOCurrRow.getAttribute("Neps4"));
@@ -282,11 +229,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue + 4;
         count_YF_Neps_4 = count_YF_Neps_4 + 1;
         yarnFaultVOCurrRow.setAttribute("Neps4",count_YF_Neps_4);
-        yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
+        yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);*/
     }
 
     public void YF_Neps_1_Undo_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Neps","Yarn Faults",-1);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("Neps1 = "+yarnFaultVOCurrRow.getAttribute("Neps1"));
@@ -298,11 +246,12 @@ public class InspectionProcessBackingBean {
             count_YF_Neps_1 = count_YF_Neps_1 - 1;
             yarnFaultVOCurrRow.setAttribute("Neps1",count_YF_Neps_1);
             yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void YF_Neps_2_Undo_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Neps","Yarn Faults",-2);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         count_YF_Neps_2 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Neps2")!=null?yarnFaultVOCurrRow.getAttribute("Neps2").toString():"0");
@@ -314,11 +263,12 @@ public class InspectionProcessBackingBean {
             count_YF_Neps_2 = count_YF_Neps_2 - 1;
             yarnFaultVOCurrRow.setAttribute("Neps2",count_YF_Neps_2);
             yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void YF_Neps_3_Undo_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Neps","Yarn Faults",-3);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("Neps3 = "+yarnFaultVOCurrRow.getAttribute("Neps3"));
@@ -330,11 +280,12 @@ public class InspectionProcessBackingBean {
             count_YF_Neps_3 = count_YF_Neps_3 - 1;
             yarnFaultVOCurrRow.setAttribute("Neps3",count_YF_Neps_3);
             yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void YF_Neps_4_Undo_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Neps","Yarn Faults",-4);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("Neps4 = "+yarnFaultVOCurrRow.getAttribute("Neps4"));
@@ -346,11 +297,12 @@ public class InspectionProcessBackingBean {
             count_YF_Neps_4 = count_YF_Neps_4 - 1;
             yarnFaultVOCurrRow.setAttribute("Neps4",count_YF_Neps_4);
             yarnFaultVOCurrRow.setAttribute("NepsTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void YF_Foreign_Yarn_1_Points_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Foreign Yarn","Yarn Faults",1);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("ForeignYarn1 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn1"));
@@ -359,11 +311,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue + 1;
         count_YF_Foreign_Yarn_1 = count_YF_Foreign_Yarn_1 + 1;
         yarnFaultVOCurrRow.setAttribute("ForeignYarn1",count_YF_Foreign_Yarn_1);
-        yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
+        yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);*/
     }
 
     public void YF_Foreign_Yarn_2_Points_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Foreign Yarn","Yarn Faults",2);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("ForeignYarn2 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn2"));
@@ -372,11 +325,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue + 2;
         count_YF_Foreign_Yarn_2 = count_YF_Foreign_Yarn_2 + 1;
         yarnFaultVOCurrRow.setAttribute("ForeignYarn2",count_YF_Foreign_Yarn_2);
-        yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
+        yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);*/
     }
 
     public void YF_Foreign_Yarn_3_Points_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Foreign Yarn","Yarn Faults",3);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("ForeignYarn3 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn3"));
@@ -385,11 +339,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue + 3;
         count_YF_Foreign_Yarn_3 = count_YF_Foreign_Yarn_3 + 1;
         yarnFaultVOCurrRow.setAttribute("ForeignYarn3",count_YF_Foreign_Yarn_3);
-        yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
+        yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);*/
     }
   
     public void YF_Foreign_Yarn_4_Points_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Foreign Yarn","Yarn Faults",4);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("ForeignYarn4 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn4"));
@@ -398,11 +353,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue + 4;
         count_YF_Foreign_Yarn_4 = count_YF_Foreign_Yarn_4 + 1;
         yarnFaultVOCurrRow.setAttribute("ForeignYarn4",count_YF_Foreign_Yarn_4);
-        yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
+        yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);*/
     }
 
     public void YF_Foreign_Yarn_1_Undo_actionListener(ActionEvent actionEvent) {        
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Foreign Yarn","Yarn Faults",-1);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("ForeignYarn1 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn1"));
@@ -414,11 +370,12 @@ public class InspectionProcessBackingBean {
             count_YF_Foreign_Yarn_1 = count_YF_Foreign_Yarn_1 - 1;
             yarnFaultVOCurrRow.setAttribute("ForeignYarn1",count_YF_Foreign_Yarn_1);
             yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void YF_Foreign_Yarn_2_Undo_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Foreign Yarn","Yarn Faults",-2);
+       /* yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("ForeignYarn2 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn2"));
@@ -430,11 +387,12 @@ public class InspectionProcessBackingBean {
             count_YF_Foreign_Yarn_2 = count_YF_Foreign_Yarn_2 - 1;
             yarnFaultVOCurrRow.setAttribute("ForeignYarn2",count_YF_Foreign_Yarn_2);
             yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void YF_Foreign_Yarn_3_Undo_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Foreign Yarn","Yarn Faults",-3);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("ForeignYarn3 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn3"));
@@ -446,11 +404,12 @@ public class InspectionProcessBackingBean {
             count_YF_Foreign_Yarn_3 = count_YF_Foreign_Yarn_3 - 1;
             yarnFaultVOCurrRow.setAttribute("ForeignYarn3",count_YF_Foreign_Yarn_3);
             yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void YF_Foreign_Yarn_4_Undo_actionListener(ActionEvent actionEvent) {
-        yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Foreign Yarn","Yarn Faults",-4);
+        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
         if (yarnFaultVOCurrRow==null)
             yarnFaultVOCurrRow = yarnFaultVO.createRow();
         System.out.println("ForeignYarn4 = "+yarnFaultVOCurrRow.getAttribute("ForeignYarn4"));
@@ -462,11 +421,12 @@ public class InspectionProcessBackingBean {
             count_YF_Foreign_Yarn_4 = count_YF_Foreign_Yarn_4 - 1;
             yarnFaultVOCurrRow.setAttribute("ForeignYarn4",count_YF_Foreign_Yarn_4);
             yarnFaultVOCurrRow.setAttribute("ForeignYarnTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void WF_Thick_Thin_End_1_Points_actionListener(ActionEvent actionEvent) {
-        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Thick/Thin End","Weaving Faults",1);
+        /*weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
         {
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
@@ -478,11 +438,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue + 1;
         count_YF_Foreign_Yarn_1 = count_YF_Foreign_Yarn_1 + 1;
         yarnFaultVOCurrRow.setAttribute("ThickThinEnd1",count_YF_Foreign_Yarn_1);
-        yarnFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
+        yarnFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);*/
     }
 
-    /*public void WF_Thick_Thin_End_2_Points_actionListener(ActionEvent actionEvent) {
-    weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+    public void WF_Thick_Thin_End_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Thick/Thin End","Weaving Faults",2);
+    /*weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
     if (weaveFaultVOCurrRow==null)
         weaveFaultVOCurrRow = weaveFaultVO.createRow();
     System.out.println("weave_Thick_Thin_End_2 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd2"));
@@ -491,12 +452,13 @@ public class InspectionProcessBackingBean {
     currTotalValue = currTotalValue + 2;
     count_WF_Thick_Thin_End_2 = count_WF_Thick_Thin_End_2 + 1;
     weaveFaultVOCurrRow.setAttribute("ThickThinEnd2",count_WF_Thick_Thin_End_2 );
-    weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
+    weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);*/
     }
 
     public void WF_Thick_Thin_End_3_Points_actionListener(ActionEvent actionEvent) {
         // Add event code here...
-        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Thick/Thin End","Weaving Faults",3);
+        /*weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
         System.out.println("weave_Thick_Thin_End_3 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd3"));
@@ -505,11 +467,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue + 3;
         count_WF_Thick_Thin_End_3 = count_WF_Thick_Thin_End_3 + 1;
         weaveFaultVOCurrRow.setAttribute("ThickThinEnd3",count_WF_Thick_Thin_End_3 );
-        weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
+        weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);*/
     }
 
     public void WF_Thick_Thin_End_4_Points_actionListener(ActionEvent actionEvent) {
-        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Thick/Thin End","Weaving Faults",4);
+        /*weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
         System.out.println("weave_Thick_Thin_End_4 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd4"));
@@ -518,12 +481,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue + 4;
         count_WF_Thick_Thin_End_4 = count_WF_Thick_Thin_End_4 + 1;
         weaveFaultVOCurrRow.setAttribute("ThickThinEnd4",count_WF_Thick_Thin_End_4 );
-        weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
+        weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);*/
     }
 
     public void WF_Thick_Thin_End_1_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Thick/Thin End","Weaving Faults",-1);
+        /*weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
         System.out.println("weave_Thick_Thin_End_1 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd1"));
@@ -535,11 +498,12 @@ public class InspectionProcessBackingBean {
             count_WF_Thick_Thin_End_1 = count_WF_Thick_Thin_End_1 - 1;
             weaveFaultVOCurrRow.setAttribute("ThickThinEnd1",count_WF_Thick_Thin_End_1 );
             weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void WF_Thick_Thin_End_2_Undo_actionListener(ActionEvent actionEvent) {
-        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Thick/Thin End","Weaving Faults",-2);
+        /*weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
         System.out.println("weave_Thick_Thin_End_2 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd2"));
@@ -551,11 +515,12 @@ public class InspectionProcessBackingBean {
             count_WF_Thick_Thin_End_2 = count_WF_Thick_Thin_End_2 - 1;
             weaveFaultVOCurrRow.setAttribute("ThickThinEnd2",count_WF_Thick_Thin_End_2 );
             weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void WF_Thick_Thin_End_3_Undo_actionListener(ActionEvent actionEvent) {
-        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Thick/Thin End","Weaving Faults",-3);
+        /*weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
         System.out.println("weave_Thick_Thin_End_3 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd3"));
@@ -567,11 +532,12 @@ public class InspectionProcessBackingBean {
             count_WF_Thick_Thin_End_3 = count_WF_Thick_Thin_End_3 - 1;
             weaveFaultVOCurrRow.setAttribute("ThickThinEnd3",count_WF_Thick_Thin_End_3 );
             weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void WF_Thick_Thin_End_4_Undo_actionListener(ActionEvent actionEvent) {
-        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Thick/Thin End","Weaving Faults",-4);
+        /*weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
         System.out.println("weave_Thick_Thin_End_4 = "+weaveFaultVOCurrRow.getAttribute("ThickThinEnd4"));
@@ -583,11 +549,12 @@ public class InspectionProcessBackingBean {
             count_WF_Thick_Thin_End_4 = count_WF_Thick_Thin_End_4 - 1;
             weaveFaultVOCurrRow.setAttribute("ThickThinEnd4",count_WF_Thick_Thin_End_4 );
             weaveFaultVOCurrRow.setAttribute("ThickThinEndTotal",currTotalValue);
-        }
+        }*/
     }
 
-    /*public void WF_Thick_Thin_Pick_1_Points_actionListener(ActionEvent actionEvent) {
-        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+    public void WF_Thick_Thin_Pick_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Thick/Thin Pick","Weaving Faults",1);
+    /*    weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
         System.out.println("weave_Thick_Thin_Pick_1 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick1"));
@@ -596,11 +563,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue + 1;
         count_WF_Thick_Thin_Pick_1 = count_WF_Thick_Thin_Pick_1 + 1;
         weaveFaultVOCurrRow.setAttribute("ThickThinPick1",count_WF_Thick_Thin_Pick_1);
-        weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
+        weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);*/
     }
 
     public void WF_Thick_Thin_Pick_2_Points_actionListener(ActionEvent actionEvent) {
-        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Thick/Thin Pick","Weaving Faults",2);
+        /*weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
         System.out.println("weave_Thick_Thin_Pick_2 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick2"));
@@ -609,11 +577,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue + 2;
         count_WF_Thick_Thin_Pick_2 = count_WF_Thick_Thin_Pick_2 + 1;
         weaveFaultVOCurrRow.setAttribute("ThickThinPick2",count_WF_Thick_Thin_Pick_2);
-        weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
+        weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);*/
     }
 
     public void WF_Thick_Thin_Pick_3_Points_actionListener(ActionEvent actionEvent) {
-        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Thick/Thin Pick","Weaving Faults",3);
+        /*weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
         System.out.println("weave_Thick_Thin_Pick_3 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick3"));
@@ -622,11 +591,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue + 3;
         count_WF_Thick_Thin_Pick_3 = count_WF_Thick_Thin_Pick_3 + 1;
         weaveFaultVOCurrRow.setAttribute("ThickThinPick3",count_WF_Thick_Thin_Pick_3);
-        weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
+        weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);*/
     }
 
     public void WF_Thick_Thin_Pick_4_Points_actionListener(ActionEvent actionEvent) {
-        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Thick/Thin Pick","Weaving Faults",4);
+        /*weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
         System.out.println("weave_Thick_Thin_Pick_4 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick4"));
@@ -635,11 +605,12 @@ public class InspectionProcessBackingBean {
         currTotalValue = currTotalValue + 4;
         count_WF_Thick_Thin_Pick_4 = count_WF_Thick_Thin_Pick_4 + 1;
         weaveFaultVOCurrRow.setAttribute("ThickThinPick4",count_WF_Thick_Thin_Pick_4);
-        weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
+        weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);*/
     }
 
     public void WF_Thick_Thin_Pick_1_Undo_actionListener(ActionEvent actionEvent) {
-        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Thick/Thin Pick","Weaving Faults",-1);
+        /*weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
         System.out.println("weave_Thick_Thin_Pick_1 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick1"));
@@ -651,11 +622,12 @@ public class InspectionProcessBackingBean {
             count_WF_Thick_Thin_Pick_1 = count_WF_Thick_Thin_Pick_1 - 1;
             weaveFaultVOCurrRow.setAttribute("ThickThinPick1",count_WF_Thick_Thin_Pick_1);
             weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
-        }
+        }*/
     }
     
     public void WF_Thick_Thin_Pick_2_Undo_actionListener(ActionEvent actionEvent) {
-        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Thick/Thin Pick","Weaving Faults",-2);
+        /*weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
         System.out.println("weave_Thick_Thin_Pick_2 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick2"));
@@ -667,11 +639,12 @@ public class InspectionProcessBackingBean {
             count_WF_Thick_Thin_Pick_2 = count_WF_Thick_Thin_Pick_2 - 1;
             weaveFaultVOCurrRow.setAttribute("ThickThinPick2",count_WF_Thick_Thin_Pick_2);
             weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void WF_Thick_Thin_Pick_3_Undo_actionListener(ActionEvent actionEvent) {
-        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Thick/Thin Pick","Weaving Faults",-3);
+        /*weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
         System.out.println("weave_Thick_Thin_Pick_3 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick3"));
@@ -683,11 +656,12 @@ public class InspectionProcessBackingBean {
             count_WF_Thick_Thin_Pick_3 = count_WF_Thick_Thin_Pick_3 - 1;
             weaveFaultVOCurrRow.setAttribute("ThickThinPick3",count_WF_Thick_Thin_Pick_3);
             weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
-        }
+        }*/
     }
 
     public void WF_Thick_Thin_Pick_4_Undo_actionListener(ActionEvent actionEvent) {
-        weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
+        insertIntoFaultEntries("Thick/Thin Pick","Weaving Faults",-4);
+        /*weaveFaultVOCurrRow = weaveFaultVO.getCurrentRow();
         if (weaveFaultVOCurrRow==null)
             weaveFaultVOCurrRow = weaveFaultVO.createRow();
         System.out.println("weave_Thick_Thin_Pick_4 = "+weaveFaultVOCurrRow.getAttribute("ThickThinPick4"));
@@ -699,7 +673,7 @@ public class InspectionProcessBackingBean {
             count_WF_Thick_Thin_Pick_4 = count_WF_Thick_Thin_Pick_4 - 1;
             weaveFaultVOCurrRow.setAttribute("ThickThinPick4",count_WF_Thick_Thin_Pick_4);
             weaveFaultVOCurrRow.setAttribute("ThickThinPickTotal",currTotalValue);
-        }
+        }*/
     }
 
     /*public void setGf_FY_Total_OT(RichOutputText gf_FY_Total_OT) {

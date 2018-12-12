@@ -327,4 +327,9 @@
     ViewLink="model.VL.PwcInspPrcWeaveFaultVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PwcOdmInspPrcFaultEntriesVO"
+    ViewLink="model.VL.PwcOdmInspPrcLineFaultEntriesVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

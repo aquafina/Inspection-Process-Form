@@ -175,5 +175,11 @@
     </attributeValues>
     <action IterBinding="PwcOdmInspPrcWeaveFaultVO2Iterator" id="CreateInsert2"
             RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="PwcOdmInspPrcWeaveFaultVO2Iterator"
+                     id="ThickThinEndTotal">
+      <AttrNames>
+        <Item Value="ThickThinEndTotal"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

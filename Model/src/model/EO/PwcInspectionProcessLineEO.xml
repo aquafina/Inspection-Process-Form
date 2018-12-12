@@ -482,6 +482,13 @@
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
   </Attribute>
+  <AccessorAttribute
+    Name="PwcOdmInspPrcFaultEntriesEO"
+    Association="model.Assoc.PwcOdmInspPrcLineFaultEntriesAssoc"
+    AssociationEnd="model.Assoc.PwcOdmInspPrcLineFaultEntriesAssoc.PwcOdmInspPrcFaultEntriesEO"
+    AssociationOtherEnd="model.Assoc.PwcOdmInspPrcLineFaultEntriesAssoc.PwcInspectionProcessLineEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PwcInspectionProcessLineRollNumberCheck">
     <DesignTime>

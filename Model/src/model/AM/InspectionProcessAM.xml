@@ -56,6 +56,21 @@
   <ViewUsage
     Name="PwcOdmInspPrcWeaveFaultVO3"
     ViewObjectName="model.VO.PwcOdmInspPrcWeaveFaultVO"/>
+  <ViewUsage
+    Name="PwcOdmInspPrcFaultEntriesVO1"
+    ViewObjectName="model.VO.PwcOdmInspPrcFaultEntriesVO"/>
+  <ViewUsage
+    Name="PwcInspectionProcessLineVO3"
+    ViewObjectName="model.VO.PwcInspectionProcessLineVO"/>
+  <ViewUsage
+    Name="PwcOdmInspPrcFaultEntriesVO2"
+    ViewObjectName="model.VO.PwcOdmInspPrcFaultEntriesVO"/>
+  <ViewUsage
+    Name="PwcOdmInspPrcFaultEntriesVO3"
+    ViewObjectName="model.VO.PwcOdmInspPrcFaultEntriesVO"/>
+  <ViewUsage
+    Name="PwcInspPrcFaultTypesVO1"
+    ViewObjectName="model.VO.PwcInspPrcFaultTypesVO"/>
   <ViewLinkUsage
     Name="PwcInspectionProcessVL"
     ViewLinkObjectName="model.VL.PwcInspectionProcessVL"
@@ -86,12 +101,68 @@
     SrcViewUsageName="model.AM.InspectionProcessAM.PwcInspectionProcessLineVO1"
     DstViewUsageName="model.AM.InspectionProcessAM.PwcOdmInspPrcWeaveFaultVO2"
     Reversed="false"/>
+  <ViewLinkUsage
+    Name="PwcOdmInspPrcLineFaultEntriesVL"
+    ViewLinkObjectName="model.VL.PwcOdmInspPrcLineFaultEntriesVL"
+    SrcViewUsageName="model.AM.InspectionProcessAM.PwcInspectionProcessLineVO3"
+    DstViewUsageName="model.AM.InspectionProcessAM.PwcOdmInspPrcFaultEntriesVO2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="PwcOdmInspPrcLineFaultEntriesVL1"
+    ViewLinkObjectName="model.VL.PwcOdmInspPrcLineFaultEntriesVL"
+    SrcViewUsageName="model.AM.InspectionProcessAM.PwcInspectionProcessLineVO1"
+    DstViewUsageName="model.AM.InspectionProcessAM.PwcOdmInspPrcFaultEntriesVO3"
+    Reversed="false"/>
   <!--<ViewLinkUsage
     Name="PwcInspPrcWeaveFaultVL"
     ViewLinkObjectName="PwcInspPrcWeaveFaultVL"
     SrcViewUsageName="model.AM.InspectionProcessAM.PwcOdmInspPrcDyeFaultVO3"
     DstViewUsageName="model.AM.InspectionProcessAM.PwcOdmInspPrcWeaveFaultVO1"
     Reversed="false"/>-->
+  <ClientInterface>
+    <Method
+      Name="setSessionValues">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="orgId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="userId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="respId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="respAppl"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="mfgOrgId"
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
+  <ClientInterface>
+    <Method
+      Name="setSessionValues">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="orgId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="userId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="respId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="respAppl"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="mfgOrgId"
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
   <ClientInterface>
     <Method
       Name="setSessionValues">

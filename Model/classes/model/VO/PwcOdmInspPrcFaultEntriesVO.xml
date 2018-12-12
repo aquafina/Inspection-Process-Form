@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PwcOdmInspPrcFaultEntriesVO"
+  Version="11.1.1.64.93"
+  InheritPersonalization="true"
+  SelectList="PwcOdmInspPrcFaultEntriesEO.FAULT_ENTRY_ID, 
+       PwcOdmInspPrcFaultEntriesEO.INSP_PRC_ROLL_NUMBER, 
+       PwcOdmInspPrcFaultEntriesEO.FAULT_TYPE_ID, 
+       PwcOdmInspPrcFaultEntriesEO.POINTS, 
+       PwcOdmInspPrcFaultEntriesEO.CREATED_BY, 
+       PwcOdmInspPrcFaultEntriesEO.CREATION_DATE, 
+       PwcOdmInspPrcFaultEntriesEO.LAST_UPDATED_BY, 
+       PwcOdmInspPrcFaultEntriesEO.LAST_UPDATED_DATE, 
+       PwcOdmInspPrcFaultEntriesEO.LAST_UPDATED_LOGIN"
+  FromList="PWC_ODM_INSP_PRC_FAULT_ENTRIES PwcOdmInspPrcFaultEntriesEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="PwcOdmInspPrcFaultEntriesEO"
+    Entity="model.EO.PwcOdmInspPrcFaultEntriesEO"/>
+  <ViewAttribute
+    Name="FaultEntryId"
+    IsUpdateable="while_insert"
+    PrecisionRule="true"
+    EntityAttrName="FaultEntryId"
+    EntityUsage="PwcOdmInspPrcFaultEntriesEO"
+    AliasName="FAULT_ENTRY_ID"/>
+  <ViewAttribute
+    Name="InspPrcRollNumber"
+    PrecisionRule="true"
+    EntityAttrName="InspPrcRollNumber"
+    EntityUsage="PwcOdmInspPrcFaultEntriesEO"
+    AliasName="INSP_PRC_ROLL_NUMBER"/>
+  <ViewAttribute
+    Name="FaultTypeId"
+    PrecisionRule="true"
+    EntityAttrName="FaultTypeId"
+    EntityUsage="PwcOdmInspPrcFaultEntriesEO"
+    AliasName="FAULT_TYPE_ID"/>
+  <ViewAttribute
+    Name="Points"
+    PrecisionRule="true"
+    EntityAttrName="Points"
+    EntityUsage="PwcOdmInspPrcFaultEntriesEO"
+    AliasName="POINTS"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="PwcOdmInspPrcFaultEntriesEO"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreationDate"
+    PrecisionRule="true"
+    EntityAttrName="CreationDate"
+    EntityUsage="PwcOdmInspPrcFaultEntriesEO"
+    AliasName="CREATION_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedBy"
+    EntityUsage="PwcOdmInspPrcFaultEntriesEO"
+    AliasName="LAST_UPDATED_BY"/>
+  <ViewAttribute
+    Name="LastUpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedDate"
+    EntityUsage="PwcOdmInspPrcFaultEntriesEO"
+    AliasName="LAST_UPDATED_DATE"/>
+  <ViewAttribute
+    Name="LastUpdatedLogin"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdatedLogin"
+    EntityUsage="PwcOdmInspPrcFaultEntriesEO"
+    AliasName="LAST_UPDATED_LOGIN"/>
+</ViewObject>
