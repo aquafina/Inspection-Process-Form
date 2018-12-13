@@ -13,9 +13,6 @@
               id="PwcInspectionProcessHeaderVO1Iterator"/>
     <invokeAction id="setSessionValuesAction" Binds="setSessionValues"
                   Refresh="always"/>
-    <iterator Binds="PwcOdmInspPrcWeaveFaultVO2" RangeSize="25"
-              DataControl="InspectionProcessAMDataControl"
-              id="PwcOdmInspPrcWeaveFaultVO2Iterator"/>
     <iterator Binds="PwcOdmInsPrcFaultsTotalVO3" RangeSize="25"
               DataControl="InspectionProcessAMDataControl"
               id="PwcOdmInsPrcFaultsTotalVO3Iterator"/>
@@ -149,12 +146,154 @@
     <action id="Rollback" RequiresUpdateModel="false"
             Action="rollbackTransaction"
             DataControl="InspectionProcessAMDataControl"/>
-    <action IterBinding="PwcOdmInspPrcWeaveFaultVO2Iterator" id="CreateInsert2"
-            RequiresUpdateModel="true" Action="createInsertRow"/>
     <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
                      id="YarnFaultsSlubs">
       <AttrNames>
         <Item Value="YarnFaultsSlubs"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="YarnFaultsForeignYarn">
+      <AttrNames>
+        <Item Value="YarnFaultsForeignYarn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="YarnFaultsNeps">
+      <AttrNames>
+        <Item Value="YarnFaultsNeps"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="WeavingFaultsThickThinEnd">
+      <AttrNames>
+        <Item Value="WeavingFaultsThickThinEnd"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="WeavingFaultsThickThinPick">
+      <AttrNames>
+        <Item Value="WeavingFaultsThickThinPick"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="WeavingFaultsKnots">
+      <AttrNames>
+        <Item Value="WeavingFaultsKnots"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="WeavingFaultsMixedYarn">
+      <AttrNames>
+        <Item Value="WeavingFaultsMixedYarn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="WeavingFaultsDoubleYarn">
+      <AttrNames>
+        <Item Value="WeavingFaultsDoubleYarn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="WeavingFaultsMissYarnPick">
+      <AttrNames>
+        <Item Value="WeavingFaultsMissYarnPick"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="WeavingFaultsReedMark">
+      <AttrNames>
+        <Item Value="WeavingFaultsReedMark"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="WeavingFaultsHole">
+      <AttrNames>
+        <Item Value="WeavingFaultsHole"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="WeavingFaultsStopMark">
+      <AttrNames>
+        <Item Value="WeavingFaultsStopMark"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="WeavingFaultsBrokenEnd">
+      <AttrNames>
+        <Item Value="WeavingFaultsBrokenEnd"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="WeavingFaultsBrokenPick">
+      <AttrNames>
+        <Item Value="WeavingFaultsBrokenPick"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="WeavingFaultsDistortionMark">
+      <AttrNames>
+        <Item Value="WeavingFaultsDistortionMark"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="DyeingFaultsStainDirtyMark">
+      <AttrNames>
+        <Item Value="DyeingFaultsStainDirtyMark"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="DyeingFaultsCreaseMark">
+      <AttrNames>
+        <Item Value="DyeingFaultsCreaseMark"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="DyeingFaultsDyeResist">
+      <AttrNames>
+        <Item Value="DyeingFaultsDyeResist"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="DyeingFaultsShadeVariation">
+      <AttrNames>
+        <Item Value="DyeingFaultsShadeVariation"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="DyeingFaultsOilSpot">
+      <AttrNames>
+        <Item Value="DyeingFaultsOilSpot"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="DyeingFaultsDropMark">
+      <AttrNames>
+        <Item Value="DyeingFaultsDropMark"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="DyeingFaultsLineMark">
+      <AttrNames>
+        <Item Value="DyeingFaultsLineMark"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="PrintingFaultsMissPrint">
+      <AttrNames>
+        <Item Value="PrintingFaultsMissPrint"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="PrintingFaultsDesignOut">
+      <AttrNames>
+        <Item Value="PrintingFaultsDesignOut"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="PrintingFaultsPrintOverlap">
+      <AttrNames>
+        <Item Value="PrintingFaultsPrintOverlap"/>
       </AttrNames>
     </attributeValues>
   </bindings>

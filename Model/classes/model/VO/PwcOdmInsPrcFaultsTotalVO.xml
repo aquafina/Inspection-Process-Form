@@ -37,50 +37,6 @@
     </DesignTime>
   </ViewAttribute>
   <ViewAttribute
-    Name="FaultTypeId"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    AliasName="FAULT_TYPE_ID"
-    Expression="FAULT_TYPE_ID"
-    SQLType="NUMERIC">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
-    </DesignTime>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="FaultName"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Precision="150"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="FAULT_NAME"
-    Expression="FAULT_NAME"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="150"/>
-    </DesignTime>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="FaultCategory"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Precision="150"
-    Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    AliasName="FAULT_CATEGORY"
-    Expression="FAULT_CATEGORY"
-    SQLType="VARCHAR">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="150"/>
-    </DesignTime>
-  </ViewAttribute>
-  <ViewAttribute
     Name="YarnFaultsSlubs"
     IsUpdateable="false"
     IsPersistent="false"
@@ -446,7 +402,6 @@
   </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="InspPrcRollNumber"/>
-    <Item Value="FaultTypeId"/>
   </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
