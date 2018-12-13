@@ -676,679 +676,691 @@ public class InspectionProcessBackingBean {
         }*/
     }
 
-    /*public void setGf_FY_Total_OT(RichOutputText gf_FY_Total_OT) {
-        this.gf_FY_Total_OT = gf_FY_Total_OT;
-    }
-
-    public RichOutputText getGf_FY_Total_OT() {
-        return gf_FY_Total_OT;
-    }
                 
                 
     
-    public void DF_OS_1_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_OS_Total_OT.getValue().toString());
+    public void WF_Knots_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Knots","Weaving Faults",1);
+        /*int currValue = Integer.parseInt(df_OS_Total_OT.getValue().toString());
         currValue = currValue+1;
         df_OS_Total_OT.setValue(currValue);
-        count_DF_OS_1++;
+        count_DF_OS_1++;*/
     }
 
-    public void DF_OS_2_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_OS_Total_OT.getValue().toString());
-        currValue = currValue+2;
-        df_OS_Total_OT.setValue(currValue);
-        count_DF_OS_2++;
+    public void WF_Knots_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Knots","Weaving Faults",2);
     }
 
-    public void DF_OS_3_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_OS_Total_OT.getValue().toString());
-        currValue = currValue+3;
-        df_OS_Total_OT.setValue(currValue);
-        count_DF_OS_3++;
+    public void WF_Knots_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Knots","Weaving Faults",3);
     }
 
-    public void DF_OS_4_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_OS_Total_OT.getValue().toString());
-        currValue = currValue+4;
-        df_OS_Total_OT.setValue(currValue);
-        count_DF_OS_4++;
+    public void WF_Knots_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Knots","Weaving Faults",4);
     }
 
-    public void DF_OS_1_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_FY_Total_OT.getValue().toString());
-        currValue = (currValue-1)<0?0:(currValue-1);
-        gf_FY_Total_OT.setValue(currValue);
-        if(count_DF_OS_1 > 0)
-            count_DF_OS_1--;
+    public void WF_Knots_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Knots","Weaving Faults",-1);
     }
 
-    public void DF_OS_2_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_FY_Total_OT.getValue().toString());
-        currValue = (currValue-2)<0?0:(currValue-2);
-        gf_FY_Total_OT.setValue(currValue);
-        if(count_DF_OS_2 > 0)
-            count_DF_OS_2--;
+    public void WF_Knots_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Knots","Weaving Faults",-2);
     }
 
-    public void DF_OS_3_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_FY_Total_OT.getValue().toString());
-        currValue = (currValue-3)<0?0:(currValue-3);
-        gf_FY_Total_OT.setValue(currValue);
-        if(count_DF_OS_3 > 0)
-            count_DF_OS_3--;
+    public void WF_Knots_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Knots","Weaving Faults",-3);
     }
 
-    public void DF_OS_4_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(gf_FY_Total_OT.getValue().toString());
-        currValue = (currValue-4)<0?0:(currValue-4);
-        gf_FY_Total_OT.setValue(currValue);
-        if(count_DF_OS_4 > 0)
-            count_DF_OS_4--;
+    public void WF_Knots_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Knots","Weaving Faults",-4);
     }
 
-    public void setDf_OS_Total_OT(RichOutputText df_OS_Total_OT) {
-        this.df_OS_Total_OT = df_OS_Total_OT;
+    public void WF_Mixed_Yarn_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Mixed Yarn","Weaving Faults",1);
     }
 
-    public RichOutputText getDf_OS_Total_OT() {
-        return df_OS_Total_OT;
+    public void WF_Mixed_Yarn_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Mixed Yarn","Weaving Faults",2);
     }
 
-    public void DF_SV_1_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SV_Total_OT.getValue().toString());
-        currValue = currValue+1;
-        df_SV_Total_OT.setValue(currValue);
-        count_DF_SV_1++;
+    public void WF_Mixed_Yarn_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Mixed Yarn","Weaving Faults",3);
     }
 
-    public void DF_SV_2_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SV_Total_OT.getValue().toString());
-        currValue = currValue+2;
-        df_SV_Total_OT.setValue(currValue);
-        count_DF_SV_2++;
+    public void WF_Mixed_Yarn_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Mixed Yarn","Weaving Faults",4);
     }
 
-    public void DF_SV_3_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SV_Total_OT.getValue().toString());
-        currValue = currValue+3;
-        df_SV_Total_OT.setValue(currValue);
-        count_DF_SV_3++;
+    public void WF_Mixed_Yarn_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Mixed Yarn","Weaving Faults",-1);
     }
 
-    public void DF_SV_4_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SV_Total_OT.getValue().toString());
-        currValue = currValue+4;
-        df_SV_Total_OT.setValue(currValue);
-        count_DF_SV_4++;
+    public void WF_Mixed_Yarn_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Mixed Yarn","Weaving Faults",-2);
     }
 
-    public void DF_SV_1_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SV_Total_OT.getValue().toString());
-        currValue = (currValue-1)<0?0:(currValue-1);
-        df_SV_Total_OT.setValue(currValue);
+    public void WF_Mixed_Yarn_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Mixed Yarn","Weaving Faults",-3);
     }
 
-    public void DF_SV_2_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SV_Total_OT.getValue().toString());
-        currValue = (currValue-2)<0?0:(currValue-2);
-        df_SV_Total_OT.setValue(currValue);
+    public void WF_Mixed_Yarn_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Mixed Yarn","Weaving Faults",-4);
     }
 
-    public void DF_SV_3_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SV_Total_OT.getValue().toString());
-        currValue = (currValue-3)<0?0:(currValue-3);
-        df_SV_Total_OT.setValue(currValue);
+    public void WF_Double_Yarn_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Double Yarn","Weaving Faults",1);
     }
 
-    public void DF_SV_4_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SV_Total_OT.getValue().toString());
-        currValue = (currValue-4)<0?0:(currValue-4);
-        df_SV_Total_OT.setValue(currValue);
+    public void WF_Double_Yarn_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Double Yarn","Weaving Faults",2);
     }
 
-    public void setDf_SV_Total_OT(RichOutputText df_SV_Total_OT) {
-        this.df_SV_Total_OT = df_SV_Total_OT;
+    public void WF_Double_Yarn_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Double Yarn","Weaving Faults",3);
     }
 
-    public RichOutputText getDf_SV_Total_OT() {
-        return df_SV_Total_OT;
+    public void WF_Double_Yarn_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Double Yarn","Weaving Faults",4);
     }
 
-    public void DF_Spot_1_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_Spot_Total_OT.getValue().toString());
-        currValue = currValue+1;
-        df_Spot_Total_OT.setValue(currValue);
+    public void WF_Double_Yarn_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Double Yarn","Weaving Faults",-1);
     }
 
-    public void DF_Spot_2_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_Spot_Total_OT.getValue().toString());
-        currValue = currValue+2;
-        df_Spot_Total_OT.setValue(currValue);
+    public void WF_Double_Yarn_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Double Yarn","Weaving Faults",-2);
     }
 
-    public void DF_Spot_3_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_Spot_Total_OT.getValue().toString());
-        currValue = currValue+3;
-        df_Spot_Total_OT.setValue(currValue);
+    public void WF_Double_Yarn_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Double Yarn","Weaving Faults",-3);
     }
 
-    public void DF_Spot_4_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_Spot_Total_OT.getValue().toString());
-        currValue = currValue+4;
-        df_Spot_Total_OT.setValue(currValue);
+    public void WF_Double_Yarn_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Double Yarn","Weaving Faults",-4);
     }
 
-    public void DF_Spot_1_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_Spot_Total_OT.getValue().toString());
-        currValue = (currValue-1)<0?0:(currValue-1);
-        df_Spot_Total_OT.setValue(currValue);
+    public void WF_Miss_Yarn_Pick_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Yarn/Pick","Weaving Faults",1);
     }
 
-    public void DF_Spot_2_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_Spot_Total_OT.getValue().toString());
-        currValue = (currValue-2)<0?0:(currValue-2);
-        df_Spot_Total_OT.setValue(currValue);
+    public void WF_Miss_Yarn_Pick_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Yarn/Pick","Weaving Faults",2);
     }
 
-    public void DF_Spot_3_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_Spot_Total_OT.getValue().toString());
-        currValue = (currValue-3)<0?0:(currValue-3);
-        df_Spot_Total_OT.setValue(currValue);
+    public void WF_Miss_Yarn_Pick_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Yarn/Pick","Weaving Faults",3);
     }
 
-    public void DF_Spot_4_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_Spot_Total_OT.getValue().toString());
-        currValue = (currValue-4)<0?0:(currValue-4);
-        df_Spot_Total_OT.setValue(currValue);
+    public void WF_Miss_Yarn_Pick_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Yarn/Pick","Weaving Faults",4);
     }
 
-    public void setDf_Spot_Total_OT(RichOutputText df_Spot_Total_OT) {
-        this.df_Spot_Total_OT = df_Spot_Total_OT;
+    public void WF_Miss_Yarn_Pick_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Yarn/Pick","Weaving Faults",-1);
     }
 
-    public RichOutputText getDf_Spot_Total_OT() {
-        return df_Spot_Total_OT;
+    public void WF_Miss_Yarn_Pick_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Yarn/Pick","Weaving Faults",-2);
     }
 
-    public void DF_MP_1_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_MP_Total_OT.getValue().toString());
-        currValue = currValue+1;
-        df_MP_Total_OT.setValue(currValue);
+    public void WF_Miss_Yarn_Pick_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Yarn/Pick","Weaving Faults",-3);
     }
 
-    public void DF_MP_2_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_MP_Total_OT.getValue().toString());
-        currValue = currValue+2;
-        df_MP_Total_OT.setValue(currValue);
+    public void WF_Miss_Yarn_Pick_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Yarn/Pick","Weaving Faults",-4);
     }
 
-    public void DF_MP_3_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_MP_Total_OT.getValue().toString());
-        currValue = currValue+3;
-        df_MP_Total_OT.setValue(currValue);
+    public void WF_Reed_Mark_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Reed Mark","Weaving Faults",1);
     }
 
-    public void DF_MP_4_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_MP_Total_OT.getValue().toString());
-        currValue = currValue+4;
-        df_MP_Total_OT.setValue(currValue);
+    public void WF_Reed_Mark_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Reed Mark","Weaving Faults",2);
     }
 
-    public void DF_MP_1_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_MP_Total_OT.getValue().toString());
-        currValue = (currValue-1)<0?0:(currValue-1);
-        df_MP_Total_OT.setValue(currValue);
+    public void WF_Reed_Mark_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Reed Mark","Weaving Faults",3);
     }
 
-    public void DF_MP_2_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_MP_Total_OT.getValue().toString());
-        currValue = (currValue-2)<0?0:(currValue-2);
-        df_MP_Total_OT.setValue(currValue);
+    public void WF_Reed_Mark_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Reed Mark","Weaving Faults",4);
     }
 
-    public void DF_MP_3_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_MP_Total_OT.getValue().toString());
-        currValue = (currValue-3)<0?0:(currValue-3);
-        df_MP_Total_OT.setValue(currValue);
+    public void WF_Reed_Mark_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Reed Mark","Weaving Faults",-1);
     }
 
-    public void DF_MP_4_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_MP_Total_OT.getValue().toString());
-        currValue = (currValue-4)<0?0:(currValue-4);
-        df_MP_Total_OT.setValue(currValue);
+    public void WF_Reed_Mark_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Reed Mark","Weaving Faults",-2);
     }
 
-    public void DF_DS_1_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_DS_Total_OT.getValue().toString());
-        currValue = currValue+1;
-        df_DS_Total_OT.setValue(currValue);
+    public void WF_Reed_Mark_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Reed Mark","Weaving Faults",-3);
     }
 
-    public void DF_DS_2_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_DS_Total_OT.getValue().toString());
-        currValue = currValue+2;
-        df_DS_Total_OT.setValue(currValue);
+    public void WF_Reed_Mark_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Reed Mark","Weaving Faults",-4);
     }
-
-    public void DF_DS_3_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_DS_Total_OT.getValue().toString());
-        currValue = currValue+3;
-        df_DS_Total_OT.setValue(currValue);
+    
+    public void WF_Hole_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Hole","Weaving Faults",1);
     }
 
-    public void DF_DS_4_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_DS_Total_OT.getValue().toString());
-        currValue = currValue+4;
-        df_DS_Total_OT.setValue(currValue);
+    public void WF_Hole_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Hole","Weaving Faults",2);
     }
 
-    public void DF_DS_1_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_DS_Total_OT.getValue().toString());
-        currValue = (currValue-1)<0?0:(currValue-1);
-        df_DS_Total_OT.setValue(currValue);
+    public void WF_Hole_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Hole","Weaving Faults",3);
     }
 
-    public void DF_DS_2_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_MP_Total_OT.getValue().toString());
-        currValue = (currValue-2)<0?0:(currValue-2);
-        df_MP_Total_OT.setValue(currValue);
+    public void WF_Hole_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Hole","Weaving Faults",4);
     }
 
-    public void DF_DS_3_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_MP_Total_OT.getValue().toString());
-        currValue = (currValue-3)<0?0:(currValue-3);
-        df_MP_Total_OT.setValue(currValue);
+    public void WF_Hole_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Hole","Weaving Faults",-1);
     }
 
-    public void DF_DS_4_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_MP_Total_OT.getValue().toString());
-        currValue = (currValue-4)<0?0:(currValue-4);
-        df_MP_Total_OT.setValue(currValue);
+    public void WF_Hole_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Hole","Weaving Faults",-2);
     }
 
-    public void setDf_MP_Total_OT(RichOutputText df_DS_Total_OT) {
-        this.df_MP_Total_OT = df_DS_Total_OT;
+    public void WF_Hole_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Hole","Weaving Faults",-3);
     }
 
-    public RichOutputText getDf_MP_Total_OT() {
-        return df_MP_Total_OT;
+    public void WF_Hole_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Hole","Weaving Faults",-4);
     }
 
-    public void setDf_DS_Total_OT(RichOutputText df_DS_Total_OT) {
-        this.df_DS_Total_OT = df_DS_Total_OT;
+    public void WF_Stop_Mark_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stop Mark","Weaving Faults",1);
     }
 
-    public RichOutputText getDf_DS_Total_OT() {
-        return df_DS_Total_OT;
+    public void WF_Stop_Mark_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stop Mark","Weaving Faults",2);
     }
 
-    public void DF_SM_1_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SM_Total_OT.getValue().toString());
-        currValue = currValue+1;
-        df_SM_Total_OT.setValue(currValue);
+    public void WF_Stop_Mark_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stop Mark","Weaving Faults",3);
     }
 
-    public void DF_SM_2_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SM_Total_OT.getValue().toString());
-        currValue = currValue+2;
-        df_SM_Total_OT.setValue(currValue);
+    public void WF_Stop_Mark_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stop Mark","Weaving Faults",4);
     }
 
-    public void DF_SM_3_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SM_Total_OT.getValue().toString());
-        currValue = currValue+3;
-        df_SM_Total_OT.setValue(currValue);
+    public void WF_Stop_Mark_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stop Mark","Weaving Faults",-1);
     }
 
-    public void DF_SM_4_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SM_Total_OT.getValue().toString());
-        currValue = currValue+4;
-        df_SM_Total_OT.setValue(currValue);
+    public void WF_Stop_Mark_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stop Mark","Weaving Faults",-2);
     }
 
-    public void DF_SM_1_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SM_Total_OT.getValue().toString());
-        currValue = (currValue-1)<0?0:(currValue-1);
-        df_SM_Total_OT.setValue(currValue);
+    public void WF_Stop_Mark_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stop Mark","Weaving Faults",-3);
     }
 
-    public void DF_SM_2_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SM_Total_OT.getValue().toString());
-        currValue = (currValue-2)<0?0:(currValue-2);
-        df_SM_Total_OT.setValue(currValue);
+    public void WF_Stop_Mark_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stop Mark","Weaving Faults",-4);
     }
 
-    public void DF_SM_3_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SM_Total_OT.getValue().toString());
-        currValue = (currValue-3)<0?0:(currValue-3);
-        df_SM_Total_OT.setValue(currValue);
+    public void WF_Broken_End_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stop Mark","Weaving Faults",1);
     }
 
-    public void DF_SM_4_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_SM_Total_OT.getValue().toString());
-        currValue = (currValue-4)<0?0:(currValue-4);
-        df_SM_Total_OT.setValue(currValue);
+    public void WF_Broken_End_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Broken End","Weaving Faults",2);
     }
 
-    public void setDf_SM_Total_OT(RichOutputText df_SM_Total_OT) {
-        this.df_SM_Total_OT = df_SM_Total_OT;
+    public void WF_Broken_End_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Broken End","Weaving Faults",3);
     }
 
-    public RichOutputText getDf_SM_Total_OT() {
-        return df_SM_Total_OT;
+    public void WF_Broken_End_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Broken End","Weaving Faults",4);
     }
 
-    public void DF_BM_1_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_BM_Total_OT.getValue().toString());
-        currValue = currValue+1;
-        df_BM_Total_OT.setValue(currValue);
+    public void WF_Broken_End_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Broken End","Weaving Faults",-1);
     }
 
-    public void DF_BM_2_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_BM_Total_OT.getValue().toString());
-        currValue = currValue+2;
-        df_BM_Total_OT.setValue(currValue);
+    public void WF_Broken_End_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Broken End","Weaving Faults",-2);
     }
 
-    public void DF_BM_3_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_BM_Total_OT.getValue().toString());
-        currValue = currValue+3;
-        df_BM_Total_OT.setValue(currValue);
+    public void WF_Broken_End_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Broken End","Weaving Faults",-3);
     }
 
-    public void DF_BM_4_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_BM_Total_OT.getValue().toString());
-        currValue = currValue+4;
-        df_BM_Total_OT.setValue(currValue);
+    public void WF_Broken_End_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Broken End","Weaving Faults",-4);
     }
 
-    public void DF_BM_1_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_BM_Total_OT.getValue().toString());
-        currValue = (currValue-1)<0?0:(currValue-1);
-        df_BM_Total_OT.setValue(currValue);
+    public void WF_Broken_Pick_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Broken Pick","Weaving Faults",1);
     }
 
-    public void DF_BM_2_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_BM_Total_OT.getValue().toString());
-        currValue = (currValue-2)<0?0:(currValue-2);
-        df_BM_Total_OT.setValue(currValue);
+    public void WF_Broken_Pick_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Broken Pick","Weaving Faults",2);
     }
 
-    public void DF_BM_3_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_BM_Total_OT.getValue().toString());
-        currValue = (currValue-3)<0?0:(currValue-3);
-        df_BM_Total_OT.setValue(currValue);
+    public void WF_Broken_Pick_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Broken Pick","Weaving Faults",3);
     }
 
-    public void DF_BM_4_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(df_BM_Total_OT.getValue().toString());
-        currValue = (currValue-4)<0?0:(currValue-4);
-        df_BM_Total_OT.setValue(currValue);
+    public void WF_Broken_Pick_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Broken Pick","Weaving Faults",4);
     }
 
-    public void setDf_BM_Total_OT(RichOutputText df_BM_Total_OT) {
-        this.df_BM_Total_OT = df_BM_Total_OT;
+    public void WF_Broken_Pick_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Broken Pick","Weaving Faults",-1);
     }
 
-    public RichOutputText getDf_BM_Total_OT() {
-        return df_BM_Total_OT;
+    public void WF_Broken_Pick_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Broken Pick","Weaving Faults",-2);
     }
 
-    public void YF_TY_1_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
-        currValue = currValue+1;
-        yf_TY_Total_OT.setValue(currValue);
+    public void WF_Broken_Pick_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Broken Pick","Weaving Faults",-3);
     }
 
-    public void YF_TY_2_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
-        currValue = currValue+2;
-        yf_TY_Total_OT.setValue(currValue);
+    public void WF_Broken_Pick_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Broken Pick","Weaving Faults",-4);
     }
 
-    public void YF_TY_3_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
-        currValue = currValue+3;
-        yf_TY_Total_OT.setValue(currValue);
+    public void WF_Distortion_Mark_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Distortion Mark","Weaving Faults",1);
     }
 
-    public void YF_TY_4_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
-        currValue = currValue+4;
-        yf_TY_Total_OT.setValue(currValue);
+    public void WF_Distortion_Mark_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Distortion Mark","Weaving Faults",2);
     }
 
-    public void YF_TY_1_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
-        currValue = (currValue-1)<0?0:(currValue-1);
-        yf_TY_Total_OT.setValue(currValue);
+    public void WF_Distortion_Mark_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Distortion Mark","Weaving Faults",3);
     }
 
-    public void YF_TY_2_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
-        currValue = (currValue-2)<0?0:(currValue-2);
-        yf_TY_Total_OT.setValue(currValue);
+    public void WF_Distortion_Mark_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Distortion Mark","Weaving Faults",4);
     }
 
-    public void YF_TY_3_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
-        currValue = (currValue-3)<0?0:(currValue-3);
-        yf_TY_Total_OT.setValue(currValue);                
+    public void WF_Distortion_Mark_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Distortion Mark","Weaving Faults",-1);
     }
 
-    public void YF_TY_4_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY_Total_OT.getValue().toString());
-        currValue = (currValue-4)<0?0:(currValue-4);
-        yf_TY_Total_OT.setValue(currValue);
+    public void WF_Distortion_Mark_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Distortion Mark","Weaving Faults",-2);
     }
 
-    public void setYf_TY_Total_OT(RichOutputText yf_TY_Total_OT) {
-        this.yf_TY_Total_OT = yf_TY_Total_OT;
+    public void WF_Distortion_Mark_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Distortion Mark","Weaving Faults",-3);
     }
 
-    public RichOutputText getYf_TY_Total_OT() {
-        return yf_TY_Total_OT;
+    public void WF_Distortion_Mark_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Distortion Mark","Weaving Faults",-4);
     }
 
-    public void YF_TY1_1_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
-        currValue = currValue+1;
-        yf_TY1_Total_OT.setValue(currValue);
+    public void DF_Stain_Dirty_Mark_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stain/Dirty Marks","Dyeing Faults",1);
     }
-
-    public void YF_TY1_2_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
-        currValue = currValue+2;
-        yf_TY1_Total_OT.setValue(currValue);
+    
+    public void DF_Stain_Dirty_Mark_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stain/Dirty Marks","Dyeing Faults",2);
     }
-
-    public void YF_TY1_3_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
-        currValue = currValue+3;
-        yf_TY1_Total_OT.setValue(currValue);
+    
+    public void DF_Stain_Dirty_Mark_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stain/Dirty Marks","Dyeing Faults",3);
     }
-
-    public void YF_TY1_4_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
-        currValue = currValue+4;
-        yf_TY1_Total_OT.setValue(currValue);
+    
+    public void DF_Stain_Dirty_Mark_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stain/Dirty Marks","Dyeing Faults",4);
     }
-
-    public void YF_TY1_1_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
-        currValue = (currValue-1)<0?0:(currValue-1);
-        yf_TY1_Total_OT.setValue(currValue);
+    
+    public void DF_Stain_Dirty_Mark_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stain/Dirty Marks","Dyeing Faults",-1);
     }
-
-    public void YF_TY1_2_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
-        currValue = (currValue-2)<0?0:(currValue-2);
-        yf_TY1_Total_OT.setValue(currValue);
+    
+    public void DF_Stain_Dirty_Mark_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stain/Dirty Marks","Dyeing Faults",-2);
     }
-
-    public void YF_TY1_3_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
-        currValue = (currValue-3)<0?0:(currValue-3);
-        yf_TY1_Total_OT.setValue(currValue);
+    
+    public void DF_Stain_Dirty_Mark_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stain/Dirty Marks","Dyeing Faults",-3);
     }
-
-    public void YF_TY1_4_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_TY1_Total_OT.getValue().toString());
-        currValue = (currValue-4)<0?0:(currValue-4);
-        yf_TY1_Total_OT.setValue(currValue);
+    
+    public void DF_Stain_Dirty_Mark_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Stain/Dirty Marks","Dyeing Faults",-4);
     }
-
-    public void YF_Slub_1_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
-        currValue = currValue+1;
-        yf_Slub_Total_OT.setValue(currValue);
+    
+    public void DF_Crease_Mark_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Crease Mark","Dyeing Faults",1);
     }
-
-    public void YF_Slub_2_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
-        currValue = currValue+2;
-        yf_Slub_Total_OT.setValue(currValue);
+    
+    public void DF_Crease_Mark_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Crease Mark","Dyeing Faults",2);
     }
-
-    public void YF_Slub_3_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
-        currValue = currValue+3;
-        yf_Slub_Total_OT.setValue(currValue);
+    
+    public void DF_Crease_Mark_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Crease Mark","Dyeing Faults",3);
     }
-
-    public void YF_Slub_4_Points_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
-        currValue = currValue+4;
-        yf_Slub_Total_OT.setValue(currValue);
+    
+    public void DF_Crease_Mark_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Crease Mark","Dyeing Faults",4);
     }
-
-    public void YF_Slub_1_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
-        currValue = (currValue-1)<0?0:(currValue-1);
-        yf_Slub_Total_OT.setValue(currValue);
+    
+    public void DF_Crease_Mark_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Crease Mark","Dyeing Faults",-1);
     }
-
-    public void YF_Slub_2_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
-        currValue = (currValue-2)<0?0:(currValue-2);
-        yf_Slub_Total_OT.setValue(currValue);
+    
+    public void DF_Crease_Mark_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Crease Mark","Dyeing Faults",-2);
     }
-
-    public void YF_Slub_3_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
-        currValue = (currValue-3)<0?0:(currValue-3);
-        yf_Slub_Total_OT.setValue(currValue);
+    
+    public void DF_Crease_Mark_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Crease Mark","Dyeing Faults",-3);
     }
-
-    public void YF_Slub_4_Undo_actionListener(ActionEvent actionEvent) {
-        // Add event code here...
-        int currValue = Integer.parseInt(yf_Slub_Total_OT.getValue().toString());
-        currValue = (currValue-4)<0?0:(currValue-4);
-        yf_Slub_Total_OT.setValue(currValue);
+    
+    public void DF_Crease_Mark_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Crease Mark","Dyeing Faults",-4);
     }
-
-    public void setYf_TY1_Total_OT(RichOutputText yf_TY1_Total_OT) {
-        this.yf_TY1_Total_OT = yf_TY1_Total_OT;
+    
+    public void DF_Joint_Mark_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Joint Mark","Dyeing Faults",1);
     }
-
-    public RichOutputText getYf_TY1_Total_OT() {
-        return yf_TY1_Total_OT;
+    
+    public void DF_Joint_Mark_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Joint Mark","Dyeing Faults",2);
+    }
+    
+    public void DF_Joint_Mark_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Joint Mark","Dyeing Faults",3);
+    }
+    
+    public void DF_Joint_Mark_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Joint Mark","Dyeing Faults",4);
+    }
+    
+    public void DF_Joint_Mark_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Joint Mark","Dyeing Faults",-1);
+    }
+    
+    public void DF_Joint_Mark_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Joint Mark","Dyeing Faults",-2);
+    }
+    
+    public void DF_Joint_Mark_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Joint Mark","Dyeing Faults",-3);
+    }
+    
+    public void DF_Joint_Mark_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Joint Mark","Dyeing Faults",-4);
+    }
+    
+    public void DF_Dye_Resist_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Dye Resist","Dyeing Faults",1);
+    }
+    
+    public void DF_Dye_Resist_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Dye Resist","Dyeing Faults",2);
+    }
+    
+    public void DF_Dye_Resist_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Dye Resist","Dyeing Faults",3);
+    }
+    
+    public void DF_Dye_Resist_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Dye Resist","Dyeing Faults",4);
+    }
+    
+    public void DF_Dye_Resist_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Dye Resist","Dyeing Faults",-1);
+    }
+    
+    public void DF_Dye_Resist_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Dye Resist","Dyeing Faults",-2);
+    }
+    
+    public void DF_Dye_Resist_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Dye Resist","Dyeing Faults",-3);
+    }
+    
+    public void DF_Dye_Resist_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Dye Resist","Dyeing Faults",-4);
+    }
+    
+    public void DF_Shade_Variation_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Shade Variation","Dyeing Faults",1);
+    }
+    
+    public void DF_Shade_Variation_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Shade Variation","Dyeing Faults",2);
+    }
+    
+    public void DF_Shade_Variation_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Shade Variation","Dyeing Faults",3);
+    }
+    
+    public void DF_Shade_Variation_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Shade Variation","Dyeing Faults",4);
+    }
+    
+    public void DF_Shade_Variation_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Shade Variation","Dyeing Faults",-1);
+    }
+    
+    public void DF_Shade_Variation_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Shade Variation","Dyeing Faults",-2);
+    }
+    
+    public void DF_Shade_Variation_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Shade Variation","Dyeing Faults",-3);
+    }
+    
+    public void DF_Shade_Variation_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Shade Variation","Dyeing Faults",-4);
+    }
+    
+    public void DF_Oil_Spot_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Oil Spot","Dyeing Faults",1);
+    }
+    
+    public void DF_Oil_Spot_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Oil Spot","Dyeing Faults",2);
+    }
+    
+    public void DF_Oil_Spot_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Oil Spot","Dyeing Faults",3);
     }
+    
+    public void DF_Oil_Spot_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Oil Spot","Dyeing Faults",4);
+    }
+    
+    public void DF_Oil_Spot_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Oil Spot","Dyeing Faults",-1);
+    }
+    
+    public void DF_Oil_Spot_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Oil Spot","Dyeing Faults",-2);
+    }
 
-    public void setYf_Slub_Total_OT(RichOutputText yf_Slub_Total_OT) {
-        this.yf_Slub_Total_OT = yf_Slub_Total_OT;
+    public void DF_Oil_Spot_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Oil Spot","Dyeing Faults",-3);
+    }
+    
+    public void DF_Oil_Spot_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Oil Spot","Dyeing Faults",-4);
+    }
+    
+    public void DF_Drop_Mark_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Drop Mark","Dyeing Faults",1);
     }
+    
+    public void DF_Drop_Mark_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Drop Mark","Dyeing Faults",2);
+    }
+    
+    public void DF_Drop_Mark_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Drop Mark","Dyeing Faults",3);
+    }
+    
+    public void DF_Drop_Mark_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Drop Mark","Dyeing Faults",4);
+    }
+    
+    public void DF_Drop_Mark_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Drop Mark","Dyeing Faults",-1);
+    }
 
-    public RichOutputText getYf_Slub_Total_OT() {
-        return yf_Slub_Total_OT;
+    public void DF_Drop_Mark_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Drop Mark","Dyeing Faults",-2);
+    }
+    
+    public void DF_Drop_Mark_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Drop Mark","Dyeing Faults",-3);
+    }
+    
+    public void DF_Drop_Mark_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Drop Mark","Dyeing Faults",-4);
+    }
+    
+    public void DF_Line_Mark_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Line Mark","Dyeing Faults",1);
+    }
+    
+    public void DF_Line_Mark_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Line Mark","Dyeing Faults",2);
+    }
+    
+    public void DF_Line_Mark_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Line Mark","Dyeing Faults",3);
+    }
+    
+    public void DF_Line_Mark_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Line Mark","Dyeing Faults",4);
+    }
+    
+    public void DF_Line_Mark_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Line Mark","Dyeing Faults",-1);
+    }
+    
+    public void DF_Line_Mark_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Line Mark","Dyeing Faults",-2);
+    }
+    
+    public void DF_Line_Mark_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Line Mark","Dyeing Faults",-3);
+    }
+    
+    public void DF_Line_Mark_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Line Mark","Dyeing Faults",-4);
+    }
+    
+    public void PF_Miss_Print_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Print","Printing Faults",1);
+    }
+    
+    public void PF_Miss_Print_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Print","Printing Faults",2);
+    }
+    
+    public void PF_Miss_Print_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Print","Printing Faults",3);
+    }
+    
+    public void PF_Miss_Print_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Print","Printing Faults",4);
+    }
+    
+    public void PF_Miss_Print_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Print","Printing Faults",-1);
+    }
+    
+    public void PF_Miss_Print_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Print","Printing Faults",-2);
+    }
+    
+    public void PF_Miss_Print_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Print","Printing Faults",-3);
+    }
+    
+    public void PF_Miss_Print_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Miss Print","Printing Faults",-4);
+    }
+    
+    public void PF_Design_Out_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Design Out","Printing Faults",1);
+    }
+    
+    public void PF_Design_Out_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Design Out","Printing Faults",2);
+    }
+    
+    public void PF_Design_Out_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Design Out","Printing Faults",3);
+    }
+    
+    public void PF_Design_Out_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Design Out","Printing Faults",4);
+    }
+    
+    public void PF_Design_Out_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Design Out","Printing Faults",-1);
+    }
+    
+    public void PF_Design_Out_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Design Out","Printing Faults",-2);
+    }
+    
+    public void PF_Design_Out_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Design Out","Printing Faults",-3);
+    }
+    
+    public void PF_Design_Out_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Design Out","Printing Faults",-4);
+    }
+    
+    public void PF_Print_Overlap_1_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Print Overlap","Printing Faults",1);
+    }
+    
+    public void PF_Print_Overlap_2_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Print Overlap","Printing Faults",2);
+    }
+    
+    public void PF_Print_Overlap_3_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Print Overlap","Printing Faults",3);
+    }
+    
+    public void PF_Print_Overlap_4_Points_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Print Overlap","Printing Faults",4);
+    }
+    
+    public void PF_Print_Overlap_1_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Print Overlap","Printing Faults",-1);
+    }
+    
+    public void PF_Print_Overlap_2_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Print Overlap","Printing Faults",-2);
+    }
+    
+    public void PF_Print_Overlap_3_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Print Overlap","Printing Faults",-3);
+    }
+    
+    public void PF_Print_Overlap_4_Undo_actionListener(ActionEvent actionEvent) {
+        insertIntoFaultEntries("Print Overlap","Printing Faults",-4);
     }
-*/
+    
     public static InspectionProcessAMImpl getApplicationModule() {
         FacesContext fctx = FacesContext.getCurrentInstance();
         BindingContext bindingContext = BindingContext.getCurrent();
         DCDataControl dc = bindingContext.findDataControl("InspectionProcessAMDataControl");
         return (InspectionProcessAMImpl)dc.getDataProvider();
         }
-
 
     public void saveChanges(ActionEvent actionEvent) {
         // Add event code here...

@@ -13,9 +13,6 @@
               id="PwcInspectionProcessHeaderVO1Iterator"/>
     <invokeAction id="setSessionValuesAction" Binds="setSessionValues"
                   Refresh="always"/>
-    <iterator Binds="PwcOdmInspPrcYarnFaultVO2" RangeSize="25"
-              DataControl="InspectionProcessAMDataControl"
-              id="PwcOdmInspPrcYarnFaultVO2Iterator"/>
     <iterator Binds="PwcOdmInspPrcWeaveFaultVO2" RangeSize="25"
               DataControl="InspectionProcessAMDataControl"
               id="PwcOdmInspPrcWeaveFaultVO2Iterator"/>
@@ -149,37 +146,7 @@
     <action id="Rollback" RequiresUpdateModel="false"
             Action="rollbackTransaction"
             DataControl="InspectionProcessAMDataControl"/>
-    <attributeValues IterBinding="PwcOdmInspPrcYarnFaultVO2Iterator"
-                     id="SlubTotal">
-      <AttrNames>
-        <Item Value="SlubTotal"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcOdmInspPrcYarnFaultVO2Iterator"
-                     id="NepsTotal">
-      <AttrNames>
-        <Item Value="NepsTotal"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcOdmInspPrcYarnFaultVO2Iterator"
-                     id="ForeignYarnTotal">
-      <AttrNames>
-        <Item Value="ForeignYarnTotal"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcOdmInspPrcWeaveFaultVO2Iterator"
-                     id="ThickThinPickTotal">
-      <AttrNames>
-        <Item Value="ThickThinPickTotal"/>
-      </AttrNames>
-    </attributeValues>
     <action IterBinding="PwcOdmInspPrcWeaveFaultVO2Iterator" id="CreateInsert2"
             RequiresUpdateModel="true" Action="createInsertRow"/>
-    <attributeValues IterBinding="PwcOdmInspPrcWeaveFaultVO2Iterator"
-                     id="ThickThinEndTotal">
-      <AttrNames>
-        <Item Value="ThickThinEndTotal"/>
-      </AttrNames>
-    </attributeValues>
   </bindings>
 </pageDefinition>
