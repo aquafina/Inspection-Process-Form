@@ -48,22 +48,15 @@ public class InspectionProcessBackingBean {
             newRow.setAttribute("Points", points);
             faultEntriesVO.insertRow(newRow);
         }
+        am.getTransaction().commit();
+        ViewObject faultsTotalVO = (ViewObject)am.findViewObject("PwcOdmInsPrcFaultsTotalVO3");
+        faultsTotalVO.executeQuery();
     }
     
     /**                      YARN FAULT                          **/
 
     public void YF_Slub_1_Points_actionListener(ActionEvent actionEvent) {
         insertIntoFaultEntries("Slubs","Yarn Faults",1);
-        /*yarnFaultVOCurrRow = yarnFaultVO.getCurrentRow();
-        if (yarnFaultVOCurrRow==null)
-            yarnFaultVOCurrRow = yarnFaultVO.createRow();
-        System.out.println("Slub1 = "+yarnFaultVOCurrRow.getAttribute("Slub1"));
-        count_YF_Slub_1 = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("Slub1")!=null?yarnFaultVOCurrRow.getAttribute("Slub1").toString():"0");
-        int currTotalValue = Integer.parseInt(yarnFaultVOCurrRow.getAttribute("SlubTotal")!=null?yarnFaultVOCurrRow.getAttribute("SlubTotal").toString():"0");
-        currTotalValue = currTotalValue+1;
-        count_YF_Slub_1  = count_YF_Slub_1 + 1;
-        yarnFaultVOCurrRow.setAttribute("Slub1",count_YF_Slub_1);
-        yarnFaultVOCurrRow.setAttribute("SlubTotal",currTotalValue);*/
     }
 
     public void YF_Slub_2_Points_actionListener(ActionEvent actionEvent) {

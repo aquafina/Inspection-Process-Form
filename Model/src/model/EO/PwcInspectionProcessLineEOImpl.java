@@ -422,16 +422,6 @@ public class PwcInspectionProcessLineEOImpl extends EntityImpl {
                 obj.setAttributeInternal(index(), value);
             }
         }
-        ,
-        PwcInspectionProcessHeaderEO {
-            public Object get(PwcInspectionProcessLineEOImpl obj) {
-                return obj.getPwcInspectionProcessHeaderEO();
-            }
-
-            public void put(PwcInspectionProcessLineEOImpl obj, Object value) {
-                obj.setPwcInspectionProcessHeaderEO((EntityImpl)value);
-            }
-        }
         ;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -460,6 +450,9 @@ public class PwcInspectionProcessLineEOImpl extends EntityImpl {
             return vals;
         }
     }
+
+
+//    public static final int PWCINSPECTIONPROCESSHEADEREO = AttributesEnum.PwcInspectionProcessHeaderEO.index();
 
 
     public static final int ROLLNUMBER = AttributesEnum.RollNumber.index();
@@ -502,7 +495,6 @@ public class PwcInspectionProcessLineEOImpl extends EntityImpl {
     public static final int INSPECTIONPROCESSLINEID = AttributesEnum.InspectionProcessLineId.index();
     public static final int INSPECTIONPROCESSID = AttributesEnum.InspectionProcessId.index();
     public static final int PWCODMINSPPRCFAULTENTRIESEO = AttributesEnum.PwcOdmInspPrcFaultEntriesEO.index();
-    public static final int PWCINSPECTIONPROCESSHEADEREO = AttributesEnum.PwcInspectionProcessHeaderEO.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -1189,20 +1181,6 @@ public class PwcInspectionProcessLineEOImpl extends EntityImpl {
 
 
     /**
-     * @return the associated entity oracle.jbo.server.EntityImpl.
-     */
-    public EntityImpl getPwcInspectionProcessHeaderEO() {
-        return (EntityImpl)getAttributeInternal(PWCINSPECTIONPROCESSHEADEREO);
-    }
-
-    /**
-     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
-     */
-    public void setPwcInspectionProcessHeaderEO(EntityImpl value) {
-        setAttributeInternal(PWCINSPECTIONPROCESSHEADEREO, value);
-    }
-
-    /**
      * @param inspectionProcessLineId key constituent
 
      * @return a Key object based on given key constituents.
@@ -1210,6 +1188,21 @@ public class PwcInspectionProcessLineEOImpl extends EntityImpl {
     public static Key createPrimaryKey(Number inspectionProcessLineId) {
         return new Key(new Object[]{inspectionProcessLineId});
     }
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+  /*  public EntityImpl getPwcInspectionProcessHeaderEO() {
+        return (EntityImpl)getAttributeInternal(PWCINSPECTIONPROCESSHEADEREO);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+   /* public void setPwcInspectionProcessHeaderEO(EntityImpl value) {
+        setAttributeInternal(PWCINSPECTIONPROCESSHEADEREO, value);
+    }
+
 
     /**
      * Add attribute defaulting logic in this method.

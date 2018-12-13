@@ -276,4 +276,69 @@ public class InspectionProcessAMImpl extends ApplicationModuleImpl implements In
     public ViewObjectImpl getPwcInspPrcFaultTypesVO1() {
         return (ViewObjectImpl)findViewObject("PwcInspPrcFaultTypesVO1");
     }
+
+    /**
+     * Container's getter for PwcInspectionProcessLineVO4.
+     * @return PwcInspectionProcessLineVO4
+     */
+    public ViewObjectImpl getPwcInspectionProcessLineVO4() {
+        return (ViewObjectImpl)findViewObject("PwcInspectionProcessLineVO4");
+    }
+
+    /**
+     * Container's getter for PwcOdmInsPrcFaultsTotalVO1.
+     * @return PwcOdmInsPrcFaultsTotalVO1
+     */
+    public ViewObjectImpl getPwcOdmInsPrcFaultsTotalVO1() {
+        return (ViewObjectImpl)findViewObject("PwcOdmInsPrcFaultsTotalVO1");
+    }
+
+    /**
+     * Container's getter for PwcOdmInspPrcLinesFaultTotalVL.
+     * @return PwcOdmInspPrcLinesFaultTotalVL
+     */
+    public ViewLinkImpl getPwcOdmInspPrcLinesFaultTotalVL() {
+        return (ViewLinkImpl)findViewLink("PwcOdmInspPrcLinesFaultTotalVL");
+    }
+
+
+    /**
+     * Container's getter for PwcInspectionProcessLineVO5.
+     * @return PwcInspectionProcessLineVO5
+     */
+    public ViewObjectImpl getPwcInspectionProcessLineVO5() {
+        return (ViewObjectImpl)findViewObject("PwcInspectionProcessLineVO5");
+    }
+
+    /**
+     * Container's getter for PwcOdmInsPrcFaultsTotalVO2.
+     * @return PwcOdmInsPrcFaultsTotalVO2
+     */
+    public ViewObjectImpl getPwcOdmInsPrcFaultsTotalVO2() {
+        return (ViewObjectImpl)findViewObject("PwcOdmInsPrcFaultsTotalVO2");
+    }
+
+    /**
+     * Container's getter for PwcInspPrcLinesFaultsTotalVL.
+     * @return PwcInspPrcLinesFaultsTotalVL
+     */
+    public ViewLinkImpl getPwcInspPrcLinesFaultsTotalVL() {
+        return (ViewLinkImpl)findViewLink("PwcInspPrcLinesFaultsTotalVL");
+    }
+
+    /**
+     * Container's getter for PwcOdmInsPrcFaultsTotalVO3.
+     * @return PwcOdmInsPrcFaultsTotalVO3
+     */
+    public ViewObjectImpl getPwcOdmInsPrcFaultsTotalVO3() {
+        return (ViewObjectImpl)findViewObject("PwcOdmInsPrcFaultsTotalVO3");
+    }
+
+    /**
+     * Container's getter for PwcOdmInspPrcLinesFaultTotalVL1.
+     * @return PwcOdmInspPrcLinesFaultTotalVL1
+     */
+    public ViewLinkImpl getPwcOdmInspPrcLinesFaultTotalVL1() {
+        return (ViewLinkImpl)findViewLink("PwcOdmInspPrcLinesFaultTotalVL1");
+    }
 }

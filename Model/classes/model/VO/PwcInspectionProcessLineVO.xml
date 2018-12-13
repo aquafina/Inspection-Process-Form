@@ -332,4 +332,14 @@
     ViewLink="model.VL.PwcOdmInspPrcLineFaultEntriesVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PwcOdmInsPrcFaultsTotalVO"
+    ViewLink="model.VL.PwcInspPrcLinesTotalVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PwcOdmInsPrcFaultsTotalVO1"
+    ViewLink="model.VL.PwcOdmInspPrcLinesFaultTotalVL"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

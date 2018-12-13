@@ -16,6 +16,9 @@
     <iterator Binds="PwcOdmInspPrcWeaveFaultVO2" RangeSize="25"
               DataControl="InspectionProcessAMDataControl"
               id="PwcOdmInspPrcWeaveFaultVO2Iterator"/>
+    <iterator Binds="PwcOdmInsPrcFaultsTotalVO3" RangeSize="25"
+              DataControl="InspectionProcessAMDataControl"
+              id="PwcOdmInsPrcFaultsTotalVO3Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
@@ -148,5 +151,11 @@
             DataControl="InspectionProcessAMDataControl"/>
     <action IterBinding="PwcOdmInspPrcWeaveFaultVO2Iterator" id="CreateInsert2"
             RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="YarnFaultsSlubs">
+      <AttrNames>
+        <Item Value="YarnFaultsSlubs"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

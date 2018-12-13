@@ -301,7 +301,9 @@
                   <af:gridCell marginStart="1px" width="7%" id="gc34"
                                halign="center" valign="middle">
                     <af:outputText id="ot3"
-                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                                   inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                   value="#{bindings.YarnFaultsSlubs.inputValue}"
+                                   partialTriggers="yarn_fault_slubs_cb1"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc16">
                     <af:spacer width="30" height="15" id="spacer17"/>

@@ -10,9 +10,12 @@
   DBObjectName="PWC_INSPECTION_PROCESS_HEADER"
   AliasName="PwcInspectionProcessHeader"
   BindingStyle="OracleName"
-  UseGlueCode="false">
+  UseGlueCode="false"
+  RowClass="model.EO.PwcInspectionProcessHeaderEOImpl">
   <DesignTime>
     <AttrArray Name="_publishEvents"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <Attribute
     Name="InspectionProcessId"
