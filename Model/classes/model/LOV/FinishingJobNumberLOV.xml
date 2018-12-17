@@ -23,6 +23,17 @@
     Name="p_batch_no"
     Kind="where"
     Type="java.lang.String"/>
+  <Variable
+    Name="p_job_no"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <SQLQuery>
     <![CDATA[select  job.job_number, 
           job.job_qty
@@ -60,6 +71,42 @@
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
   </ViewAttribute>
+  <ViewCriteria
+    Name="FinishingJobNumberLOVCriteria"
+    ViewObjectName="model.LOV.FinishingJobNumberLOV"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="vcrow54"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="FinishingJobNumberLOVCriteria_vcrow54_JobNumber"
+        ViewAttribute="JobNumber"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":p_job_no"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <AttrArray Name="KeyAttributes">
     <Item Value="JobNumber"/>
   </AttrArray>

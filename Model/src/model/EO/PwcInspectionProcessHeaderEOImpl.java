@@ -370,6 +370,39 @@ public class PwcInspectionProcessHeaderEOImpl extends EntityImpl {
                 obj.setSalesOrderNumber((Number)value);
             }
         }
+        ,
+        FinishType {
+            public Object get(PwcInspectionProcessHeaderEOImpl obj) {
+                return obj.getFinishType();
+            }
+
+            public void put(PwcInspectionProcessHeaderEOImpl obj,
+                            Object value) {
+                obj.setFinishType((String)value);
+            }
+        }
+        ,
+        Jute {
+            public Object get(PwcInspectionProcessHeaderEOImpl obj) {
+                return obj.getJute();
+            }
+
+            public void put(PwcInspectionProcessHeaderEOImpl obj,
+                            Object value) {
+                obj.setJute((String)value);
+            }
+        }
+        ,
+        Weave {
+            public Object get(PwcInspectionProcessHeaderEOImpl obj) {
+                return obj.getWeave();
+            }
+
+            public void put(PwcInspectionProcessHeaderEOImpl obj,
+                            Object value) {
+                obj.setWeave((String)value);
+            }
+        }
         ;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
@@ -398,6 +431,7 @@ public class PwcInspectionProcessHeaderEOImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int INSPECTIONPROCESSID = AttributesEnum.InspectionProcessId.index();
     public static final int PPNUMBER = AttributesEnum.PpNumber.index();
     public static final int WONUMBER = AttributesEnum.WoNumber.index();
@@ -430,11 +464,24 @@ public class PwcInspectionProcessHeaderEOImpl extends EntityImpl {
     public static final int ATTRIBUTE15 = AttributesEnum.Attribute15.index();
     public static final int MFGORGID = AttributesEnum.MfgOrgId.index();
     public static final int SALESORDERNUMBER = AttributesEnum.SalesOrderNumber.index();
+    public static final int FINISHTYPE = AttributesEnum.FinishType.index();
+    public static final int JUTE = AttributesEnum.Jute.index();
+    public static final int WEAVE = AttributesEnum.Weave.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public PwcInspectionProcessHeaderEOImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        if (mDefinitionObject == null) {
+            mDefinitionObject = EntityDefImpl.findDefObject("model.EO.PwcInspectionProcessHeaderEO");
+        }
+        return mDefinitionObject;
     }
 
     /**
@@ -950,6 +997,54 @@ public class PwcInspectionProcessHeaderEOImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for FinishType, using the alias name FinishType.
+     * @return the FinishType
+     */
+    public String getFinishType() {
+        return (String)getAttributeInternal(FINISHTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FinishType.
+     * @param value value to set the FinishType
+     */
+    public void setFinishType(String value) {
+        setAttributeInternal(FINISHTYPE, value);
+    }
+
+    /**
+     * Gets the attribute value for Jute, using the alias name Jute.
+     * @return the Jute
+     */
+    public String getJute() {
+        return (String)getAttributeInternal(JUTE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Jute.
+     * @param value value to set the Jute
+     */
+    public void setJute(String value) {
+        setAttributeInternal(JUTE, value);
+    }
+
+    /**
+     * Gets the attribute value for Weave, using the alias name Weave.
+     * @return the Weave
+     */
+    public String getWeave() {
+        return (String)getAttributeInternal(WEAVE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Weave.
+     * @param value value to set the Weave
+     */
+    public void setWeave(String value) {
+        setAttributeInternal(WEAVE, value);
+    }
+
+    /**
      * getAttrInvokeAccessor: generated method. Do not modify.
      * @param index the index identifying the attribute
      * @param attrDef the attribute
@@ -991,13 +1086,5 @@ public class PwcInspectionProcessHeaderEOImpl extends EntityImpl {
         return new Key(new Object[]{inspectionProcessId});
     }
 
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        if (mDefinitionObject == null) {
-            mDefinitionObject = EntityDefImpl.findDefObject("model.EO.PwcInspectionProcessHeaderEO");
-        }
-        return mDefinitionObject;
-    }
+
 }

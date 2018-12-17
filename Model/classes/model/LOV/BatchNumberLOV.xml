@@ -33,6 +33,50 @@
       </SchemaBasedProperties>
     </Properties>
   </Variable>
+  <Variable
+    Name="p_batch_no"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="p_buyer"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="p_pp_number"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="p_sales_order_no"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <SQLQuery>
     <![CDATA[select  line.line_id,
           line.batch_no, 
@@ -66,6 +110,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="BatchNo"
@@ -278,6 +328,74 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewCriteria
+    Name="BatchNumberLOVCriteria"
+    ViewObjectName="model.LOV.BatchNumberLOV"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="vcrow50"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="BatchNumberLOVCriteria_vcrow50_BatchNo"
+        ViewAttribute="BatchNo"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":p_batch_no"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="BatchNumberLOVCriteria_vcrow50_Buyer"
+        ViewAttribute="Buyer"
+        Operator="CONTAINS"
+        Conjunction="OR"
+        Value=":p_buyer"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="WorkOrderNumber"
+        ViewAttribute="WorkOrderNumber"
+        Operator="CONTAINS"
+        Conjunction="OR"
+        Value=":p_wo_number"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="PpNumber"
+        ViewAttribute="PpNumber"
+        Operator="CONTAINS"
+        Conjunction="OR"
+        Value=":p_pp_number"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="SaleOrderNo"
+        ViewAttribute="SaleOrderNo"
+        Operator="="
+        Conjunction="OR"
+        Value=":p_sales_order_no"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <AttrArray Name="KeyAttributes">
     <Item Value="LineId"/>
   </AttrArray>

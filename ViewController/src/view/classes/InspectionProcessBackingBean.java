@@ -898,7 +898,12 @@ public class InspectionProcessBackingBean {
         }
 
     public void saveChanges(ActionEvent actionEvent) {
-        ApplicationModuleImpl am = getApplicationModule();        
+        ApplicationModuleImpl am = getApplicationModule();     
+        ViewObject inspPrcHeaderVO = (ViewObject)am.findViewObject("PwcInspectionProcessHeaderVO1");
+        if (inspPrcHeaderVO.getCurrentRow().getAttribute("Attribute1")==null)
+        {
+            inspPrcHeaderVO.getCurrentRow().setAttribute("Attribute1","Y");
+        }
         am.getDBTransaction().commit();
     }
     

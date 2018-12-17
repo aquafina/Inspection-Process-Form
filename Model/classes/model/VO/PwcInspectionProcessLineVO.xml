@@ -87,7 +87,7 @@
        PwcInspectionProcessLineEO.ATTRIBUTE15, 
        PwcInspectionProcessLineEO.MFG_ORG_ID, 
        PwcInspectionProcessLineEO.INSPECTION_PROCESS_LINE_ID, 
-       PwcInspectionProcessLineEO.ROLL_QUANTITY/1.0936 ROLL_QUANTITY_MTR
+ /*NVL(ROUND((PwcInspectionProcessLineEO.ROLL_QUANTITY/1.0936),2),0)*/0 ROLL_QUANTITY_MTR
 FROM PWC_INSPECTION_PROCESS_LINE PwcInspectionProcessLineEO]]>
   </SQLQuery>
   <EntityUsage

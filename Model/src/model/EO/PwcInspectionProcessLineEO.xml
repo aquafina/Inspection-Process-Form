@@ -484,6 +484,39 @@
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="CutableWidth"
+    ColumnName="CUTABLE_WIDTH"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PWC_INSPECTION_PROCESS_LINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FinishWidth"
+    ColumnName="FINISH_WIDTH"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PWC_INSPECTION_PROCESS_LINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Kgs"
+    ColumnName="KGS"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PWC_INSPECTION_PROCESS_LINE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="PwcOdmInspPrcFaultEntriesEO"
     Association="model.Assoc.PwcOdmInspPrcLineFaultEntriesAssoc"

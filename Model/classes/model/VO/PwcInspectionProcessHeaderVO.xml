@@ -37,7 +37,10 @@
        PwcInspectionProcessHeader.ATTRIBUTE14, 
        PwcInspectionProcessHeader.ATTRIBUTE15, 
        PwcInspectionProcessHeader.MFG_ORG_ID, 
-       PwcInspectionProcessHeader.SALES_ORDER_NUMBER"
+       PwcInspectionProcessHeader.SALES_ORDER_NUMBER, 
+       PwcInspectionProcessHeader.FINISH_TYPE, 
+       PwcInspectionProcessHeader.JUTE, 
+       PwcInspectionProcessHeader.WEAVE"
   FromList="PWC_INSPECTION_PROCESS_HEADER PwcInspectionProcessHeader"
   BindingStyle="OracleName"
   CustomQuery="false"
@@ -107,11 +110,10 @@
       <Item Value="WorkOrderNumber"/>
       <Item Value="SaleOrderNo"/>
       <Item Value="PpNumber"/>
-      <Item Value="JobNumber"/>
-      <Item Value="BatchNo"/>
     </AttrArray>
     <DisplayCriteria
-      Hint="showAndExecute"/>
+      Hint="showAndExecute"
+      Name="WoNumberLOVCriteria"/>
   </ListBinding>
   <ListBinding
     Name="LOV_BatchNumber"
@@ -136,12 +138,13 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="BatchNo"/>
+      <Item Value="WorkOrderNumber"/>
       <Item Value="PpNumber"/>
       <Item Value="SaleOrderNo"/>
-      <Item Value="WorkOrderNumber"/>
     </AttrArray>
     <DisplayCriteria
-      Hint="showAndExecute"/>
+      Hint="showAndExecute"
+      Name="BatchNumberLOVCriteria"/>
   </ListBinding>
   <ListBinding
     Name="LOV_SalesOrderNumber"
@@ -185,7 +188,8 @@
       <Item Value="JobQty"/>
     </AttrArray>
     <DisplayCriteria
-      Hint="showAndExecute"/>
+      Hint="showAndExecute"
+      Name="FinishingJobNumberLOVCriteria"/>
   </ListBinding>
   <EntityUsage
     Name="PwcInspectionProcessHeader"
@@ -228,7 +232,7 @@
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="20"/>
+          Value="50"/>
         <CONTROLTYPE
           Value="input_text_lov"/>
       </SchemaBasedProperties>
@@ -466,6 +470,24 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="FinishType"
+    PrecisionRule="true"
+    EntityAttrName="FinishType"
+    EntityUsage="PwcInspectionProcessHeader"
+    AliasName="FINISH_TYPE"/>
+  <ViewAttribute
+    Name="Jute"
+    PrecisionRule="true"
+    EntityAttrName="Jute"
+    EntityUsage="PwcInspectionProcessHeader"
+    AliasName="JUTE"/>
+  <ViewAttribute
+    Name="Weave"
+    PrecisionRule="true"
+    EntityAttrName="Weave"
+    EntityUsage="PwcInspectionProcessHeader"
+    AliasName="WEAVE"/>
   <ViewLinkAccessor
     Name="PwcInspectionProcessLineVO"
     ViewLink="model.VL.PwcInspectionProcessVL"

@@ -403,6 +403,42 @@
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="FinishType"
+    Precision="100"
+    ColumnName="FINISH_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PWC_INSPECTION_PROCESS_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Jute"
+    Precision="100"
+    ColumnName="JUTE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PWC_INSPECTION_PROCESS_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Weave"
+    Precision="100"
+    ColumnName="WEAVE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PWC_INSPECTION_PROCESS_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
   <Key
     Name="InspectionProcessPk"
     PrimaryKey="true">

@@ -413,6 +413,36 @@ public class PwcInspectionProcessLineEOImpl extends EntityImpl {
             }
         }
         ,
+        CutableWidth {
+            public Object get(PwcInspectionProcessLineEOImpl obj) {
+                return obj.getCutableWidth();
+            }
+
+            public void put(PwcInspectionProcessLineEOImpl obj, Object value) {
+                obj.setCutableWidth((BigDecimal)value);
+            }
+        }
+        ,
+        FinishWidth {
+            public Object get(PwcInspectionProcessLineEOImpl obj) {
+                return obj.getFinishWidth();
+            }
+
+            public void put(PwcInspectionProcessLineEOImpl obj, Object value) {
+                obj.setFinishWidth((BigDecimal)value);
+            }
+        }
+        ,
+        Kgs {
+            public Object get(PwcInspectionProcessLineEOImpl obj) {
+                return obj.getKgs();
+            }
+
+            public void put(PwcInspectionProcessLineEOImpl obj, Object value) {
+                obj.setKgs((BigDecimal)value);
+            }
+        }
+        ,
         PwcOdmInspPrcFaultEntriesEO {
             public Object get(PwcInspectionProcessLineEOImpl obj) {
                 return obj.getPwcOdmInspPrcFaultEntriesEO();
@@ -494,6 +524,9 @@ public class PwcInspectionProcessLineEOImpl extends EntityImpl {
     public static final int WONUMBER = AttributesEnum.WoNumber.index();
     public static final int INSPECTIONPROCESSLINEID = AttributesEnum.InspectionProcessLineId.index();
     public static final int INSPECTIONPROCESSID = AttributesEnum.InspectionProcessId.index();
+    public static final int CUTABLEWIDTH = AttributesEnum.CutableWidth.index();
+    public static final int FINISHWIDTH = AttributesEnum.FinishWidth.index();
+    public static final int KGS = AttributesEnum.Kgs.index();
     public static final int PWCODMINSPPRCFAULTENTRIESEO = AttributesEnum.PwcOdmInspPrcFaultEntriesEO.index();
 
     /**
@@ -1136,6 +1169,54 @@ public class PwcInspectionProcessLineEOImpl extends EntityImpl {
      */
     public void setInspectionProcessId(BigDecimal value) {
         setAttributeInternal(INSPECTIONPROCESSID, value);
+    }
+
+    /**
+     * Gets the attribute value for CutableWidth, using the alias name CutableWidth.
+     * @return the CutableWidth
+     */
+    public BigDecimal getCutableWidth() {
+        return (BigDecimal)getAttributeInternal(CUTABLEWIDTH);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CutableWidth.
+     * @param value value to set the CutableWidth
+     */
+    public void setCutableWidth(BigDecimal value) {
+        setAttributeInternal(CUTABLEWIDTH, value);
+    }
+
+    /**
+     * Gets the attribute value for FinishWidth, using the alias name FinishWidth.
+     * @return the FinishWidth
+     */
+    public BigDecimal getFinishWidth() {
+        return (BigDecimal)getAttributeInternal(FINISHWIDTH);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for FinishWidth.
+     * @param value value to set the FinishWidth
+     */
+    public void setFinishWidth(BigDecimal value) {
+        setAttributeInternal(FINISHWIDTH, value);
+    }
+
+    /**
+     * Gets the attribute value for Kgs, using the alias name Kgs.
+     * @return the Kgs
+     */
+    public BigDecimal getKgs() {
+        return (BigDecimal)getAttributeInternal(KGS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Kgs.
+     * @param value value to set the Kgs
+     */
+    public void setKgs(BigDecimal value) {
+        setAttributeInternal(KGS, value);
     }
 
     /**

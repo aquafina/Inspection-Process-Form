@@ -20,8 +20,30 @@
     </SchemaBasedProperties>
   </Properties>
   <Variable
-    Name="p_batch_no"
-    Kind="where"
+    Name="p_wo_number"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="p_pp_no"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="p_sales_order_no"
+    Kind="viewcriteria"
     Type="java.lang.String">
     <Properties>
       <SchemaBasedProperties>
@@ -157,6 +179,58 @@ where header.header_id = line.header_id
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewCriteria
+    Name="WoNumberLOVCriteria"
+    ViewObjectName="model.LOV.WoNumberLOV"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="vcrow41"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="WorkOrderNumber"
+        ViewAttribute="WorkOrderNumber"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":p_wo_number"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="WoNumberLOVCriteria_vcrow41_PpNumber"
+        ViewAttribute="PpNumber"
+        Operator="STARTSWITH"
+        Conjunction="OR"
+        Value=":p_pp_no"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="WoNumberLOVCriteria_vcrow41_SaleOrderNo"
+        ViewAttribute="SaleOrderNo"
+        Operator="="
+        Conjunction="OR"
+        Value=":p_sales_order_no"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <AttrArray Name="KeyAttributes">
     <Item Value="WorkOrderNumber"/>
   </AttrArray>

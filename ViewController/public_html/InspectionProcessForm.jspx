@@ -52,7 +52,9 @@
                                     model="#{bindings.WoNumber.listOfValuesModel}"
                                     required="#{bindings.WoNumber.hints.mandatory}"
                                     columns="#{bindings.WoNumber.hints.displayWidth}"
-                                    shortDesc="#{bindings.WoNumber.hints.tooltip}">
+                                    shortDesc="#{bindings.WoNumber.hints.tooltip}"
+                                    disabled="#{bindings.Attribute1.inputValue=='Y'}"
+                                    partialTriggers="cb3">
                 <f:validator binding="#{bindings.WoNumber.validator}"/>
               </af:inputListOfValues>
               <af:inputListOfValues id="batchNumberId"
@@ -63,7 +65,7 @@
                                     required="#{bindings.BatchNumber.hints.mandatory}"
                                     columns="#{bindings.BatchNumber.hints.displayWidth}"
                                     shortDesc="#{bindings.BatchNumber.hints.tooltip}"
-                                    partialTriggers="woNumberId">
+                                    partialTriggers="cb3">
                 <f:validator binding="#{bindings.BatchNumber.validator}"/>
               </af:inputListOfValues>
               <af:panelLabelAndMessage label="Buyer Name"
@@ -89,7 +91,7 @@
                                     required="#{bindings.FinishingJobNumber.hints.mandatory}"
                                     columns="#{bindings.FinishingJobNumber.hints.displayWidth}"
                                     shortDesc="#{bindings.FinishingJobNumber.hints.tooltip}"
-                                    partialTriggers="batchNumberId">
+                                    partialTriggers="cb3">
                 <f:validator binding="#{bindings.FinishingJobNumber.validator}"/>
               </af:inputListOfValues>
               <af:panelLabelAndMessage label="Job Quantity"
@@ -100,6 +102,22 @@
                                     pattern="#{bindings.JobQuantity.format}"/>
                 </af:outputText>
               </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.FinishType.hints.label}"
+                                       id="plam8">
+                <af:outputText value="#{bindings.FinishType.inputValue}"
+                               id="ot13"/>
+              </af:panelLabelAndMessage>
+              <af:outputText value="#{bindings.Weave.inputValue}" id="ot14"/>
+              <af:inputText value="#{bindings.Jute.inputValue}"
+                            label="#{bindings.Jute.hints.label}"
+                            required="#{bindings.Jute.hints.mandatory}"
+                            columns="#{bindings.Jute.hints.displayWidth}"
+                            maximumLength="#{bindings.Jute.hints.precision}"
+                            shortDesc="#{bindings.Jute.hints.tooltip}" id="it4">
+                <f:validator binding="#{bindings.Jute.validator}"/>
+              </af:inputText>
+              <af:outputText value="#{bindings.Attribute1.inputValue}"
+                             id="ot12" rendered="false"/>
             </af:panelFormLayout>
           </af:panelGroupLayout>
           <af:panelGroupLayout id="pgl5">
@@ -116,7 +134,7 @@
             </af:commandButton>
           </af:panelGroupLayout>
           <af:panelGroupLayout id="pgl2" layout="horizontal">
-            <af:panelFormLayout id="panelFormLayout1" rows="4" maxColumns="3">
+            <af:panelFormLayout id="panelFormLayout1" rows="5">
               <af:inputText value="#{bindings.InspectionMachineNumber.inputValue}"
                             label="Inspection Machine Number"
                             required="#{bindings.InspectionMachineNumber.hints.mandatory}"
@@ -157,6 +175,10 @@
                 <af:convertNumber groupingUsed="false"
                                   pattern="#{bindings.FaultsPer100Sq.format}"/>
               </af:inputText>
+              <af:panelLabelAndMessage label="Roll Quantity MTR" id="plam5">
+                <af:outputText value="#{bindings.RollQuantityMtr.inputValue}"
+                               id="ot8"/>
+              </af:panelLabelAndMessage>
               <af:inputText value="#{bindings.RollQuantity.inputValue}"
                             label="Roll Quantity"
                             required="#{bindings.RollQuantity.hints.mandatory}"
@@ -183,12 +205,32 @@
                 <f:validator binding="#{bindings.InspectionDate.validator}"/>
                 <af:convertDateTime pattern="#{bindings.InspectionDate.format}"/>
               </af:inputDate>
-              <af:spacer width="10" height="10" id="s10"/>
-              <af:panelLabelAndMessage label="Roll Quantity MTR"
-                                       id="plam5">
-                <af:outputText value="#{bindings.RollQuantityMtr.inputValue}"
-                               id="ot8"/>
-              </af:panelLabelAndMessage>
+              <af:inputText value="#{bindings.FinishWidth.inputValue}"
+                            label="#{bindings.FinishWidth.hints.label}"
+                            required="#{bindings.FinishWidth.hints.mandatory}"
+                            columns="#{bindings.FinishWidth.hints.displayWidth}"
+                            maximumLength="#{bindings.FinishWidth.hints.precision}"
+                            shortDesc="#{bindings.FinishWidth.hints.tooltip}"
+                            id="it8">
+                <f:validator binding="#{bindings.FinishWidth.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.CutableWidth.inputValue}"
+                            label="#{bindings.CutableWidth.hints.label}"
+                            required="#{bindings.CutableWidth.hints.mandatory}"
+                            columns="#{bindings.CutableWidth.hints.displayWidth}"
+                            maximumLength="#{bindings.CutableWidth.hints.precision}"
+                            shortDesc="#{bindings.CutableWidth.hints.tooltip}"
+                            id="it7">
+                <f:validator binding="#{bindings.CutableWidth.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.Kgs.inputValue}"
+                            label="#{bindings.Kgs.hints.label}"
+                            required="#{bindings.Kgs.hints.mandatory}"
+                            columns="#{bindings.Kgs.hints.displayWidth}"
+                            maximumLength="#{bindings.Kgs.hints.precision}"
+                            shortDesc="#{bindings.Kgs.hints.tooltip}" id="it9">
+                <f:validator binding="#{bindings.Kgs.validator}"/>
+              </af:inputText>
               <af:inputText value="#{bindings.MfgOrgId1.inputValue}"
                             label="#{bindings.MfgOrgId1.hints.label}"
                             required="#{bindings.MfgOrgId1.hints.mandatory}"
@@ -257,7 +299,7 @@
                                inlineStyle="font-weight:bold; font-size:15px;"/>
                 <af:spacer width="250" height="10" id="s6"/>
                 <af:outputText value="Undo" id="outputText35"
-                               inlineStyle="font-weight:bold;"/>
+                               inlineStyle="font-weight:bold; font-size:15px;"/>
               </af:panelGroupLayout>
               <af:panelGridLayout id="pgl6">
                 <af:gridRow id="gr8">
