@@ -117,7 +117,7 @@
               <af:resetActionListener/>
             </af:commandButton>
           </af:panelGroupLayout>
-          <af:panelGroupLayout id="pgl2">
+          <af:panelGroupLayout id="pgl2" layout="horizontal">
             <af:panelFormLayout id="panelFormLayout1" rows="4" maxColumns="2">
               <af:inputText value="#{bindings.InspectionMachineNumber.inputValue}"
                             label="Inspection Machine Number"
@@ -137,7 +137,7 @@
                             showRequired="true" required="true">
                 <f:validator binding="#{bindings.RollNumber.validator}"/>
               </af:inputText>
-              <af:inputText value="#{bindings.DyeingFaultsCreaseMark.inputValue+ bindings.DyeingFaultsDropMark.inputValue}"
+              <af:inputText value="#{bindings.DyeingFaultsCreaseMark.inputValue+ bindings.DyeingFaultsDropMark.inputValue+ bindings.DyeingFaultsDyeResist.inputValue+ bindings.DyeingFaultsLineMark.inputValue+ bindings.DyeingFaultsOilSpot.inputValue+ bindings.DyeingFaultsShadeVariation.inputValue+ bindings.DyeingFaultsStainDirtyMark.inputValue+ bindings.PrintingFaultsDesignOut.inputValue + bindings.PrintingFaultsMissPrint.inputValue + bindings.WeavingFaultsBrokenEnd.inputValue + bindings.WeavingFaultsBrokenPick.inputValue + bindings.WeavingFaultsDistortionMark.inputValue + bindings.WeavingFaultsDoubleYarn.inputValue + bindings.WeavingFaultsHole.inputValue + bindings.WeavingFaultsKnots.inputValue + bindings.WeavingFaultsMissYarnPick.inputValue + bindings.WeavingFaultsMixedYarn.inputValue + bindings.WeavingFaultsReedMark.inputValue + bindings.WeavingFaultsStopMark.inputValue + bindings.WeavingFaultsThickThinPick.inputValue + bindings.YarnFaultsForeignYarn.inputValue + bindings.YarnFaultsNeps.inputValue + bindings.YarnFaultsSlubs.inputValue+ bindings.DyeingFaultsJointMark.inputValue}"
                             label="Total Faults"
                             required="#{bindings.TotalFaults.hints.mandatory}"
                             columns="#{bindings.TotalFaults.hints.displayWidth}"
@@ -154,7 +154,7 @@
                             columns="#{bindings.FaultsPer100Sq.hints.displayWidth}"
                             maximumLength="#{bindings.FaultsPer100Sq.hints.precision}"
                             shortDesc="#{bindings.FaultsPer100Sq.hints.tooltip}"
-                            id="it5">
+                            id="it5" readOnly="true">
                 <f:validator binding="#{bindings.FaultsPer100Sq.validator}"/>
                 <af:convertNumber groupingUsed="false"
                                   pattern="#{bindings.FaultsPer100Sq.format}"/>
@@ -210,6 +210,21 @@
                                   pattern="#{bindings.OrgId1.format}"/>
               </af:inputText>
             </af:panelFormLayout>
+            <af:panelGroupLayout id="pgl10"
+                                 inlineStyle="width:119px; height:96px;"
+                                 layout="vertical">
+              <h:commandButton id="cb11"
+                               style="background-color:Blue; color:white; font-weight:bolder; width:100px;" value="DTM"/>
+              <af:spacer width="10" height="10" id="s1"/>
+              <h:commandButton value="Dyeing Stitch" id="cb1"
+                               style="width:100px; text-align:center; background-color:Fuchsia; color:white; font-weight:bolder;"/>
+              <af:spacer width="10" height="10" id="s7"/>
+              <h:commandButton value="Printing Stitch" id="cb8"
+                               style="text-align:center; width:100px; background-color:Green; color:white; font-weight:bolder;"/>
+              <af:spacer width="10" height="10" id="s9"/>
+              <h:commandButton value="Finishing Stitch" id="cb9"
+                               style="width:100px; text-align:center; background-color:Brown; color:white; font-weight:bolder;"/>
+            </af:panelGroupLayout>
           </af:panelGroupLayout>
           <af:panelGroupLayout id="pgl9" layout="horizontal">
             <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
@@ -229,8 +244,7 @@
             <af:outputText id="outputText1"
                            inlineStyle="font-weight:bolder;"
                            styleClass="width:100%;"/>
-            <af:panelGroupLayout id="pgl8" inlineStyle="width:1259px;"
-                                 partialTriggers="cb1">
+            <af:panelGroupLayout id="pgl8" inlineStyle="width:1259px;">
               <af:panelGroupLayout id="pgl4"
                                    inlineStyle="width:693px; height:29px;">
                 <af:spacer width="450" height="10" id="s4"/>

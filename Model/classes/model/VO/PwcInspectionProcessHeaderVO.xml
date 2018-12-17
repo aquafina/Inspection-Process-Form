@@ -70,8 +70,13 @@
   </ViewAccessor>
   <ViewAccessor
     Name="SaleOrderNoLOV1"
-    ViewObjectName="model.LOV.SaleOrderNoLOV"
-    RowLevelBinds="true"/>
+    ViewObjectName="model.LOV.SaleOrderNoLOV">
+    <ParameterMap>
+      <PIMap Variable="p_pp_number">
+        <TransientExpression><![CDATA[PpNumber]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_PpNumber"
     ListVOName="PpNumberLOV1"

@@ -40,7 +40,7 @@
                     selectedRowKeys="#{bindings.PwcInspectionProcessHeaderVO1.collectionModel.selectedRow}"
                     selectionListener="#{bindings.PwcInspectionProcessHeaderVO1.collectionModel.makeCurrent}"
                     rowSelection="single" id="t1" partialTriggers="::cb1 ::cb2"
-                    width="60%">
+                    width="70%" inlineStyle="height:464px;">
             <af:column sortProperty="#{bindings.PwcInspectionProcessHeaderVO1.hints.PpNumber.name}"
                        filterable="true" sortable="true"
                        headerText="PP Number"

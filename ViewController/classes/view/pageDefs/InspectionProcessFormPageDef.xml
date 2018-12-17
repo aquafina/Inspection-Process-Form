@@ -296,5 +296,11 @@
         <Item Value="PrintingFaultsPrintOverlap"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="PwcOdmInsPrcFaultsTotalVO3Iterator"
+                     id="DyeingFaultsJointMark">
+      <AttrNames>
+        <Item Value="DyeingFaultsJointMark"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
