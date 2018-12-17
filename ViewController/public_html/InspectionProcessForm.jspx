@@ -116,7 +116,7 @@
             </af:commandButton>
           </af:panelGroupLayout>
           <af:panelGroupLayout id="pgl2" layout="horizontal">
-            <af:panelFormLayout id="panelFormLayout1" rows="4" maxColumns="2">
+            <af:panelFormLayout id="panelFormLayout1" rows="4" maxColumns="3">
               <af:inputText value="#{bindings.InspectionMachineNumber.inputValue}"
                             label="Inspection Machine Number"
                             required="#{bindings.InspectionMachineNumber.hints.mandatory}"
@@ -168,15 +168,13 @@
                 <af:convertNumber groupingUsed="false"
                                   pattern="#{bindings.RollQuantity.format}"/>
               </af:inputText>
-              <af:inputText value="#{bindings.Grade.inputValue}"
-                            label="Grade"
-                            required="#{bindings.Grade.hints.mandatory}"
-                            columns="#{bindings.Grade.hints.displayWidth}"
-                            maximumLength="#{bindings.Grade.hints.precision}"
-                            shortDesc="#{bindings.Grade.hints.tooltip}"
-                            id="it8">
-                <f:validator binding="#{bindings.Grade.validator}"/>
-              </af:inputText>
+              <af:selectOneChoice value="#{bindings.Grade.inputValue}"
+                                  label="#{bindings.Grade.label}"
+                                  required="#{bindings.Grade.hints.mandatory}"
+                                  shortDesc="#{bindings.Grade.hints.tooltip}"
+                                  id="soc1">
+                <f:selectItems value="#{bindings.Grade.items}" id="si1"/>
+              </af:selectOneChoice>
               <af:inputDate value="#{bindings.InspectionDate.inputValue}"
                             label="Inspection Date"
                             required="#{bindings.InspectionDate.hints.mandatory}"
@@ -185,6 +183,12 @@
                 <f:validator binding="#{bindings.InspectionDate.validator}"/>
                 <af:convertDateTime pattern="#{bindings.InspectionDate.format}"/>
               </af:inputDate>
+              <af:spacer width="10" height="10" id="s10"/>
+              <af:panelLabelAndMessage label="Roll Quantity MTR"
+                                       id="plam5">
+                <af:outputText value="#{bindings.RollQuantityMtr.inputValue}"
+                               id="ot8"/>
+              </af:panelLabelAndMessage>
               <af:inputText value="#{bindings.MfgOrgId1.inputValue}"
                             label="#{bindings.MfgOrgId1.hints.label}"
                             required="#{bindings.MfgOrgId1.hints.mandatory}"
@@ -247,10 +251,10 @@
                                    inlineStyle="width:693px; height:29px;">
                 <af:spacer width="450" height="10" id="s4"/>
                 <af:outputText value="Points" id="ot4"
-                               inlineStyle="font-weight:bold;"/>
+                               inlineStyle="font-weight:bold; font-size:15px;"/>
                 <af:spacer width="230" height="10" id="s5"/>
                 <af:outputText value="Total" id="outputText34"
-                               inlineStyle="font-weight:bold;"/>
+                               inlineStyle="font-weight:bold; font-size:15px;"/>
                 <af:spacer width="250" height="10" id="s6"/>
                 <af:outputText value="Undo" id="outputText35"
                                inlineStyle="font-weight:bold;"/>
@@ -261,12 +265,41 @@
                     <af:spacer width="10" height="20" id="spacer28"/>
                   </af:gridCell>
                 </af:gridRow>
+                <af:gridRow id="gr13">
+                  <af:gridCell id="gridCell34"/>
+                  <af:gridCell marginStart="2px" width="14%" id="gridCell35"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell36"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell37"
+                               valign="middle" halign="center"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell38"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell39"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell40"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell41"
+                               halign="center">
+                    <af:outputText value="Yarn Fault" id="outputText50"
+                                   inlineStyle="font-weight:bolder; font-size:15.0px;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell42"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell43"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell44"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell45"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell46" valign="middle" halign="center"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell47" valign="middle" halign="center"/>
+                </af:gridRow>
                 <af:gridRow marginTop="2px" height="auto" id="gr3">
-                  <af:gridCell id="gc18"/>
                   <af:gridCell marginStart="2px" width="14%" id="gc67"
                                halign="center" valign="middle">
                     <af:outputText value="Slubs" id="ot2"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc7">
                     <af:spacer width="30" height="15" id="s3"/>
@@ -342,14 +375,10 @@
                   </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="1px" height="auto" id="gr5">
-                  <af:gridCell id="gc46">
-                    <af:outputText value="Yarn Fault" id="outputText50"
-                                   inlineStyle="font-weight:bolder;"/>
-                  </af:gridCell>
                   <af:gridCell marginStart="2px" width="14%" id="gc65"
                                halign="center" valign="middle">
                     <af:outputText value="Neps" id="outputText4"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc52">
                     <af:spacer width="30" height="15" id="spacer4"/>
@@ -428,11 +457,10 @@
                                id="gc43"/>
                 </af:gridRow>
                 <af:gridRow marginTop="1px" height="auto" id="gr4">
-                  <af:gridCell id="gc71"/>
                   <af:gridCell marginStart="2px" width="8%" id="gc11"
                                halign="center" valign="middle">
                     <af:outputText value="Foreign Yarn" id="outputText5"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc54">
                     <af:spacer width="30" height="15" id="spacer5"/>
@@ -519,12 +547,43 @@
                     <af:spacer width="10" height="20" id="s8"/>
                   </af:gridCell>
                 </af:gridRow>
+                <af:gridRow id="gr14">
+                  <af:gridCell id="gridCell48"/>
+                  <af:gridCell marginStart="2px" width="14%" id="gridCell343"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell344"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell345"
+                               valign="middle" halign="center"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell346"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell347"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell348"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell349"
+                               halign="center">
+                    <af:outputText value="Weave Fault" id="outputText27"
+                                   inlineStyle="font-weight:bolder; font-size:15px;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell350"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell351"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell352"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell353"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell354" valign="middle"
+                               halign="center"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell355" valign="middle"
+                               halign="center"/>
+                </af:gridRow>
                 <af:gridRow marginTop="1px" height="auto" id="gridRow4">
-                  <af:gridCell id="gridCell49"/>
                   <af:gridCell marginStart="2px" width="8%" id="gridCell50"
                                halign="center" valign="middle">
                     <af:outputText value="Thick/Thin End" id="outputText2"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell51">
                     <af:spacer width="30" height="15" id="spacer3"/>
@@ -606,11 +665,10 @@
                 </af:gridRow>
                 <af:gridRow marginTop="1px" marginBottom="2px" height="auto"
                             id="gridRow5">
-                  <af:gridCell id="gridCell65"/>
                   <af:gridCell marginStart="2px" width="8%" id="gridCell66"
                                halign="center" valign="middle">
                     <af:outputText value="Thick/Thin Pick" id="outputText19"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell67">
                     <af:spacer width="30" height="15" id="spacer32"/>
@@ -689,11 +747,10 @@
                                id="gridCell80"/>
                 </af:gridRow>
                 <af:gridRow marginTop="2px" height="auto" id="gridRow6">
-                  <af:gridCell id="gridCell81"/>
                   <af:gridCell marginStart="2px" width="14%" id="gridCell82"
                                halign="center" valign="middle">
                     <af:outputText value="Knots" id="outputText21"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell83">
                     <af:spacer width="30" height="15" id="spacer35"/>
@@ -769,11 +826,10 @@
                   </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="1px" height="auto" id="gridRow7">
-                  <af:gridCell id="gridCell95"/>
                   <af:gridCell marginStart="2px" width="14%" id="gridCell96"
                                halign="center" valign="middle">
                     <af:outputText value="Mixed Yarn" id="outputText23"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell97">
                     <af:spacer width="30" height="15" id="spacer38"/>
@@ -852,11 +908,10 @@
                                id="gridCell110"/>
                 </af:gridRow>
                 <af:gridRow marginTop="1px" height="auto" id="gridRow8">
-                  <af:gridCell id="gridCell111"/>
                   <af:gridCell marginStart="2px" width="8%" id="gridCell112"
                                halign="center" valign="middle">
                     <af:outputText value="Double Yarn" id="outputText25"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell113">
                     <af:spacer width="30" height="15" id="spacer41"/>
@@ -935,14 +990,10 @@
                                id="gridCell126"/>
                 </af:gridRow>
                 <af:gridRow marginTop="1px" height="auto" id="gridRow9">
-                  <af:gridCell id="gridCell127">
-                    <af:outputText value="Weave Fault" id="outputText27"
-                                   inlineStyle="font-weight:bolder;"/>
-                  </af:gridCell>
                   <af:gridCell marginStart="2px" width="8%" id="gridCell128"
                                halign="center" valign="middle">
                     <af:outputText value="Miss Yarn/Pick" id="outputText28"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell129">
                     <af:spacer width="30" height="15" id="spacer44"/>
@@ -1022,11 +1073,10 @@
                 </af:gridRow>
                 <af:gridRow marginTop="1px" marginBottom="2px" height="auto"
                             id="gridRow10">
-                  <af:gridCell id="gridCell143"/>
                   <af:gridCell marginStart="2px" width="8%" id="gridCell144"
                                halign="center" valign="middle">
                     <af:outputText value="Reed Mark" id="outputText30"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell145">
                     <af:spacer width="30" height="15" id="spacer47"/>
@@ -1106,11 +1156,10 @@
                 </af:gridRow>
                 <af:gridRow marginTop="1px" marginBottom="2px" height="auto"
                             id="gridRow18">
-                  <af:gridCell id="gridCell262"/>
                   <af:gridCell marginStart="2px" width="8%" id="gridCell263"
                                halign="center" valign="middle">
                     <af:outputText value="Hole" id="outputText32"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell264">
                     <af:spacer width="30" height="15" id="spacer69"/>
@@ -1189,11 +1238,10 @@
                 </af:gridRow>
                 <af:gridRow marginTop="1px" marginBottom="2px" height="auto"
                             id="gridRow19">
-                  <af:gridCell id="gridCell278"/>
                   <af:gridCell marginStart="2px" width="8%" id="gridCell279"
                                halign="center" valign="middle">
                     <af:outputText value="Stop Mark" id="outputText52"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell280">
                     <af:spacer width="30" height="15" id="spacer72"/>
@@ -1271,11 +1319,10 @@
                                id="gridCell293"/>
                 </af:gridRow>
                 <af:gridRow id="gr10">
-                  <af:gridCell id="gridCell295"/>
                   <af:gridCell marginStart="2px" width="8%" id="gridCell296"
                                halign="center" valign="middle">
                     <af:outputText value="Broken End" id="outputText54"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell297">
                     <af:spacer width="30" height="15" id="spacer76"/>
@@ -1353,11 +1400,10 @@
                                id="gridCell310"/>
                 </af:gridRow>
                 <af:gridRow id="gr11">
-                  <af:gridCell id="gridCell311"/>
                   <af:gridCell marginStart="2px" width="8%" id="gridCell312"
                                halign="center" valign="middle">
                     <af:outputText value="Broken Pick" id="outputText56"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell313">
                     <af:spacer width="30" height="15" id="spacer79"/>
@@ -1435,11 +1481,10 @@
                                id="gridCell326"/>
                 </af:gridRow>
                 <af:gridRow id="gr12">
-                  <af:gridCell id="gridCell327"/>
                   <af:gridCell marginStart="2px" width="8%" id="gridCell328"
                                halign="center" valign="middle">
                     <af:outputText value="Distortion Mark" id="outputText58"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell329">
                     <af:spacer width="30" height="15" id="spacer82"/>
@@ -1521,12 +1566,43 @@
                     <af:spacer width="10" height="20" id="spacer75"/>
                   </af:gridCell>
                 </af:gridRow>
+                <af:gridRow id="gr15">
+                  <af:gridCell id="gridCell49"/>
+                  <af:gridCell marginStart="2px" width="14%" id="gridCell65"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell81"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell95"
+                               valign="middle" halign="center"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell111"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell127"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell143"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell262"
+                               halign="center">
+                    <af:outputText value="Dye Fault" id="outputText8"
+                                   inlineStyle="font-weight:bolder; font-size:15px;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell278"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell295"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell311"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell327"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell356" valign="middle"
+                               halign="center"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell357" valign="middle"
+                               halign="center"/>
+                </af:gridRow>
                 <af:gridRow marginTop="1px" height="auto" id="gr2">
-                  <af:gridCell id="gc72"/>
                   <af:gridCell marginStart="2px" width="8%" id="gc23"
                                halign="center" valign="middle">
                     <af:outputText value="Stain/Dirty Marks" id="outputText6"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc1">
                     <af:spacer width="30" height="15" id="spacer6"/>
@@ -1605,11 +1681,10 @@
                 </af:gridRow>
                 <af:gridRow marginTop="1px" marginBottom="2px" height="auto"
                             id="gr1">
-                  <af:gridCell id="gc73"/>
                   <af:gridCell marginStart="2px" width="8%" id="gc39"
                                halign="center" valign="middle">
                     <af:outputText value="Crease Mark" id="outputText7"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc57">
                     <af:spacer width="30" height="15" id="spacer7"/>
@@ -1687,11 +1762,10 @@
                                id="gc29"/>
                 </af:gridRow>
                 <af:gridRow marginTop="2px" height="auto" id="gridRow11">
-                  <af:gridCell id="gc74"/>
                   <af:gridCell marginStart="2px" width="14%" id="gridCell152"
                                halign="center" valign="middle">
                     <af:outputText value="Joint Mark" id="outputText36"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell153">
                     <af:spacer width="30" height="15" id="spacer1"/>
@@ -1766,11 +1840,10 @@
                   </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="1px" height="auto" id="gridRow12">
-                  <af:gridCell id="gc75"/>
                   <af:gridCell marginStart="2px" width="14%" id="gridCell165"
                                halign="center" valign="middle">
                     <af:outputText value="Dye Resist" id="outputText38"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell166">
                     <af:spacer width="30" height="15" id="spacer51"/>
@@ -1848,14 +1921,10 @@
                                id="gridCell179"/>
                 </af:gridRow>
                 <af:gridRow marginTop="1px" height="auto" id="gridRow13">
-                  <af:gridCell id="gc76">
-                    <af:outputText value="Dye Fault" id="outputText51"
-                                   inlineStyle="font-weight:bolder;"/>
-                  </af:gridCell>
                   <af:gridCell marginStart="2px" width="8%" id="gridCell180"
                                halign="center" valign="middle">
                     <af:outputText value="Shade Variation" id="outputText40"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell181">
                     <af:spacer width="30" height="15" id="spacer54"/>
@@ -1933,11 +2002,10 @@
                                id="gridCell194"/>
                 </af:gridRow>
                 <af:gridRow marginTop="1px" height="auto" id="gridRow14">
-                  <af:gridCell id="gc77"/>
                   <af:gridCell marginStart="2px" width="8%" id="gridCell195"
                                halign="center" valign="middle">
                     <af:outputText value="Oil Spot" id="outputText42"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell196">
                     <af:spacer width="30" height="15" id="spacer57"/>
@@ -2016,11 +2084,10 @@
                 </af:gridRow>
                 <af:gridRow marginTop="1px" marginBottom="2px" height="auto"
                             id="gridRow15">
-                  <af:gridCell id="gc78"/>
                   <af:gridCell marginStart="2px" width="8%" id="gridCell210"
                                halign="center" valign="middle">
                     <af:outputText value="Drop Mark" id="outputText44"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell211">
                     <af:spacer width="30" height="15" id="spacer60"/>
@@ -2099,11 +2166,10 @@
                 </af:gridRow>
                 <af:gridRow marginTop="1px" marginBottom="2px" height="auto"
                             id="gridRow16">
-                  <af:gridCell id="gc79"/>
                   <af:gridCell marginStart="2px" width="8%" id="gridCell225"
                                halign="center" valign="middle">
                     <af:outputText value="Line Mark" id="outputText46"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell226">
                     <af:spacer width="30" height="15" id="spacer63"/>
@@ -2185,13 +2251,44 @@
                     <af:spacer width="10" height="20" id="spacer2"/>
                   </af:gridCell>
                 </af:gridRow>
+                <af:gridRow id="gr16">
+                  <af:gridCell id="gridCell358"/>
+                  <af:gridCell marginStart="2px" width="14%" id="gridCell359"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell360"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell361"
+                               valign="middle" halign="center"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell362"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell363"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell364"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="5%" id="gridCell365"
+                               halign="center">
+                    <af:outputText value="Printing Fault" id="outputText16"
+                                   inlineStyle="font-weight:bolder; font-size:15px;"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell366"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell367"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell368"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" width="7%" id="gridCell369"
+                               halign="center" valign="middle"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell370" valign="middle"
+                               halign="center"/>
+                  <af:gridCell marginStart="1px" marginEnd="2px" width="5%"
+                               id="gridCell371" valign="middle"
+                               halign="center"/>
+                </af:gridRow>
                 <af:gridRow marginTop="1px" marginBottom="2px" height="auto"
                             id="gridRow17">
-                  <af:gridCell id="gc80"/>
                   <af:gridCell marginStart="2px" width="8%" id="gridCell240"
                                halign="center" valign="middle">
                     <af:outputText value="Miss Print" id="outputText48"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell241">
                     <af:spacer width="30" height="15" id="spacer66"/>
@@ -2270,15 +2367,10 @@
                                id="gridCell254"/>
                 </af:gridRow>
                 <af:gridRow marginTop="2px" height="auto" id="gridRow1">
-                  <af:gridCell id="gc81">
-                    <af:outputText value="Printing Fault" id="outputText18"
-                                   inlineStyle="font-weight:bolder;"
-                                   styleClass="width:100%;"/>
-                  </af:gridCell>
                   <af:gridCell marginStart="2px" width="14%" id="gridCell6"
                                halign="center" valign="middle">
                     <af:outputText value="Design Out" id="outputText12"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell7">
                     <af:spacer width="30" height="15" id="spacer19"/>
@@ -2353,11 +2445,10 @@
                   </af:gridCell>
                 </af:gridRow>
                 <af:gridRow marginTop="1px" height="auto" id="gridRow2">
-                  <af:gridCell id="gc82"/>
                   <af:gridCell marginStart="2px" width="14%" id="gridCell19"
                                halign="center" valign="middle">
                     <af:outputText value="Print Overlap" id="outputText14"
-                                   inlineStyle="font-weight:bolder;"/>
+                                   inlineStyle="font-weight:bolder; font-size:12px;"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell20">
                     <af:spacer width="30" height="15" id="spacer22"/>

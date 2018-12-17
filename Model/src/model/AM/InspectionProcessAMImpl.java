@@ -349,4 +349,12 @@ public class InspectionProcessAMImpl extends ApplicationModuleImpl implements In
     public ViewObjectImpl getFinishingJobNumberLOV1() {
         return (ViewObjectImpl)findViewObject("FinishingJobNumberLOV1");
     }
+
+    /**
+     * Container's getter for GradesLOV1.
+     * @return GradesLOV1
+     */
+    public ViewObjectImpl getGradesLOV1() {
+        return (ViewObjectImpl)findViewObject("GradesLOV1");
+    }
 }

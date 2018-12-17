@@ -102,12 +102,6 @@
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
-                     id="Grade">
-      <AttrNames>
-        <Item Value="Grade"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
                      id="InspectionDate">
       <AttrNames>
         <Item Value="InspectionDate"/>
@@ -302,5 +296,13 @@
     <listOfValues StaticList="false"
                   IterBinding="PwcInspectionProcessHeaderVO1Iterator"
                   Uses="LOV_FinishingJobNumber" id="FinishingJobNumber"/>
+    <list IterBinding="PwcInspectionProcessLineVO1Iterator" StaticList="false"
+          Uses="LOV_Grade" id="Grade" DTSupportsMRU="true"/>
+    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
+                     id="RollQuantityMtr">
+      <AttrNames>
+        <Item Value="RollQuantityMtr"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

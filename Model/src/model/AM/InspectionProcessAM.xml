@@ -89,6 +89,9 @@
   <ViewUsage
     Name="FinishingJobNumberLOV1"
     ViewObjectName="model.LOV.FinishingJobNumberLOV"/>
+  <ViewUsage
+    Name="GradesLOV1"
+    ViewObjectName="model.LOV.GradesLOV"/>
   <ViewLinkUsage
     Name="PwcInspectionProcessVL"
     ViewLinkObjectName="model.VL.PwcInspectionProcessVL"
@@ -143,6 +146,28 @@
     SrcViewUsageName="model.AM.InspectionProcessAM.PwcInspectionProcessLineVO1"
     DstViewUsageName="model.AM.InspectionProcessAM.PwcOdmInsPrcFaultsTotalVO3"
     Reversed="false"/>
+  <ClientInterface>
+    <Method
+      Name="setSessionValues">
+      <Return
+        Type="void"/>
+      <Parameter
+        Name="orgId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="userId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="respId"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="respAppl"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="mfgOrgId"
+        Type="java.lang.String"/>
+    </Method>
+  </ClientInterface>
   <ClientInterface>
     <Method
       Name="setSessionValues">
