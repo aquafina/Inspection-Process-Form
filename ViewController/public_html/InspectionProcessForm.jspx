@@ -205,32 +205,6 @@
                 <f:validator binding="#{bindings.InspectionDate.validator}"/>
                 <af:convertDateTime pattern="#{bindings.InspectionDate.format}"/>
               </af:inputDate>
-              <af:inputText value="#{bindings.FinishWidth.inputValue}"
-                            label="#{bindings.FinishWidth.hints.label}"
-                            required="#{bindings.FinishWidth.hints.mandatory}"
-                            columns="#{bindings.FinishWidth.hints.displayWidth}"
-                            maximumLength="#{bindings.FinishWidth.hints.precision}"
-                            shortDesc="#{bindings.FinishWidth.hints.tooltip}"
-                            id="it8">
-                <f:validator binding="#{bindings.FinishWidth.validator}"/>
-              </af:inputText>
-              <af:inputText value="#{bindings.CutableWidth.inputValue}"
-                            label="#{bindings.CutableWidth.hints.label}"
-                            required="#{bindings.CutableWidth.hints.mandatory}"
-                            columns="#{bindings.CutableWidth.hints.displayWidth}"
-                            maximumLength="#{bindings.CutableWidth.hints.precision}"
-                            shortDesc="#{bindings.CutableWidth.hints.tooltip}"
-                            id="it7">
-                <f:validator binding="#{bindings.CutableWidth.validator}"/>
-              </af:inputText>
-              <af:inputText value="#{bindings.Kgs.inputValue}"
-                            label="#{bindings.Kgs.hints.label}"
-                            required="#{bindings.Kgs.hints.mandatory}"
-                            columns="#{bindings.Kgs.hints.displayWidth}"
-                            maximumLength="#{bindings.Kgs.hints.precision}"
-                            shortDesc="#{bindings.Kgs.hints.tooltip}" id="it9">
-                <f:validator binding="#{bindings.Kgs.validator}"/>
-              </af:inputText>
               <af:inputText value="#{bindings.MfgOrgId1.inputValue}"
                             label="#{bindings.MfgOrgId1.hints.label}"
                             required="#{bindings.MfgOrgId1.hints.mandatory}"

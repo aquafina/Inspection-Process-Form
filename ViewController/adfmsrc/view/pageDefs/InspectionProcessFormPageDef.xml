@@ -328,22 +328,5 @@
         <Item Value="Jute"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
-                     id="CutableWidth">
-      <AttrNames>
-        <Item Value="CutableWidth"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
-                     id="FinishWidth">
-      <AttrNames>
-        <Item Value="FinishWidth"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator" id="Kgs">
-      <AttrNames>
-        <Item Value="Kgs"/>
-      </AttrNames>
-    </attributeValues>
   </bindings>
 </pageDefinition>
