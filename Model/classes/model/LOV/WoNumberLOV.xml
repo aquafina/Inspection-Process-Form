@@ -20,7 +20,7 @@
     </SchemaBasedProperties>
   </Properties>
   <Variable
-    Name="p_pp_number"
+    Name="p_batch_no"
     Kind="where"
     Type="java.lang.String">
     <Properties>
@@ -31,7 +31,17 @@
     </Properties>
   </Variable>
   <SQLQuery>
-    <![CDATA[select  work_order_number from PWC_ODM_MASTER_SHT_PRCSNG_HDR where pp_number = nvl(:p_pp_number,pp_number)]]>
+    <![CDATA[select  header.work_order_number, 
+        header.pp_number, 
+        header.sale_order_no,
+        job.job_number,
+        line.batch_no 
+from PWC_ODM_MASTER_SHT_PRCSNG_HDR header, 
+  PWC_ODM_MASTER_SHT_PRCSNG_lINE line,
+  PWC_ODM_MASTER_SHT_JOB_PRCSNG job
+where header.header_id = line.header_id
+  and line.line_id = job.line_id 
+  and job.attribute1 = 'Finishing']]>
   </SQLQuery>
   <ViewAttribute
     Name="WorkOrderNumber"
@@ -53,6 +63,97 @@
           Value="30"/>
         <LABEL
           ResId="model.LOV.WoNumberLOV.WorkOrderNumber_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PpNumber"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="500"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PP_NUMBER"
+    Expression="PP_NUMBER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <LABEL
+          ResId="model.LOV.WoNumberLOV.PpNumber_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SaleOrderNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="SALE_ORDER_NO"
+    Expression="SALE_ORDER_NO"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.LOV.WoNumberLOV.SaleOrderNo_LABEL"/>
+        <DISPLAYWIDTH
+          Value="30"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobNumber"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="500"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="JOB_NUMBER"
+    Expression="JOB_NUMBER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <LABEL
+          ResId="model.LOV.WoNumberLOV.JobNumber_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BatchNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="BATCH_NO"
+    Expression="BATCH_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="30"/>
+        <LABEL
+          ResId="model.LOV.WoNumberLOV.BatchNo_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

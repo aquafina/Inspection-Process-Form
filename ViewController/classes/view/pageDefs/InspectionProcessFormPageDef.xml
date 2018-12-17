@@ -50,15 +50,6 @@
         <Item Value="InspectionProcessId"/>
       </AttrNames>
     </attributeValues>
-    <listOfValues StaticList="false"
-                  IterBinding="PwcInspectionProcessHeaderVO1Iterator"
-                  Uses="LOV_PpNumber" id="PpNumber"/>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
-                     id="SalesOrderNumber">
-      <AttrNames>
-        <Item Value="SalesOrderNumber"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
                      id="ItemDescription">
       <AttrNames>
@@ -120,12 +111,6 @@
                      id="InspectionDate">
       <AttrNames>
         <Item Value="InspectionDate"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
-                     id="FinishingJobNumber">
-      <AttrNames>
-        <Item Value="FinishingJobNumber"/>
       </AttrNames>
     </attributeValues>
     <methodAction id="setSessionValues"
@@ -302,5 +287,20 @@
         <Item Value="DyeingFaultsJointMark"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                     id="PpNumber">
+      <AttrNames>
+        <Item Value="PpNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                     id="SalesOrderNumber">
+      <AttrNames>
+        <Item Value="SalesOrderNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues StaticList="false"
+                  IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                  Uses="LOV_FinishingJobNumber" id="FinishingJobNumber"/>
   </bindings>
 </pageDefinition>

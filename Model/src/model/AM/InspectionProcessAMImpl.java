@@ -341,4 +341,12 @@ public class InspectionProcessAMImpl extends ApplicationModuleImpl implements In
     public ViewLinkImpl getPwcOdmInspPrcLinesFaultTotalVL1() {
         return (ViewLinkImpl)findViewLink("PwcOdmInspPrcLinesFaultTotalVL1");
     }
+
+    /**
+     * Container's getter for FinishingJobNumberLOV1.
+     * @return FinishingJobNumberLOV1
+     */
+    public ViewObjectImpl getFinishingJobNumberLOV1() {
+        return (ViewObjectImpl)findViewObject("FinishingJobNumberLOV1");
+    }
 }

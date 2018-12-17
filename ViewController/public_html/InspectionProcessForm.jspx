@@ -32,27 +32,19 @@
                 <af:convertNumber groupingUsed="false"
                                   pattern="#{bindings.InspectionProcessId.format}"/>
               </af:inputText>
-              <af:inputListOfValues id="ppNumberId"
-                                    popupTitle="Search and Select: #{bindings.PpNumber.hints.label}"
-                                    value="#{bindings.PpNumber.inputValue}"
-                                    label="PP Number"
-                                    model="#{bindings.PpNumber.listOfValuesModel}"
-                                    required="#{bindings.PpNumber.hints.mandatory}"
-                                    columns="#{bindings.PpNumber.hints.displayWidth}"
-                                    shortDesc="#{bindings.PpNumber.hints.tooltip}">
-                <f:validator binding="#{bindings.PpNumber.validator}"/>
-              </af:inputListOfValues>
-              <af:inputText value="#{bindings.SalesOrderNumber.inputValue}"
-                            label="Sale Order Number"
-                            required="#{bindings.SalesOrderNumber.hints.mandatory}"
-                            columns="#{bindings.SalesOrderNumber.hints.displayWidth}"
-                            maximumLength="#{bindings.SalesOrderNumber.hints.precision}"
-                            shortDesc="#{bindings.SalesOrderNumber.hints.tooltip}"
-                            id="it4">
-                <f:validator binding="#{bindings.SalesOrderNumber.validator}"/>
-                <af:convertNumber groupingUsed="false"
-                                  pattern="#{bindings.SalesOrderNumber.format}"/>
-              </af:inputText>
+              <af:panelLabelAndMessage label="PP Number"
+                                       id="plam6">
+                <af:outputText value="#{bindings.PpNumber.inputValue}"
+                               id="ot10"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="Sales Order Number"
+                                       id="plam7">
+                <af:outputText value="#{bindings.SalesOrderNumber.inputValue}"
+                               id="ot11">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.SalesOrderNumber.format}"/>
+                </af:outputText>
+              </af:panelLabelAndMessage>
               <af:inputListOfValues id="woNumberId"
                                     popupTitle="Search and Select: #{bindings.WoNumber.hints.label}"
                                     value="#{bindings.WoNumber.inputValue}"
@@ -70,7 +62,8 @@
                                     model="#{bindings.BatchNumber.listOfValuesModel}"
                                     required="#{bindings.BatchNumber.hints.mandatory}"
                                     columns="#{bindings.BatchNumber.hints.displayWidth}"
-                                    shortDesc="#{bindings.BatchNumber.hints.tooltip}">
+                                    shortDesc="#{bindings.BatchNumber.hints.tooltip}"
+                                    partialTriggers="woNumberId">
                 <f:validator binding="#{bindings.BatchNumber.validator}"/>
               </af:inputListOfValues>
               <af:panelLabelAndMessage label="Buyer Name"
@@ -88,16 +81,21 @@
                 <af:outputText value="#{bindings.ItemDescription.inputValue}"
                                id="ot6" partialTriggers="batchNumberId"/>
               </af:panelLabelAndMessage>
-              <af:panelLabelAndMessage label="Finishing Job Number"
-                                       id="plam5"
-                                       partialTriggers="batchNumberId">
-                <af:outputText value="#{bindings.FinishingJobNumber.inputValue}"
-                               id="ot8"/>
-              </af:panelLabelAndMessage>
+              <af:inputListOfValues id="finishingJobNumberId"
+                                    popupTitle="Search and Select: #{bindings.FinishingJobNumber.hints.label}"
+                                    value="#{bindings.FinishingJobNumber.inputValue}"
+                                    label="Finishing Job Number"
+                                    model="#{bindings.FinishingJobNumber.listOfValuesModel}"
+                                    required="#{bindings.FinishingJobNumber.hints.mandatory}"
+                                    columns="#{bindings.FinishingJobNumber.hints.displayWidth}"
+                                    shortDesc="#{bindings.FinishingJobNumber.hints.tooltip}"
+                                    partialTriggers="batchNumberId">
+                <f:validator binding="#{bindings.FinishingJobNumber.validator}"/>
+              </af:inputListOfValues>
               <af:panelLabelAndMessage label="Job Quantity"
                                        id="plam4">
                 <af:outputText value="#{bindings.JobQuantity.inputValue}"
-                               id="ot7" partialTriggers="batchNumberId">
+                               id="ot7" partialTriggers="finishingJobNumberId">
                   <af:convertNumber groupingUsed="false"
                                     pattern="#{bindings.JobQuantity.format}"/>
                 </af:outputText>
@@ -134,7 +132,7 @@
                             maximumLength="#{bindings.RollNumber.hints.precision}"
                             shortDesc="#{bindings.RollNumber.hints.tooltip}"
                             id="inputText1" inlineStyle="width:20px;"
-                            showRequired="true" required="true">
+                            showRequired="true" required="true" readOnly="true">
                 <f:validator binding="#{bindings.RollNumber.validator}"/>
               </af:inputText>
               <af:inputText value="#{bindings.DyeingFaultsCreaseMark.inputValue+ bindings.DyeingFaultsDropMark.inputValue+ bindings.DyeingFaultsDyeResist.inputValue+ bindings.DyeingFaultsLineMark.inputValue+ bindings.DyeingFaultsOilSpot.inputValue+ bindings.DyeingFaultsShadeVariation.inputValue+ bindings.DyeingFaultsStainDirtyMark.inputValue+ bindings.PrintingFaultsDesignOut.inputValue + bindings.PrintingFaultsMissPrint.inputValue + bindings.WeavingFaultsBrokenEnd.inputValue + bindings.WeavingFaultsBrokenPick.inputValue + bindings.WeavingFaultsDistortionMark.inputValue + bindings.WeavingFaultsDoubleYarn.inputValue + bindings.WeavingFaultsHole.inputValue + bindings.WeavingFaultsKnots.inputValue + bindings.WeavingFaultsMissYarnPick.inputValue + bindings.WeavingFaultsMixedYarn.inputValue + bindings.WeavingFaultsReedMark.inputValue + bindings.WeavingFaultsStopMark.inputValue + bindings.WeavingFaultsThickThinPick.inputValue + bindings.YarnFaultsForeignYarn.inputValue + bindings.YarnFaultsNeps.inputValue + bindings.YarnFaultsSlubs.inputValue+ bindings.DyeingFaultsJointMark.inputValue}"
@@ -214,16 +212,16 @@
                                  inlineStyle="width:119px; height:96px;"
                                  layout="vertical">
               <h:commandButton id="cb11"
-                               style="background-color:Blue; color:white; font-weight:bolder; width:100px;" value="DTM"/>
+                               style="background-color:Blue; color:white; font-weight:bolder; width:120px;" value="DTM"/>
               <af:spacer width="10" height="10" id="s1"/>
               <h:commandButton value="Dyeing Stitch" id="cb1"
-                               style="width:100px; text-align:center; background-color:Fuchsia; color:white; font-weight:bolder;"/>
+                               style="width:120px; text-align:center; background-color:Fuchsia; color:white; font-weight:bolder;"/>
               <af:spacer width="10" height="10" id="s7"/>
               <h:commandButton value="Printing Stitch" id="cb8"
-                               style="text-align:center; width:100px; background-color:Green; color:white; font-weight:bolder;"/>
+                               style="text-align:center; width:120px; background-color:Green; color:white; font-weight:bolder;"/>
               <af:spacer width="10" height="10" id="s9"/>
               <h:commandButton value="Finishing Stitch" id="cb9"
-                               style="width:100px; text-align:center; background-color:Brown; color:white; font-weight:bolder;"/>
+                               style="width:120px; text-align:center; background-color:Brown; color:white; font-weight:bolder;"/>
             </af:panelGroupLayout>
           </af:panelGroupLayout>
           <af:panelGroupLayout id="pgl9" layout="horizontal">

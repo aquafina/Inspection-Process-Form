@@ -77,25 +77,15 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
-  <ListBinding
-    Name="LOV_PpNumber"
-    ListVOName="PpNumberLOV1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_PpNumber_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="PpNumber"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="PpNumber"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="PpNumber"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
-  </ListBinding>
+  <ViewAccessor
+    Name="FinishingJobNumberLOV1"
+    ViewObjectName="model.LOV.FinishingJobNumberLOV">
+    <ParameterMap>
+      <PIMap Variable="p_batch_no">
+        <TransientExpression><![CDATA[BatchNumber]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_WoNumber"
     ListVOName="WoNumberLOV1"
@@ -106,11 +96,19 @@
     <AttrArray Name="AttrNames">
       <Item Value="WoNumber"/>
     </AttrArray>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="BatchNumber"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="WorkOrderNumber"/>
+      <Item Value="BatchNo"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="WorkOrderNumber"/>
+      <Item Value="SaleOrderNo"/>
+      <Item Value="PpNumber"/>
+      <Item Value="JobNumber"/>
+      <Item Value="BatchNo"/>
     </AttrArray>
     <DisplayCriteria
       Hint="showAndExecute"/>
@@ -129,19 +127,18 @@
       <Item Value="BuyerName"/>
       <Item Value="ItemCode"/>
       <Item Value="ItemDescription"/>
-      <Item Value="JobQuantity"/>
-      <Item Value="FinishingJobNumber"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="BatchNo"/>
       <Item Value="Buyer"/>
       <Item Value="ItemCode"/>
       <Item Value="ItemDesc"/>
-      <Item Value="JobQty"/>
-      <Item Value="JobNumber"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="BatchNo"/>
+      <Item Value="PpNumber"/>
+      <Item Value="SaleOrderNo"/>
+      <Item Value="WorkOrderNumber"/>
     </AttrArray>
     <DisplayCriteria
       Hint="showAndExecute"/>
@@ -166,6 +163,30 @@
     <DisplayCriteria
       Hint="showAndExecute"/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_FinishingJobNumber"
+    ListVOName="FinishingJobNumberLOV1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_FinishingJobNumber_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FinishingJobNumber"/>
+    </AttrArray>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="JobQuantity"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="JobNumber"/>
+      <Item Value="JobQty"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="JobNumber"/>
+      <Item Value="JobQty"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="showAndExecute"/>
+  </ListBinding>
   <EntityUsage
     Name="PwcInspectionProcessHeader"
     Entity="model.EO.PwcInspectionProcessHeaderEO"/>
@@ -186,15 +207,12 @@
   </ViewAttribute>
   <ViewAttribute
     Name="PpNumber"
-    LOVName="LOV_PpNumber"
     PrecisionRule="true"
     EntityAttrName="PpNumber"
     EntityUsage="PwcInspectionProcessHeader"
     AliasName="PP_NUMBER">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
         <DISPLAYWIDTH
           Value="20"/>
       </SchemaBasedProperties>
@@ -209,10 +227,10 @@
     AliasName="WO_NUMBER">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
         <DISPLAYWIDTH
           Value="20"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -225,10 +243,10 @@
     AliasName="BATCH_NUMBER">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
         <DISPLAYWIDTH
           Value="20"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -276,11 +294,14 @@
     PrecisionRule="true"
     EntityAttrName="FinishingJobNumber"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="FINISHING_JOB_NUMBER">
+    AliasName="FINISHING_JOB_NUMBER"
+    LOVName="LOV_FinishingJobNumber">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

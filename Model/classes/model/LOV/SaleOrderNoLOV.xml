@@ -32,7 +32,8 @@
     </Properties>
   </Variable>
   <SQLQuery>
-    <![CDATA[select distinct sale_order_no,buyer from PWC_ODM_MASTER_SHT_PRCSNG_HDR where pp_number = nvl(:p_pp_number,pp_number)]]>
+    <![CDATA[select distinct sale_order_no,buyer from PWC_ODM_MASTER_SHT_PRCSNG_HDR where pp_number = nvl(:p_pp_number,pp_number)
+and org_id = nvl(:p_org_id, org_id)]]>
   </SQLQuery>
   <ViewAttribute
     Name="SaleOrderNo"
