@@ -16,6 +16,10 @@
     <iterator Binds="PwcOdmInsPrcFaultsTotalVO3" RangeSize="25"
               DataControl="InspectionProcessAMDataControl"
               id="PwcOdmInsPrcFaultsTotalVO3Iterator"/>
+    <searchRegion Criteria="PwcInspectionProcessLineVOCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="PwcInspectionProcessLineVO1Iterator"
+                  id="PwcInspectionProcessLineVOCriteriaQuery"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
@@ -75,12 +79,6 @@
                      id="ItemCode">
       <AttrNames>
         <Item Value="ItemCode"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
-                     id="InspectionMachineNumber">
-      <AttrNames>
-        <Item Value="InspectionMachineNumber"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
@@ -317,16 +315,20 @@
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
-                     id="Weave">
-      <AttrNames>
-        <Item Value="Weave"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
                      id="Jute">
       <AttrNames>
         <Item Value="Jute"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                     id="Weave">
+      <AttrNames>
+        <Item Value="Weave"/>
+      </AttrNames>
+    </attributeValues>
+    <listOfValues StaticList="false"
+                  IterBinding="PwcInspectionProcessLineVO1Iterator"
+                  Uses="LOV_InspectionMachineNumber"
+                  id="InspectionMachineNumber"/>
   </bindings>
 </pageDefinition>

@@ -357,4 +357,20 @@ public class InspectionProcessAMImpl extends ApplicationModuleImpl implements In
     public ViewObjectImpl getGradesLOV1() {
         return (ViewObjectImpl)findViewObject("GradesLOV1");
     }
+
+    /**
+     * Container's getter for RollNumberLOV1.
+     * @return RollNumberLOV1
+     */
+    public ViewObjectImpl getRollNumberLOV1() {
+        return (ViewObjectImpl)findViewObject("RollNumberLOV1");
+    }
+
+    /**
+     * Container's getter for MachineNumberLOV1.
+     * @return MachineNumberLOV1
+     */
+    public ViewObjectImpl getMachineNumberLOV1() {
+        return (ViewObjectImpl)findViewObject("MachineNumberLOV1");
+    }
 }

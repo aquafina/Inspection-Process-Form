@@ -73,13 +73,8 @@
   </ViewAccessor>
   <ViewAccessor
     Name="SaleOrderNoLOV1"
-    ViewObjectName="model.LOV.SaleOrderNoLOV">
-    <ParameterMap>
-      <PIMap Variable="p_pp_number">
-        <TransientExpression><![CDATA[PpNumber]]></TransientExpression>
-      </PIMap>
-    </ParameterMap>
-  </ViewAccessor>
+    ViewObjectName="model.LOV.SaleOrderNoLOV"
+    RowLevelBinds="true"/>
   <ViewAccessor
     Name="FinishingJobNumberLOV1"
     ViewObjectName="model.LOV.FinishingJobNumberLOV">

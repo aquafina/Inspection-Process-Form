@@ -14,6 +14,10 @@
     <Attr Name="_codeGenFlag2" Value="VarAccess"/>
     <Attr Name="_isExpertMode" Value="true"/>
   </DesignTime>
+  <Variable
+    Name="p_roll_number"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <ViewAccessor
     Name="PpNumberLOV1"
     ViewObjectName="model.LOV.PpNumberLOV"
@@ -23,7 +27,7 @@
     ViewObjectName="model.LOV.BatchNumberLOV">
     <ParameterMap>
       <PIMap Variable="p_wo_number">
-        <TransientExpression><![CDATA[WoNumber]]></TransientExpression>
+        <TransientExpression><![CDATA[PwcInspectionProcessHeaderVO.WoNumber]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -40,6 +44,14 @@
     Name="GradesLOV1"
     ViewObjectName="model.LOV.GradesLOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="RollNumberLOV1"
+    ViewObjectName="model.LOV.RollNumberLOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="MachineNumberLOV1"
+    ViewObjectName="model.LOV.MachineNumberLOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Grade"
     ListVOName="GradesLOV1"
@@ -52,6 +64,42 @@
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Grade"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RollNumber"
+    ListVOName="RollNumberLOV1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_RollNumber_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RollNumber"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="RollNumber"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="RollNumber"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_InspectionMachineNumber"
+    ListVOName="MachineNumberLOV1"
+    ListRangeSize="10"
+    NullValueFlag="none"
+    NullValueId="LOV_InspectionMachineNumber_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="InspectionMachineNumber"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MachineNumber"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="MachineNumber"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -87,7 +135,7 @@
        PwcInspectionProcessLineEO.ATTRIBUTE15, 
        PwcInspectionProcessLineEO.MFG_ORG_ID, 
        PwcInspectionProcessLineEO.INSPECTION_PROCESS_LINE_ID, 
- /*NVL(ROUND((PwcInspectionProcessLineEO.ROLL_QUANTITY/1.0936),2),0)*/0 ROLL_QUANTITY_MTR
+NVL(ROUND((PwcInspectionProcessLineEO.ROLL_QUANTITY/1.0936),2),0) ROLL_QUANTITY_MTR
 FROM PWC_INSPECTION_PROCESS_LINE PwcInspectionProcessLineEO]]>
   </SQLQuery>
   <EntityUsage
@@ -106,11 +154,14 @@ FROM PWC_INSPECTION_PROCESS_LINE PwcInspectionProcessLineEO]]>
     PrecisionRule="true"
     EntityAttrName="RollNumber"
     EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="ROLL_NUMBER">
+    AliasName="ROLL_NUMBER"
+    LOVName="LOV_RollNumber">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="30"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -119,11 +170,14 @@ FROM PWC_INSPECTION_PROCESS_LINE PwcInspectionProcessLineEO]]>
     PrecisionRule="true"
     EntityAttrName="InspectionMachineNumber"
     EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="INSPECTION_MACHINE_NUMBER">
+    AliasName="INSPECTION_MACHINE_NUMBER"
+    LOVName="LOV_InspectionMachineNumber">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="30"/>
+        <CONTROLTYPE
+          Value="input_text_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -352,6 +406,45 @@ FROM PWC_INSPECTION_PROCESS_LINE PwcInspectionProcessLineEO]]>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
   </ViewAttribute>
+  <ViewCriteria
+    Name="PwcInspectionProcessLineVOCriteria"
+    ViewObjectName="model.VO.PwcInspectionProcessLineVO"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="displayName"
+          ResId="displayName"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="vcrow35"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="RollNumber"
+        ViewAttribute="RollNumber"
+        Operator="="
+        Conjunction="AND"
+        Value=":p_roll_number"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="PwcOdmInspPrcDyeFaultVO"
     ViewLink="model.VL.InspPrcLineDyeFaultVL"
@@ -382,4 +475,14 @@ FROM PWC_INSPECTION_PROCESS_LINE PwcInspectionProcessLineEO]]>
     ViewLink="model.VL.PwcOdmInspPrcLinesFaultTotalVL"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="PwcInspectionProcessHeaderVO"
+    ViewLink="model.VL.PwcInspectionProcessVL"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

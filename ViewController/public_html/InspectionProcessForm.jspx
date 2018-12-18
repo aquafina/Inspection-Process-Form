@@ -139,17 +139,18 @@
               <af:resetActionListener/>
             </af:commandButton>
           </af:panelGroupLayout>
+          <af:panelGroupLayout layout="vertical" id="pgl11">
+            <af:panelHeader text="Inspection Process Line Search" id="ph2">
+              <af:query id="qryId1" headerText="Search" disclosed="false"
+                        value="#{bindings.PwcInspectionProcessLineVOCriteriaQuery.queryDescriptor}"
+                        model="#{bindings.PwcInspectionProcessLineVOCriteriaQuery.queryModel}"
+                        queryListener="#{bindings.PwcInspectionProcessLineVOCriteriaQuery.processQuery}"
+                        queryOperationListener="#{bindings.PwcInspectionProcessLineVOCriteriaQuery.processQueryOperation}"/>
+            </af:panelHeader>
+          </af:panelGroupLayout>
           <af:panelGroupLayout id="pgl2" layout="horizontal">
-            <af:panelFormLayout id="panelFormLayout1" rows="5">
-              <af:inputText value="#{bindings.InspectionMachineNumber.inputValue}"
-                            label="Inspection Machine Number"
-                            required="#{bindings.InspectionMachineNumber.hints.mandatory}"
-                            columns="#{bindings.InspectionMachineNumber.hints.displayWidth}"
-                            maximumLength="#{bindings.InspectionMachineNumber.hints.precision}"
-                            shortDesc="#{bindings.InspectionMachineNumber.hints.tooltip}"
-                            id="it1">
-                <f:validator binding="#{bindings.InspectionMachineNumber.validator}"/>
-              </af:inputText>
+            <af:panelFormLayout id="panelFormLayout1" rows="5"
+                                partialTriggers="qryId1">
               <af:inputText value="#{bindings.RollNumber.inputValue}"
                             label="Roll Number"
                             columns="#{bindings.RollNumber.hints.displayWidth}"
@@ -159,6 +160,16 @@
                             showRequired="true" required="true" readOnly="true">
                 <f:validator binding="#{bindings.RollNumber.validator}"/>
               </af:inputText>
+              <af:inputListOfValues id="inspectionMachineNumber"
+                                    popupTitle="Search and Select: #{bindings.InspectionMachineNumber.hints.label}"
+                                    value="#{bindings.InspectionMachineNumber.inputValue}"
+                                    label="Inspection Machine Number"
+                                    model="#{bindings.InspectionMachineNumber.listOfValuesModel}"
+                                    required="#{bindings.InspectionMachineNumber.hints.mandatory}"
+                                    columns="#{bindings.InspectionMachineNumber.hints.displayWidth}"
+                                    shortDesc="#{bindings.InspectionMachineNumber.hints.tooltip}">
+                <f:validator binding="#{bindings.InspectionMachineNumber.validator}"/>
+              </af:inputListOfValues>
               <af:inputText value="#{bindings.DyeingFaultsCreaseMark.inputValue+ bindings.DyeingFaultsDropMark.inputValue+ bindings.DyeingFaultsDyeResist.inputValue+ bindings.DyeingFaultsLineMark.inputValue+ bindings.DyeingFaultsOilSpot.inputValue+ bindings.DyeingFaultsShadeVariation.inputValue+ bindings.DyeingFaultsStainDirtyMark.inputValue+ bindings.PrintingFaultsDesignOut.inputValue + bindings.PrintingFaultsMissPrint.inputValue + bindings.WeavingFaultsBrokenEnd.inputValue + bindings.WeavingFaultsBrokenPick.inputValue + bindings.WeavingFaultsDistortionMark.inputValue + bindings.WeavingFaultsDoubleYarn.inputValue + bindings.WeavingFaultsHole.inputValue + bindings.WeavingFaultsKnots.inputValue + bindings.WeavingFaultsMissYarnPick.inputValue + bindings.WeavingFaultsMixedYarn.inputValue + bindings.WeavingFaultsReedMark.inputValue + bindings.WeavingFaultsStopMark.inputValue + bindings.WeavingFaultsThickThinPick.inputValue + bindings.YarnFaultsForeignYarn.inputValue + bindings.YarnFaultsNeps.inputValue + bindings.YarnFaultsSlubs.inputValue+ bindings.DyeingFaultsJointMark.inputValue}"
                             label="Total Faults"
                             required="#{bindings.TotalFaults.hints.mandatory}"
@@ -361,7 +372,7 @@
                                halign="center" valign="middle">
                     <af:outputText id="ot3"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   value="#{bindings.YarnFaultsSlubs.inputValue}"
+                                   value="#{bindings.YarnFaultsSlubs.inputValue>=0?bindings.YarnFaultsSlubs.inputValue:0}"
                                    partialTriggers="yarn_fault_slubs_cb1 yarn_fault_slubs_cb2 yarn_fault_slubs_cb3 yarn_fault_slubs_cb4 yarn_fault_slubs_undo_cb1 yarn_fault_slubs_undo_cb2 yarn_fault_slubs_undo_cb3 yarn_fault_slubs_undo_cb4"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc16">
