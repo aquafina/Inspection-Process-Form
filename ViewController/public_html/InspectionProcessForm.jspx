@@ -279,7 +279,8 @@
             <af:outputText id="outputText1"
                            inlineStyle="font-weight:bolder;"
                            styleClass="width:100%;"/>
-            <af:panelGroupLayout id="pgl8" inlineStyle="width:1259px;">
+            <af:panelGroupLayout id="pgl8" inlineStyle="width:1259px;"
+                                 partialTriggers="qryId1">
               <af:panelGroupLayout id="pgl4"
                                    inlineStyle="width:693px; height:29px;">
                 <af:spacer width="450" height="10" id="s4"/>

@@ -19,28 +19,6 @@
     Kind="viewcriteria"
     Type="java.lang.String"/>
   <ViewAccessor
-    Name="PpNumberLOV1"
-    ViewObjectName="model.LOV.PpNumberLOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
-    Name="BatchNumberLOV1"
-    ViewObjectName="model.LOV.BatchNumberLOV">
-    <ParameterMap>
-      <PIMap Variable="p_wo_number">
-        <TransientExpression><![CDATA[PwcInspectionProcessHeaderVO.WoNumber]]></TransientExpression>
-      </PIMap>
-    </ParameterMap>
-  </ViewAccessor>
-  <ViewAccessor
-    Name="WoNumberLOV1"
-    ViewObjectName="model.LOV.WoNumberLOV">
-    <ParameterMap>
-      <PIMap Variable="p_pp_number">
-        <TransientExpression><![CDATA[PpNumber]]></TransientExpression>
-      </PIMap>
-    </ParameterMap>
-  </ViewAccessor>
-  <ViewAccessor
     Name="GradesLOV1"
     ViewObjectName="model.LOV.GradesLOV"
     RowLevelBinds="true"/>
