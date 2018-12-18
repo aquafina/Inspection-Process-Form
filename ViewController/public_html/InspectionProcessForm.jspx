@@ -65,7 +65,8 @@
                                     required="#{bindings.BatchNumber.hints.mandatory}"
                                     columns="#{bindings.BatchNumber.hints.displayWidth}"
                                     shortDesc="#{bindings.BatchNumber.hints.tooltip}"
-                                    partialTriggers="cb3">
+                                    partialTriggers="cb3"
+                                    disabled="#{bindings.Attribute1.inputValue=='Y'}">
                 <f:validator binding="#{bindings.BatchNumber.validator}"/>
               </af:inputListOfValues>
               <af:panelLabelAndMessage label="Buyer Name"
@@ -91,7 +92,8 @@
                                     required="#{bindings.FinishingJobNumber.hints.mandatory}"
                                     columns="#{bindings.FinishingJobNumber.hints.displayWidth}"
                                     shortDesc="#{bindings.FinishingJobNumber.hints.tooltip}"
-                                    partialTriggers="cb3">
+                                    partialTriggers="cb3"
+                                    disabled="#{bindings.Attribute1.inputValue=='Y'}">
                 <f:validator binding="#{bindings.FinishingJobNumber.validator}"/>
               </af:inputListOfValues>
               <af:panelLabelAndMessage label="Job Quantity"
@@ -107,13 +109,17 @@
                 <af:outputText value="#{bindings.FinishType.inputValue}"
                                id="ot13"/>
               </af:panelLabelAndMessage>
-              <af:outputText value="#{bindings.Weave.inputValue}" id="ot14"/>
+              <af:panelLabelAndMessage label="#{bindings.Weave.hints.label}"
+                                       id="plam9">
+                <af:outputText value="#{bindings.Weave.inputValue}" id="ot14"/>
+              </af:panelLabelAndMessage>
               <af:inputText value="#{bindings.Jute.inputValue}"
                             label="#{bindings.Jute.hints.label}"
                             required="#{bindings.Jute.hints.mandatory}"
                             columns="#{bindings.Jute.hints.displayWidth}"
                             maximumLength="#{bindings.Jute.hints.precision}"
-                            shortDesc="#{bindings.Jute.hints.tooltip}" id="it4">
+                            shortDesc="#{bindings.Jute.hints.tooltip}" id="it4"
+                            disabled="#{bindings.Attribute1.inputValue=='Y'}">
                 <f:validator binding="#{bindings.Jute.validator}"/>
               </af:inputText>
               <af:outputText value="#{bindings.Attribute1.inputValue}"

@@ -82,7 +82,7 @@ where header.header_id = line.header_id
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="30"/>
+          Value="20"/>
         <LABEL
           ResId="model.LOV.WoNumberLOV.WorkOrderNumber_LABEL"/>
       </SchemaBasedProperties>
@@ -105,7 +105,7 @@ where header.header_id = line.header_id
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="30"/>
+          Value="50"/>
         <LABEL
           ResId="model.LOV.WoNumberLOV.PpNumber_LABEL"/>
       </SchemaBasedProperties>
@@ -129,7 +129,7 @@ where header.header_id = line.header_id
         <LABEL
           ResId="model.LOV.WoNumberLOV.SaleOrderNo_LABEL"/>
         <DISPLAYWIDTH
-          Value="30"/>
+          Value="20"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -150,7 +150,7 @@ where header.header_id = line.header_id
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="30"/>
+          Value="20"/>
         <LABEL
           ResId="model.LOV.WoNumberLOV.JobNumber_LABEL"/>
       </SchemaBasedProperties>
@@ -173,7 +173,7 @@ where header.header_id = line.header_id
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="30"/>
+          Value="50"/>
         <LABEL
           ResId="model.LOV.WoNumberLOV.BatchNo_LABEL"/>
       </SchemaBasedProperties>

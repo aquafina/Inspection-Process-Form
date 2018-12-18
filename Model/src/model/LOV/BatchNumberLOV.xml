@@ -134,7 +134,7 @@
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="30"/>
+          Value="20"/>
         <LABEL
           ResId="model.LOV.BatchNumberLOV.BatchNo_LABEL"/>
       </SchemaBasedProperties>
@@ -178,7 +178,7 @@
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="30"/>
+          Value="20"/>
         <LABEL
           ResId="model.LOV.BatchNumberLOV.WorkOrderNumber_LABEL"/>
       </SchemaBasedProperties>
@@ -201,7 +201,7 @@
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="30"/>
+          Value="20"/>
         <LABEL
           ResId="model.LOV.BatchNumberLOV.PpNumber_LABEL"/>
       </SchemaBasedProperties>
@@ -223,7 +223,7 @@
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="30"/>
+          Value="60"/>
         <LABEL
           ResId="model.LOV.BatchNumberLOV.SaleOrderNo_LABEL"/>
       </SchemaBasedProperties>
@@ -360,14 +360,6 @@
         Operator="CONTAINS"
         Conjunction="AND"
         Value=":p_batch_no"
-        IsBindVarValue="true"
-        Required="Optional"/>
-      <ViewCriteriaItem
-        Name="BatchNumberLOVCriteria_vcrow50_Buyer"
-        ViewAttribute="Buyer"
-        Operator="CONTAINS"
-        Conjunction="OR"
-        Value=":p_buyer"
         IsBindVarValue="true"
         Required="Optional"/>
       <ViewCriteriaItem

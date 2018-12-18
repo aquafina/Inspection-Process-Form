@@ -317,15 +317,15 @@
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
-                     id="Weave">
-      <AttrNames>
-        <Item Value="Weave"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
                      id="Jute">
       <AttrNames>
         <Item Value="Jute"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                     id="Weave">
+      <AttrNames>
+        <Item Value="Weave"/>
       </AttrNames>
     </attributeValues>
   </bindings>

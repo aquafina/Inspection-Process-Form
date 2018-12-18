@@ -134,7 +134,7 @@
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="30"/>
+          Value="20"/>
         <LABEL
           ResId="model.LOV.BatchNumberLOV.BatchNo_LABEL"/>
       </SchemaBasedProperties>
@@ -178,7 +178,7 @@
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="30"/>
+          Value="20"/>
         <LABEL
           ResId="model.LOV.BatchNumberLOV.WorkOrderNumber_LABEL"/>
       </SchemaBasedProperties>
@@ -201,7 +201,7 @@
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="30"/>
+          Value="20"/>
         <LABEL
           ResId="model.LOV.BatchNumberLOV.PpNumber_LABEL"/>
       </SchemaBasedProperties>
@@ -223,7 +223,7 @@
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
-          Value="30"/>
+          Value="50"/>
         <LABEL
           ResId="model.LOV.BatchNumberLOV.SaleOrderNo_LABEL"/>
       </SchemaBasedProperties>
