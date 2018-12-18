@@ -222,6 +222,32 @@
                 <f:validator binding="#{bindings.InspectionDate.validator}"/>
                 <af:convertDateTime pattern="#{bindings.InspectionDate.format}"/>
               </af:inputDate>
+              <af:inputText value="#{bindings.FinishWidth.inputValue}"
+                            label="Finish Width"
+                            required="#{bindings.FinishWidth.hints.mandatory}"
+                            columns="#{bindings.FinishWidth.hints.displayWidth}"
+                            maximumLength="#{bindings.FinishWidth.hints.precision}"
+                            shortDesc="#{bindings.FinishWidth.hints.tooltip}"
+                            id="it7">
+                <f:validator binding="#{bindings.FinishWidth.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.CutableWidth.inputValue}"
+                            label="Cutable Width"
+                            required="#{bindings.CutableWidth.hints.mandatory}"
+                            columns="#{bindings.CutableWidth.hints.displayWidth}"
+                            maximumLength="#{bindings.CutableWidth.hints.precision}"
+                            shortDesc="#{bindings.CutableWidth.hints.tooltip}"
+                            id="it1">
+                <f:validator binding="#{bindings.CutableWidth.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.Kgs.inputValue}"
+                            label="KGS"
+                            required="#{bindings.Kgs.hints.mandatory}"
+                            columns="#{bindings.Kgs.hints.displayWidth}"
+                            maximumLength="#{bindings.Kgs.hints.precision}"
+                            shortDesc="#{bindings.Kgs.hints.tooltip}" id="it8">
+                <f:validator binding="#{bindings.Kgs.validator}"/>
+              </af:inputText>
               <af:inputText value="#{bindings.MfgOrgId1.inputValue}"
                             label="#{bindings.MfgOrgId1.hints.label}"
                             required="#{bindings.MfgOrgId1.hints.mandatory}"
@@ -245,7 +271,7 @@
                                   pattern="#{bindings.OrgId1.format}"/>
               </af:inputText>
             </af:panelFormLayout>
-            <af:panelGridLayout id="pgl12">
+            <af:panelGridLayout id="pgl12" rendered="false">
               <af:gridRow id="gr21">
                 <af:gridCell id="gc81" halign="center">
                   <af:outputText value="ADD" id="ot15"
@@ -269,8 +295,9 @@
                 </af:gridCell>
                 <af:gridCell marginStart="5px" width="33%" id="gc76"
                              halign="center">
-                  <af:outputText value="0" id="ot18"
-                                 inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                  <af:outputText value="#{bindings.Attribute11.inputValue}" id="ot18"
+                                 inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                 partialTriggers="cb11 commandButton1"/>
                 </af:gridCell>
                 <af:gridCell marginStart="5px" marginEnd="5px" width="40%"
                              id="gc73">
@@ -517,7 +544,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc48"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.YarnFaultsNeps.inputValue}"
+                    <af:outputText value="#{bindings.YarnFaultsNeps.inputValue>=0?bindings.YarnFaultsNeps.inputValue:0}"
                                    id="ot9"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="yarn_fault_neps_cb1 yarn_fault_neps_cb2 yarn_fault_neps_cb3 yarn_fault_neps_cb4 yarn_fault_neps_undo_cb1 yarn_fault_neps_undo_cb2 yarn_fault_neps_undo_cb3 yarn_fault_neps_undo_cb4"/>

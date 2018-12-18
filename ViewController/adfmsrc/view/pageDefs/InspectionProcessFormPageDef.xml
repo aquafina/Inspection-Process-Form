@@ -330,5 +330,28 @@
                   IterBinding="PwcInspectionProcessLineVO1Iterator"
                   Uses="LOV_InspectionMachineNumber"
                   id="InspectionMachineNumber"/>
+    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
+                     id="Attribute11">
+      <AttrNames>
+        <Item Value="Attribute1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
+                     id="CutableWidth">
+      <AttrNames>
+        <Item Value="CutableWidth"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
+                     id="FinishWidth">
+      <AttrNames>
+        <Item Value="FinishWidth"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator" id="Kgs">
+      <AttrNames>
+        <Item Value="Kgs"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

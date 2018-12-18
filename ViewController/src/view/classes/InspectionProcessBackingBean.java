@@ -934,10 +934,23 @@ public class InspectionProcessBackingBean {
     }
 
     public void inspPrcLineAddDTM(ActionEvent actionEvent) {
-        
+        ApplicationModule am = getApplicationModule();
+        ViewObject inspPrcLinesVO = (ViewObject) am.findViewObject("PwcInspectionProcessLineVO1");
+        Row currRow = inspPrcLinesVO.getCurrentRow();
+        int count = Integer.parseInt(currRow.getAttribute("Attribute1")!=null?currRow.getAttribute("Attribute1").toString():"0");
+        count+=1;
+        currRow.setAttribute("Attribute1", count);
     }
 
     public void inspPrcLineUndoDTM(ActionEvent actionEvent) {
-        // Add event code here...
+        ApplicationModule am = getApplicationModule();
+        ViewObject inspPrcLinesVO = (ViewObject) am.findViewObject("PwcInspectionProcessLineVO1");
+        Row currRow = inspPrcLinesVO.getCurrentRow();
+        int count = Integer.parseInt(currRow.getAttribute("Attribute1")!=null?currRow.getAttribute("Attribute1").toString():"0");
+        if (count>0)
+        {
+            count-=1;
+            currRow.setAttribute("Attribute1", count);
+        }
     }
 }

@@ -24,13 +24,8 @@
     RowLevelBinds="true"/>
   <ViewAccessor
     Name="RollNumberLOV1"
-    ViewObjectName="model.LOV.RollNumberLOV">
-    <ParameterMap>
-      <PIMap Variable="p_insp_prc_id">
-        <TransientExpression><![CDATA[PwcInspectionProcessHeaderVO.InspectionProcessId]]></TransientExpression>
-      </PIMap>
-    </ParameterMap>
-  </ViewAccessor>
+    ViewObjectName="model.LOV.RollNumberLOV"
+    RowLevelBinds="true"/>
   <ViewAccessor
     Name="MachineNumberLOV1"
     ViewObjectName="model.LOV.MachineNumberLOV"
@@ -119,6 +114,9 @@
        PwcInspectionProcessLineEO.MFG_ORG_ID, 
        PwcInspectionProcessLineEO.INSPECTION_PROCESS_LINE_ID, 
 NVL(ROUND((PwcInspectionProcessLineEO.ROLL_QUANTITY/1.0936),2),0) ROLL_QUANTITY_MTR
+,cutable_width
+,finish_width
+,kgs
 FROM PWC_INSPECTION_PROCESS_LINE PwcInspectionProcessLineEO]]>
   </SQLQuery>
   <EntityUsage
@@ -389,6 +387,24 @@ FROM PWC_INSPECTION_PROCESS_LINE PwcInspectionProcessLineEO]]>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CutableWidth"
+    PrecisionRule="true"
+    EntityAttrName="CutableWidth"
+    EntityUsage="PwcInspectionProcessLineEO"
+    AliasName="CUTABLE_WIDTH"/>
+  <ViewAttribute
+    Name="FinishWidth"
+    PrecisionRule="true"
+    EntityAttrName="FinishWidth"
+    EntityUsage="PwcInspectionProcessLineEO"
+    AliasName="FINISH_WIDTH"/>
+  <ViewAttribute
+    Name="Kgs"
+    PrecisionRule="true"
+    EntityAttrName="Kgs"
+    EntityUsage="PwcInspectionProcessLineEO"
+    AliasName="KGS"/>
   <ViewCriteria
     Name="PwcInspectionProcessLineVOCriteria"
     ViewObjectName="model.VO.PwcInspectionProcessLineVO"

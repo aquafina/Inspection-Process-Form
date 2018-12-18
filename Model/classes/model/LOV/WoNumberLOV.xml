@@ -53,17 +53,23 @@
     </Properties>
   </Variable>
   <SQLQuery>
-    <![CDATA[select  header.work_order_number, 
-        header.pp_number, 
-        header.sale_order_no,
-        job.job_number,
-        line.batch_no 
-from PWC_ODM_MASTER_SHT_PRCSNG_HDR header, 
-  PWC_ODM_MASTER_SHT_PRCSNG_lINE line,
-  PWC_ODM_MASTER_SHT_JOB_PRCSNG job
-where header.header_id = line.header_id
-  and line.line_id = job.line_id 
-  and job.attribute1 = 'Finishing']]>
+    <![CDATA[select    wdj.attribute1 work_order_number,
+          wdj.attribute11 pp_number, 
+          ooha.order_number sale_order_no,
+          wdj.attribute13 job_code,
+          we.wip_entity_name job_number,
+          wdj.attribute5 batch_no,
+          we.wip_entity_id job_id
+from    wip_entities we,
+        wip_discrete_jobs wdj,
+        oe_order_headers_all ooha 
+where we.wip_entity_id = wdj.wip_entity_id
+  and wdj.attribute12 = ooha.header_id
+  and wdj.attribute13 = 'FIN'
+  and attribute_category = 'Job Details'
+  and wdj.organization_id = nvl(:p_org_id, wdj.organization_id)
+  and wdj.quantity_completed != 0
+  and we.wip_entity_id not in (select  nvl(job_id,0) from PWC_INSPECTION_PROCESS_HEADER)]]>
   </SQLQuery>
   <ViewAttribute
     Name="WorkOrderNumber"
@@ -115,6 +121,7 @@ where header.header_id = line.header_id
     Name="SaleOrderNo"
     IsUpdateable="false"
     IsPersistent="false"
+    IsNotNull="true"
     PrecisionRule="true"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
@@ -124,14 +131,21 @@ where header.header_id = line.header_id
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>
     </DesignTime>
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="model.LOV.WoNumberLOV.SaleOrderNo_LABEL"/>
-        <DISPLAYWIDTH
-          Value="20"/>
-      </SchemaBasedProperties>
-    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobCode"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="JOB_CODE"
+    Expression="JOB_CODE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
   </ViewAttribute>
   <ViewAttribute
     Name="JobNumber"
@@ -179,6 +193,21 @@ where header.header_id = line.header_id
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="JobId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="JOB_ID"
+    Expression="JOB_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
   <ViewCriteria
     Name="WoNumberLOVCriteria"
     ViewObjectName="model.LOV.WoNumberLOV"
@@ -219,14 +248,6 @@ where header.header_id = line.header_id
         Operator="STARTSWITH"
         Conjunction="OR"
         Value=":p_pp_no"
-        IsBindVarValue="true"
-        Required="Optional"/>
-      <ViewCriteriaItem
-        Name="WoNumberLOVCriteria_vcrow41_SaleOrderNo"
-        ViewAttribute="SaleOrderNo"
-        Operator="="
-        Conjunction="OR"
-        Value=":p_sales_order_no"
         IsBindVarValue="true"
         Required="Optional"/>
     </ViewCriteriaRow>

@@ -22,7 +22,14 @@
   <Variable
     Name="p_batch_no"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <Variable
     Name="p_job_no"
     Kind="viewcriteria"
@@ -35,13 +42,30 @@
     </Properties>
   </Variable>
   <SQLQuery>
-    <![CDATA[select  job.job_number, 
-          job.job_qty
-  from  PWC_ODM_MASTER_SHT_PRCSNG_lINE line,
-        PWC_ODM_MASTER_SHT_JOB_PRCSNG job
-  where line.line_id = job.line_id 
-  and line.BATCH_NO = nvl(:p_batch_no, line.BATCH_NO)
-  and job.attribute1 = 'Finishing']]>
+    <![CDATA[SELECT we.wip_entity_name job_number, 
+      wdj.start_quantity job_qty,
+      (SELECT SUM (DECODE (UPPER (mtt.transaction_type_name),
+                      'WIP COMPLETION', mmt.transaction_quantity,
+                      'WIP COMPLETION RETURN', mmt.transaction_quantity
+                     )
+                 ) inspection_quantity 
+from  wip_discrete_jobs wdj1
+        ,wip_entities we1
+        ,mtl_material_transactions mmt
+        ,mtl_transaction_types  mtt
+WHERE we1.WIP_ENTITY_ID = wdj1.WIP_ENTITY_ID
+and    mmt.TRANSACTION_SOURCE_ID = wdj1.WIP_ENTITY_ID
+and    mmt.TRANSACTION_TYPE_ID = mtt.TRANSACTION_TYPE_ID
+and we1.wip_entity_id = we.wip_entity_id) inspection_qty
+  FROM wip_entities we,
+       wip_discrete_jobs wdj
+ WHERE we.wip_entity_id = wdj.wip_entity_id
+   AND wdj.attribute13 = 'FIN'
+   AND attribute_category = 'Job Details'
+   AND wdj.attribute1 = NVL (:p_wo_number, wdj.attribute1)
+   AND wdj.organization_id = NVL (:p_org_id, wdj.organization_id)
+   AND we.wip_entity_id NOT IN (SELECT NVL (job_id, 0)
+                                  FROM pwc_inspection_process_header)]]>
   </SQLQuery>
   <ViewAttribute
     Name="JobNumber"
@@ -66,6 +90,20 @@
     ColumnType="NUMBER"
     AliasName="JOB_QTY"
     Expression="JOB_QTY"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="InspectionQty"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="INSPECTION_QTY"
+    Expression="INSPECTION_QTY"
     SQLType="NUMERIC">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="39"/>

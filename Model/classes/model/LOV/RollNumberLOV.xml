@@ -30,8 +30,15 @@
       </SchemaBasedProperties>
     </Properties>
   </Variable>
+  <Variable
+    Name="p_insp_prc_id"
+    Kind="where"
+    Type="java.lang.String"/>
   <SQLQuery>
-    <![CDATA[select  roll_number from PWC_INSPECTION_PROCESS_LINE where nvl(org_id,'-1') = nvl(:p_org_id, '-1')]]>
+    <![CDATA[SELECT roll_number
+  FROM pwc_inspection_process_line
+ WHERE inspection_process_id = NVL (:p_insp_prc_id, inspection_process_id)
+   AND NVL (org_id, '-1') = NVL (:p_org_id, '-1')]]>
   </SQLQuery>
   <ViewAttribute
     Name="RollNumber"
