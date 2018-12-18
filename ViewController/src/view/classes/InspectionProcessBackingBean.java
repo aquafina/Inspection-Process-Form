@@ -932,4 +932,12 @@ public class InspectionProcessBackingBean {
             FacesMessage msg = new FacesMessage(s, message, "");
             FacesContext.getCurrentInstance().addMessage(null, msg);
     }
+
+    public void inspPrcLineAddDTM(ActionEvent actionEvent) {
+        
+    }
+
+    public void inspPrcLineUndoDTM(ActionEvent actionEvent) {
+        // Add event code here...
+    }
 }

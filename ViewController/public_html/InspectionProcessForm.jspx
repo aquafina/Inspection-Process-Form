@@ -245,21 +245,88 @@
                                   pattern="#{bindings.OrgId1.format}"/>
               </af:inputText>
             </af:panelFormLayout>
-            <af:panelGroupLayout id="pgl10"
-                                 inlineStyle="width:119px; height:96px;"
-                                 layout="vertical">
-              <h:commandButton id="cb11"
-                               style="background-color:Blue; color:white; font-weight:bolder; width:120px;" value="DTM"/>
-              <af:spacer width="10" height="10" id="s1"/>
-              <h:commandButton value="Dyeing Stitch" id="cb1"
-                               style="width:120px; text-align:center; background-color:Fuchsia; color:white; font-weight:bolder;"/>
-              <af:spacer width="10" height="10" id="s7"/>
-              <h:commandButton value="Printing Stitch" id="cb8"
-                               style="text-align:center; width:120px; background-color:Green; color:white; font-weight:bolder;"/>
-              <af:spacer width="10" height="10" id="s9"/>
-              <h:commandButton value="Finishing Stitch" id="cb9"
-                               style="width:120px; text-align:center; background-color:Brown; color:white; font-weight:bolder;"/>
-            </af:panelGroupLayout>
+            <af:panelGridLayout id="pgl12">
+              <af:gridRow id="gr21">
+                <af:gridCell id="gc81" halign="center">
+                  <af:outputText value="ADD" id="ot15"
+                                 inlineStyle="font-size:12px; font-weight:bold;"/>
+                </af:gridCell>
+                <af:gridCell id="gc82" halign="center">
+                  <af:outputText value="TOTAL" id="ot16"
+                                 inlineStyle="font-size:12px; font-weight:bold;"/>
+                </af:gridCell>
+                <af:gridCell id="gc83" halign="center">
+                  <af:outputText value="UNDO" id="ot17"
+                                 inlineStyle="font-size:12px; font-weight:bold;"/>
+                </af:gridCell>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" height="auto" id="gr18">
+                <af:gridCell marginStart="5px" width="40%" id="gc80">
+                  <h:commandButton id="cb11"
+                                   style="background-color:Blue; color:white; font-weight:bolder; width:120px;"
+                                   value="DTM"
+                                   actionListener="#{backingBeanScope.InspectionProcessBackingBean.inspPrcLineAddDTM}"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="33%" id="gc76"
+                             halign="center">
+                  <af:outputText value="0" id="ot18"
+                                 inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="40%"
+                             id="gc73">
+                  <h:commandButton id="commandButton1"
+                                   style="background-color:Blue; color:white; font-weight:bolder; width:120px;"
+                                   value="DTM"
+                                   actionListener="#{backingBeanScope.InspectionProcessBackingBean.inspPrcLineUndoDTM}"/>
+                </af:gridCell>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" height="auto" id="gr17">
+                <af:gridCell marginStart="5px" width="40%" id="gc79">
+                  <h:commandButton value="Dyeing Stitch" id="cb1"
+                                   style="width:120px; text-align:center; background-color:Fuchsia; color:white; font-weight:bolder;"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="33%" id="gc71">
+                  <af:outputText value="0" id="outputText17"
+                                 inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="40%"
+                             id="gc18">
+                  <h:commandButton value="Dyeing Stitch" id="commandButton2"
+                                   style="width:120px; text-align:center; background-color:Fuchsia; color:white; font-weight:bolder;"/>
+                </af:gridCell>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" height="auto" id="gr19">
+                <af:gridCell marginStart="5px" width="40%" id="gc77">
+                  <h:commandButton value="Printing Stitch" id="cb8"
+                                   style="text-align:center; width:120px; background-color:Green; color:white; font-weight:bolder;"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="33%" id="gc75">
+                  <af:outputText value="0" id="outputText18"
+                                 inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="40%"
+                             id="gc46">
+                  <h:commandButton value="Printing Stitch" id="commandButton3"
+                                   style="text-align:center; width:120px; background-color:Green; color:white; font-weight:bolder;"/>
+                </af:gridCell>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" marginBottom="5px" height="auto"
+                          id="gr20">
+                <af:gridCell marginStart="5px" width="40%" id="gc72">
+                  <h:commandButton value="Finishing Stitch" id="cb9"
+                                   style="width:120px; text-align:center; background-color:Brown; color:white; font-weight:bolder;"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="33%" id="gc78">
+                  <af:outputText value="0" id="outputText51"
+                                 inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="40%"
+                             id="gc74">
+                  <h:commandButton value="Finishing Stitch" id="commandButton4"
+                                   style="width:120px; text-align:center; background-color:Brown; color:white; font-weight:bolder;"/>
+                </af:gridCell>
+              </af:gridRow>
+            </af:panelGridLayout>
           </af:panelGroupLayout>
           <af:panelGroupLayout id="pgl9" layout="horizontal">
             <af:commandButton actionListener="#{bindings.CreateInsert.execute}"

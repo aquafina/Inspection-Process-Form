@@ -24,8 +24,13 @@
     RowLevelBinds="true"/>
   <ViewAccessor
     Name="RollNumberLOV1"
-    ViewObjectName="model.LOV.RollNumberLOV"
-    RowLevelBinds="true"/>
+    ViewObjectName="model.LOV.RollNumberLOV">
+    <ParameterMap>
+      <PIMap Variable="p_insp_prc_id">
+        <TransientExpression><![CDATA[PwcInspectionProcessHeaderVO.InspectionProcessId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="MachineNumberLOV1"
     ViewObjectName="model.LOV.MachineNumberLOV"
