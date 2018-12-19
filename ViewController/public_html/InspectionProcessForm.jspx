@@ -104,6 +104,12 @@
                                     pattern="#{bindings.JobQuantity.format}"/>
                 </af:outputText>
               </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="Inspection Quantity"
+                                       id="plam10"
+                                       partialTriggers="finishingJobNumberId">
+                <af:outputText value="#{bindings.InspectionQty.inputValue}"
+                               id="ot19"/>
+              </af:panelLabelAndMessage>
               <af:panelLabelAndMessage label="#{bindings.FinishType.hints.label}"
                                        id="plam8">
                 <af:outputText value="#{bindings.FinishType.inputValue}"
@@ -131,7 +137,6 @@
                               text="New"
                               disabled="#{!bindings.CreateInsert1.enabled}"
                               id="cb4"/>
-            <af:commandButton text="Complete" id="cb2"/>
             <af:commandButton actionListener="#{bindings.Rollback.execute}"
                               text="Back"
                               immediate="true" id="cb7"
@@ -192,10 +197,6 @@
                 <af:convertNumber groupingUsed="false"
                                   pattern="#{bindings.FaultsPer100Sq.format}"/>
               </af:inputText>
-              <af:panelLabelAndMessage label="Roll Quantity MTR" id="plam5">
-                <af:outputText value="#{bindings.RollQuantityMtr.inputValue}"
-                               id="ot8"/>
-              </af:panelLabelAndMessage>
               <af:inputText value="#{bindings.RollQuantity.inputValue}"
                             label="Roll Quantity"
                             required="#{bindings.RollQuantity.hints.mandatory}"
@@ -207,6 +208,10 @@
                 <af:convertNumber groupingUsed="false"
                                   pattern="#{bindings.RollQuantity.format}"/>
               </af:inputText>
+              <af:panelLabelAndMessage label="Roll Quantity MTR" id="plam5">
+                <af:outputText value="#{bindings.RollQuantityMtr.inputValue}"
+                               id="ot8" partialTriggers="it6"/>
+              </af:panelLabelAndMessage>
               <af:selectOneChoice value="#{bindings.Grade.inputValue}"
                                   label="#{bindings.Grade.label}"
                                   required="#{bindings.Grade.hints.mandatory}"
@@ -272,43 +277,15 @@
               </af:inputText>
             </af:panelFormLayout>
             <af:panelGridLayout id="pgl12" rendered="false">
-              <af:gridRow id="gr21">
-                <af:gridCell id="gc81" halign="center">
-                  <af:outputText value="ADD" id="ot15"
-                                 inlineStyle="font-size:12px; font-weight:bold;"/>
-                </af:gridCell>
-                <af:gridCell id="gc82" halign="center">
-                  <af:outputText value="TOTAL" id="ot16"
-                                 inlineStyle="font-size:12px; font-weight:bold;"/>
-                </af:gridCell>
-                <af:gridCell id="gc83" halign="center">
-                  <af:outputText value="UNDO" id="ot17"
-                                 inlineStyle="font-size:12px; font-weight:bold;"/>
-                </af:gridCell>
-              </af:gridRow>
               <af:gridRow marginTop="5px" height="auto" id="gr18">
-                <af:gridCell marginStart="5px" width="40%" id="gc80">
-                  <h:commandButton id="cb11"
-                                   style="background-color:Blue; color:white; font-weight:bolder; width:120px;"
-                                   value="DTM"
-                                   actionListener="#{backingBeanScope.InspectionProcessBackingBean.inspPrcLineAddDTM}"/>
-                </af:gridCell>
+                <af:gridCell marginStart="5px" width="33%" id="gc80"/>
                 <af:gridCell marginStart="5px" width="33%" id="gc76"
-                             halign="center">
-                  <af:outputText value="#{bindings.Attribute11.inputValue}" id="ot18"
-                                 inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                 partialTriggers="cb11 commandButton1"/>
-                </af:gridCell>
-                <af:gridCell marginStart="5px" marginEnd="5px" width="40%"
-                             id="gc73">
-                  <h:commandButton id="commandButton1"
-                                   style="background-color:Blue; color:white; font-weight:bolder; width:120px;"
-                                   value="DTM"
-                                   actionListener="#{backingBeanScope.InspectionProcessBackingBean.inspPrcLineUndoDTM}"/>
-                </af:gridCell>
+                             halign="stretch"/>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="34%"
+                             id="gc73" halign="stretch"/>
               </af:gridRow>
               <af:gridRow marginTop="5px" height="auto" id="gr17">
-                <af:gridCell marginStart="5px" width="40%" id="gc79">
+                <af:gridCell marginStart="5px" width="33%" id="gc79">
                   <h:commandButton value="Dyeing Stitch" id="cb1"
                                    style="width:120px; text-align:center; background-color:Fuchsia; color:white; font-weight:bolder;"/>
                 </af:gridCell>
@@ -316,14 +293,14 @@
                   <af:outputText value="0" id="outputText17"
                                  inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
                 </af:gridCell>
-                <af:gridCell marginStart="5px" marginEnd="5px" width="40%"
+                <af:gridCell marginStart="5px" marginEnd="5px" width="34%"
                              id="gc18">
                   <h:commandButton value="Dyeing Stitch" id="commandButton2"
                                    style="width:120px; text-align:center; background-color:Fuchsia; color:white; font-weight:bolder;"/>
                 </af:gridCell>
               </af:gridRow>
               <af:gridRow marginTop="5px" height="auto" id="gr19">
-                <af:gridCell marginStart="5px" width="40%" id="gc77">
+                <af:gridCell marginStart="5px" width="33%" id="gc77">
                   <h:commandButton value="Printing Stitch" id="cb8"
                                    style="text-align:center; width:120px; background-color:Green; color:white; font-weight:bolder;"/>
                 </af:gridCell>
@@ -331,7 +308,7 @@
                   <af:outputText value="0" id="outputText18"
                                  inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
                 </af:gridCell>
-                <af:gridCell marginStart="5px" marginEnd="5px" width="40%"
+                <af:gridCell marginStart="5px" marginEnd="5px" width="34%"
                              id="gc46">
                   <h:commandButton value="Printing Stitch" id="commandButton3"
                                    style="text-align:center; width:120px; background-color:Green; color:white; font-weight:bolder;"/>
@@ -339,7 +316,7 @@
               </af:gridRow>
               <af:gridRow marginTop="5px" marginBottom="5px" height="auto"
                           id="gr20">
-                <af:gridCell marginStart="5px" width="40%" id="gc72">
+                <af:gridCell marginStart="5px" width="33%" id="gc72">
                   <h:commandButton value="Finishing Stitch" id="cb9"
                                    style="width:120px; text-align:center; background-color:Brown; color:white; font-weight:bolder;"/>
                 </af:gridCell>
@@ -347,11 +324,53 @@
                   <af:outputText value="0" id="outputText51"
                                  inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
                 </af:gridCell>
-                <af:gridCell marginStart="5px" marginEnd="5px" width="40%"
+                <af:gridCell marginStart="5px" marginEnd="5px" width="34%"
                              id="gc74">
                   <h:commandButton value="Finishing Stitch" id="commandButton4"
                                    style="width:120px; text-align:center; background-color:Brown; color:white; font-weight:bolder;"/>
                 </af:gridCell>
+              </af:gridRow>
+            </af:panelGridLayout>
+            <af:panelGridLayout id="pgl10">
+              <af:gridRow marginTop="5px" height="auto" id="gr22">
+                <af:gridCell marginStart="5px" width="34%" id="gc81">
+                  <af:commandButton text="commandButton 5" id="cb11"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" width="33%" id="gc83">
+                  <af:outputText value="#{bindings.Attribute11.inputValue}"
+                                 id="ot18"
+                                 inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                 partialTriggers="cb2 cb10"/>
+                </af:gridCell>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="33%"
+                             id="gc94">
+                  <af:commandButton text="commandButton 6" id="cb2"/>
+                </af:gridCell>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" height="auto" id="gr25">
+                <af:gridCell marginStart="5px" width="34%" id="gc89"/>
+                <af:gridCell marginStart="5px" width="33%" id="gc82"/>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="33%"
+                             id="gc95"/>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" height="auto" id="gr23">
+                <af:gridCell marginStart="5px" width="34%" id="gc97"/>
+                <af:gridCell marginStart="5px" width="33%" id="gc99"/>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="33%"
+                             id="gc98"/>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" height="auto" id="gr21">
+                <af:gridCell marginStart="5px" width="34%" id="gc90"/>
+                <af:gridCell marginStart="5px" width="33%" id="gc96"/>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="33%"
+                             id="gc93"/>
+              </af:gridRow>
+              <af:gridRow marginTop="5px" marginBottom="5px" height="auto"
+                          id="gr24">
+                <af:gridCell marginStart="5px" width="34%" id="gc91"/>
+                <af:gridCell marginStart="5px" width="33%" id="gc92"/>
+                <af:gridCell marginStart="5px" marginEnd="5px" width="33%"
+                             id="gc88"/>
               </af:gridRow>
             </af:panelGridLayout>
           </af:panelGroupLayout>
@@ -394,7 +413,9 @@
                   </af:gridCell>
                 </af:gridRow>
                 <af:gridRow id="gr13">
-                  <af:gridCell id="gridCell34"/>
+                  <af:gridCell id="gridCell34">
+                    <af:outputText value="#{(bindings.YarnFaultsSlubs.inputValue+bindings.YarnFaultsNeps.inputValue)>=0?(bindings.YarnFaultsSlubs.inputValue+bindings.YarnFaultsNeps.inputValue):0}" id="ot20"/>
+                  </af:gridCell>
                   <af:gridCell marginStart="2px" width="14%" id="gridCell35"
                                halign="center" valign="middle"/>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell36"/>
@@ -628,7 +649,7 @@
                                halign="center" valign="middle">
                     <af:outputText id="outputText9"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   value="#{bindings.YarnFaultsForeignYarn.inputValue}"
+                                   value="#{bindings.YarnFaultsForeignYarn.inputValue>=0?bindings.YarnFaultsForeignYarn.inputValue:0}"
                                    partialTriggers="yarn_fault_foreign_yarn_cb1 yarn_fault_foreign_yarn_cb2 yarn_fault_foreign_yarn_cb3 yarn_fault_foreign_yarn_cb4 yarn_fault_foreign_yarn_undo_cb1 yarn_fault_foreign_yarn_undo_cb2 yarn_fault_foreign_yarn_undo_cb3 yarn_fault_foreign_yarn_undo_cb4"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gc31">
@@ -754,7 +775,7 @@
                     <af:outputText id="outputText3"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="thick_thin_end_cb1 thick_thin_end_cb2 thick_thin_end_cb3 thick_thin_end_cb4 thick_thin_end_cb5 thick_thin_end_cb6 thick_thin_end_cb7 thick_thin_end_cb8"
-                                   value="#{bindings.WeavingFaultsThickThinEnd.inputValue}"/>
+                                   value="#{bindings.WeavingFaultsThickThinEnd.inputValue>=0?bindings.WeavingFaultsThickThinEnd.inputValue:0}"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell58">
                     <af:spacer width="30" height="15" id="spacer31"/>
@@ -836,7 +857,7 @@
                                halign="center" valign="middle">
                     <af:outputText id="outputText20"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   value="#{bindings.WeavingFaultsThickThinPick.inputValue}"
+                                   value="#{bindings.WeavingFaultsThickThinPick.inputValue>=0?bindings.WeavingFaultsThickThinPick.inputValue:0}"
                                    partialTriggers="thick_thin_pick_cb1 thick_thin_pick_cb2 thick_thin_pick_cb3 thick_thin_pick_cb4 thick_thin_pick_cb5 thick_thin_pick_cb6 thick_thin_pick_cb7 thick_thin_pick_cb8"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell74">
@@ -918,7 +939,7 @@
                                halign="center" valign="middle">
                     <af:outputText id="outputText22"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   value="#{bindings.WeavingFaultsKnots.inputValue}"
+                                   value="#{bindings.WeavingFaultsKnots.inputValue>=0?bindings.WeavingFaultsKnots.inputValue:0}"
                                    partialTriggers="knots_cb1 knots_cb2 knots_cb3 knots_cb4 knots_cb5 knots_cb6 knots_cb7 knots_cb8"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell90">
@@ -997,7 +1018,7 @@
                                halign="center" valign="middle">
                     <af:outputText id="outputText24"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   value="#{bindings.WeavingFaultsMixedYarn.inputValue}"
+                                   value="#{bindings.WeavingFaultsMixedYarn.inputValue>=0?bindings.WeavingFaultsMixedYarn.inputValue:0}"
                                    partialTriggers="mixed_yarn_cb1 mixed_yarn_cb2 mixed_yarn_cb3 mixed_yarn_cb4 mixed_yarn_cb5 mixed_yarn_cb6 mixed_yarn_cb7 mixed_yarn_cb8"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell104">
@@ -1079,7 +1100,7 @@
                                halign="center" valign="middle">
                     <af:outputText id="outputText26"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   value="#{bindings.WeavingFaultsDoubleYarn.inputValue}"
+                                   value="#{bindings.WeavingFaultsDoubleYarn.inputValue>=0?bindings.WeavingFaultsDoubleYarn.inputValue:0}"
                                    partialTriggers="double_yarn_cb1 double_yarn_cb2 double_yarn_cb3 double_yarn_cb4 double_yarn_cb5 double_yarn_cb6 double_yarn_cb7 double_yarn_cb8"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell120">
@@ -1161,7 +1182,7 @@
                                halign="center" valign="middle">
                     <af:outputText id="outputText29"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   value="#{bindings.WeavingFaultsMissYarnPick.inputValue}"
+                                   value="#{bindings.WeavingFaultsMissYarnPick.inputValue>=0?bindings.WeavingFaultsMissYarnPick.inputValue:0}"
                                    partialTriggers="miss_yarn_pick_cb1 miss_yarn_pick_cb2 miss_yarn_pick_cb3 miss_yarn_pick_cb4 miss_yarn_pick_cb5 miss_yarn_pick_cb6 miss_yarn_pick_cb7 miss_yarn_pick_cb8"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell136">
@@ -1244,7 +1265,7 @@
                                halign="center" valign="middle">
                     <af:outputText id="outputText31"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   value="#{bindings.WeavingFaultsReedMark.inputValue}"
+                                   value="#{bindings.WeavingFaultsReedMark.inputValue>=0?bindings.WeavingFaultsReedMark.inputValue:0}"
                                    partialTriggers="commandButton49 commandButton50 commandButton51 commandButton52 commandButton53 commandButton54 commandButton55 commandButton56"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell255">
@@ -1325,7 +1346,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell270"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.WeavingFaultsHole.inputValue}" id="outputText33"
+                    <af:outputText value="#{bindings.WeavingFaultsHole.inputValue>=0?bindings.WeavingFaultsHole.inputValue:0}" id="outputText33"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="commandButton57 commandButton58 commandButton59 commandButton60 commandButton61 commandButton62 commandButton63 commandButton64"/>
                   </af:gridCell>
@@ -1407,7 +1428,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell286"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.WeavingFaultsStopMark.inputValue}" id="outputText53"
+                    <af:outputText value="#{bindings.WeavingFaultsStopMark.inputValue>=0?bindings.WeavingFaultsStopMark.inputValue:0}" id="outputText53"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="commandButton65 commandButton66 commandButton67 commandButton68 commandButton69 commandButton70 commandButton71 commandButton72"/>
                   </af:gridCell>
@@ -1488,7 +1509,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell303"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.WeavingFaultsBrokenEnd.inputValue}" id="outputText55"
+                    <af:outputText value="#{bindings.WeavingFaultsBrokenEnd.inputValue>=0?bindings.WeavingFaultsBrokenEnd.inputValue:0}" id="outputText55"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="commandButton73 commandButton74 commandButton75 commandButton76 commandButton77 commandButton78 commandButton79 commandButton80"/>
                   </af:gridCell>
@@ -1569,7 +1590,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell319"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.WeavingFaultsBrokenPick.inputValue}" id="outputText57"
+                    <af:outputText value="#{bindings.WeavingFaultsBrokenPick.inputValue>=0?bindings.WeavingFaultsBrokenPick.inputValue:0}" id="outputText57"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="commandButton81 commandButton82 commandButton83 commandButton84 commandButton85 commandButton86 commandButton87 commandButton88"/>
                   </af:gridCell>
@@ -1650,7 +1671,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell335"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.WeavingFaultsDistortionMark.inputValue}" id="outputText59"
+                    <af:outputText value="#{bindings.WeavingFaultsDistortionMark.inputValue>=0?bindings.WeavingFaultsDistortionMark.inputValue:0}" id="outputText59"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="commandButton89 commandButton90 commandButton91 commandButton92 commandButton93 commandButton94 commandButton95 commandButton96"/>
                   </af:gridCell>
@@ -1768,7 +1789,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc70"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.DyeingFaultsStainDirtyMark.inputValue}" id="outputText10"
+                    <af:outputText value="#{bindings.DyeingFaultsStainDirtyMark.inputValue>=0?bindings.DyeingFaultsStainDirtyMark.inputValue:0}" id="outputText10"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="stain_dirty_marks_cb1 stain_dirty_marks_cb2 stain_dirty_marks_cb3 stain_dirty_marks_cb4 stain_dirty_marks_cb5 stain_dirty_marks_cb6 stain_dirty_marks_cb7 stain_dirty_marks_cb8"/>
                   </af:gridCell>
@@ -1850,7 +1871,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gc42"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.DyeingFaultsCreaseMark.inputValue}" id="outputText11"
+                    <af:outputText value="#{bindings.DyeingFaultsCreaseMark.inputValue>=0?bindings.DyeingFaultsCreaseMark.inputValue:0}" id="outputText11"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="crease_mark_cb3 crease_mark_cb2 crease_mark_cb1 crease_mark_cb4 crease_mark_cb5 crease_mark_cb6 crease_mark_cb7 crease_mark_cb8"/>
                   </af:gridCell>
@@ -1931,7 +1952,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell159"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.DyeingFaultsJointMark.inputValue}" id="outputText37"
+                    <af:outputText value="#{bindings.DyeingFaultsJointMark.inputValue>=0?bindings.DyeingFaultsJointMark.inputValue:0}" id="outputText37"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="joint_mark_cb1 joint_mark_cb2 joint_mark_cb3 joint_mark_cb4 joint_mark_cb5 joint_mark_cb6 joint_mark_cb7 joint_mark_cb8"/>
                   </af:gridCell>
@@ -2009,7 +2030,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell172"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.DyeingFaultsDyeResist.inputValue}" id="outputText39"
+                    <af:outputText value="#{bindings.DyeingFaultsDyeResist.inputValue>=0?bindings.DyeingFaultsDyeResist.inputValue:0}" id="outputText39"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="dye_resist_cb1 dye_resist_cb2 dye_resist_cb3 dye_resist_cb4 dye_resist_cb7 dye_resist_cb5 dye_resist_cb6 dye_resist_cb8"/>
                   </af:gridCell>
@@ -2090,7 +2111,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell187"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.DyeingFaultsShadeVariation.inputValue}" id="outputText41"
+                    <af:outputText value="#{bindings.DyeingFaultsShadeVariation.inputValue>=0?bindings.DyeingFaultsShadeVariation.inputValue:0}" id="outputText41"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="shade_variation_cb1 shade_variation_cb2 shade_variation_cb3 shade_variation_cb4 shade_variation_cb5 shade_variation_cb6 shade_variation_cb7 shade_variation_cb8"/>
                   </af:gridCell>
@@ -2171,7 +2192,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell202"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.DyeingFaultsOilSpot.inputValue}" id="outputText43"
+                    <af:outputText value="#{bindings.DyeingFaultsOilSpot.inputValue>=0?bindings.DyeingFaultsOilSpot.inputValue:0}" id="outputText43"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="oil_spot_cb1 oil_spot_cb2 oil_spot_cb3 oil_spot_cb4 oil_spot_cb5 oil_spot_cb6 oil_spot_cb7 oil_spot_cb8"/>
                   </af:gridCell>
@@ -2253,7 +2274,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell217"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.DyeingFaultsDropMark.inputValue}" id="outputText45"
+                    <af:outputText value="#{bindings.DyeingFaultsDropMark.inputValue>=0?bindings.DyeingFaultsDropMark.inputValue:0}" id="outputText45"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="drop_mark_cb4 drop_mark_cb1 drop_mark_cb2 drop_mark_cb3 drop_mark_cb5 drop_mark_cb6 drop_mark_cb7 drop_mark_cb8"/>
                   </af:gridCell>
@@ -2335,7 +2356,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell232"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.DyeingFaultsLineMark.inputValue}" id="outputText47"
+                    <af:outputText value="#{bindings.DyeingFaultsLineMark.inputValue>=0?bindings.DyeingFaultsLineMark.inputValue:0}" id="outputText47"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="line_mark_cb1 line_mark_cb2 line_mark_cb3 line_mark_cb4 line_mark_cb5 line_mark_cb6 line_mark_cb7 line_mark_cb8"/>
                   </af:gridCell>
@@ -2456,7 +2477,7 @@
                                halign="center" valign="middle">
                     <af:outputText id="outputText49"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                   value="#{bindings.PrintingFaultsMissPrint.inputValue}"
+                                   value="#{bindings.PrintingFaultsMissPrint.inputValue>=0?bindings.PrintingFaultsMissPrint.inputValue:0}"
                                    partialTriggers="miss_print_cb1 miss_print_cb2 miss_print_cb3 miss_print_cb4 miss_print_cb7 miss_print_cb6 miss_print_cb5 miss_print_cb8"/>
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell248">
@@ -2536,7 +2557,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell13"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.PrintingFaultsDesignOut.inputValue}" id="outputText13"
+                    <af:outputText value="#{bindings.PrintingFaultsDesignOut.inputValue>=0?bindings.PrintingFaultsDesignOut.inputValue:0}" id="outputText13"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="design_out_cb6 design_out_cb3 design_out_cb5 design_out_cb4 design_out_cb7 design_out_cb2 design_out_cb1 design_out_cb8"/>
                   </af:gridCell>
@@ -2614,7 +2635,7 @@
                   </af:gridCell>
                   <af:gridCell marginStart="1px" width="7%" id="gridCell26"
                                halign="center" valign="middle">
-                    <af:outputText value="#{bindings.PrintingFaultsPrintOverlap.inputValue}" id="outputText15"
+                    <af:outputText value="#{bindings.PrintingFaultsPrintOverlap.inputValue>=0?bindings.PrintingFaultsPrintOverlap.inputValue:0}" id="outputText15"
                                    inlineStyle="padding-left:20px; padding-right:20px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
                                    partialTriggers="print_overlap_cb3 print_overlap_cb2 print_overlap_cb1 print_overlap_cb4 print_overlap_cb5 print_overlap_cb6 print_overlap_cb7 print_overlap_cb8"/>
                   </af:gridCell>

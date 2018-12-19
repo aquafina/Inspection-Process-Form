@@ -353,5 +353,11 @@
         <Item Value="Kgs"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessHeaderVO1Iterator"
+                     id="InspectionQty">
+      <AttrNames>
+        <Item Value="InspectionQty"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

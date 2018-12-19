@@ -173,10 +173,12 @@
     </AttrArray>
     <AttrArray Name="DerivedAttrNames">
       <Item Value="JobQuantity"/>
+      <Item Value="InspectionQty"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="JobNumber"/>
       <Item Value="JobQty"/>
+      <Item Value="InspectionQty"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="JobNumber"/>
@@ -490,6 +492,15 @@
     EntityAttrName="Weave"
     EntityUsage="PwcInspectionProcessHeader"
     AliasName="WEAVE"/>
+  <ViewAttribute
+    Name="InspectionQty"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
   <ViewLinkAccessor
     Name="PwcInspectionProcessLineVO"
     ViewLink="model.VL.PwcInspectionProcessVL"
