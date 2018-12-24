@@ -171,10 +171,10 @@
                                 readOnly="true">
                     <f:validator binding="#{bindings.RollNumber.validator}"/>
                   </af:inputText>
-                  <af:inputListOfValues id="inspectionMachineNumber"
+                  <af:inputListOfValues id="inspectionMachineNumberId"
                                         popupTitle="Search and Select: #{bindings.InspectionMachineNumber.hints.label}"
                                         value="#{bindings.InspectionMachineNumber.inputValue}"
-                                        label="Inspection Machine Number"
+                                        label="#{bindings.InspectionMachineNumber.hints.label}"
                                         model="#{bindings.InspectionMachineNumber.listOfValuesModel}"
                                         required="#{bindings.InspectionMachineNumber.hints.mandatory}"
                                         columns="#{bindings.InspectionMachineNumber.hints.displayWidth}"

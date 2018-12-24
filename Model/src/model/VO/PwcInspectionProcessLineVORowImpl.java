@@ -371,17 +371,6 @@ public class PwcInspectionProcessLineVORowImpl extends ViewRowImpl {
             }
         }
         ,
-        RollQuantityMtr {
-            public Object get(PwcInspectionProcessLineVORowImpl obj) {
-                return obj.getRollQuantityMtr();
-            }
-
-            public void put(PwcInspectionProcessLineVORowImpl obj,
-                            Object value) {
-                obj.setRollQuantityMtr((BigDecimal)value);
-            }
-        }
-        ,
         CutableWidth {
             public Object get(PwcInspectionProcessLineVORowImpl obj) {
                 return obj.getCutableWidth();
@@ -412,6 +401,17 @@ public class PwcInspectionProcessLineVORowImpl extends ViewRowImpl {
             public void put(PwcInspectionProcessLineVORowImpl obj,
                             Object value) {
                 obj.setKgs((BigDecimal)value);
+            }
+        }
+        ,
+        RollQuantityMtr {
+            public Object get(PwcInspectionProcessLineVORowImpl obj) {
+                return obj.getRollQuantityMtr();
+            }
+
+            public void put(PwcInspectionProcessLineVORowImpl obj,
+                            Object value) {
+                obj.setRollQuantityMtr((BigDecimal)value);
             }
         }
         ,
@@ -470,17 +470,6 @@ public class PwcInspectionProcessLineVORowImpl extends ViewRowImpl {
             }
         }
         ,
-        /*PwcOdmInsPrcFaultsTotalVO {
-            public Object get(PwcInspectionProcessLineVORowImpl obj) {
-                return obj.getPwcOdmInsPrcFaultsTotalVO();
-            }
-
-            public void put(PwcInspectionProcessLineVORowImpl obj,
-                            Object value) {
-                obj.setAttributeInternal(index(), value);
-            }
-        }
-        ,*/
         PwcOdmInsPrcFaultsTotalVO1 {
             public Object get(PwcInspectionProcessLineVORowImpl obj) {
                 return obj.getPwcOdmInsPrcFaultsTotalVO1();
@@ -514,17 +503,6 @@ public class PwcInspectionProcessLineVORowImpl extends ViewRowImpl {
             }
         }
         ,
-        RollNumberLOV1 {
-            public Object get(PwcInspectionProcessLineVORowImpl obj) {
-                return obj.getRollNumberLOV1();
-            }
-
-            public void put(PwcInspectionProcessLineVORowImpl obj,
-                            Object value) {
-                obj.setAttributeInternal(index(), value);
-            }
-        }
-        ,
         MachineNumberLOV1 {
             public Object get(PwcInspectionProcessLineVORowImpl obj) {
                 return obj.getMachineNumberLOV1();
@@ -537,6 +515,7 @@ public class PwcInspectionProcessLineVORowImpl extends ViewRowImpl {
         }
         ;
         private static AttributesEnum[] vals = null;
+
         private static final int firstIndex = 0;
 
         public abstract Object get(PwcInspectionProcessLineVORowImpl object);
@@ -563,6 +542,13 @@ public class PwcInspectionProcessLineVORowImpl extends ViewRowImpl {
             return vals;
         }
     }
+    //    public static final int PWCODMINSPRCFAULTSTOTALVO = AttributesEnum.PwcOdmInsPrcFaultsTotalVO.index();
+
+    //    public static final int PWCODMINSPRCFAULTSTOTALVO = AttributesEnum.PwcOdmInsPrcFaultsTotalVO.index();
+
+    //    public static final int PWCODMINSPRCFAULTSTOTALVO = AttributesEnum.PwcOdmInsPrcFaultsTotalVO.index();
+
+
     public static final int INSPECTIONPROCESSID = AttributesEnum.InspectionProcessId.index();
     public static final int ROLLNUMBER = AttributesEnum.RollNumber.index();
     public static final int INSPECTIONMACHINENUMBER = AttributesEnum.InspectionMachineNumber.index();
@@ -594,20 +580,18 @@ public class PwcInspectionProcessLineVORowImpl extends ViewRowImpl {
     public static final int ATTRIBUTE15 = AttributesEnum.Attribute15.index();
     public static final int MFGORGID = AttributesEnum.MfgOrgId.index();
     public static final int INSPECTIONPROCESSLINEID = AttributesEnum.InspectionProcessLineId.index();
-    public static final int ROLLQUANTITYMTR = AttributesEnum.RollQuantityMtr.index();
     public static final int CUTABLEWIDTH = AttributesEnum.CutableWidth.index();
     public static final int FINISHWIDTH = AttributesEnum.FinishWidth.index();
     public static final int KGS = AttributesEnum.Kgs.index();
+    public static final int ROLLQUANTITYMTR = AttributesEnum.RollQuantityMtr.index();
     public static final int GLM = AttributesEnum.GLM.index();
     public static final int PWCODMINSPPRCDYEFAULTVO = AttributesEnum.PwcOdmInspPrcDyeFaultVO.index();
     public static final int PWCODMINSPPRCGREIGEFAULTVO = AttributesEnum.PwcOdmInspPrcGreigeFaultVO.index();
     public static final int PWCODMINSPPRCWEAVEFAULTVO = AttributesEnum.PwcOdmInspPrcWeaveFaultVO.index();
     public static final int PWCODMINSPPRCFAULTENTRIESVO = AttributesEnum.PwcOdmInspPrcFaultEntriesVO.index();
-//    public static final int PWCODMINSPRCFAULTSTOTALVO = AttributesEnum.PwcOdmInsPrcFaultsTotalVO.index();
     public static final int PWCODMINSPRCFAULTSTOTALVO1 = AttributesEnum.PwcOdmInsPrcFaultsTotalVO1.index();
     public static final int PWCINSPECTIONPROCESSHEADERVO = AttributesEnum.PwcInspectionProcessHeaderVO.index();
     public static final int GRADESLOV1 = AttributesEnum.GradesLOV1.index();
-    public static final int ROLLNUMBERLOV1 = AttributesEnum.RollNumberLOV1.index();
     public static final int MACHINENUMBERLOV1 = AttributesEnum.MachineNumberLOV1.index();
 
     /**
@@ -1275,12 +1259,6 @@ public class PwcInspectionProcessLineVORowImpl extends ViewRowImpl {
         return (RowSet)getAttributeInternal(GRADESLOV1);
     }
 
-    /**
-     * Gets the view accessor <code>RowSet</code> RollNumberLOV1.
-     */
-    public RowSet getRollNumberLOV1() {
-        return (RowSet)getAttributeInternal(ROLLNUMBERLOV1);
-    }
 
     /**
      * Gets the view accessor <code>RowSet</code> MachineNumberLOV1.

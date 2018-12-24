@@ -38,11 +38,21 @@ select 'D' Grade from dual]]>
     ColumnType="CHAR"
     AliasName="GRADE"
     Expression="GRADE"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
   </ViewAttribute>
+  <ViewAttribute
+    Name="MachineNumber"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="Grade"/>
   </AttrArray>

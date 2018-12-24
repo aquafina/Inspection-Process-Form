@@ -326,10 +326,6 @@
         <Item Value="Weave"/>
       </AttrNames>
     </attributeValues>
-    <listOfValues StaticList="false"
-                  IterBinding="PwcInspectionProcessLineVO1Iterator"
-                  Uses="LOV_InspectionMachineNumber"
-                  id="InspectionMachineNumber"/>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
                      id="CutableWidth">
       <AttrNames>
@@ -382,5 +378,9 @@
         <Item Value="Attribute4"/>
       </AttrNames>
     </attributeValues>
+    <listOfValues StaticList="false"
+                  IterBinding="PwcInspectionProcessLineVO1Iterator"
+                  Uses="LOV_InspectionMachineNumber"
+                  id="InspectionMachineNumber"/>
   </bindings>
 </pageDefinition>

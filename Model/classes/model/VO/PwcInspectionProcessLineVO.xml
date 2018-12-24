@@ -38,15 +38,6 @@
     ViewObjectName="model.LOV.GradesLOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="RollNumberLOV1"
-    ViewObjectName="model.LOV.RollNumberLOV">
-    <ParameterMap>
-      <PIMap Variable="p_org_id">
-        <TransientExpression><![CDATA[adf.context.sessionScope.mfg_org_id]]></TransientExpression>
-      </PIMap>
-    </ParameterMap>
-  </ViewAccessor>
-  <ViewAccessor
     Name="MachineNumberLOV1"
     ViewObjectName="model.LOV.MachineNumberLOV"
     RowLevelBinds="true"/>
@@ -62,24 +53,6 @@
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="Grade"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_RollNumber"
-    ListVOName="RollNumberLOV1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_RollNumber_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="RollNumber"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="RollNumber"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="RollNumber"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -132,11 +105,11 @@
        PwcInspectionProcessLineEO.ATTRIBUTE14, 
        PwcInspectionProcessLineEO.ATTRIBUTE15, 
        PwcInspectionProcessLineEO.MFG_ORG_ID, 
-       PwcInspectionProcessLineEO.INSPECTION_PROCESS_LINE_ID, 
-NVL(ROUND((PwcInspectionProcessLineEO.ROLL_QUANTITY/1.0936),2),0) ROLL_QUANTITY_MTR
+       PwcInspectionProcessLineEO.INSPECTION_PROCESS_LINE_ID
 ,cutable_width
 ,finish_width
 ,kgs
+,NVL(ROUND((PwcInspectionProcessLineEO.ROLL_QUANTITY/1.0936),2),0) ROLL_QUANTITY_MTR
 FROM PWC_INSPECTION_PROCESS_LINE PwcInspectionProcessLineEO
 where mfg_org_id = nvl(:p_org_id, mfg_org_id)]]>
   </SQLQuery>
@@ -156,14 +129,11 @@ where mfg_org_id = nvl(:p_org_id, mfg_org_id)]]>
     PrecisionRule="true"
     EntityAttrName="RollNumber"
     EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="ROLL_NUMBER"
-    LOVName="LOV_RollNumber">
+    AliasName="ROLL_NUMBER">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="30"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -395,20 +365,6 @@ where mfg_org_id = nvl(:p_org_id, mfg_org_id)]]>
     EntityUsage="PwcInspectionProcessLineEO"
     AliasName="INSPECTION_PROCESS_LINE_ID"/>
   <ViewAttribute
-    Name="RollQuantityMtr"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    AliasName="ROLL_QUANTITY_MTR"
-    Expression="ROLL_QUANTITY_MTR"
-    SQLType="NUMERIC">
-    <DesignTime>
-      <Attr Name="_DisplaySize" Value="39"/>
-    </DesignTime>
-  </ViewAttribute>
-  <ViewAttribute
     Name="CutableWidth"
     PrecisionRule="true"
     EntityAttrName="CutableWidth"
@@ -426,6 +382,20 @@ where mfg_org_id = nvl(:p_org_id, mfg_org_id)]]>
     EntityAttrName="Kgs"
     EntityUsage="PwcInspectionProcessLineEO"
     AliasName="KGS"/>
+  <ViewAttribute
+    Name="RollQuantityMtr"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ROLL_QUANTITY_MTR"
+    Expression="ROLL_QUANTITY_MTR"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
   <ViewAttribute
     Name="GLM"
     IsSelected="false"
