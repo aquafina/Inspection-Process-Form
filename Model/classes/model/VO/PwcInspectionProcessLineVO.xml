@@ -66,24 +66,6 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_RollNumber"
-    ListVOName="RollNumberLOV1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_RollNumber_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="RollNumber"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="RollNumber"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="RollNumber"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_InspectionMachineNumber"
     ListVOName="MachineNumberLOV1"
     ListRangeSize="10"
@@ -156,17 +138,7 @@ where mfg_org_id = nvl(:p_org_id, mfg_org_id)]]>
     PrecisionRule="true"
     EntityAttrName="RollNumber"
     EntityUsage="PwcInspectionProcessLineEO"
-    AliasName="ROLL_NUMBER"
-    LOVName="LOV_RollNumber">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYWIDTH
-          Value="30"/>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="ROLL_NUMBER"/>
   <ViewAttribute
     Name="InspectionMachineNumber"
     PrecisionRule="true"

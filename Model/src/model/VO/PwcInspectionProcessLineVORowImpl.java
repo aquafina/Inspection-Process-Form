@@ -470,7 +470,7 @@ public class PwcInspectionProcessLineVORowImpl extends ViewRowImpl {
             }
         }
         ,
-        /*PwcOdmInsPrcFaultsTotalVO {
+        PwcOdmInsPrcFaultsTotalVO {
             public Object get(PwcInspectionProcessLineVORowImpl obj) {
                 return obj.getPwcOdmInsPrcFaultsTotalVO();
             }
@@ -480,7 +480,7 @@ public class PwcInspectionProcessLineVORowImpl extends ViewRowImpl {
                 obj.setAttributeInternal(index(), value);
             }
         }
-        ,*/
+        ,
         PwcOdmInsPrcFaultsTotalVO1 {
             public Object get(PwcInspectionProcessLineVORowImpl obj) {
                 return obj.getPwcOdmInsPrcFaultsTotalVO1();
@@ -537,6 +537,17 @@ public class PwcInspectionProcessLineVORowImpl extends ViewRowImpl {
         }
         ;
         private static AttributesEnum[] vals = null;
+        /*PwcOdmInsPrcFaultsTotalVO {
+            public Object get(PwcInspectionProcessLineVORowImpl obj) {
+                return obj.getPwcOdmInsPrcFaultsTotalVO();
+            }
+
+            public void put(PwcInspectionProcessLineVORowImpl obj,
+                            Object value) {
+                obj.setAttributeInternal(index(), value);
+            }
+        }
+        ,*/
         private static final int firstIndex = 0;
 
         public abstract Object get(PwcInspectionProcessLineVORowImpl object);
@@ -563,6 +574,8 @@ public class PwcInspectionProcessLineVORowImpl extends ViewRowImpl {
             return vals;
         }
     }
+    //    public static final int PWCODMINSPRCFAULTSTOTALVO = AttributesEnum.PwcOdmInsPrcFaultsTotalVO.index();
+
     public static final int INSPECTIONPROCESSID = AttributesEnum.InspectionProcessId.index();
     public static final int ROLLNUMBER = AttributesEnum.RollNumber.index();
     public static final int INSPECTIONMACHINENUMBER = AttributesEnum.InspectionMachineNumber.index();
@@ -603,7 +616,7 @@ public class PwcInspectionProcessLineVORowImpl extends ViewRowImpl {
     public static final int PWCODMINSPPRCGREIGEFAULTVO = AttributesEnum.PwcOdmInspPrcGreigeFaultVO.index();
     public static final int PWCODMINSPPRCWEAVEFAULTVO = AttributesEnum.PwcOdmInspPrcWeaveFaultVO.index();
     public static final int PWCODMINSPPRCFAULTENTRIESVO = AttributesEnum.PwcOdmInspPrcFaultEntriesVO.index();
-//    public static final int PWCODMINSPRCFAULTSTOTALVO = AttributesEnum.PwcOdmInsPrcFaultsTotalVO.index();
+    public static final int PWCODMINSPRCFAULTSTOTALVO = AttributesEnum.PwcOdmInsPrcFaultsTotalVO.index();
     public static final int PWCODMINSPRCFAULTSTOTALVO1 = AttributesEnum.PwcOdmInsPrcFaultsTotalVO1.index();
     public static final int PWCINSPECTIONPROCESSHEADERVO = AttributesEnum.PwcInspectionProcessHeaderVO.index();
     public static final int GRADESLOV1 = AttributesEnum.GradesLOV1.index();

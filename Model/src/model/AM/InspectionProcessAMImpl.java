@@ -2,6 +2,8 @@ package model.AM;
 
 import model.AM.common.InspectionProcessAM;
 
+import model.VO.PwcInspectionProcessLineVOImpl;
+
 import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Row;
@@ -358,13 +360,6 @@ public class InspectionProcessAMImpl extends ApplicationModuleImpl implements In
         return (ViewObjectImpl)findViewObject("GradesLOV1");
     }
 
-    /**
-     * Container's getter for RollNumberLOV1.
-     * @return RollNumberLOV1
-     */
-    public ViewObjectImpl getRollNumberLOV1() {
-        return (ViewObjectImpl)findViewObject("RollNumberLOV1");
-    }
 
     /**
      * Container's getter for MachineNumberLOV1.

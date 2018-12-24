@@ -146,13 +146,7 @@
             </af:commandButton>
           </af:panelGroupLayout>
           <af:panelGroupLayout layout="vertical" id="pgl11">
-            <af:panelHeader text="Inspection Process Line Search" id="ph2">
-              <af:query id="qryId1" headerText="Search" disclosed="false"
-                        value="#{bindings.PwcInspectionProcessLineVOCriteriaQuery.queryDescriptor}"
-                        model="#{bindings.PwcInspectionProcessLineVOCriteriaQuery.queryModel}"
-                        queryListener="#{bindings.PwcInspectionProcessLineVOCriteriaQuery.processQuery}"
-                        queryOperationListener="#{bindings.PwcInspectionProcessLineVOCriteriaQuery.processQueryOperation}"/>
-            </af:panelHeader>
+            <af:panelHeader text="Inspection Process Line Search" id="ph2"/>
           </af:panelGroupLayout>
           <af:panelGridLayout id="pgl12">
             <af:gridRow marginTop="5px" marginBottom="5px" height="auto"

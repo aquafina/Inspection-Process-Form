@@ -16,10 +16,6 @@
     <iterator Binds="PwcOdmInsPrcFaultsTotalVO3" RangeSize="25"
               DataControl="InspectionProcessAMDataControl"
               id="PwcOdmInsPrcFaultsTotalVO3Iterator"/>
-    <searchRegion Criteria="PwcInspectionProcessLineVOCriteria"
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
-                  Binds="PwcInspectionProcessLineVO1Iterator"
-                  id="PwcInspectionProcessLineVOCriteriaQuery"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
