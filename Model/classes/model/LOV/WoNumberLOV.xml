@@ -42,8 +42,8 @@
     </Properties>
   </Variable>
   <Variable
-    Name="p_sales_order_no"
-    Kind="viewcriteria"
+    Name="p_org_id"
+    Kind="where"
     Type="java.lang.String">
     <Properties>
       <SchemaBasedProperties>

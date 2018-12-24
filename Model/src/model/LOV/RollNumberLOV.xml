@@ -9,9 +9,11 @@
   BindingStyle="OracleName"
   CustomQuery="true"
   PageIterMode="Full"
-  UseGlueCode="false">
+  UseGlueCode="false"
+  ComponentClass="model.LOV.RollNumberLOVImpl">
   <DesignTime>
     <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Coll|VarAccess"/>
   </DesignTime>
   <Properties>
     <SchemaBasedProperties>
@@ -33,12 +35,19 @@
   <Variable
     Name="p_insp_prc_id"
     Kind="where"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <SQLQuery>
     <![CDATA[SELECT roll_number
   FROM pwc_inspection_process_line
  WHERE inspection_process_id = NVL (:p_insp_prc_id, inspection_process_id)
-   AND NVL (org_id, '-1') = NVL (:p_org_id, '-1')]]>
+   AND mfg_org_id = NVL (:p_org_id, mfg_org_id)]]>
   </SQLQuery>
   <ViewAttribute
     Name="RollNumber"

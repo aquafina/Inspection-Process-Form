@@ -6,59 +6,32 @@
   Name="PwcInspectionProcessHeaderVO"
   Version="11.1.1.64.93"
   InheritPersonalization="true"
-  SelectList="PwcInspectionProcessHeader.INSPECTION_PROCESS_ID, 
-       PwcInspectionProcessHeader.PP_NUMBER, 
-       PwcInspectionProcessHeader.WO_NUMBER, 
-       PwcInspectionProcessHeader.BATCH_NUMBER, 
-       PwcInspectionProcessHeader.BUYER_NAME, 
-       PwcInspectionProcessHeader.ITEM_CODE, 
-       PwcInspectionProcessHeader.ITEM_DESCRIPTION, 
-       PwcInspectionProcessHeader.FINISHING_JOB_NUMBER, 
-       PwcInspectionProcessHeader.JOB_QUANTITY, 
-       PwcInspectionProcessHeader.CREATED_BY, 
-       PwcInspectionProcessHeader.CREATION_DATE, 
-       PwcInspectionProcessHeader.LAST_UPDATED_BY, 
-       PwcInspectionProcessHeader.LAST_UPDATED_DATE, 
-       PwcInspectionProcessHeader.LAST_UPDATED_LOGIN, 
-       PwcInspectionProcessHeader.ORG_ID, 
-       PwcInspectionProcessHeader.ATTRIBUTE1, 
-       PwcInspectionProcessHeader.ATTRIBUTE2, 
-       PwcInspectionProcessHeader.ATTRIBUTE3, 
-       PwcInspectionProcessHeader.ATTRIBUTE4, 
-       PwcInspectionProcessHeader.ATTRIBUTE5, 
-       PwcInspectionProcessHeader.ATTRIBUTE6, 
-       PwcInspectionProcessHeader.ATTRIBUTE7, 
-       PwcInspectionProcessHeader.ATTRIBUTE8, 
-       PwcInspectionProcessHeader.ATTRIBUTE9, 
-       PwcInspectionProcessHeader.ATTRIBUTE10, 
-       PwcInspectionProcessHeader.ATTRIBUTE11, 
-       PwcInspectionProcessHeader.ATTRIBUTE12, 
-       PwcInspectionProcessHeader.ATTRIBUTE13, 
-       PwcInspectionProcessHeader.ATTRIBUTE14, 
-       PwcInspectionProcessHeader.ATTRIBUTE15, 
-       PwcInspectionProcessHeader.MFG_ORG_ID, 
-       PwcInspectionProcessHeader.SALES_ORDER_NUMBER, 
-       PwcInspectionProcessHeader.FINISH_TYPE, 
-       PwcInspectionProcessHeader.JUTE, 
-       PwcInspectionProcessHeader.WEAVE"
-  FromList="PWC_INSPECTION_PROCESS_HEADER PwcInspectionProcessHeader"
   BindingStyle="OracleName"
-  CustomQuery="false"
+  CustomQuery="true"
   PageIterMode="Full"
   UseGlueCode="false">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="VarAccess"/>
+    <Attr Name="_isExpertMode" Value="true"/>
   </DesignTime>
-  <ViewAccessor
-    Name="PpNumberLOV1"
-    ViewObjectName="model.LOV.PpNumberLOV"
-    RowLevelBinds="true"/>
+  <Variable
+    Name="p_org_id"
+    Kind="where"
+    Type="java.lang.String">
+    <TransientExpression><![CDATA[adf.context.sessionScope.mfg_org_id]]></TransientExpression>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <ViewAccessor
     Name="WoNumberLOV1"
     ViewObjectName="model.LOV.WoNumberLOV">
     <ParameterMap>
-      <PIMap Variable="p_pp_number">
-        <TransientExpression><![CDATA[PpNumber]]></TransientExpression>
+      <PIMap Variable="p_org_id">
+        <TransientExpression><![CDATA[adf.context.sessionScope.mfg_org_id]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -69,18 +42,20 @@
       <PIMap Variable="p_wo_number">
         <TransientExpression><![CDATA[WoNumber]]></TransientExpression>
       </PIMap>
+      <PIMap Variable="p_org_id">
+        <TransientExpression><![CDATA[adf.context.sessionScope.mfg_org_id]]></TransientExpression>
+      </PIMap>
     </ParameterMap>
   </ViewAccessor>
-  <ViewAccessor
-    Name="SaleOrderNoLOV1"
-    ViewObjectName="model.LOV.SaleOrderNoLOV"
-    RowLevelBinds="true"/>
   <ViewAccessor
     Name="FinishingJobNumberLOV1"
     ViewObjectName="model.LOV.FinishingJobNumberLOV">
     <ParameterMap>
       <PIMap Variable="p_batch_no">
         <TransientExpression><![CDATA[BatchNumber]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="p_org_id">
+        <TransientExpression><![CDATA[adf.context.sessionScope.mfg_org_id]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -124,12 +99,18 @@
       <Item Value="BuyerName"/>
       <Item Value="ItemCode"/>
       <Item Value="ItemDescription"/>
+      <Item Value="FinishType"/>
+      <Item Value="Weave"/>
+      <Item Value="FinishGSM"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="BatchNo"/>
       <Item Value="Buyer"/>
       <Item Value="ItemCode"/>
       <Item Value="ItemDesc"/>
+      <Item Value="Finish"/>
+      <Item Value="WeaveStyle"/>
+      <Item Value="FinishGsm"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="BatchNo"/>
@@ -140,26 +121,6 @@
     <DisplayCriteria
       Hint="showAndExecute"
       Name="BatchNumberLOVCriteria"/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_SalesOrderNumber"
-    ListVOName="SaleOrderNoLOV1"
-    ListRangeSize="10"
-    NullValueFlag="none"
-    NullValueId="LOV_SalesOrderNumber_LOVUIHints_NullValueId"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="SalesOrderNumber"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="SaleOrderNo"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="SaleOrderNo"/>
-      <Item Value="Buyer"/>
-    </AttrArray>
-    <DisplayCriteria
-      Hint="showAndExecute"/>
   </ListBinding>
   <ListBinding
     Name="LOV_FinishingJobNumber"
@@ -188,6 +149,45 @@
       Hint="showAndExecute"
       Name="FinishingJobNumberLOVCriteria"/>
   </ListBinding>
+  <SQLQuery>
+    <![CDATA[SELECT PwcInspectionProcessHeader.INSPECTION_PROCESS_ID, 
+       PwcInspectionProcessHeader.PP_NUMBER, 
+       PwcInspectionProcessHeader.WO_NUMBER, 
+       PwcInspectionProcessHeader.BATCH_NUMBER, 
+       PwcInspectionProcessHeader.BUYER_NAME, 
+       PwcInspectionProcessHeader.ITEM_CODE, 
+       PwcInspectionProcessHeader.ITEM_DESCRIPTION, 
+       PwcInspectionProcessHeader.FINISHING_JOB_NUMBER, 
+       PwcInspectionProcessHeader.JOB_QUANTITY, 
+       PwcInspectionProcessHeader.CREATED_BY, 
+       PwcInspectionProcessHeader.CREATION_DATE, 
+       PwcInspectionProcessHeader.LAST_UPDATED_BY, 
+       PwcInspectionProcessHeader.LAST_UPDATED_DATE, 
+       PwcInspectionProcessHeader.LAST_UPDATED_LOGIN, 
+       PwcInspectionProcessHeader.ORG_ID, 
+       PwcInspectionProcessHeader.ATTRIBUTE1, 
+       PwcInspectionProcessHeader.ATTRIBUTE2, 
+       PwcInspectionProcessHeader.ATTRIBUTE3, 
+       PwcInspectionProcessHeader.ATTRIBUTE4, 
+       PwcInspectionProcessHeader.ATTRIBUTE5, 
+       PwcInspectionProcessHeader.ATTRIBUTE6, 
+       PwcInspectionProcessHeader.ATTRIBUTE7, 
+       PwcInspectionProcessHeader.ATTRIBUTE8, 
+       PwcInspectionProcessHeader.ATTRIBUTE9, 
+       PwcInspectionProcessHeader.ATTRIBUTE10, 
+       PwcInspectionProcessHeader.ATTRIBUTE11, 
+       PwcInspectionProcessHeader.ATTRIBUTE12, 
+       PwcInspectionProcessHeader.ATTRIBUTE13, 
+       PwcInspectionProcessHeader.ATTRIBUTE14, 
+       PwcInspectionProcessHeader.ATTRIBUTE15, 
+       PwcInspectionProcessHeader.MFG_ORG_ID, 
+       PwcInspectionProcessHeader.SALES_ORDER_NUMBER, 
+       PwcInspectionProcessHeader.FINISH_TYPE, 
+       PwcInspectionProcessHeader.JUTE, 
+       PwcInspectionProcessHeader.WEAVE
+FROM PWC_INSPECTION_PROCESS_HEADER PwcInspectionProcessHeader
+where mfg_org_id = nvl(:p_org_id,mfg_org_id)]]>
+  </SQLQuery>
   <EntityUsage
     Name="PwcInspectionProcessHeader"
     Entity="model.EO.PwcInspectionProcessHeaderEO"/>
@@ -455,18 +455,10 @@
     AliasName="MFG_ORG_ID"/>
   <ViewAttribute
     Name="SalesOrderNumber"
-    LOVName="LOV_SalesOrderNumber"
     PrecisionRule="true"
     EntityAttrName="SalesOrderNumber"
     EntityUsage="PwcInspectionProcessHeader"
-    AliasName="SALES_ORDER_NUMBER">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="input_text_lov"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="SALES_ORDER_NUMBER"/>
   <ViewAttribute
     Name="FinishType"
     PrecisionRule="true"
@@ -509,7 +501,8 @@
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     AliasName="VIEW_ATTR"
-    SQLType="VARCHAR"/>
+    SQLType="VARCHAR"
+    DefaultValue="123"/>
   <ViewLinkAccessor
     Name="PwcInspectionProcessLineVO"
     ViewLink="model.VL.PwcInspectionProcessVL"

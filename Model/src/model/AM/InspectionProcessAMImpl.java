@@ -24,7 +24,7 @@ public class InspectionProcessAMImpl extends ApplicationModuleImpl implements In
 
     public void setSessionValues(String orgId, String userId, String respId,
                                  String respAppl, String mfgOrgId) {
-        System.out.println("orgid = "+orgId);
+        System.out.println("mfgOrgid = "+mfgOrgId);
         ADFContext.getCurrent().getSessionScope().put("user_id", userId);
         ADFContext.getCurrent().getSessionScope().put("org_id", orgId);
         ADFContext.getCurrent().getSessionScope().put("resp_id", respId);
@@ -51,7 +51,7 @@ public class InspectionProcessAMImpl extends ApplicationModuleImpl implements In
                                  }       
                              }    
                          }*/
-                         System.out.println("mfg_org_id = "+mfgOrgId);
+                         System.out.println("org_id = "+orgId);
                 //ADFContext.getCurrent().getSessionScope().put("mfg_org_id", mfgOrgId);
     }
 

@@ -12,7 +12,7 @@
               DataControl="InspectionProcessAMDataControl"
               id="PwcInspectionProcessHeaderVO1Iterator"/>
     <invokeAction id="setSessionValuesAction" Binds="setSessionValues"
-                  Refresh="always"/>
+                  Refresh="never"/>
     <iterator Binds="PwcOdmInsPrcFaultsTotalVO3" RangeSize="25"
               DataControl="InspectionProcessAMDataControl"
               id="PwcOdmInsPrcFaultsTotalVO3Iterator"/>
@@ -331,12 +331,6 @@
                   Uses="LOV_InspectionMachineNumber"
                   id="InspectionMachineNumber"/>
     <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
-                     id="Attribute11">
-      <AttrNames>
-        <Item Value="Attribute1"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
                      id="CutableWidth">
       <AttrNames>
         <Item Value="CutableWidth"/>
@@ -357,6 +351,35 @@
                      id="InspectionQty">
       <AttrNames>
         <Item Value="InspectionQty"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator" id="GLM">
+      <AttrNames>
+        <Item Value="GLM"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
+                     id="Attribute11">
+      <AttrNames>
+        <Item Value="Attribute1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
+                     id="Attribute2">
+      <AttrNames>
+        <Item Value="Attribute2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
+                     id="Attribute3">
+      <AttrNames>
+        <Item Value="Attribute3"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="PwcInspectionProcessLineVO1Iterator"
+                     id="Attribute4">
+      <AttrNames>
+        <Item Value="Attribute4"/>
       </AttrNames>
     </attributeValues>
   </bindings>

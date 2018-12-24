@@ -9,23 +9,43 @@
   BindingStyle="OracleName"
   CustomQuery="true"
   PageIterMode="Full"
-  UseGlueCode="false">
+  UseGlueCode="false"
+  ComponentClass="model.VO.PwcInspectionProcessLineVOImpl"
+  RowClass="model.VO.PwcInspectionProcessLineVORowImpl">
   <DesignTime>
-    <Attr Name="_codeGenFlag2" Value="VarAccess"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
     <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <Variable
     Name="p_roll_number"
     Kind="viewcriteria"
     Type="java.lang.String"/>
+  <Variable
+    Name="p_org_id"
+    Kind="where"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <TransientExpression><![CDATA[adf.context.sessionScope.mfg_org_id]]></TransientExpression>
+  </Variable>
   <ViewAccessor
     Name="GradesLOV1"
     ViewObjectName="model.LOV.GradesLOV"
     RowLevelBinds="true"/>
   <ViewAccessor
     Name="RollNumberLOV1"
-    ViewObjectName="model.LOV.RollNumberLOV"
-    RowLevelBinds="true"/>
+    ViewObjectName="model.LOV.RollNumberLOV">
+    <ParameterMap>
+      <PIMap Variable="p_org_id">
+        <TransientExpression><![CDATA[adf.context.sessionScope.mfg_org_id]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ViewAccessor
     Name="MachineNumberLOV1"
     ViewObjectName="model.LOV.MachineNumberLOV"
@@ -117,7 +137,8 @@ NVL(ROUND((PwcInspectionProcessLineEO.ROLL_QUANTITY/1.0936),2),0) ROLL_QUANTITY_
 ,cutable_width
 ,finish_width
 ,kgs
-FROM PWC_INSPECTION_PROCESS_LINE PwcInspectionProcessLineEO]]>
+FROM PWC_INSPECTION_PROCESS_LINE PwcInspectionProcessLineEO
+where mfg_org_id = nvl(:p_org_id, mfg_org_id)]]>
   </SQLQuery>
   <EntityUsage
     Name="PwcInspectionProcessLineEO"
@@ -405,6 +426,15 @@ FROM PWC_INSPECTION_PROCESS_LINE PwcInspectionProcessLineEO]]>
     EntityAttrName="Kgs"
     EntityUsage="PwcInspectionProcessLineEO"
     AliasName="KGS"/>
+  <ViewAttribute
+    Name="GLM"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"/>
   <ViewCriteria
     Name="PwcInspectionProcessLineVOCriteria"
     ViewObjectName="model.VO.PwcInspectionProcessLineVO"

@@ -41,6 +41,39 @@
       </SchemaBasedProperties>
     </Properties>
   </Variable>
+  <Variable
+    Name="p_job_number"
+    Kind="where"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="p_org_id"
+    Kind="where"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="p_wo_number"
+    Kind="where"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <SQLQuery>
     <![CDATA[SELECT we.wip_entity_name job_number, 
       wdj.start_quantity job_qty,
@@ -65,7 +98,9 @@ and we1.wip_entity_id = we.wip_entity_id) inspection_qty
    AND wdj.attribute1 = NVL (:p_wo_number, wdj.attribute1)
    AND wdj.organization_id = NVL (:p_org_id, wdj.organization_id)
    AND we.wip_entity_id NOT IN (SELECT NVL (job_id, 0)
-                                  FROM pwc_inspection_process_header)]]>
+                                  FROM pwc_inspection_process_header)
+   and wdj.attribute5 = nvl(:p_batch_no, wdj.attribute5)
+ and we.wip_entity_name = nvl(:p_job_number,we.wip_entity_name)]]>
   </SQLQuery>
   <ViewAttribute
     Name="JobNumber"

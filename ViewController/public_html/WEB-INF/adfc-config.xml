@@ -6,8 +6,8 @@
   <view id="InspectionProcessSearchForm">
     <page>/InspectionProcessSearchForm.jspx</page>
     <input-page-parameter>
-      <from-value>#{param.ParamOrgId}</from-value>
-      <to-value>#{viewScope.OrgId}</to-value>
+      <from-value>#{param.ParamMfgOrgId}</from-value>
+      <to-value>#{viewScope.MfgOrgId}</to-value>
     </input-page-parameter>
     <input-page-parameter>
       <from-value>#{param.ParamUserId}</from-value>

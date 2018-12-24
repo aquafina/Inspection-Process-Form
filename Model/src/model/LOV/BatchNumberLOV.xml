@@ -45,17 +45,6 @@
     </Properties>
   </Variable>
   <Variable
-    Name="p_buyer"
-    Kind="viewcriteria"
-    Type="java.lang.String">
-    <Properties>
-      <SchemaBasedProperties>
-        <DISPLAYHINT
-          Value="Hide"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Variable>
-  <Variable
     Name="p_pp_number"
     Kind="viewcriteria"
     Type="java.lang.String">
@@ -67,8 +56,20 @@
     </Properties>
   </Variable>
   <Variable
+    Name="p_org_id"
+    Kind="where"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <TransientExpression><![CDATA[adf.context.sessionScope.mfg_org_id]]></TransientExpression>
+  </Variable>
+  <Variable
     Name="p_sales_order_no"
-    Kind="viewcriteria"
+    Kind="where"
     Type="java.lang.String">
     <Properties>
       <SchemaBasedProperties>
@@ -86,17 +87,26 @@
           we.WIP_ENTITY_NAME job_number, 
           wdj.start_quantity job_qty,  
           msi.CONCATENATED_SEGMENTS item_code, 
-          msi.DESCRIPTION item_desc
+          msi.DESCRIPTION item_desc,
+          prg_headers.finish,
+          gd_headers.finish_gsm, 
+          gd_headers.WEAVE_STYLE
   from wip_entities we,
         wip_discrete_jobs wdj,
         oe_order_headers_all ooha,
         PWC_ODM_MASTER_SHT_PRCSNG_HDR prc_header,
-        mtl_system_items_kfv msi  
+        mtl_system_items_kfv msi,
+        pwc_om_processing_prg_hdr prg_headers,
+        pwc_om_processing_prg_lns prg_lines,
+        PWC_OM_GREIGE_DEMOND_HEADER gd_headers
   where  we.wip_entity_id = wdj.wip_entity_id
   and wdj.attribute12 = ooha.header_id
   and nvl(wdj.attribute1,'-1') = nvl(prc_header.WORK_ORDER_NUMBER,'-1') 
   and wdj.primary_item_id = msi.INVENTORY_ITEM_ID
   and wdj.organization_id = msi.ORGANIZATION_ID
+  and nvl(wdj.attribute11,'-1') = nvl(prg_headers.PROCESSING_PRG_NO,'-1')
+  and prg_headers.pp_header_id = prg_lines.pp_header_id
+  and prg_lines.gd_number = gd_headers.gd_no
   and wdj.attribute13 = 'FIN'
   and wdj.attribute_category = 'Job Details'
   and wdj.quantity_completed != 0
@@ -314,6 +324,50 @@
           ResId="model.LOV.BatchNumberLOV.ItemDesc_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Finish"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FINISH"
+    Expression="FINISH"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FinishGsm"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FINISH_GSM"
+    Expression="FINISH_GSM"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="39"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="WeaveStyle"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="WEAVE_STYLE"
+    Expression="WEAVE_STYLE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
   </ViewAttribute>
   <ViewCriteria
     Name="BatchNumberLOVCriteria"

@@ -113,11 +113,12 @@
               <af:panelLabelAndMessage label="#{bindings.FinishType.hints.label}"
                                        id="plam8">
                 <af:outputText value="#{bindings.FinishType.inputValue}"
-                               id="ot13"/>
+                               id="ot13" partialTriggers="batchNumberId"/>
               </af:panelLabelAndMessage>
               <af:panelLabelAndMessage label="#{bindings.Weave.hints.label}"
                                        id="plam9">
-                <af:outputText value="#{bindings.Weave.inputValue}" id="ot14"/>
+                <af:outputText value="#{bindings.Weave.inputValue}" id="ot14"
+                               partialTriggers="batchNumberId"/>
               </af:panelLabelAndMessage>
               <af:inputText value="#{bindings.Jute.inputValue}"
                             label="#{bindings.Jute.hints.label}"
@@ -153,227 +154,249 @@
                         queryOperationListener="#{bindings.PwcInspectionProcessLineVOCriteriaQuery.processQueryOperation}"/>
             </af:panelHeader>
           </af:panelGroupLayout>
-          <af:panelGroupLayout id="pgl2" layout="horizontal">
-            <af:panelFormLayout id="panelFormLayout1" rows="5"
-                                partialTriggers="qryId1">
-              <af:inputText value="#{bindings.RollNumber.inputValue}"
-                            label="Roll Number"
-                            columns="#{bindings.RollNumber.hints.displayWidth}"
-                            maximumLength="#{bindings.RollNumber.hints.precision}"
-                            shortDesc="#{bindings.RollNumber.hints.tooltip}"
-                            id="inputText1" inlineStyle="width:20px;"
-                            showRequired="true" required="true" readOnly="true">
-                <f:validator binding="#{bindings.RollNumber.validator}"/>
-              </af:inputText>
-              <af:inputListOfValues id="inspectionMachineNumber"
-                                    popupTitle="Search and Select: #{bindings.InspectionMachineNumber.hints.label}"
-                                    value="#{bindings.InspectionMachineNumber.inputValue}"
-                                    label="Inspection Machine Number"
-                                    model="#{bindings.InspectionMachineNumber.listOfValuesModel}"
-                                    required="#{bindings.InspectionMachineNumber.hints.mandatory}"
-                                    columns="#{bindings.InspectionMachineNumber.hints.displayWidth}"
-                                    shortDesc="#{bindings.InspectionMachineNumber.hints.tooltip}">
-                <f:validator binding="#{bindings.InspectionMachineNumber.validator}"/>
-              </af:inputListOfValues>
-              <af:inputText value="#{bindings.DyeingFaultsCreaseMark.inputValue+ bindings.DyeingFaultsDropMark.inputValue+ bindings.DyeingFaultsDyeResist.inputValue+ bindings.DyeingFaultsLineMark.inputValue+ bindings.DyeingFaultsOilSpot.inputValue+ bindings.DyeingFaultsShadeVariation.inputValue+ bindings.DyeingFaultsStainDirtyMark.inputValue+ bindings.PrintingFaultsDesignOut.inputValue + bindings.PrintingFaultsMissPrint.inputValue + bindings.WeavingFaultsBrokenEnd.inputValue + bindings.WeavingFaultsBrokenPick.inputValue + bindings.WeavingFaultsDistortionMark.inputValue + bindings.WeavingFaultsDoubleYarn.inputValue + bindings.WeavingFaultsHole.inputValue + bindings.WeavingFaultsKnots.inputValue + bindings.WeavingFaultsMissYarnPick.inputValue + bindings.WeavingFaultsMixedYarn.inputValue + bindings.WeavingFaultsReedMark.inputValue + bindings.WeavingFaultsStopMark.inputValue + bindings.WeavingFaultsThickThinPick.inputValue + bindings.YarnFaultsForeignYarn.inputValue + bindings.YarnFaultsNeps.inputValue + bindings.YarnFaultsSlubs.inputValue+ bindings.DyeingFaultsJointMark.inputValue}"
-                            label="Total Faults"
-                            required="#{bindings.TotalFaults.hints.mandatory}"
-                            columns="#{bindings.TotalFaults.hints.displayWidth}"
-                            maximumLength="#{bindings.TotalFaults.hints.precision}"
-                            shortDesc="#{bindings.TotalFaults.hints.tooltip}"
-                            id="it3">
-                <f:validator binding="#{bindings.TotalFaults.validator}"/>
-                <af:convertNumber groupingUsed="false"
-                                  pattern="#{bindings.TotalFaults.format}"/>
-              </af:inputText>
-              <af:inputText value="#{bindings.FaultsPer100Sq.inputValue}"
-                            label="Faults Per 100Sq"
-                            required="#{bindings.FaultsPer100Sq.hints.mandatory}"
-                            columns="#{bindings.FaultsPer100Sq.hints.displayWidth}"
-                            maximumLength="#{bindings.FaultsPer100Sq.hints.precision}"
-                            shortDesc="#{bindings.FaultsPer100Sq.hints.tooltip}"
-                            id="it5" readOnly="true">
-                <f:validator binding="#{bindings.FaultsPer100Sq.validator}"/>
-                <af:convertNumber groupingUsed="false"
-                                  pattern="#{bindings.FaultsPer100Sq.format}"/>
-              </af:inputText>
-              <af:inputText value="#{bindings.RollQuantity.inputValue}"
-                            label="Roll Quantity"
-                            required="#{bindings.RollQuantity.hints.mandatory}"
-                            columns="#{bindings.RollQuantity.hints.displayWidth}"
-                            maximumLength="#{bindings.RollQuantity.hints.precision}"
-                            shortDesc="#{bindings.RollQuantity.hints.tooltip}"
-                            id="it6">
-                <f:validator binding="#{bindings.RollQuantity.validator}"/>
-                <af:convertNumber groupingUsed="false"
-                                  pattern="#{bindings.RollQuantity.format}"/>
-              </af:inputText>
-              <af:panelLabelAndMessage label="Roll Quantity MTR" id="plam5">
-                <af:outputText value="#{bindings.RollQuantityMtr.inputValue}"
-                               id="ot8" partialTriggers="it6"/>
-              </af:panelLabelAndMessage>
-              <af:selectOneChoice value="#{bindings.Grade.inputValue}"
-                                  label="#{bindings.Grade.label}"
-                                  required="#{bindings.Grade.hints.mandatory}"
-                                  shortDesc="#{bindings.Grade.hints.tooltip}"
-                                  id="soc1">
-                <f:selectItems value="#{bindings.Grade.items}" id="si1"/>
-              </af:selectOneChoice>
-              <af:inputDate value="#{bindings.InspectionDate.inputValue}"
-                            label="Inspection Date"
-                            required="#{bindings.InspectionDate.hints.mandatory}"
-                            shortDesc="#{bindings.InspectionDate.hints.tooltip}"
-                            id="id1">
-                <f:validator binding="#{bindings.InspectionDate.validator}"/>
-                <af:convertDateTime pattern="#{bindings.InspectionDate.format}"/>
-              </af:inputDate>
-              <af:inputText value="#{bindings.FinishWidth.inputValue}"
-                            label="Finish Width"
-                            required="#{bindings.FinishWidth.hints.mandatory}"
-                            columns="#{bindings.FinishWidth.hints.displayWidth}"
-                            maximumLength="#{bindings.FinishWidth.hints.precision}"
-                            shortDesc="#{bindings.FinishWidth.hints.tooltip}"
-                            id="it7">
-                <f:validator binding="#{bindings.FinishWidth.validator}"/>
-              </af:inputText>
-              <af:inputText value="#{bindings.CutableWidth.inputValue}"
-                            label="Cutable Width"
-                            required="#{bindings.CutableWidth.hints.mandatory}"
-                            columns="#{bindings.CutableWidth.hints.displayWidth}"
-                            maximumLength="#{bindings.CutableWidth.hints.precision}"
-                            shortDesc="#{bindings.CutableWidth.hints.tooltip}"
-                            id="it1">
-                <f:validator binding="#{bindings.CutableWidth.validator}"/>
-              </af:inputText>
-              <af:inputText value="#{bindings.Kgs.inputValue}"
-                            label="KGS"
-                            required="#{bindings.Kgs.hints.mandatory}"
-                            columns="#{bindings.Kgs.hints.displayWidth}"
-                            maximumLength="#{bindings.Kgs.hints.precision}"
-                            shortDesc="#{bindings.Kgs.hints.tooltip}" id="it8">
-                <f:validator binding="#{bindings.Kgs.validator}"/>
-              </af:inputText>
-              <af:inputText value="#{bindings.MfgOrgId1.inputValue}"
-                            label="#{bindings.MfgOrgId1.hints.label}"
-                            required="#{bindings.MfgOrgId1.hints.mandatory}"
-                            columns="#{bindings.MfgOrgId1.hints.displayWidth}"
-                            maximumLength="#{bindings.MfgOrgId1.hints.precision}"
-                            shortDesc="#{bindings.MfgOrgId1.hints.tooltip}"
-                            id="inputText8" rendered="false">
-                <f:validator binding="#{bindings.MfgOrgId1.validator}"/>
-                <af:convertNumber groupingUsed="false"
-                                  pattern="#{bindings.MfgOrgId1.format}"/>
-              </af:inputText>
-              <af:inputText value="#{bindings.OrgId1.inputValue}"
-                            label="#{bindings.OrgId1.hints.label}"
-                            required="#{bindings.OrgId1.hints.mandatory}"
-                            columns="#{bindings.OrgId1.hints.displayWidth}"
-                            maximumLength="#{bindings.OrgId1.hints.precision}"
-                            shortDesc="#{bindings.OrgId1.hints.tooltip}"
-                            id="inputText9" rendered="false">
-                <f:validator binding="#{bindings.OrgId1.validator}"/>
-                <af:convertNumber groupingUsed="false"
-                                  pattern="#{bindings.OrgId1.format}"/>
-              </af:inputText>
-            </af:panelFormLayout>
-            <af:panelGridLayout id="pgl12" rendered="false">
-              <af:gridRow marginTop="5px" height="auto" id="gr18">
-                <af:gridCell marginStart="5px" width="33%" id="gc80"/>
-                <af:gridCell marginStart="5px" width="33%" id="gc76"
-                             halign="stretch"/>
-                <af:gridCell marginStart="5px" marginEnd="5px" width="34%"
-                             id="gc73" halign="stretch"/>
-              </af:gridRow>
-              <af:gridRow marginTop="5px" height="auto" id="gr17">
-                <af:gridCell marginStart="5px" width="33%" id="gc79">
-                  <h:commandButton value="Dyeing Stitch" id="cb1"
-                                   style="width:120px; text-align:center; background-color:Fuchsia; color:white; font-weight:bolder;"/>
-                </af:gridCell>
-                <af:gridCell marginStart="5px" width="33%" id="gc71">
-                  <af:outputText value="0" id="outputText17"
-                                 inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
-                </af:gridCell>
-                <af:gridCell marginStart="5px" marginEnd="5px" width="34%"
-                             id="gc18">
-                  <h:commandButton value="Dyeing Stitch" id="commandButton2"
-                                   style="width:120px; text-align:center; background-color:Fuchsia; color:white; font-weight:bolder;"/>
-                </af:gridCell>
-              </af:gridRow>
-              <af:gridRow marginTop="5px" height="auto" id="gr19">
-                <af:gridCell marginStart="5px" width="33%" id="gc77">
-                  <h:commandButton value="Printing Stitch" id="cb8"
-                                   style="text-align:center; width:120px; background-color:Green; color:white; font-weight:bolder;"/>
-                </af:gridCell>
-                <af:gridCell marginStart="5px" width="33%" id="gc75">
-                  <af:outputText value="0" id="outputText18"
-                                 inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
-                </af:gridCell>
-                <af:gridCell marginStart="5px" marginEnd="5px" width="34%"
-                             id="gc46">
-                  <h:commandButton value="Printing Stitch" id="commandButton3"
-                                   style="text-align:center; width:120px; background-color:Green; color:white; font-weight:bolder;"/>
-                </af:gridCell>
-              </af:gridRow>
-              <af:gridRow marginTop="5px" marginBottom="5px" height="auto"
-                          id="gr20">
-                <af:gridCell marginStart="5px" width="33%" id="gc72">
-                  <h:commandButton value="Finishing Stitch" id="cb9"
-                                   style="width:120px; text-align:center; background-color:Brown; color:white; font-weight:bolder;"/>
-                </af:gridCell>
-                <af:gridCell marginStart="5px" width="33%" id="gc78">
-                  <af:outputText value="0" id="outputText51"
-                                 inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"/>
-                </af:gridCell>
-                <af:gridCell marginStart="5px" marginEnd="5px" width="34%"
-                             id="gc74">
-                  <h:commandButton value="Finishing Stitch" id="commandButton4"
-                                   style="width:120px; text-align:center; background-color:Brown; color:white; font-weight:bolder;"/>
-                </af:gridCell>
-              </af:gridRow>
-            </af:panelGridLayout>
-            <af:panelGridLayout id="pgl10">
-              <af:gridRow marginTop="5px" height="auto" id="gr22">
-                <af:gridCell marginStart="5px" width="34%" id="gc81">
-                  <af:commandButton text="commandButton 5" id="cb11"/>
-                </af:gridCell>
-                <af:gridCell marginStart="5px" width="33%" id="gc83">
-                  <af:outputText value="#{bindings.Attribute11.inputValue}"
-                                 id="ot18"
-                                 inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
-                                 partialTriggers="cb2 cb10"/>
-                </af:gridCell>
-                <af:gridCell marginStart="5px" marginEnd="5px" width="33%"
-                             id="gc94">
-                  <af:commandButton text="commandButton 6" id="cb2"/>
-                </af:gridCell>
-              </af:gridRow>
-              <af:gridRow marginTop="5px" height="auto" id="gr25">
-                <af:gridCell marginStart="5px" width="34%" id="gc89"/>
-                <af:gridCell marginStart="5px" width="33%" id="gc82"/>
-                <af:gridCell marginStart="5px" marginEnd="5px" width="33%"
-                             id="gc95"/>
-              </af:gridRow>
-              <af:gridRow marginTop="5px" height="auto" id="gr23">
-                <af:gridCell marginStart="5px" width="34%" id="gc97"/>
-                <af:gridCell marginStart="5px" width="33%" id="gc99"/>
-                <af:gridCell marginStart="5px" marginEnd="5px" width="33%"
-                             id="gc98"/>
-              </af:gridRow>
-              <af:gridRow marginTop="5px" height="auto" id="gr21">
-                <af:gridCell marginStart="5px" width="34%" id="gc90"/>
-                <af:gridCell marginStart="5px" width="33%" id="gc96"/>
-                <af:gridCell marginStart="5px" marginEnd="5px" width="33%"
-                             id="gc93"/>
-              </af:gridRow>
-              <af:gridRow marginTop="5px" marginBottom="5px" height="auto"
-                          id="gr24">
-                <af:gridCell marginStart="5px" width="34%" id="gc91"/>
-                <af:gridCell marginStart="5px" width="33%" id="gc92"/>
-                <af:gridCell marginStart="5px" marginEnd="5px" width="33%"
-                             id="gc88"/>
-              </af:gridRow>
-            </af:panelGridLayout>
-          </af:panelGroupLayout>
+          <af:panelGridLayout id="pgl12">
+            <af:gridRow marginTop="5px" marginBottom="5px" height="auto"
+                        id="gr17">
+              <af:gridCell marginStart="5px" width="40%" id="gc46"
+                           halign="stretch">
+                <af:panelFormLayout id="panelFormLayout1" rows="5"
+                                    partialTriggers="qryId1">
+                  <af:inputText value="#{bindings.RollNumber.inputValue}"
+                                label="Roll Number"
+                                columns="#{bindings.RollNumber.hints.displayWidth}"
+                                maximumLength="#{bindings.RollNumber.hints.precision}"
+                                shortDesc="#{bindings.RollNumber.hints.tooltip}"
+                                id="inputText1" inlineStyle="width:20px;"
+                                showRequired="true" required="true"
+                                readOnly="true">
+                    <f:validator binding="#{bindings.RollNumber.validator}"/>
+                  </af:inputText>
+                  <af:inputListOfValues id="inspectionMachineNumber"
+                                        popupTitle="Search and Select: #{bindings.InspectionMachineNumber.hints.label}"
+                                        value="#{bindings.InspectionMachineNumber.inputValue}"
+                                        label="Inspection Machine Number"
+                                        model="#{bindings.InspectionMachineNumber.listOfValuesModel}"
+                                        required="#{bindings.InspectionMachineNumber.hints.mandatory}"
+                                        columns="#{bindings.InspectionMachineNumber.hints.displayWidth}"
+                                        shortDesc="#{bindings.InspectionMachineNumber.hints.tooltip}">
+                    <f:validator binding="#{bindings.InspectionMachineNumber.validator}"/>
+                  </af:inputListOfValues>
+                  <af:inputText value="#{bindings.DyeingFaultsCreaseMark.inputValue+ bindings.DyeingFaultsDropMark.inputValue+ bindings.DyeingFaultsDyeResist.inputValue+ bindings.DyeingFaultsLineMark.inputValue+ bindings.DyeingFaultsOilSpot.inputValue+ bindings.DyeingFaultsShadeVariation.inputValue+ bindings.DyeingFaultsStainDirtyMark.inputValue+ bindings.PrintingFaultsDesignOut.inputValue + bindings.PrintingFaultsMissPrint.inputValue + bindings.WeavingFaultsBrokenEnd.inputValue + bindings.WeavingFaultsBrokenPick.inputValue + bindings.WeavingFaultsDistortionMark.inputValue + bindings.WeavingFaultsDoubleYarn.inputValue + bindings.WeavingFaultsHole.inputValue + bindings.WeavingFaultsKnots.inputValue + bindings.WeavingFaultsMissYarnPick.inputValue + bindings.WeavingFaultsMixedYarn.inputValue + bindings.WeavingFaultsReedMark.inputValue + bindings.WeavingFaultsStopMark.inputValue + bindings.WeavingFaultsThickThinPick.inputValue + bindings.YarnFaultsForeignYarn.inputValue + bindings.YarnFaultsNeps.inputValue + bindings.YarnFaultsSlubs.inputValue+ bindings.DyeingFaultsJointMark.inputValue}"
+                                label="Total Faults"
+                                required="#{bindings.TotalFaults.hints.mandatory}"
+                                columns="#{bindings.TotalFaults.hints.displayWidth}"
+                                maximumLength="#{bindings.TotalFaults.hints.precision}"
+                                shortDesc="#{bindings.TotalFaults.hints.tooltip}"
+                                id="it3" partialTriggers="ot3 ot9">
+                    <f:validator binding="#{bindings.TotalFaults.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.TotalFaults.format}"/>
+                  </af:inputText>
+                  <af:inputText
+                                label="#{bindings.FaultsPer100Sq.hints.label}"
+                                required="#{bindings.FaultsPer100Sq.hints.mandatory}"
+                                columns="#{bindings.FaultsPer100Sq.hints.displayWidth}"
+                                maximumLength="#{bindings.FaultsPer100Sq.hints.precision}"
+                                shortDesc="#{bindings.FaultsPer100Sq.hints.tooltip}"
+                                id="it5" readOnly="true"
+                                partialTriggers="it3 it1"
+                                value="#{bindings.FaultsPer100Sq.inputValue}">
+                    <f:validator binding="#{bindings.FaultsPer100Sq.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.FaultsPer100Sq.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.RollQuantity.inputValue}"
+                                label="Roll Quantity"
+                                required="#{bindings.RollQuantity.hints.mandatory}"
+                                columns="#{bindings.RollQuantity.hints.displayWidth}"
+                                maximumLength="#{bindings.RollQuantity.hints.precision}"
+                                shortDesc="#{bindings.RollQuantity.hints.tooltip}"
+                                id="it6">
+                    <f:validator binding="#{bindings.RollQuantity.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.RollQuantity.format}"/>
+                  </af:inputText>
+                  <af:panelLabelAndMessage label="Roll Quantity MTR" id="plam5">
+                    <af:outputText value="#{bindings.RollQuantityMtr.inputValue}"
+                                   id="ot8" partialTriggers="it6"/>
+                  </af:panelLabelAndMessage>
+                  <af:selectOneChoice value="#{bindings.Grade.inputValue}"
+                                      label="#{bindings.Grade.label}"
+                                      required="#{bindings.Grade.hints.mandatory}"
+                                      shortDesc="#{bindings.Grade.hints.tooltip}"
+                                      id="soc1">
+                    <f:selectItems value="#{bindings.Grade.items}" id="si1"/>
+                  </af:selectOneChoice>
+                  <af:inputDate value="#{bindings.InspectionDate.inputValue}"
+                                label="Inspection Date"
+                                required="#{bindings.InspectionDate.hints.mandatory}"
+                                shortDesc="#{bindings.InspectionDate.hints.tooltip}"
+                                id="id1">
+                    <f:validator binding="#{bindings.InspectionDate.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.InspectionDate.format}"/>
+                  </af:inputDate>
+                  <af:inputText value="#{bindings.FinishWidth.inputValue}"
+                                label="Finish Width"
+                                required="#{bindings.FinishWidth.hints.mandatory}"
+                                columns="#{bindings.FinishWidth.hints.displayWidth}"
+                                maximumLength="#{bindings.FinishWidth.hints.precision}"
+                                shortDesc="#{bindings.FinishWidth.hints.tooltip}"
+                                id="it7">
+                    <f:validator binding="#{bindings.FinishWidth.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.CutableWidth.inputValue}"
+                                label="Cutable Width"
+                                required="#{bindings.CutableWidth.hints.mandatory}"
+                                columns="#{bindings.CutableWidth.hints.displayWidth}"
+                                maximumLength="#{bindings.CutableWidth.hints.precision}"
+                                shortDesc="#{bindings.CutableWidth.hints.tooltip}"
+                                id="it1">
+                    <f:validator binding="#{bindings.CutableWidth.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Kgs.inputValue}" label="KGS"
+                                required="#{bindings.Kgs.hints.mandatory}"
+                                columns="#{bindings.Kgs.hints.displayWidth}"
+                                maximumLength="#{bindings.Kgs.hints.precision}"
+                                shortDesc="#{bindings.Kgs.hints.tooltip}"
+                                id="it8">
+                    <f:validator binding="#{bindings.Kgs.validator}"/>
+                  </af:inputText>
+                  <af:panelLabelAndMessage label="#{bindings.GLM.hints.label}"
+                                           id="plam11">
+                    <af:outputText value="#{bindings.GLM.inputValue}"
+                                   id="ot15"/>
+                  </af:panelLabelAndMessage>
+                  <af:inputText value="#{bindings.MfgOrgId1.inputValue}"
+                                label="#{bindings.MfgOrgId1.hints.label}"
+                                required="#{bindings.MfgOrgId1.hints.mandatory}"
+                                columns="#{bindings.MfgOrgId1.hints.displayWidth}"
+                                maximumLength="#{bindings.MfgOrgId1.hints.precision}"
+                                shortDesc="#{bindings.MfgOrgId1.hints.tooltip}"
+                                id="inputText8" rendered="false">
+                    <f:validator binding="#{bindings.MfgOrgId1.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.MfgOrgId1.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.OrgId1.inputValue}"
+                                label="#{bindings.OrgId1.hints.label}"
+                                required="#{bindings.OrgId1.hints.mandatory}"
+                                columns="#{bindings.OrgId1.hints.displayWidth}"
+                                maximumLength="#{bindings.OrgId1.hints.precision}"
+                                shortDesc="#{bindings.OrgId1.hints.tooltip}"
+                                id="inputText9" rendered="false">
+                    <f:validator binding="#{bindings.OrgId1.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.OrgId1.format}"/>
+                  </af:inputText>
+                </af:panelFormLayout>
+              </af:gridCell>
+              <af:gridCell marginStart="5px" marginEnd="5px" width="20%"
+                           id="gc18" halign="stretch">
+                <af:panelGridLayout id="pgl10">
+                  <af:gridRow id="gr18">
+                    <af:gridCell marginStart="5px" width="34%" id="gridCell372"
+                                 halign="center">
+                      <af:outputText value="ADD" id="ot16"
+                                     inlineStyle="font-weight:bold; font-size:12px;"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="33%" id="gridCell373"
+                                 halign="center">
+                      <af:outputText value="TOTAL"
+                                     id="outputText17"
+                                     inlineStyle="font-weight:bold; font-size:12px;"
+                                     partialTriggers="cb2 cb11"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" marginEnd="5px" width="33%"
+                                 id="gridCell374" halign="center">
+                      <af:outputText value="UNDO" id="ot17"
+                                     inlineStyle="font-weight:bold; font-size:12px;"/>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr22">
+                    <af:gridCell marginStart="5px" width="34%" id="gc81"
+                                 halign="center">
+                      <af:commandButton text="DTM" id="cb11"
+                                        actionListener="#{backingBeanScope.InspectionProcessBackingBean.inspPrcLineAddDTM}"
+                                        inlineStyle='background-image:url("blue1.png"); color:White; font-weight:bold; width:100px;'/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="33%" id="gc83"
+                                 halign="center">
+                      <af:outputText value="#{bindings.Attribute11.inputValue}"
+                                     id="ot18"
+                                     inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                     partialTriggers="cb2 cb11"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" marginEnd="5px" width="33%"
+                                 id="gc94" halign="center">
+                      <af:commandButton text="DTM" id="cb2"
+                                        actionListener="#{backingBeanScope.InspectionProcessBackingBean.inspPrcLineUndoDTM}"
+                                        inlineStyle='background-image:url("blue1.png"); color:White; font-weight:bold; width:100px;'/>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr25">
+                    <af:gridCell marginStart="5px" width="34%" id="gc89"
+                                 halign="center">
+                      <af:commandButton text="Dyeing Stitch" id="cb1"
+                                        actionListener="#{backingBeanScope.InspectionProcessBackingBean.inspPrcAddDyeingStitch}"
+                                        inlineStyle='background-image:url("pink.png"); color:White; font-weight:bold; width:100px;'/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="33%" id="gc82"
+                                 halign="center">
+                      <af:outputText value="#{bindings.Attribute2.inputValue}" id="ot21"
+                                     inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                     partialTriggers="cb1 cb8"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" marginEnd="5px" width="33%"
+                                 id="gc95" halign="center">
+                      <af:commandButton text="Dyeing Stitch" id="cb8"
+                                        actionListener="#{backingBeanScope.InspectionProcessBackingBean.inspPrcUndoDyeingStitch}"
+                                        inlineStyle='background-image:url("pink.png"); color:White; font-weight:bold; width:100px;'/>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr23">
+                    <af:gridCell marginStart="5px" width="34%" id="gc97"
+                                 halign="center">
+                      <af:commandButton text="Printing Stitch" id="cb9"
+                                        actionListener="#{backingBeanScope.InspectionProcessBackingBean.inspPrcAddPrintingStitch}"
+                                        inlineStyle='background-image:url("Green.png"); color:White; font-weight:bold; width:100px;'/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="33%" id="gridCell375"
+                                 halign="center">
+                      <af:outputText value="#{bindings.Attribute3.inputValue}" id="outputText18"
+                                     inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                     partialTriggers="cb9 cb10"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" marginEnd="5px" width="33%"
+                                 id="gc98" halign="center">
+                      <af:commandButton text="Printing Stitch" id="cb10"
+                                        actionListener="#{backingBeanScope.InspectionProcessBackingBean.inspPrcUndoPrintingStitch}"
+                                        inlineStyle='background-image:url("Green.png"); color:White; font-weight:bold; width:100px;'/>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" id="gr21">
+                    <af:gridCell marginStart="5px" width="34%" id="gc90"
+                                 halign="center">
+                      <af:commandButton text="Finishing Stitch" id="cb12"
+                                        actionListener="#{backingBeanScope.InspectionProcessBackingBean.inspPrcAddFinishingStitch}"
+                                        inlineStyle='background-image:url("Brown.png"); color:White; font-weight:bold; width:100px;'/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="33%" id="gc96"
+                                 halign="center">
+                      <af:outputText value="#{bindings.Attribute4.inputValue}" id="outputText51"
+                                     inlineStyle="padding-left:15px; padding-right:15px; background-color:Yellow; border-color:Black; border-style:solid; border-width:thin;"
+                                     partialTriggers="cb12 cb13"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" marginEnd="5px" width="33%"
+                                 id="gc93" halign="center">
+                      <af:commandButton text="Finishing Stitch" id="cb13"
+                                        actionListener="#{backingBeanScope.InspectionProcessBackingBean.inspPrcUndoFinishingStitch}"
+                                        inlineStyle='background-image:url("Brown.png"); color:White; font-weight:bold; width:100px;'/>
+                    </af:gridCell>
+                  </af:gridRow>
+                </af:panelGridLayout>
+              </af:gridCell>
+            </af:gridRow>
+          </af:panelGridLayout>
           <af:panelGroupLayout id="pgl9" layout="horizontal">
             <af:commandButton actionListener="#{bindings.CreateInsert.execute}"
                               text="New"
@@ -413,9 +436,7 @@
                   </af:gridCell>
                 </af:gridRow>
                 <af:gridRow id="gr13">
-                  <af:gridCell id="gridCell34">
-                    <af:outputText value="#{(bindings.YarnFaultsSlubs.inputValue+bindings.YarnFaultsNeps.inputValue)>=0?(bindings.YarnFaultsSlubs.inputValue+bindings.YarnFaultsNeps.inputValue):0}" id="ot20"/>
-                  </af:gridCell>
+                  <af:gridCell id="gridCell34"/>
                   <af:gridCell marginStart="2px" width="14%" id="gridCell35"
                                halign="center" valign="middle"/>
                   <af:gridCell marginStart="1px" width="5%" id="gridCell36"/>

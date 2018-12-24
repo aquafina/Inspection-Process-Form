@@ -17,6 +17,8 @@ import oracle.adf.view.rich.component.rich.output.RichOutputText;
 
 import oracle.adf.view.rich.context.AdfFacesContext;
 
+import oracle.adf.view.rich.event.LaunchPopupEvent;
+
 import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
 
@@ -25,11 +27,16 @@ import oracle.jbo.Row;
 import oracle.jbo.RowSetIterator;
 import oracle.jbo.ViewObject;
 import oracle.jbo.server.ApplicationModuleImpl;
+import oracle.jbo.server.ViewObjectImpl;
 
 public class InspectionProcessBackingBean {
 
     public InspectionProcessBackingBean() {
         super();
+        /*ViewObjectImpl linesVO = getApplicationModule().findViewObject("PwcInspectionProcessLineVO1");
+        linesVO
+               vo.setNamedWhereClauseParam("", pVariableValue);
+               vo.executeQuery();*/
     }
 
     public void insertIntoFaultEntries(String faultName, String faultCategory, int points) {
@@ -53,6 +60,8 @@ public class InspectionProcessBackingBean {
         am.getTransaction().commit();
         ViewObject faultsTotalVO = (ViewObject)am.findViewObject("PwcOdmInsPrcFaultsTotalVO3");
         faultsTotalVO.executeQuery();
+        ViewObject inspPrcLinesVO = (ViewObject) am.findViewObject("PwcInspectionProcessLineVO1");
+        inspPrcLinesVO.executeQuery();
     }
     
     /**                      YARN FAULT                          **/
@@ -937,20 +946,125 @@ public class InspectionProcessBackingBean {
         ApplicationModule am = getApplicationModule();
         ViewObject inspPrcLinesVO = (ViewObject) am.findViewObject("PwcInspectionProcessLineVO1");
         Row currRow = inspPrcLinesVO.getCurrentRow();
-        int count = Integer.parseInt(currRow.getAttribute("Attribute1")!=null?currRow.getAttribute("Attribute1").toString():"0");
-        count+=1;
-        currRow.setAttribute("Attribute1", count);
+        if (currRow!=null)
+        {
+            int count = Integer.parseInt(currRow.getAttribute("Attribute1")!=null?currRow.getAttribute("Attribute1").toString():"0");
+            count+=1;
+            currRow.setAttribute("Attribute1", count);
+            am.getTransaction().commit();
+        }
     }
 
     public void inspPrcLineUndoDTM(ActionEvent actionEvent) {
         ApplicationModule am = getApplicationModule();
         ViewObject inspPrcLinesVO = (ViewObject) am.findViewObject("PwcInspectionProcessLineVO1");
         Row currRow = inspPrcLinesVO.getCurrentRow();
-        int count = Integer.parseInt(currRow.getAttribute("Attribute1")!=null?currRow.getAttribute("Attribute1").toString():"0");
-        if (count>0)
+        if (currRow!=null)
         {
-            count-=1;
-            currRow.setAttribute("Attribute1", count);
+            int count = Integer.parseInt(currRow.getAttribute("Attribute1")!=null?currRow.getAttribute("Attribute1").toString():"0");
+            if (count>0)
+            {
+                count-=1;
+                currRow.setAttribute("Attribute1", count);
+                am.getTransaction().commit();
+            }
         }
     }
+
+    public void inspPrcAddDyeingStitch(ActionEvent actionEvent) {
+        ApplicationModule am = getApplicationModule();
+        ViewObject inspPrcLinesVO = (ViewObject) am.findViewObject("PwcInspectionProcessLineVO1");
+        Row currRow = inspPrcLinesVO.getCurrentRow();
+        if (currRow!=null)
+        {
+            int count = Integer.parseInt(currRow.getAttribute("Attribute2")!=null?currRow.getAttribute("Attribute2").toString():"0");
+            count+=1;
+            currRow.setAttribute("Attribute2", count);
+            am.getTransaction().commit();
+        }
+    }
+    
+    public void inspPrcUndoDyeingStitch(ActionEvent actionEvent) {
+        ApplicationModule am = getApplicationModule();
+        ViewObject inspPrcLinesVO = (ViewObject) am.findViewObject("PwcInspectionProcessLineVO1");
+        Row currRow = inspPrcLinesVO.getCurrentRow();
+        if (currRow!=null)
+        {
+            int count = Integer.parseInt(currRow.getAttribute("Attribute2")!=null?currRow.getAttribute("Attribute2").toString():"0");
+            if (count>0)
+            {
+                count-=1;
+                currRow.setAttribute("Attribute2", count);
+                am.getTransaction().commit();
+            }
+        }
+    }
+    
+    public void inspPrcAddPrintingStitch(ActionEvent actionEvent) {
+        ApplicationModule am = getApplicationModule();
+        ViewObject inspPrcLinesVO = (ViewObject) am.findViewObject("PwcInspectionProcessLineVO1");
+        Row currRow = inspPrcLinesVO.getCurrentRow();
+        if (currRow!=null)
+        {
+            int count = Integer.parseInt(currRow.getAttribute("Attribute3")!=null?currRow.getAttribute("Attribute3").toString():"0");
+            count+=1;
+            currRow.setAttribute("Attribute3", count);
+            am.getTransaction().commit();
+        }
+    }
+    
+    public void inspPrcUndoPrintingStitch(ActionEvent actionEvent) {
+        ApplicationModule am = getApplicationModule();
+        ViewObject inspPrcLinesVO = (ViewObject) am.findViewObject("PwcInspectionProcessLineVO1");
+        Row currRow = inspPrcLinesVO.getCurrentRow();
+        if (currRow!=null)
+        {
+            int count = Integer.parseInt(currRow.getAttribute("Attribute3")!=null?currRow.getAttribute("Attribute3").toString():"0");
+            if (count>0)
+            {
+                count-=1;
+                currRow.setAttribute("Attribute3", count);
+                am.getTransaction().commit();
+            }
+        }
+    }
+    
+    public void inspPrcAddFinishingStitch(ActionEvent actionEvent) {
+        ApplicationModule am = getApplicationModule();
+        ViewObject inspPrcLinesVO = (ViewObject) am.findViewObject("PwcInspectionProcessLineVO1");
+        Row currRow = inspPrcLinesVO.getCurrentRow();
+        if (currRow!=null)
+        {
+            int count = Integer.parseInt(currRow.getAttribute("Attribute4")!=null?currRow.getAttribute("Attribute4").toString():"0");
+            count+=1;
+            currRow.setAttribute("Attribute4", count);
+            am.getTransaction().commit();
+        }
+    }
+    
+    public void inspPrcUndoFinishingStitch(ActionEvent actionEvent) {
+        ApplicationModule am = getApplicationModule();
+        ViewObject inspPrcLinesVO = (ViewObject) am.findViewObject("PwcInspectionProcessLineVO1");
+        Row currRow = inspPrcLinesVO.getCurrentRow();
+        if (currRow!=null)
+        {
+            int count = Integer.parseInt(currRow.getAttribute("Attribute4")!=null?currRow.getAttribute("Attribute4").toString():"0");
+            if (count>0)
+            {
+                count-=1;
+                currRow.setAttribute("Attribute4", count);
+                am.getTransaction().commit();
+            }
+        }
+    }
+
+   /* public void rollNumberLovLaunchPopupListener(LaunchPopupEvent launchPopupEvent) {
+        ApplicationModule am = getApplicationModule();
+        ViewObject inspPrcLinesVO = (ViewObject) am.findViewObject("PwcInspectionProcessHeaderVO1");
+        Row currRow = inspPrcLinesVO.getCurrentRow();
+        String inspPrcId = currRow.getAttribute("InspectionProcessId").toString();
+        ViewObject rollNumberLov = (ViewObject) am.findViewObject("RollNumberLOV1");
+        rollNumberLov.setNamedWhereClauseParam("p_insp_prc_id", inspPrcId);
+        rollNumberLov.executeQuery();
+    }*/
 }
